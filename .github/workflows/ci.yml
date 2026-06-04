@@ -84,12 +84,32 @@ jobs:
       - name: Prepare site
         run: |
           mkdir -p _site
-          # Copy all learning.html files as the main entry points
+          # Copy all files and subdirectories needed for the learning page
           for project_dir in knowledge/ai-agents/*/; do
             project=$(basename "$project_dir")
             mkdir -p "_site/$project"
+            # Copy all files and subdirectories needed for the learning page
+            if [ -d "$project_dir" ]; then
+              cp -r "$project_dir"* "_site/$project/" 2>/dev/null || true
+            fi
+            # Ensure learning.html becomes index.html
             if [ -f "$project_dir/learning.html" ]; then
               cp "$project_dir/learning.html" "_site/$project/index.html"
+            fi
+          done
+
+          # Verify site structure
+          echo "Verifying site structure..."
+          for project in langchain langgraph openclaw; do
+            if [ -f "_site/$project/index.html" ]; then
+              echo "  ✓ _site/$project/index.html"
+            else
+              echo "  ✗ _site/$project/index.html MISSING" && exit 1
+            fi
+            if [ -f "_site/$project/wiki/wiki/marked.min.js" ]; then
+              echo "  ✓ _site/$project/wiki/wiki/marked.min.js"
+            else
+              echo "  ⚠ _site/$project/wiki/wiki/marked.min.js not found (may not be needed)"
             fi
           done
 
