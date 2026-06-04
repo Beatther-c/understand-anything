@@ -1,95 +1,80 @@
-# 工具接口：ToolNode、InjectedState 与 ToolMessage
+# 05 工具接口：ToolNode、InjectedState 与 ToolMessage
 
 ## 你会学到什么
 
-- 用工程视角解释 LangGraph 的核心抽象：ToolNode, tools_condition, InjectedState, InjectedStore。
-- 从源码入口 `libs/prebuilt/langgraph/prebuilt/tool_node.py` 追踪到测试证据，理解它解决的真实问题。
-- 把本课概念复刻成一个最小实验，并能说明它在生产 Agent 中的边界。
+- ToolNode 如何从 AIMessage 提取 tool_calls 并并行执行工具
+- InjectedState 注解如何让工具函数获取当前图状态
+- tools_condition 如何决定 ReAct 循环的路由走向
+- ToolMessage 如何将工具结果回填到消息流中
+- ToolNode 的错误处理策略如何影响 Agent 稳定性
 
 ## AI 概念从零解释
 
-工具调用是模型提出的结构化动作，ToolNode 把动作解析、注入隐藏参数、执行工具，再把结果写回消息流。
+ToolNode 本质是一个"批量 RPC dispatcher"。想象一个微服务网关：上游（LLM）发出一批调用意图（tool_calls），网关并行路由到对应的 handler，收集结果后统一返回。
 
-如果把一次 LLM 调用看成普通 RPC，Agent 就会显得神秘；但 LangGraph 的观点更像“长期运行的工作流”。LLM 只是节点之一，状态、边、工具、恢复点和事件流共同决定系统行为。本课的核心是：ToolNode, tools_condition, InjectedState, InjectedStore 如何把不稳定的模型行为包进稳定的软件结构。
+类比后端经验：
+- **tool_calls** = 一批 RPC request（包含 method name + args + correlation ID）
+- **ToolNode** = 网关/dispatcher，负责路由、并发执行和结果收集
+- **InjectedState** = sidecar 注入的上下文（类似 gRPC interceptor 注入 metadata）
+- **ToolMessage** = RPC response（带 tool_call_id 做关联）
+- **tools_condition** = 网关前的 router，决定请求是否需要 dispatch
+- **ToolCallRequest** = 内部调度单元，包含 tool_call、state、config 等运行时上下文
 
-## 为什么工程上需要这个抽象
+关键区别：这里的"调用方"是一个 LLM，它输出的是结构化意图而非真正的函数调用。框架负责把意图映射到真实执行。
 
-让 LLM 只负责选择工具和公开参数，权限、状态、存储和运行时对象由系统注入，能降低提示泄露和参数伪造风险。
-
-对后端工程师可以类比为：普通函数像同步 controller；LangGraph 图像可恢复 saga/workflow；checkpoint 像持久化执行日志；stream/debug 像领域事件与 tracing。
-
-## 最小心智模型
-
-```python
-# 伪代码：不是逐字源码，而是本课抽象的最小模型
-state = initial_input
-while current_node != END:
-    update = current_node.run(state, runtime)
-    state = merge_by_schema(state, update)
-    current_node = route_by_edges(state)
-return project_output(state)
-```
-
-本课在这个循环中关注：`AIMessage.tool_calls -> ToolNode -> tool(args + injected) -> ToolMessage`。
-
-## Source entry points
-
-- repo: `langchain-ai/langgraph`
-- commit: `83dd61feaca993d2ee428706ad04c869895ce400`
-- scope: `libs/langgraph, libs/prebuilt, libs/checkpoint, libs/sdk-py`
-- primary path: `libs/prebuilt/langgraph/prebuilt/tool_node.py`
-- primary symbol: `ToolNode`
-- related symbols: `ToolNode, tools_condition, InjectedState, InjectedStore`
-- previous lesson: 模型适配：把 ChatModel 当成图节点的一部分
-- next lesson: 流式输出、调试事件与追踪
+整个流程形成闭环：LLM → AIMessage(tool_calls) → ToolNode → ToolMessage → 写回 messages Channel → LLM 在下轮看到结果。这个闭环是 ReAct 循环中"执行"阶段的核心。
 
 ## 源码阅读路径
 
-1. 先读 `libs/prebuilt/langgraph/prebuilt/tool_node.py` 中的 `ToolNode`，只标记输入参数、返回值和它读写的状态。
-2. 再读本课 evidence 中的测试文件，观察测试如何构造图、输入和断言。
-3. 最后回到源码，把测试中的断言映射到具体分支：错误处理、状态合并、路由、持久化或事件输出。
+- **repo**: langchain-ai/langgraph
+- **commit**: 83dd61feaca993d2ee428706ad04c869895ce400
+- **scope**: libs/prebuilt/
+- **primary path**: `libs/prebuilt/langgraph/prebuilt/tool_node.py`
+- **primary symbol**: `ToolNode`
 
-## 核心 entities 与 relations
+**3 步阅读方法**：
 
-- entity: `lesson:05-tool-interface`，课程单元。
-- entity: `concept:05-tool-interface`，源码概念 `ToolNode, tools_condition, InjectedState, InjectedStore`。
-- relation: 本课概念与前后课程的依赖关系见 `graph/relations.json`。
+1. **看类定义**（L622-740）：ToolNode 继承 RunnableCallable，初始化时将工具列表注册到 `tools_by_name` 字典，支持 BaseTool 实例和普通函数两种输入
+2. **看 `_func` / `_afunc`**（L800-860）：从 input 解析 tool_calls → 为每个 call 构造 ToolRuntime → 用 executor.map 并行执行 → `_combine_tool_outputs` 合并输出
+3. **看 `tools_condition`**：检查最后一条消息是否有 tool_calls，有则路由到 "tools" 节点，否则到 END
+
+补充阅读：关注 `InjectedState` 类定义（同文件）和 `ToolCallRequest` 数据类，理解工具调用的完整上下文如何构建。还可以看 `_run_one` 方法理解单个工具的执行流程：参数注入 → 工具调用 → 结果包装。
 
 ## 关键 claims 与 evidence
 
-- claim: `claim-05-tool-interface`，ToolNode 会识别 AIMessage 中的工具调用，并把 InjectedState/InjectedStore 等系统参数从 LLM 可见 schema 中隔离出来。
+**claim-05-tool-interface**：ToolNode 从输入 state 的最后一条 AIMessage 中提取 tool_calls，并行执行对应工具，返回 ToolMessage 列表写入 messages Channel。
 
-- `ev-toolnode-code`: `libs/prebuilt/langgraph/prebuilt/tool_node.py:622`，ToolNode 是执行工具调用的 Runnable 节点。
-- `ev-injected-state-code`: `libs/prebuilt/langgraph/prebuilt/tool_node.py:1753`，注入注解让状态和存储在执行期传入工具，且不暴露给模型 schema。
-- `ev-test-toolnode`: `libs/prebuilt/tests/test_tool_node.py:1`，ToolNode 测试覆盖工具调用输入、输出和错误处理。
-- `ev-test-injected-state`: `libs/prebuilt/tests/test_tool_node.py:1315`，InjectedState/InjectedStore 测试覆盖状态与存储注入。
+这个 claim 描述了 ToolNode 的核心职责：它不做推理，只做执行。LLM 输出的 AIMessage 中包含一个或多个 tool_calls（结构化意图），ToolNode 提取这些意图，根据 tool name 在 `tools_by_name` 字典中查找注册的工具，并行调用，然后把每个结果包装成 ToolMessage（带 tool_call_id 关联）写回 messages Channel。这实现了"意图-执行-结果"的完整闭环。
+
+**证据支持**：
+- `ev-toolnode-class-code`：ToolNode 类定义，展示工具注册和输入解析逻辑
+- `ev-toolnode-invoke-code`：`_func` 方法实现并行执行和结果收集
+- `ev-test-tool-node-basic`：验证单个 tool_call 的正确解析和执行
+- `ev-test-tool-node-parallel`：验证多个并行 tool_calls 的执行
 
 ## 相关测试证据
 
-- `ev-test-toolnode`: `libs/prebuilt/tests/test_tool_node.py:1`，ToolNode 测试覆盖工具调用输入、输出和错误处理。
-- `ev-test-injected-state`: `libs/prebuilt/tests/test_tool_node.py:1315`，InjectedState/InjectedStore 测试覆盖状态与存储注入。
+- **ev-test-tool-node-basic**（`libs/prebuilt/tests/test_tool_node.py:125-221`）：构造一个 AIMessage 包含 tool_calls，传入 ToolNode，验证输出为对应的 ToolMessage 列表。阅读时关注测试如何构造 tool_calls 数组和如何断言 ToolMessage 的 tool_call_id 匹配。这个测试覆盖了最基本的"调用意图 → 执行 → 结果"路径。
 
-阅读测试时不要只看 test name。建议记录三件事：输入状态是什么、预期输出是什么、测试是否覆盖失败/边界路径。
+- **ev-test-tool-node-parallel**（`libs/prebuilt/tests/test_tool_node.py:222-268`）：构造包含多个 tool_calls 的 AIMessage，验证 ToolNode 并行执行所有工具并返回等量的 ToolMessage。关注 executor.map 的并行调度是否正确分发，以及多个 ToolMessage 的顺序是否与 tool_calls 顺序一致。
 
 ## 真实源码解释
 
-ToolNode 读取最近消息中的 tool_calls，查找对应工具并执行。InjectedState/InjectedStore 标注的参数不会交给模型填写，而是在执行期由系统注入。这种设计把 LLM 可控输入和系统可信上下文拆开。
+**ToolNode 的设计选择**：继承 RunnableCallable 而非 BaseTool，因为它不是一个工具，而是一个执行多个工具的调度节点。初始化时接受工具列表，构建 `tools_by_name` 字典用于 O(1) 查找。`name` 默认为 `"tools"`，在图可视化中显示为 tools 节点。
 
-## 设计取舍
+**输入解析的三种模式**：ToolNode 支持 dict（图状态）、list（消息列表）和 tool_calls 列表三种输入。`_parse_input` 方法统一从中提取 `tool_calls` 数组。对于 dict 输入，从 `state[messages_key]` 的最后一条 AIMessage 中取；对于 list 输入，直接取末尾 AIMessage。
 
-- 显式图结构让流程更可审查，但需要学习节点、边、状态和运行时的词汇。
-- 类型 schema 能提前暴露状态合并错误，但动态消息和工具调用仍需要运行时测试兜底。
-- 运行时事件和 checkpoint 增加复杂度，但换来可恢复、可观测和可回放的生产能力。
+**并行执行策略**：`_func` 使用 `get_executor_for_config` 获取线程池，对所有 tool_calls 做 `executor.map` 并行执行。异步版本 `_afunc` 使用 `asyncio.gather`。每个 tool_call 独立构造 `ToolRuntime` 上下文，包含 state、config、store 等运行时信息。这意味着多个工具调用不会串行阻塞，但共享同一份 state 快照。
 
-## Java/backend 类比
+**InjectedState 机制**：通过 `_extract_state` 从输入中提取当前图状态，注入到 ToolRuntime 中。工具函数如果声明了 `Annotated[dict, InjectedState]` 参数，框架会自动注入状态，而这个参数不会暴露在 tool schema 中（LLM 看不到它）。这类似 Spring 的 `@Autowired`——框架注入运行时上下文，调用方无需感知。
 
-可以把 LangGraph 想成 Temporal/Cadence 风格的工作流内核加上 LLM 节点：节点像 activity，状态像 workflow state，checkpoint 像 event history，ToolNode 像受控外部副作用适配器，Command/interrupt 像工作流信号和人工审批。
+**tools_condition 的路由逻辑**：这是一个简单的条件边辅助函数——检查 `state["messages"][-1]` 是否有 `tool_calls` 属性。有则返回 `"tools"`（路由到 ToolNode），无则返回 `END`（结束循环）。它是 ReAct 模式的"退出条件"。
 
-## 常见误解
+**错误处理**：`handle_tool_errors` 支持多种策略——布尔值、字符串模板、异常类型过滤或自定义 callable。默认行为是捕获参数校验错误（模型给了错误参数）并返回错误描述作为 ToolMessage 内容，让 LLM 有机会在下一轮修正参数并重试。工具本身的执行异常默认会重新抛出。
 
-- 误解：LangGraph 是“画图工具”。更准确地说，它是可执行状态图运行时。
-- 误解：Agent loop 必须手写 while。LangGraph 倾向用条件边、Command 和节点返回值表达循环。
-- 误解：测试只需要 mock 模型输出。实际还要测试状态合并、工具注入、checkpoint、stream 事件和恢复路径。
+**Command 工具的特殊处理**：如果工具返回 Command 对象而非普通值，ToolNode 会直接传递 Command 而非包装为 ToolMessage。`_combine_tool_outputs` 方法处理混合输出——普通 ToolMessage 和 Command 可以共存。这允许工具控制图的执行流程——例如工具执行后直接路由到特定节点，而不是回到 agent 继续推理。
+
+**输出格式的自动适配**：ToolNode 根据输入类型自动决定输出格式。dict 输入返回 `{messages_key: [ToolMessage...]}`；list 输入返回 `[ToolMessage...]`。这保证了 ToolNode 可以无缝嵌入不同的图状态结构中。
 
 ## 自测题
 
@@ -105,7 +90,9 @@ ToolNode 读取最近消息中的 tool_calls，查找对应工具并执行。Inj
 
 ## 学完标准
 
-- 能不看答案说出 `ToolNode, tools_condition, InjectedState, InjectedStore` 解决什么工程问题。
-- 能在源码中定位本课 primary symbol，并说明至少两个测试如何证明行为。
-- 能完成实验，并把自己的实现与 LangGraph 源码设计差异写成 5 条以内的笔记。
-
+- 能解释 ToolNode 从 AIMessage 到 ToolMessage 的完整数据流
+- 能说明 InjectedState 如何在不暴露给 LLM 的前提下注入图状态
+- 能画出 agent → tools_condition → ToolNode → agent 的循环结构
+- 能描述 ToolNode 的并行执行机制（executor.map / asyncio.gather）和错误恢复策略
+- 理解 tool_call_id 如何实现请求-响应关联（类似 correlation ID）
+- 能区分 ToolNode 输出 ToolMessage 和 Command 两种模式的适用场景

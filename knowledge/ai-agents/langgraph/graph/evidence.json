@@ -1,431 +1,535 @@
 [
   {
+    "id": "ev-stategraph-compile-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-stategraph-code",
-    "path": "libs/langgraph/langgraph/graph/state.py",
-    "line_range": [
-      130,
-      210
-    ],
-    "symbol": "StateGraph",
-    "evidence_type": "code",
-    "summary": "StateGraph 是有状态图构建器，接收 state_schema/context_schema/input/output 等图定义。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-compiled-code",
     "path": "libs/langgraph/langgraph/graph/state.py",
     "line_range": [
       1164,
-      1235
+      1388
     ],
     "symbol": "StateGraph.compile",
     "evidence_type": "code",
-    "summary": "compile 接收 checkpointer/store/interrupt/cache/debug 等参数并产出 CompiledStateGraph。"
+    "summary": "StateGraph.compile() 方法验证图结构、创建 channels、实例化 CompiledStateGraph 并绑定节点和边"
   },
   {
+    "id": "ev-compiled-extends-pregel",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-state-basic",
-    "path": "libs/langgraph/tests/test_state.py",
+    "path": "libs/langgraph/langgraph/graph/state.py",
     "line_range": [
-      1,
-      160
+      1391,
+      1410
     ],
-    "symbol": "test_state",
-    "evidence_type": "test",
-    "summary": "状态图测试覆盖基础节点、边和状态更新行为。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-runnable",
-    "path": "libs/langgraph/tests/test_runnable.py",
-    "line_range": [
-      1,
-      180
-    ],
-    "symbol": "test_runnable",
-    "evidence_type": "test",
-    "summary": "Runnable 互操作测试证明编译图可作为可调用对象使用。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-messages-state-code",
-    "path": "libs/langgraph/langgraph/graph/message.py",
-    "line_range": [
-      372,
-      380
-    ],
-    "symbol": "MessagesState",
+    "symbol": "CompiledStateGraph",
     "evidence_type": "code",
-    "summary": "MessagesState 定义 messages 字段并绑定 add_messages reducer。"
+    "summary": "CompiledStateGraph 类定义显示其继承 Pregel[StateT, ContextT, InputT, OutputT]"
   },
   {
+    "id": "ev-test-compile-invoke",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-add-messages-code",
-    "path": "libs/langgraph/langgraph/graph/message.py",
+    "path": "libs/langgraph/tests/test_pregel.py",
     "line_range": [
-      31,
-      170
+      433,
+      462
     ],
-    "symbol": "add_messages",
-    "evidence_type": "code",
-    "summary": "add_messages 负责合并消息、按 id 更新以及处理消息格式。"
+    "symbol": "test_invoke_single_process_in_out",
+    "evidence_type": "test",
+    "summary": "测试验证 compile 后的图可通过 invoke 执行单节点处理"
   },
   {
+    "id": "ev-test-stream-basic",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/tests/test_pregel.py",
+    "line_range": [
+      1382,
+      1418
+    ],
+    "symbol": "test_imp_stream_order",
+    "evidence_type": "test",
+    "summary": "测试验证 stream 方法按正确顺序输出每步结果"
+  },
+  {
+    "id": "ev-get-channels-code",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/langgraph/graph/state.py",
+    "line_range": [
+      1801,
+      1859
+    ],
+    "symbol": "_get_channels",
+    "evidence_type": "code",
+    "summary": "_get_channels 解析 TypedDict 的 type_hints，将 Annotated 字段映射为 BinaryOperatorAggregate，无注解字段映射为 LastValue"
+  },
+  {
+    "id": "ev-binop-channel-code",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/langgraph/channels/binop.py",
+    "line_range": [
+      51,
+      142
+    ],
+    "symbol": "BinaryOperatorAggregate",
+    "evidence_type": "code",
+    "summary": "BinaryOperatorAggregate 实现 update 方法，对新值逐一应用 operator 进行聚合"
+  },
+  {
+    "id": "ev-test-channels-binop",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/tests/test_channels.py",
+    "line_range": [
+      92,
+      107
+    ],
+    "symbol": "test_binop",
+    "evidence_type": "test",
+    "summary": "测试验证 BinaryOperatorAggregate 正确使用 operator.add 聚合多个值"
+  },
+  {
     "id": "ev-test-messages-state",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
     "path": "libs/langgraph/tests/test_messages_state.py",
     "line_range": [
-      1,
-      220
+      188,
+      210
     ],
     "symbol": "test_messages_state",
     "evidence_type": "test",
-    "summary": "消息状态测试覆盖 TypedDict/Pydantic 状态和消息合并。"
+    "summary": "测试验证 MessagesState 使用 add_messages reducer 正确管理消息列表"
   },
   {
+    "id": "ev-add-node-impl-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-channels-overwrite",
-    "path": "libs/langgraph/tests/test_channels.py",
+    "path": "libs/langgraph/langgraph/graph/state.py",
     "line_range": [
-      497,
-      525
+      662,
+      913
     ],
-    "symbol": "Overwrite channel tests",
-    "evidence_type": "test",
-    "summary": "Overwrite 测试验证 reducer 可被显式覆盖且保持 dict 形状。"
+    "symbol": "StateGraph.add_node",
+    "evidence_type": "code",
+    "summary": "add_node 实际实现：推断节点名、包装为 RunnableCallable、创建 StateNodeSpec 存入 self.nodes"
   },
   {
+    "id": "ev-state-node-spec-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-runtime-code",
-    "path": "libs/langgraph/langgraph/runtime.py",
+    "path": "libs/langgraph/langgraph/graph/_node.py",
     "line_range": [
       1,
-      120
+      80
     ],
-    "symbol": "Runtime",
+    "symbol": "StateNodeSpec",
     "evidence_type": "code",
-    "summary": "Runtime 为节点提供 context、store、stream_writer 等运行期依赖。"
+    "summary": "StateNodeSpec 数据类定义节点的 runnable、metadata、input_schema、retry_policy 等属性"
   },
   {
+    "id": "ev-test-add-node-function",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-react-prompt-code",
+    "path": "libs/langgraph/tests/test_pregel.py",
+    "line_range": [
+      433,
+      462
+    ],
+    "symbol": "test_invoke_single_process_in_out",
+    "evidence_type": "test",
+    "summary": "测试使用普通函数作为节点，验证 add_node + compile + invoke 工作流"
+  },
+  {
+    "id": "ev-test-node-name-infer",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/tests/test_pregel.py",
+    "line_range": [
+      505,
+      528
+    ],
+    "symbol": "test_invoke_single_process_in_out_dict",
+    "evidence_type": "test",
+    "summary": "测试验证函数名自动推断为节点名的行为"
+  },
+  {
+    "id": "ev-create-react-agent-code",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
     "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
     "line_range": [
       278,
-      560
+      500
     ],
     "symbol": "create_react_agent",
     "evidence_type": "code",
-    "summary": "create_react_agent 接收 prompt、state_schema、context_schema、hooks 等参数。"
+    "summary": "create_react_agent 函数接受 model/tools/prompt 参数，构建包含 agent 和 tools 节点的 StateGraph"
   },
   {
+    "id": "ev-should-bind-tools-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-react-prompt",
-    "path": "libs/prebuilt/tests/test_react_agent.py",
-    "line_range": [
-      150,
-      199
-    ],
-    "symbol": "prompt tests",
-    "evidence_type": "test",
-    "summary": "ReAct agent 测试覆盖多种 prompt 输入形态。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-runtime-context",
-    "path": "libs/langgraph/tests/test_runtime.py",
-    "line_range": [
-      1,
-      180
-    ],
-    "symbol": "test_runtime",
-    "evidence_type": "test",
-    "summary": "Runtime 测试验证节点能读取 context/store/stream_writer 等运行期对象。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-react-call-model-code",
     "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
     "line_range": [
-      560,
-      860
-    ],
-    "symbol": "call_model",
-    "evidence_type": "code",
-    "summary": "ReAct agent 内部模型节点负责调用 chat model 并写回消息。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-tool-binding-code",
-    "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
-    "line_range": [
-      180,
-      205
+      173,
+      198
     ],
     "symbol": "_should_bind_tools",
     "evidence_type": "code",
-    "summary": "工具绑定校验逻辑要求模型绑定工具集合与传入工具匹配。"
+    "summary": "_should_bind_tools 检查模型是否已绑定工具，未绑定则自动调用 bind_tools"
   },
   {
+    "id": "ev-test-react-agent-basic",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-dynamic-model",
     "path": "libs/prebuilt/tests/test_react_agent.py",
     "line_range": [
-      1565,
-      1846
+      91,
+      121
     ],
-    "symbol": "dynamic model tests",
+    "symbol": "test_no_prompt",
     "evidence_type": "test",
-    "summary": "动态模型测试覆盖运行时选择模型和静态/动态模型差异。"
+    "summary": "测试验证 create_react_agent 无 prompt 时的基本 ReAct 循环执行"
   },
   {
+    "id": "ev-test-react-agent-prompt",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-model-tool-mismatch",
     "path": "libs/prebuilt/tests/test_react_agent.py",
     "line_range": [
-      329,
-      368
+      148,
+      168
     ],
-    "symbol": "tool binding mismatch tests",
+    "symbol": "test_system_message_prompt",
     "evidence_type": "test",
-    "summary": "测试验证模型已绑定工具与传入工具不一致时会报错。"
+    "summary": "测试验证 create_react_agent 支持 SystemMessage 作为 prompt 参数"
   },
   {
+    "id": "ev-toolnode-class-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-toolnode-code",
     "path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
     "line_range": [
       622,
-      820
+      800
     ],
     "symbol": "ToolNode",
     "evidence_type": "code",
-    "summary": "ToolNode 是执行工具调用的 Runnable 节点。"
+    "summary": "ToolNode 类继承 RunnableCallable，初始化时注册工具列表，执行时从 state 提取 tool_calls"
   },
   {
+    "id": "ev-toolnode-invoke-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-injected-state-code",
     "path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
     "line_range": [
-      1753,
-      1906
+      800,
+      1000
     ],
-    "symbol": "InjectedState/InjectedStore",
+    "symbol": "ToolNode._func",
     "evidence_type": "code",
-    "summary": "注入注解让状态和存储在执行期传入工具，且不暴露给模型 schema。"
+    "summary": "ToolNode._func 实现并行执行工具调用并收集 ToolMessage 结果"
   },
   {
+    "id": "ev-test-tool-node-basic",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-toolnode",
     "path": "libs/prebuilt/tests/test_tool_node.py",
     "line_range": [
-      1,
-      180
+      125,
+      221
     ],
     "symbol": "test_tool_node",
     "evidence_type": "test",
-    "summary": "ToolNode 测试覆盖工具调用输入、输出和错误处理。"
+    "summary": "测试验证 ToolNode 正确解析 AIMessage.tool_calls 并执行工具返回 ToolMessage"
   },
   {
+    "id": "ev-test-tool-node-parallel",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-injected-state",
     "path": "libs/prebuilt/tests/test_tool_node.py",
     "line_range": [
-      1315,
-      1455
+      222,
+      268
     ],
-    "symbol": "InjectedState tests",
+    "symbol": "test_tool_node_tool_call_input",
     "evidence_type": "test",
-    "summary": "InjectedState/InjectedStore 测试覆盖状态与存储注入。"
+    "summary": "测试验证 ToolNode 支持多个并行 tool_calls 的执行"
   },
   {
+    "id": "ev-stream-mode-def-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-pregel-stream-code",
-    "path": "libs/langgraph/langgraph/pregel/main.py",
-    "line_range": [
-      1,
-      260
-    ],
-    "symbol": "Pregel",
-    "evidence_type": "code",
-    "summary": "Pregel 主运行时提供 invoke/stream/astream 等执行入口。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-debug-code",
-    "path": "libs/langgraph/langgraph/pregel/debug.py",
-    "line_range": [
-      1,
-      180
-    ],
-    "symbol": "debug events",
-    "evidence_type": "code",
-    "summary": "debug 模块组织任务、写入、checkpoint 等调试事件。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-stream-events",
-    "path": "libs/langgraph/tests/test_stream_events_v3.py",
-    "line_range": [
-      1,
-      220
-    ],
-    "symbol": "stream events tests",
-    "evidence_type": "test",
-    "summary": "stream events v3 测试覆盖事件结构和生命周期。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-debug-checkpoints",
-    "path": "libs/langgraph/tests/test_pregel.py",
-    "line_range": [
-      4359,
-      4424
-    ],
-    "symbol": "test_debug_retry",
-    "evidence_type": "test",
-    "summary": "debug retry 测试验证 checkpoint 事件与历史状态一致。"
-  },
-  {
-    "repo": "langchain-ai/langgraph",
-    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-command-code",
     "path": "libs/langgraph/langgraph/types.py",
     "line_range": [
-      664,
-      810
+      120,
+      139
     ],
-    "symbol": "Send/Command",
+    "symbol": "StreamMode",
     "evidence_type": "code",
-    "summary": "Send/Command 表达动态分发、状态更新、图跳转和恢复参数。"
+    "summary": "StreamMode 类型定义支持 values/updates/checkpoints/tasks/debug/messages/custom 七种模式"
   },
   {
+    "id": "ev-stream-messages-handler-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-interrupt-code",
+    "path": "libs/langgraph/langgraph/pregel/_messages.py",
+    "line_range": [
+      1,
+      50
+    ],
+    "symbol": "StreamMessagesHandler",
+    "evidence_type": "code",
+    "summary": "StreamMessagesHandler 作为回调处理器拦截 LLM 输出 token 并转发到 messages 流"
+  },
+  {
+    "id": "ev-test-stream-values",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/tests/test_pregel.py",
+    "line_range": [
+      555,
+      684
+    ],
+    "symbol": "test_invoke_two_processes_in_out",
+    "evidence_type": "test",
+    "summary": "测试验证多节点图的 stream 输出按步骤正确返回中间状态"
+  },
+  {
+    "id": "ev-test-stream-messages",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/tests/test_pregel.py",
+    "line_range": [
+      6986,
+      7127
+    ],
+    "symbol": "test_stream_mode_messages_command",
+    "evidence_type": "test",
+    "summary": "测试验证 stream_mode='messages' 正确输出 LLM 消息 token"
+  },
+  {
+    "id": "ev-conditional-edges-code",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/langgraph/graph/state.py",
+    "line_range": [
+      969,
+      1017
+    ],
+    "symbol": "StateGraph.add_conditional_edges",
+    "evidence_type": "code",
+    "summary": "add_conditional_edges 将路由函数包装为 BranchSpec 存储在 self.branches 中"
+  },
+  {
+    "id": "ev-command-class-code",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/langgraph/types.py",
+    "line_range": [
+      759,
+      808
+    ],
+    "symbol": "Command",
+    "evidence_type": "code",
+    "summary": "Command 数据类包含 graph/update/resume/goto 字段，支持状态更新和动态路由"
+  },
+  {
+    "id": "ev-test-conditional-edges",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/tests/test_pregel.py",
+    "line_range": [
+      2925,
+      2976
+    ],
+    "symbol": "test_callable_in_conditional_edges_with_no_path_map",
+    "evidence_type": "test",
+    "summary": "测试验证条件边使用 callable 路由函数的正确行为"
+  },
+  {
+    "id": "ev-test-command-goto",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/langgraph/tests/test_pregel.py",
+    "line_range": [
+      5236,
+      5303
+    ],
+    "symbol": "test_command_goto_with_static_breakpoints",
+    "evidence_type": "test",
+    "summary": "测试验证 Command(goto=...) 实现动态路由到指定节点"
+  },
+  {
+    "id": "ev-interrupt-func-code",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
     "path": "libs/langgraph/langgraph/types.py",
     "line_range": [
       811,
-      929
+      934
     ],
     "symbol": "interrupt",
     "evidence_type": "code",
-    "summary": "interrupt 会抛出 GraphInterrupt 并把中断值暴露给调用端等待恢复。"
+    "summary": "interrupt() 函数追踪中断索引，检查 resume 值，未找到则抛出 GraphInterrupt 暂停执行"
   },
   {
+    "id": "ev-command-resume-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-react-loop-code",
-    "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "path": "libs/langgraph/langgraph/types.py",
     "line_range": [
-      860,
-      1006
+      759,
+      808
     ],
-    "symbol": "ReAct graph assembly",
+    "symbol": "Command.resume",
     "evidence_type": "code",
-    "summary": "ReAct agent 将模型节点、工具节点和条件路由组装成循环图。"
+    "summary": "Command 的 resume 字段用于提供恢复值，支持 dict 映射或单个值形式"
   },
   {
+    "id": "ev-test-interrupt-resume",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-interrupt-loop",
     "path": "libs/langgraph/tests/test_pregel.py",
     "line_range": [
-      4922,
-      4985
+      4852,
+      4920
     ],
-    "symbol": "test_interrupt_loop",
+    "symbol": "test_interrupt_multiple",
     "evidence_type": "test",
-    "summary": "中断循环测试验证 interrupt 在循环中的暂停与恢复。"
+    "summary": "测试验证多个 interrupt 的暂停和 Command(resume=...) 恢复行为"
   },
   {
+    "id": "ev-test-interrupt-multiple",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-parent-command",
-    "path": "libs/langgraph/tests/test_parent_command.py",
+    "path": "libs/langgraph/tests/test_pregel.py",
     "line_range": [
-      1,
-      220
+      5305,
+      5722
     ],
-    "symbol": "parent command tests",
+    "symbol": "test_multiple_interrupt_state_persistence",
     "evidence_type": "test",
-    "summary": "父图 Command 测试覆盖跨图/子图跳转和状态更新。"
+    "summary": "测试验证多次中断场景下状态正确持久化和恢复"
   },
   {
+    "id": "ev-base-saver-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-checkpoint-code",
     "path": "libs/checkpoint/langgraph/checkpoint/base/__init__.py",
     "line_range": [
-      1,
-      220
+      176,
+      348
     ],
     "symbol": "BaseCheckpointSaver",
     "evidence_type": "code",
-    "summary": "checkpoint base 定义保存、读取、列举 checkpoint 的抽象契约。"
+    "summary": "BaseCheckpointSaver 定义 get/get_tuple/put/put_writes/list/delete_thread 等核心接口"
   },
   {
+    "id": "ev-inmemory-saver-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-sdk-client-code",
-    "path": "libs/sdk-py/langgraph_sdk/client.py",
+    "path": "libs/checkpoint/langgraph/checkpoint/memory/__init__.py",
     "line_range": [
-      1,
-      180
+      33,
+      100
     ],
-    "symbol": "get_client",
+    "symbol": "InMemorySaver",
     "evidence_type": "code",
-    "summary": "Python SDK 提供与远程 LangGraph 服务交互的客户端入口。"
+    "summary": "InMemorySaver 使用 defaultdict 存储 checkpoint，实现 BaseCheckpointSaver 所有方法"
   },
   {
+    "id": "ev-remote-graph-code",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-checkpoint",
-    "path": "libs/langgraph/tests/test_pregel.py",
+    "path": "libs/langgraph/langgraph/pregel/remote.py",
     "line_range": [
-      805,
-      980
+      118,
+      300
     ],
-    "symbol": "checkpoint tests",
-    "evidence_type": "test",
-    "summary": "Pregel checkpoint 测试覆盖保存、错误、pending writes 和多线程隔离。"
+    "symbol": "RemoteGraph",
+    "evidence_type": "code",
+    "summary": "RemoteGraph 实现 PregelProtocol，通过 LangGraphClient SDK 发起远程 HTTP 调用"
   },
   {
+    "id": "ev-test-checkpoint-roundtrip",
     "repo": "langchain-ai/langgraph",
     "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-    "id": "ev-test-sdk-stream",
-    "path": "libs/sdk-py/tests/streaming/test_thread_stream.py",
+    "path": "libs/checkpoint/tests/test_memory.py",
     "line_range": [
-      1,
+      210,
       220
     ],
-    "symbol": "SDK streaming tests",
+    "symbol": "test_memory_saver",
     "evidence_type": "test",
-    "summary": "SDK streaming 测试覆盖线程流订阅和远程事件投影。"
+    "summary": "测试验证 InMemorySaver 的 put/get_tuple 读写一致性"
+  },
+  {
+    "id": "ev-create-react-agent-full-code",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "line_range": [
+      278,
+      1016
+    ],
+    "symbol": "create_react_agent",
+    "evidence_type": "code",
+    "summary": "create_react_agent 完整实现：构建 StateGraph、注册 agent/tools 节点、设置条件边和中断点"
+  },
+  {
+    "id": "ev-react-agent-graph-structure",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/prebuilt/tests/test_react_agent_graph.py",
+    "line_range": [
+      1,
+      40
+    ],
+    "symbol": "test_react_agent_graph",
+    "evidence_type": "test",
+    "summary": "测试验证 create_react_agent 生成的图结构包含正确的节点和边"
+  },
+  {
+    "id": "ev-test-react-agent-with-checkpoint",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/prebuilt/tests/test_react_agent.py",
+    "line_range": [
+      91,
+      121
+    ],
+    "symbol": "test_no_prompt",
+    "evidence_type": "test",
+    "summary": "测试验证 create_react_agent 配合 checkpointer 的持久化执行"
+  },
+  {
+    "id": "ev-test-react-agent-interrupt",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/prebuilt/tests/test_react_agent.py",
+    "line_range": [
+      535,
+      598
+    ],
+    "symbol": "test_react_agent_update_state",
+    "evidence_type": "test",
+    "summary": "测试验证 react agent 的 update_state 和中断恢复能力"
+  },
+  {
+    "id": "ev-test-checkpoint-list-history",
+    "repo": "langchain-ai/langgraph",
+    "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+    "path": "libs/checkpoint/tests/test_memory.py",
+    "line_range": [
+      225,
+      245
+    ],
+    "symbol": "test_memory_saver_list",
+    "evidence_type": "test",
+    "summary": "测试验证 InMemorySaver 的 list 方法正确返回 checkpoint 历史记录"
   }
 ]

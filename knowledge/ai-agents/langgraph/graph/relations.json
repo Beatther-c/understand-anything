@@ -1,72 +1,282 @@
 [
   {
-    "id": "rel-01",
-    "from": "concept:01-runnable",
-    "to": "concept:02-message-schema",
-    "type": "depends_on",
-    "description": "可执行图依赖状态 schema 和 reducer。",
-    "evidence_ids": [
-      "ev-messages-state-code"
-    ]
+    "id": "rel-stategraph-compiles-to-compiled",
+    "source": "entity-stategraph",
+    "target": "entity-compiled-stategraph",
+    "type": "produces",
+    "description": "StateGraph.compile() 产生 CompiledStateGraph 实例"
   },
   {
-    "id": "rel-02",
-    "from": "concept:02-message-schema",
-    "to": "concept:05-tool-interface",
-    "type": "composes",
-    "description": "工具结果通过 ToolMessage 回到 messages 状态。",
-    "evidence_ids": [
-      "ev-runtime-code"
-    ]
+    "id": "rel-compiled-extends-pregel",
+    "source": "entity-compiled-stategraph",
+    "target": "entity-pregel",
+    "type": "extends",
+    "description": "CompiledStateGraph 继承 Pregel 获得 invoke/stream 执行能力"
   },
   {
-    "id": "rel-03",
-    "from": "concept:03-prompt-template",
-    "to": "concept:04-chat-model-adapter",
-    "type": "feeds",
-    "description": "prompt 装配结果进入模型适配节点。",
-    "evidence_ids": [
-      "ev-react-call-model-code"
-    ]
+    "id": "rel-stategraph-add-node",
+    "source": "entity-stategraph",
+    "target": "entity-add-node",
+    "type": "contains",
+    "description": "StateGraph 包含 add_node 方法用于注册节点"
   },
   {
-    "id": "rel-04",
-    "from": "concept:04-chat-model-adapter",
-    "to": "concept:07-agent-loop",
-    "type": "emits",
-    "description": "模型输出决定 agent loop 的下一步。",
-    "evidence_ids": [
-      "ev-toolnode-code"
-    ]
+    "id": "rel-stategraph-compile-method",
+    "source": "entity-stategraph",
+    "target": "entity-compile-method",
+    "type": "contains",
+    "description": "StateGraph 包含 compile 方法"
   },
   {
-    "id": "rel-05",
-    "from": "concept:05-tool-interface",
-    "to": "concept:07-agent-loop",
+    "id": "rel-typeddict-creates-channels",
+    "source": "entity-typeddict-state",
+    "target": "entity-basechannel",
+    "type": "produces",
+    "description": "TypedDict 的每个字段在编译时被解析为对应的 Channel 实例"
+  },
+  {
+    "id": "rel-lastvalue-implements-basechannel",
+    "source": "entity-lastvalue",
+    "target": "entity-basechannel",
     "type": "implements",
-    "description": "ToolNode 是 ReAct 循环中的动作执行节点。",
-    "evidence_ids": [
-      "ev-pregel-stream-code"
-    ]
+    "description": "LastValue 实现 BaseChannel 接口，存储最后写入值"
   },
   {
-    "id": "rel-06",
-    "from": "concept:06-callback-tracing",
-    "to": "concept:08-provider-integration",
-    "type": "observes",
-    "description": "stream/debug 事件可包含 checkpoint 相关状态。",
-    "evidence_ids": [
-      "ev-command-code"
-    ]
+    "id": "rel-binop-implements-basechannel",
+    "source": "entity-binop-aggregate",
+    "target": "entity-basechannel",
+    "type": "implements",
+    "description": "BinaryOperatorAggregate 实现 BaseChannel 接口，支持 reducer 聚合"
   },
   {
-    "id": "rel-07",
-    "from": "concept:07-agent-loop",
-    "to": "concept:08-provider-integration",
+    "id": "rel-messages-state-uses-add-messages",
+    "source": "entity-messages-state",
+    "target": "entity-add-messages",
     "type": "depends_on",
-    "description": "可恢复 agent loop 依赖 checkpoint 和线程配置。",
-    "evidence_ids": [
-      "ev-checkpoint-code"
-    ]
+    "description": "MessagesState 使用 add_messages 作为 messages 字段的 reducer"
+  },
+  {
+    "id": "rel-add-messages-used-by-binop",
+    "source": "entity-add-messages",
+    "target": "entity-binop-aggregate",
+    "type": "consumed by",
+    "description": "add_messages 作为 BinaryOperatorAggregate 的 operator 参数"
+  },
+  {
+    "id": "rel-node-function-registered-by-add-node",
+    "source": "entity-node-function",
+    "target": "entity-add-node",
+    "type": "consumes",
+    "description": "节点函数通过 add_node 注册到图中"
+  },
+  {
+    "id": "rel-add-node-creates-statenodespec",
+    "source": "entity-add-node",
+    "target": "entity-state-node-spec",
+    "type": "produces",
+    "description": "add_node 将函数包装为 StateNodeSpec 存储在 self.nodes 中"
+  },
+  {
+    "id": "rel-prompt-runnable-in-react-agent",
+    "source": "entity-prompt-runnable",
+    "target": "entity-create-react-agent",
+    "type": "contains",
+    "description": "create_react_agent 内部构建 prompt_runnable 处理提示逻辑"
+  },
+  {
+    "id": "rel-create-react-agent-uses-stategraph",
+    "source": "entity-create-react-agent",
+    "target": "entity-stategraph",
+    "type": "calls",
+    "description": "create_react_agent 内部创建 StateGraph 构建图拓扑"
+  },
+  {
+    "id": "rel-create-react-agent-uses-toolnode",
+    "source": "entity-create-react-agent",
+    "target": "entity-tool-node",
+    "type": "calls",
+    "description": "create_react_agent 实例化 ToolNode 作为工具执行节点"
+  },
+  {
+    "id": "rel-create-react-agent-model-node",
+    "source": "entity-create-react-agent",
+    "target": "entity-model-node",
+    "type": "contains",
+    "description": "create_react_agent 包含内部的 agent model 节点"
+  },
+  {
+    "id": "rel-model-node-uses-chatmodel",
+    "source": "entity-model-node",
+    "target": "entity-chatmodel-node",
+    "type": "depends_on",
+    "description": "model_node 调用 LanguageModelLike(ChatModel) 生成回复"
+  },
+  {
+    "id": "rel-toolnode-produces-toolmessage",
+    "source": "entity-tool-node",
+    "target": "entity-tool-message",
+    "type": "produces",
+    "description": "ToolNode 执行工具后返回 ToolMessage 列表"
+  },
+  {
+    "id": "rel-toolnode-uses-injectedstate",
+    "source": "entity-tool-node",
+    "target": "entity-injected-state",
+    "type": "depends_on",
+    "description": "ToolNode 检测 InjectedState 注解并注入图状态到工具参数"
+  },
+  {
+    "id": "rel-toolnode-uses-toolcallrequest",
+    "source": "entity-tool-node",
+    "target": "entity-tool-call-request",
+    "type": "produces",
+    "description": "ToolNode 为每个 tool_call 创建 ToolCallRequest 对象"
+  },
+  {
+    "id": "rel-tools-condition-routes-toolnode",
+    "source": "entity-tools-condition",
+    "target": "entity-tool-node",
+    "type": "depends_on",
+    "description": "tools_condition 检测 tool_calls 存在时路由到 ToolNode"
+  },
+  {
+    "id": "rel-pregel-uses-stream-mode",
+    "source": "entity-pregel",
+    "target": "entity-stream-mode",
+    "type": "depends_on",
+    "description": "Pregel.stream() 根据 stream_mode 参数决定输出格式"
+  },
+  {
+    "id": "rel-pregel-uses-stream-messages-handler",
+    "source": "entity-pregel",
+    "target": "entity-stream-messages-handler",
+    "type": "calls",
+    "description": "Pregel 在 stream_mode='messages' 时注入 StreamMessagesHandler 回调"
+  },
+  {
+    "id": "rel-pregel-uses-callback-handler",
+    "source": "entity-pregel",
+    "target": "entity-graph-callback-handler",
+    "type": "calls",
+    "description": "Pregel 通过 GraphCallbackHandler 发射图生命周期事件"
+  },
+  {
+    "id": "rel-pregel-uses-pregelloop",
+    "source": "entity-pregel",
+    "target": "entity-pregel-loop",
+    "type": "calls",
+    "description": "Pregel.stream() 创建 SyncPregelLoop/AsyncPregelLoop 执行图"
+  },
+  {
+    "id": "rel-conditional-edges-in-stategraph",
+    "source": "entity-stategraph",
+    "target": "entity-conditional-edges",
+    "type": "contains",
+    "description": "StateGraph 包含 add_conditional_edges 方法"
+  },
+  {
+    "id": "rel-conditional-edges-uses-branchspec",
+    "source": "entity-conditional-edges",
+    "target": "entity-branch-spec",
+    "type": "produces",
+    "description": "add_conditional_edges 创建 BranchSpec 存储路由规则"
+  },
+  {
+    "id": "rel-command-controls-routing",
+    "source": "entity-command",
+    "target": "entity-pregel",
+    "type": "consumes",
+    "description": "Command 被 Pregel 引擎解析，执行状态更新和动态路由"
+  },
+  {
+    "id": "rel-interrupt-raises-graphinterrupt",
+    "source": "entity-interrupt-func",
+    "target": "entity-pregel-loop",
+    "type": "calls",
+    "description": "interrupt() 抛出 GraphInterrupt 被 PregelLoop 捕获并暂停执行"
+  },
+  {
+    "id": "rel-command-resumes-interrupt",
+    "source": "entity-command",
+    "target": "entity-interrupt-func",
+    "type": "depends_on",
+    "description": "Command(resume=...) 提供恢复值给之前的 interrupt() 调用"
+  },
+  {
+    "id": "rel-send-used-in-conditional",
+    "source": "entity-send",
+    "target": "entity-conditional-edges",
+    "type": "consumes",
+    "description": "Send 对象在条件边返回值中动态分发任务到目标节点"
+  },
+  {
+    "id": "rel-react-loop-uses-tools-condition",
+    "source": "entity-react-loop",
+    "target": "entity-tools-condition",
+    "type": "depends_on",
+    "description": "ReAct 循环使用 tools_condition 判断是否继续调用工具"
+  },
+  {
+    "id": "rel-pregel-uses-checkpoint-saver",
+    "source": "entity-pregel",
+    "target": "entity-base-checkpoint-saver",
+    "type": "depends_on",
+    "description": "Pregel 在每步后通过 BaseCheckpointSaver.put 持久化 Checkpoint"
+  },
+  {
+    "id": "rel-inmemory-implements-basesaver",
+    "source": "entity-inmemory-saver",
+    "target": "entity-base-checkpoint-saver",
+    "type": "implements",
+    "description": "InMemorySaver 实现 BaseCheckpointSaver 的所有抽象方法"
+  },
+  {
+    "id": "rel-basesaver-uses-serializer",
+    "source": "entity-base-checkpoint-saver",
+    "target": "entity-serializer-protocol",
+    "type": "depends_on",
+    "description": "BaseCheckpointSaver 使用 SerializerProtocol 序列化 Channel 值"
+  },
+  {
+    "id": "rel-remotegraph-uses-sdk",
+    "source": "entity-remote-graph",
+    "target": "entity-langgraph-client",
+    "type": "depends_on",
+    "description": "RemoteGraph 通过 LangGraphClient/SyncLangGraphClient 发起 HTTP 请求"
+  },
+  {
+    "id": "rel-pregel-get-state-returns-snapshot",
+    "source": "entity-pregel",
+    "target": "entity-state-snapshot",
+    "type": "produces",
+    "description": "Pregel.get_state() 返回 StateSnapshot 命名元组"
+  },
+  {
+    "id": "rel-checkpoint-stored-by-saver",
+    "source": "entity-checkpoint",
+    "target": "entity-base-checkpoint-saver",
+    "type": "consumes",
+    "description": "Checkpoint 数据通过 BaseCheckpointSaver.put 存储和检索"
+  },
+  {
+    "id": "rel-capstone-uses-all",
+    "source": "entity-capstone-full-agent",
+    "target": "entity-create-react-agent",
+    "type": "depends_on",
+    "description": "综合项目基于 create_react_agent 或手动组装完整 Agent 图"
+  },
+  {
+    "id": "rel-capstone-uses-checkpoint",
+    "source": "entity-capstone-full-agent",
+    "target": "entity-inmemory-saver",
+    "type": "depends_on",
+    "description": "综合项目使用 InMemorySaver 或 PostgresSaver 持久化状态"
+  },
+  {
+    "id": "rel-retry-policy-in-pregel",
+    "source": "entity-retry-policy",
+    "target": "entity-pregel",
+    "type": "consumes",
+    "description": "RetryPolicy 配置被 Pregel 执行器用于节点失败重试"
   }
 ]

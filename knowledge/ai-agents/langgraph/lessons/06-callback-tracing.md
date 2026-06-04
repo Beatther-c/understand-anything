@@ -1,95 +1,80 @@
-# 流式输出、调试事件与追踪
+# 06 流式输出、调试事件与追踪
 
 ## 你会学到什么
 
-- 用工程视角解释 LangGraph 的核心抽象：stream, astream, debug events。
-- 从源码入口 `libs/langgraph/langgraph/pregel/main.py` 追踪到测试证据，理解它解决的真实问题。
-- 把本课概念复刻成一个最小实验，并能说明它在生产 Agent 中的边界。
+- StreamMode 七种模式的设计意图和适用场景
+- StreamMessagesHandler 如何实现 token 级流式输出
+- StreamWriter 如何让节点向 custom 流写入自定义数据
+- Pregel 执行循环如何驱动多模式并行输出
+- 回调系统与 LangSmith 追踪的集成方式
 
 ## AI 概念从零解释
 
-图运行不是黑盒返回值；Pregel 运行时可以按 values、updates、debug、messages 等模式暴露中间事件。
+流式输出的本质是"观察者模式 + 多路复用"。类比后端经验：
 
-如果把一次 LLM 调用看成普通 RPC，Agent 就会显得神秘；但 LangGraph 的观点更像“长期运行的工作流”。LLM 只是节点之一，状态、边、工具、恢复点和事件流共同决定系统行为。本课的核心是：stream, astream, debug events 如何把不稳定的模型行为包进稳定的软件结构。
+- **StreamMode** = Kafka topic 的分区策略——同一个执行过程可以按不同维度（全量状态、增量更新、token 粒度、debug 事件）投递到不同"topic"
+- **values 模式** = 每步结束后的 state snapshot（类似 event sourcing 的 projection）
+- **updates 模式** = 增量 diff（类似 CDC change event，只包含本步修改的字段）
+- **messages 模式** = LLM 输出的 token 流（类似 WebSocket 推送逐字符，前端可实时渲染打字效果）
+- **custom 模式** = 节点内部主动 emit 的自定义事件（类似 OpenTelemetry span event）
+- **checkpoints 模式** = 状态快照事件（类似数据库的 WAL checkpoint 通知）
+- **tasks 模式** = 任务生命周期事件（类似分布式追踪中的 span start/end）
+- **debug 模式** = checkpoints + tasks 的组合，用于开发环境全量观测
+- **StreamMessagesHandler** = 一个 callback handler，拦截 LLM 的 `on_llm_new_token` 事件并转发到输出流
 
-## 为什么工程上需要这个抽象
-
-Agent 的失败常发生在中间步骤。流式事件、checkpoint 事件和 tracing 让工程师能定位是哪一步、哪个节点、哪个工具导致偏差。
-
-对后端工程师可以类比为：普通函数像同步 controller；LangGraph 图像可恢复 saga/workflow；checkpoint 像持久化执行日志；stream/debug 像领域事件与 tracing。
-
-## 最小心智模型
-
-```python
-# 伪代码：不是逐字源码，而是本课抽象的最小模型
-state = initial_input
-while current_node != END:
-    update = current_node.run(state, runtime)
-    state = merge_by_schema(state, update)
-    current_node = route_by_edges(state)
-return project_output(state)
-```
-
-本课在这个循环中关注：`graph.stream(input, stream_mode=[...]) -> event chunks -> tracer/debug UI`。
-
-## Source entry points
-
-- repo: `langchain-ai/langgraph`
-- commit: `83dd61feaca993d2ee428706ad04c869895ce400`
-- scope: `libs/langgraph, libs/prebuilt, libs/checkpoint, libs/sdk-py`
-- primary path: `libs/langgraph/langgraph/pregel/main.py`
-- primary symbol: `Pregel.stream`
-- related symbols: `stream, astream, debug events`
-- previous lesson: 工具接口：ToolNode、InjectedState 与 ToolMessage
-- next lesson: Agent Loop：条件边、Command、interrupt 与 ReAct 循环
+这些模式可以**组合使用**：`stream_mode=["values", "messages"]` 同时获取状态快照和 token 流。框架为每种模式独立输出，客户端可以按需消费。
 
 ## 源码阅读路径
 
-1. 先读 `libs/langgraph/langgraph/pregel/main.py` 中的 `Pregel.stream`，只标记输入参数、返回值和它读写的状态。
-2. 再读本课 evidence 中的测试文件，观察测试如何构造图、输入和断言。
-3. 最后回到源码，把测试中的断言映射到具体分支：错误处理、状态合并、路由、持久化或事件输出。
+- **repo**: langchain-ai/langgraph
+- **commit**: 83dd61feaca993d2ee428706ad04c869895ce400
+- **scope**: libs/langgraph/
+- **primary path**: `libs/langgraph/langgraph/types.py`
+- **primary symbol**: `StreamMode`
 
-## 核心 entities 与 relations
+**3 步阅读方法**：
 
-- entity: `lesson:06-callback-tracing`，课程单元。
-- entity: `concept:06-callback-tracing`，源码概念 `stream, astream, debug events`。
-- relation: 本课概念与前后课程的依赖关系见 `graph/relations.json`。
+1. **看 StreamMode 定义**（`types.py:120-134`）：7 种 Literal 类型 + 详细注释说明每种模式的语义
+2. **看 StreamMessagesHandler**（`pregel/_messages.py:49-`）：继承 BaseCallbackHandler，实现 `on_llm_new_token` 拦截 LLM 输出，包装为 `(message_chunk, metadata)` 元组
+3. **看 Pregel.stream**（`pregel/main.py`）：理解执行循环如何根据 stream_mode 列表分发事件到不同输出通道
+
+补充阅读：查看 `StreamWriter` 的类型定义（`types.py:136-139`）和 `GraphCallbackHandler`（`callbacks.py`），理解自定义流和图级事件的实现。还可以看 `SyncPregelLoop` 中的流式分发逻辑。
 
 ## 关键 claims 与 evidence
 
-- claim: `claim-06-callback-tracing`，Pregel.stream/astream 提供多种 stream_mode，使调用方可以观察值、更新、消息、debug 和 checkpoint 事件。
+**claim-06-callback-tracing**：Pregel.stream() 支持多种 stream_mode（values/updates/messages/custom/debug），通过回调系统和 StreamMessagesHandler 实现 token 级流式输出。
 
-- `ev-pregel-stream-code`: `libs/langgraph/langgraph/pregel/main.py:1`，Pregel 主运行时提供 invoke/stream/astream 等执行入口。
-- `ev-debug-code`: `libs/langgraph/langgraph/pregel/debug.py:1`，debug 模块组织任务、写入、checkpoint 等调试事件。
-- `ev-test-stream-events`: `libs/langgraph/tests/test_stream_events_v3.py:1`，stream events v3 测试覆盖事件结构和生命周期。
-- `ev-test-debug-checkpoints`: `libs/langgraph/tests/test_pregel.py:4359`，debug retry 测试验证 checkpoint 事件与历史状态一致。
+这个 claim 的核心含义：LangGraph 的流式不是简单的"结束后返回"，而是在执行过程中通过多种模式持续输出。`values` 和 `updates` 在每个超步结束时输出；`messages` 通过回调机制实现 token 级粒度；`custom` 让节点开发者可以注入任意事件。这种设计让同一次执行可以同时服务"前端实时展示"和"后端调试追踪"两种需求。
+
+**证据支持**：
+- `ev-stream-mode-def-code`：StreamMode 类型定义，7 种模式的 Literal union
+- `ev-stream-messages-handler-code`：StreamMessagesHandler 回调处理器，拦截 token 并转发
+- `ev-test-stream-values`：验证多节点图的 stream 按步骤输出中间状态
+- `ev-test-stream-messages`：验证 messages 模式正确输出 LLM token
 
 ## 相关测试证据
 
-- `ev-test-stream-events`: `libs/langgraph/tests/test_stream_events_v3.py:1`，stream events v3 测试覆盖事件结构和生命周期。
-- `ev-test-debug-checkpoints`: `libs/langgraph/tests/test_pregel.py:4359`，debug retry 测试验证 checkpoint 事件与历史状态一致。
+- **ev-test-stream-values**（`libs/langgraph/tests/test_pregel.py:555-684`）：构建两个节点的图，验证 `stream(mode="values")` 按执行顺序输出每步完整状态。阅读时关注测试如何断言输出顺序和状态累积——每步输出的是完整 state 而非 diff。
 
-阅读测试时不要只看 test name。建议记录三件事：输入状态是什么、预期输出是什么、测试是否覆盖失败/边界路径。
+- **ev-test-stream-messages**（`libs/langgraph/tests/test_pregel.py:6986-7127`）：验证 `stream_mode="messages"` 结合 Command 时能正确输出 LLM 消息 token。关注测试如何模拟 LLM 的逐 token 输出和 StreamMessagesHandler 的转发行为。每个 token 输出都带有 metadata 标识来源节点。
 
 ## 真实源码解释
 
-Pregel 的 stream/astream 不是只返回最终状态，而是按 stream mode 发出事件。debug 模块把任务、写入和 checkpoint 组织成可观测事件。测试把事件与状态历史比对，证明事件不是纯日志，而是可核验的执行证据。
+**StreamMode 的类型定义**：使用 `Literal` union 而非枚举，因为它需要支持字符串列表组合（`stream_mode=["values", "messages"]`）。7 种模式覆盖了从粗粒度（values）到细粒度（messages）再到完全自定义（custom）的全谱。注释中明确说明了 functional API 下 values 模式只在工作流结束时输出一次。
 
-## 设计取舍
+**StreamMessagesHandler 的设计**：继承 `BaseCallbackHandler` 和 `_StreamingCallbackHandler`，实现了 langchain_core 的回调协议。当 LLM 产生新 token 时，handler 将其包装为 `(message_chunk, metadata)` 元组推入输出流。metadata 包含节点名和命名空间信息（通过 `filter_to_user_tags`），让客户端知道 token 来自哪个节点的 LLM 调用。handler 还会过滤带有 `TAG_NOSTREAM` 或 `TAG_HIDDEN` 标签的节点。
 
-- 显式图结构让流程更可审查，但需要学习节点、边、状态和运行时的词汇。
-- 类型 schema 能提前暴露状态合并错误，但动态消息和工具调用仍需要运行时测试兜底。
-- 运行时事件和 checkpoint 增加复杂度，但换来可恢复、可观测和可回放的生产能力。
+**StreamWriter 的注入**：节点函数可以声明 `writer: StreamWriter` 参数，框架自动注入。当 `stream_mode` 包含 `"custom"` 时，调用 `writer(data)` 会将数据推入输出流；否则 writer 是 no-op（`Callable[[Any], None]`）。这是一种优雅的"按需激活"模式——节点代码不需要知道外部是否在监听。
 
-## Java/backend 类比
+**Pregel 循环的流式分发**：每完成一个超步，循环检查当前激活的 stream_mode 列表，分别将 values/updates/checkpoints 等数据推入对应的输出 channel。多种模式的数据通过 `StreamChunk` 协议统一格式化。这使得一次 stream 调用可以同时输出多种粒度的数据。
 
-可以把 LangGraph 想成 Temporal/Cadence 风格的工作流内核加上 LLM 节点：节点像 activity，状态像 workflow state，checkpoint 像 event history，ToolNode 像受控外部副作用适配器，Command/interrupt 像工作流信号和人工审批。
+**debug 和 tasks 模式**：`debug` 是 `checkpoints` + `tasks` 的组合，用于开发调试。`tasks` 模式在 task 开始和结束时发射事件，包含节点名、执行结果和错误信息。这对于生产环境的可观测性至关重要——类似分布式追踪中的 span 事件。
 
-## 常见误解
+**与 LangSmith 的集成**：LangGraph 的回调系统与 LangSmith 追踪天然集成。每个节点执行、LLM 调用、工具执行都会通过 callback 上报为 trace span，形成完整的执行时序图。GraphCallbackHandler 负责发射图级别的生命周期事件（如 GraphInterruptEvent、GraphResumeEvent）。
 
-- 误解：LangGraph 是“画图工具”。更准确地说，它是可执行状态图运行时。
-- 误解：Agent loop 必须手写 while。LangGraph 倾向用条件边、Command 和节点返回值表达循环。
-- 误解：测试只需要 mock 模型输出。实际还要测试状态合并、工具注入、checkpoint、stream 事件和恢复路径。
+**多模式组合的实践建议**：前端实时展示用 `["messages"]`；后端监控用 `["updates", "tasks"]`；调试问题用 `["debug"]`；自定义进度上报用 `["custom"]`。多种模式可以组合，框架会为每种模式独立输出数据，互不干扰。
+
+**节点过滤与 TAG**：通过给节点添加 `TAG_NOSTREAM` 或 `TAG_HIDDEN` 标签，可以让特定节点的输出不出现在 messages 流中。这对于隐藏内部处理节点（如工具执行）的 LLM 输出很有用——前端只需要看到最终 agent 节点的回复。
 
 ## 自测题
 
@@ -105,7 +90,9 @@ Pregel 的 stream/astream 不是只返回最终状态，而是按 stream mode �
 
 ## 学完标准
 
-- 能不看答案说出 `stream, astream, debug events` 解决什么工程问题。
-- 能在源码中定位本课 primary symbol，并说明至少两个测试如何证明行为。
-- 能完成实验，并把自己的实现与 LangGraph 源码设计差异写成 5 条以内的笔记。
-
+- 能列举 7 种 StreamMode 并说明各自的数据粒度和适用场景
+- 能解释 StreamMessagesHandler 如何实现从 LLM token 到客户端流的转发
+- 能描述 StreamWriter 的注入时机和 no-op 行为
+- 理解 Pregel 超步循环如何驱动多模式并行输出
+- 能为不同业务场景选择合适的 stream_mode 组合
+- 理解 TAG_NOSTREAM 和 TAG_HIDDEN 如何控制节点输出的可见性

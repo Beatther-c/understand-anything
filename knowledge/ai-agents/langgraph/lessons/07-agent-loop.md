@@ -1,96 +1,122 @@
-# Agent Loop：条件边、Command、interrupt 与 ReAct 循环
+# 07 Agent Loop：条件边、Command、interrupt 与 ReAct 循环
 
 ## 你会学到什么
 
-- 用工程视角解释 LangGraph 的核心抽象：add_conditional_edges, Command, interrupt, create_react_agent。
-- 从源码入口 `libs/langgraph/langgraph/types.py` 追踪到测试证据，理解它解决的真实问题。
-- 把本课概念复刻成一个最小实验，并能说明它在生产 Agent 中的边界。
+- add_conditional_edges 如何注册路由函数实现动态分支
+- Command 原语如何统一状态更新、路由控制和中断恢复
+- interrupt() 如何暂停执行并实现 human-in-the-loop
+- Send 如何实现 map-reduce 动态并行调度
+- ReAct 循环的完整控制流：agent → tools_condition → tools → agent
 
 ## AI 概念从零解释
 
-Agent loop 是一个状态机循环：模型节点决定继续、调用工具或结束；工具结果回到模型；interrupt/Command 可以暂停、恢复或跳转。
+Agent Loop 是 LangGraph 的核心——它把"LLM 做决策、工具做执行"的循环用图的控制流表达出来。类比分布式系统：
 
-如果把一次 LLM 调用看成普通 RPC，Agent 就会显得神秘；但 LangGraph 的观点更像“长期运行的工作流”。LLM 只是节点之一，状态、边、工具、恢复点和事件流共同决定系统行为。本课的核心是：add_conditional_edges, Command, interrupt, create_react_agent 如何把不稳定的模型行为包进稳定的软件结构。
+- **条件边（conditional edges）** = saga 编排器中的路由决策节点。saga 的每一步完成后，编排器根据结果决定下一步走 compensate 还是 continue。条件边做的是同样的事：节点完成后，路由函数检查状态决定下一个节点。路由函数可以返回单个节点名（顺序执行）或列表（并行扇出）。
 
-## 为什么工程上需要这个抽象
+- **Command** = 一个复合控制指令，类似 saga 中的"更新状态 + 发送下一步事件"原子操作。它把 `update`（修改状态）和 `goto`（路由到节点）合并为一个返回值，避免了"先更新状态、再靠条件边路由"的两步拆分。Command 还能通过 `graph=Command.PARENT` 向父图发送指令，实现子图到父图的跨层通信。
 
-真实 Agent 必须支持分支、循环、人工确认、跨节点跳转和恢复。LangGraph 把这些控制流显式化。
+- **interrupt()** = checkpoint/replay 中的暂停点。就像一个分布式事务执行到需要人工审批时，持久化当前状态后挂起，等审批通过后从 checkpoint 恢复继续执行。interrupt 必须配合 checkpointer 使用，因为暂停后进程可能重启——没有持久化就没有恢复的基础。
 
-对后端工程师可以类比为：普通函数像同步 controller；LangGraph 图像可恢复 saga/workflow；checkpoint 像持久化执行日志；stream/debug 像领域事件与 tracing。
+- **Send** = map-reduce 的 map 阶段——在条件边中向多个节点实例发送不同输入，实现动态扇出。类似一个 scatter-gather 模式：一个路由决策产生多个并行任务，每个任务接收不同的输入参数。
 
-## 最小心智模型
-
-```python
-# 伪代码：不是逐字源码，而是本课抽象的最小模型
-state = initial_input
-while current_node != END:
-    update = current_node.run(state, runtime)
-    state = merge_by_schema(state, update)
-    current_node = route_by_edges(state)
-return project_output(state)
-```
-
-本课在这个循环中关注：`agent -> should_continue? tools : END；tools -> agent；interrupt -> Command(resume=...)`。
-
-## Source entry points
-
-- repo: `langchain-ai/langgraph`
-- commit: `83dd61feaca993d2ee428706ad04c869895ce400`
-- scope: `libs/langgraph, libs/prebuilt, libs/checkpoint, libs/sdk-py`
-- primary path: `libs/langgraph/langgraph/types.py`
-- primary symbol: `Command, interrupt`
-- related symbols: `add_conditional_edges, Command, interrupt, create_react_agent`
-- previous lesson: 流式输出、调试事件与追踪
-- next lesson: 持久化与远程集成：Checkpoint、Store、SDK 与部署边界
+- **ReAct 循环** = 最经典的 Agent 模式：LLM 生成 tool_calls → tools_condition 检查是否有调用 → 有则执行工具 → 结果回填 → LLM 再次决策。循环直到 LLM 不再调用工具（类似 while loop 的退出条件）。这是 LangGraph 中最重要的控制流模式。
 
 ## 源码阅读路径
 
-1. 先读 `libs/langgraph/langgraph/types.py` 中的 `Command, interrupt`，只标记输入参数、返回值和它读写的状态。
-2. 再读本课 evidence 中的测试文件，观察测试如何构造图、输入和断言。
-3. 最后回到源码，把测试中的断言映射到具体分支：错误处理、状态合并、路由、持久化或事件输出。
+- **repo**: langchain-ai/langgraph
+- **commit**: 83dd61feaca993d2ee428706ad04c869895ce400
+- **scope**: libs/langgraph/ + libs/prebuilt/
+- **primary path**: `libs/langgraph/langgraph/graph/state.py`
+- **primary symbol**: `StateGraph.add_conditional_edges`
 
-## 核心 entities 与 relations
+**3 步阅读方法**：
 
-- entity: `lesson:07-agent-loop`，课程单元。
-- entity: `concept:07-agent-loop`，源码概念 `add_conditional_edges, Command, interrupt, create_react_agent`。
-- relation: 本课概念与前后课程的依赖关系见 `graph/relations.json`。
+1. **看 add_conditional_edges**（`state.py:969-1017`）：将路由函数包装为 `BranchSpec` 存储在 `self.branches[source]` 中。注意 `coerce_to_runnable` 的包装和重名检查逻辑
+2. **看 Command 数据类**（`types.py:759-808`）：4 个字段 `graph/update/resume/goto`，`_update_as_tuples` 将 update 转为 Channel 写入格式。注意 `PARENT` 类变量的定义
+3. **看 interrupt() 函数**（`types.py:811-934`）：追踪中断索引（scratchpad.interrupt_counter）、查找 resume 值、未找到则抛出 GraphInterrupt 暂停执行
+
+补充阅读：看 `tools_condition`（`prebuilt/tool_node.py`）理解 ReAct 循环的退出条件；看 `Send` 数据类（`types.py`）理解 map-reduce 的 API；看 `BranchSpec`（`graph/_branch.py`）理解条件边的编译时绑定。
 
 ## 关键 claims 与 evidence
 
-- claim: `claim-07-agent-loop`，LangGraph 用条件边和 Command 表达 agent 的循环、跳转、暂停和恢复，而不是把控制流藏在 while 循环里。
+### claim-07-agent-loop-conditional
 
-- `ev-command-code`: `libs/langgraph/langgraph/types.py:664`，Send/Command 表达动态分发、状态更新、图跳转和恢复参数。
-- `ev-interrupt-code`: `libs/langgraph/langgraph/types.py:811`，interrupt 会抛出 GraphInterrupt 并把中断值暴露给调用端等待恢复。
-- `ev-react-loop-code`: `libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py:860`，ReAct agent 将模型节点、工具节点和条件路由组装成循环图。
-- `ev-test-interrupt-loop`: `libs/langgraph/tests/test_pregel.py:4922`，中断循环测试验证 interrupt 在循环中的暂停与恢复。
-- `ev-test-parent-command`: `libs/langgraph/tests/test_parent_command.py:1`，父图 Command 测试覆盖跨图/子图跳转和状态更新。
+**claim**：add_conditional_edges 注册路由函数，节点完成后调用该函数决定下一步；节点也可直接返回 Command(goto=...) 实现动态路由而无需显式条件边。
+
+**含义解读**：LangGraph 提供了两种路由方式。传统方式是 `add_conditional_edges(source, router_fn)`——router_fn 接收当前状态，返回目标节点名。这种方式适合路由逻辑与业务逻辑分离的场景，例如 `tools_condition` 只检查消息中有没有 tool_calls。
+
+新方式是节点直接返回 `Command(goto="next_node")`，这让路由逻辑和业务逻辑在同一个函数中，减少了图定义的复杂度。这种方式适合路由决策依赖节点内部计算结果的场景——例如根据 LLM 输出动态选择下一步。
+
+两种方式可以共存：同一个图中有些边用 `add_conditional_edges`，有些节点返回 Command。
+
+**证据支持**：
+- `ev-conditional-edges-code`：`add_conditional_edges` 实现，path 函数被包装为 BranchSpec
+- `ev-command-class-code`：Command 数据类定义，goto 字段支持单节点名或列表
+- `ev-test-conditional-edges`：测试验证路由函数的正确行为
+- `ev-test-command-goto`：测试验证 Command(goto=...) 的动态路由
+
+### claim-07-agent-loop-interrupt
+
+**claim**：interrupt() 函数抛出 GraphInterrupt 暂停执行，必须配合 checkpointer 使用；通过 Command(resume=value) 恢复执行并将 value 作为 interrupt 返回值。
+
+**含义解读**：interrupt 实现了 human-in-the-loop 模式。完整流程如下：
+1. 节点代码调用 `answer = interrupt("请确认是否继续")`
+2. 框架检查 scratchpad 中是否有对应的 resume 值
+3. 没有 → 抛出 `GraphInterrupt`，暂停图执行，中断值发送给客户端
+4. 客户端展示中断信息给用户，用户做出决定
+5. 客户端调用 `graph.stream(Command(resume="confirmed"), config)`
+6. 图从节点开头重新执行（replay），这次 interrupt() 找到 resume 值，直接返回
+
+关键设计约束：节点代码必须是**幂等的**——interrupt 之前的逻辑会重新跑一遍。如果有副作用（如发送邮件），需要在 interrupt 之前做幂等检查。
+
+**证据支持**：
+- `ev-interrupt-func-code`：interrupt() 函数实现，追踪中断索引和 resume 值查找
+- `ev-command-resume-code`：Command.resume 字段定义
+- `ev-test-interrupt-resume`：测试验证暂停和恢复行为
+- `ev-test-interrupt-multiple`：测试验证多次中断的状态持久化
 
 ## 相关测试证据
 
-- `ev-test-interrupt-loop`: `libs/langgraph/tests/test_pregel.py:4922`，中断循环测试验证 interrupt 在循环中的暂停与恢复。
-- `ev-test-parent-command`: `libs/langgraph/tests/test_parent_command.py:1`，父图 Command 测试覆盖跨图/子图跳转和状态更新。
+- **ev-test-conditional-edges**（`libs/langgraph/tests/test_pregel.py:2925-2976`）：构建带条件边的图，路由函数根据状态返回不同节点名。测试验证不同输入会走向不同分支。阅读时关注路由函数的签名 `(state: State) -> str` 和返回值格式。
 
-阅读测试时不要只看 test name。建议记录三件事：输入状态是什么、预期输出是什么、测试是否覆盖失败/边界路径。
+- **ev-test-interrupt-resume**（`libs/langgraph/tests/test_pregel.py:4852-4920`）：构建包含 interrupt 的节点，第一次执行触发中断，第二次用 Command(resume=...) 恢复。测试验证 interrupt 的返回值是 resume 提供的值，且后续状态更新正确。
+
+- **ev-test-interrupt-multiple**（`libs/langgraph/tests/test_pregel.py:5305-5722`）：验证同一节点中多个 interrupt 调用的行为——每次恢复只推进一个 interrupt，框架通过索引追踪匹配。这是 interrupt 最复杂的场景，证明了索引追踪机制的正确性。
 
 ## 真实源码解释
 
-条件边表达从模型到工具或结束的分支，工具节点执行后再回到模型节点。Command 可以同时携带 update、goto、resume 等控制信息；interrupt 则通过 GraphInterrupt 暂停并把待处理值暴露给调用端。这样循环和人工介入都成为图协议的一部分。
+**add_conditional_edges 的实现**：将路由函数通过 `coerce_to_runnable` 转为 Runnable（支持 trace），然后包装为 `BranchSpec` 存入 `self.branches[source][name]`。name 从路由函数名推断，默认为 "condition"。编译时，Pregel 执行器会在源节点完成后执行所有注册的 branch，根据返回值确定下一步激活哪些节点。如果路由函数返回列表，会同时激活多个节点（扇出）。`path_map` 参数可选——如果提供，路由函数返回 key，path_map 映射为节点名；不提供则路由函数直接返回节点名。
 
-## 设计取舍
+**Command 的双重角色**：Command 既是节点返回值（告诉引擎如何路由），也是用户输入（`graph.stream(Command(resume=...))` 恢复中断）。四个字段各有用途：
+- `graph`：指定命令目标图（None=当前图，`Command.PARENT`=父图），用于子图跨层通信
+- `update`：原子性状态更新，通过 `_update_as_tuples` 转为 Channel 写入格式
+- `goto`：路由目标，支持字符串、字符串列表和 Send 对象
+- `resume`：恢复中断的值，支持 dict（按 interrupt ID 映射）或单值
 
-- 显式图结构让流程更可审查，但需要学习节点、边、状态和运行时的词汇。
-- 类型 schema 能提前暴露状态合并错误，但动态消息和工具调用仍需要运行时测试兜底。
-- 运行时事件和 checkpoint 增加复杂度，但换来可恢复、可观测和可回放的生产能力。
+**interrupt() 的状态机**：函数内部维护一个中断计数器（通过 `scratchpad.interrupt_counter()`）。每次调用递增索引。恢复执行时，节点从头重新运行：
+1. 如果 `scratchpad.resume` 中有对应索引的值，直接返回（快速跳过已恢复的 interrupt）
+2. 如果找到 `get_null_resume`（新的恢复值），消费它并追加到 resume 列表
+3. 否则抛出 `GraphInterrupt`，携带 `Interrupt.from_ns` 创建的中断对象
 
-## Java/backend 类比
+这个三段式逻辑保证了多 interrupt 场景的正确性——每个 interrupt 按调用顺序与 resume 值一一对应。
 
-可以把 LangGraph 想成 Temporal/Cadence 风格的工作流内核加上 LLM 节点：节点像 activity，状态像 workflow state，checkpoint 像 event history，ToolNode 像受控外部副作用适配器，Command/interrupt 像工作流信号和人工审批。
+**BranchSpec 的编译时绑定**：`BranchSpec.from_path(path, path_map, True)` 将路由函数和路径映射打包。第三个参数 `True` 表示这是一条"消费性"边——源节点的输出已被消费。编译时，每个源节点的 branches 会被转化为 Pregel 的超步后路由逻辑。
 
-## 常见误解
+**Send 原语的 map-reduce 模式**：在条件边中，路由函数可以返回 `[Send("node_a", input1), Send("node_a", input2)]`。这会创建 node_a 的两个并行实例，各自接收不同输入——类似 MapReduce 的 map 阶段。每个 Send 实例独立执行，结果通过 reducer 聚合回主状态。这对于"并行处理多个子任务"的场景非常有用。
 
-- 误解：LangGraph 是“画图工具”。更准确地说，它是可执行状态图运行时。
-- 误解：Agent loop 必须手写 while。LangGraph 倾向用条件边、Command 和节点返回值表达循环。
-- 误解：测试只需要 mock 模型输出。实际还要测试状态合并、工具注入、checkpoint、stream 事件和恢复路径。
+Send 的典型用例包括：并行查询多个数据源、并行调用多个 LLM 生成不同视角的回答、并行处理文档的多个章节。它与普通的“多节点并行”不同：Send 允许同一个节点的多个实例并行执行，每个实例有不同的输入。
+
+**ReAct 循环的组装**：`create_react_agent` 中的图结构：
+1. 添加 `agent` 节点（执行 LLM 推理，输出 AIMessage）
+2. 添加 `tools` 节点（ToolNode 执行工具，输出 ToolMessage）
+3. `START` → `agent`（入口边）
+4. `agent` → `tools_condition`（条件边：有 tool_calls → "tools"，无 → END）
+5. `tools` → `agent`（普通边：工具结果回到 agent 继续推理）
+
+这个循环持续直到 LLM 不再产生 tool_calls——每一轮都是完整的"推理→执行→观察"周期。配合 checkpointer 时，可以在任意步骤中断并恢复。
+
+**循环次数控制**：`create_react_agent` 支持 `recursion_limit` 参数限制最大循环次数，防止 LLM 无限调用工具。还可以通过 `interrupt_before`/`interrupt_after` 参数在指定节点前后自动中断，实现更细粒度的 human-in-the-loop 控制。
 
 ## 自测题
 
@@ -106,7 +132,9 @@ return project_output(state)
 
 ## 学完标准
 
-- 能不看答案说出 `add_conditional_edges, Command, interrupt, create_react_agent` 解决什么工程问题。
-- 能在源码中定位本课 primary symbol，并说明至少两个测试如何证明行为。
-- 能完成实验，并把自己的实现与 LangGraph 源码设计差异写成 5 条以内的笔记。
-
+- 能解释 add_conditional_edges 和 Command(goto=...) 两种路由方式的适用场景
+- 能描述 interrupt/resume 的完整生命周期，包括多 interrupt 的索引匹配
+- 能画出 ReAct 循环的完整图结构（节点 + 边 + 条件边）
+- 能说明 Command 的 graph/update/goto/resume 四个字段各自的作用
+- 理解 Send 如何在条件边中实现动态 map-reduce 扇出
+- 能解释为什么 interrupt 要求节点代码幂等

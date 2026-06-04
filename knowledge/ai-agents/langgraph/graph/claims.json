@@ -1,114 +1,142 @@
 [
   {
     "id": "claim-01-runnable",
-    "text": "StateGraph.compile 会把声明式节点/边转换为可 invoke/stream 的 CompiledStateGraph，而不是直接执行节点函数。",
+    "text": "StateGraph.compile() 返回 CompiledStateGraph 实例，该实例继承 Pregel 并实现 Runnable 接口的 invoke/stream/ainvoke/astream 方法",
     "lesson": "01-runnable",
     "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-stategraph-code",
-      "ev-compiled-code",
-      "ev-test-state-basic",
-      "ev-test-runnable"
+      "ev-stategraph-compile-code",
+      "ev-compiled-extends-pregel",
+      "ev-test-compile-invoke",
+      "ev-test-stream-basic"
     ],
     "status": "generated"
   },
   {
     "id": "claim-02-message-schema",
-    "text": "MessagesState 通过预定义 messages 字段和 add_messages reducer 支撑对话状态的增量合并。",
+    "text": "TypedDict 中使用 Annotated[type, reducer] 标注的字段会被解析为 BinaryOperatorAggregate Channel，未标注字段使用 LastValue Channel",
     "lesson": "02-message-schema",
-    "confidence": "medium-high",
+    "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-messages-state-code",
-      "ev-add-messages-code",
-      "ev-test-messages-state",
-      "ev-test-channels-overwrite"
+      "ev-get-channels-code",
+      "ev-binop-channel-code",
+      "ev-test-channels-binop",
+      "ev-test-messages-state"
     ],
     "status": "generated"
   },
   {
     "id": "claim-03-prompt-template",
-    "text": "LangGraph 的 prompt 装配通常发生在节点或 pre_model_hook 中，运行时通过 state/context/store 注入所需上下文。",
+    "text": "StateGraph.add_node 接受普通 Python 函数作为节点，函数签名为 (State) -> dict 或 (State, config) -> dict，自动推断函数名为节点名",
     "lesson": "03-prompt-template",
-    "confidence": "medium-high",
+    "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-runtime-code",
-      "ev-react-prompt-code",
-      "ev-test-react-prompt",
-      "ev-test-runtime-context"
+      "ev-add-node-impl-code",
+      "ev-state-node-spec-code",
+      "ev-test-add-node-function",
+      "ev-test-node-name-infer"
     ],
     "status": "generated"
   },
   {
     "id": "claim-04-chat-model-adapter",
-    "text": "预构建 ReAct agent 会把模型调用封装成图节点，并校验模型绑定工具与传入工具集合的一致性。",
+    "text": "create_react_agent 接受 LanguageModelLike 参数，自动调用 model.bind_tools(tools) 绑定工具，并将 prompt|model 组成的 chain 作为 agent 节点",
     "lesson": "04-chat-model-adapter",
-    "confidence": "medium-high",
+    "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-react-call-model-code",
-      "ev-tool-binding-code",
-      "ev-test-dynamic-model",
-      "ev-test-model-tool-mismatch"
+      "ev-create-react-agent-code",
+      "ev-should-bind-tools-code",
+      "ev-test-react-agent-basic",
+      "ev-test-react-agent-prompt"
     ],
     "status": "generated"
   },
   {
     "id": "claim-05-tool-interface",
-    "text": "ToolNode 会识别 AIMessage 中的工具调用，并把 InjectedState/InjectedStore 等系统参数从 LLM 可见 schema 中隔离出来。",
+    "text": "ToolNode 从输入 state 的最后一条 AIMessage 中提取 tool_calls，并行执行对应工具，返回 ToolMessage 列表写入 messages Channel",
     "lesson": "05-tool-interface",
-    "confidence": "medium-high",
+    "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-toolnode-code",
-      "ev-injected-state-code",
-      "ev-test-toolnode",
-      "ev-test-injected-state"
+      "ev-toolnode-class-code",
+      "ev-toolnode-invoke-code",
+      "ev-test-tool-node-basic",
+      "ev-test-tool-node-parallel"
     ],
     "status": "generated"
   },
   {
     "id": "claim-06-callback-tracing",
-    "text": "Pregel.stream/astream 提供多种 stream_mode，使调用方可以观察值、更新、消息、debug 和 checkpoint 事件。",
+    "text": "Pregel.stream() 支持多种 stream_mode（values/updates/messages/custom/debug），通过回调系统和 StreamMessagesHandler 实现 token 级流式输出",
     "lesson": "06-callback-tracing",
-    "confidence": "medium-high",
+    "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-pregel-stream-code",
-      "ev-debug-code",
-      "ev-test-stream-events",
-      "ev-test-debug-checkpoints"
+      "ev-stream-mode-def-code",
+      "ev-stream-messages-handler-code",
+      "ev-test-stream-values",
+      "ev-test-stream-messages"
     ],
     "status": "generated"
   },
   {
-    "id": "claim-07-agent-loop",
-    "text": "LangGraph 用条件边和 Command 表达 agent 的循环、跳转、暂停和恢复，而不是把控制流藏在 while 循环里。",
+    "id": "claim-07-agent-loop-conditional",
+    "text": "add_conditional_edges 注册路由函数，节点完成后调用该函数决定下一步；节点也可直接返回 Command(goto=...) 实现动态路由而无需显式条件边",
     "lesson": "07-agent-loop",
-    "confidence": "medium-high",
+    "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-command-code",
-      "ev-interrupt-code",
-      "ev-react-loop-code",
-      "ev-test-interrupt-loop",
-      "ev-test-parent-command"
+      "ev-conditional-edges-code",
+      "ev-command-class-code",
+      "ev-test-conditional-edges",
+      "ev-test-command-goto"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-07-agent-loop-interrupt",
+    "text": "interrupt() 函数抛出 GraphInterrupt 暂停执行，必须配合 checkpointer 使用；通过 Command(resume=value) 恢复执行并将 value 作为 interrupt 返回值",
+    "lesson": "07-agent-loop",
+    "confidence": "high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-interrupt-func-code",
+      "ev-command-resume-code",
+      "ev-test-interrupt-resume",
+      "ev-test-interrupt-multiple"
     ],
     "status": "generated"
   },
   {
     "id": "claim-08-provider-integration",
-    "text": "LangGraph 把本地运行时的 checkpoint/store 契约与远程 SDK 契约分离，使同一图可以本地执行或通过服务端线程/运行接口执行。",
+    "text": "BaseCheckpointSaver 定义 get_tuple/put/put_writes/list 四个核心方法；InMemorySaver 是其内存实现；RemoteGraph 通过 SDK 连接远程部署",
     "lesson": "08-provider-integration",
-    "confidence": "medium-high",
+    "confidence": "high",
     "evidence_level": "code+tests",
     "evidence_ids": [
-      "ev-checkpoint-code",
-      "ev-sdk-client-code",
-      "ev-test-checkpoint",
-      "ev-test-sdk-stream"
+      "ev-base-saver-code",
+      "ev-inmemory-saver-code",
+      "ev-remote-graph-code",
+      "ev-test-checkpoint-roundtrip",
+      "ev-test-checkpoint-list-history"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-99-capstone",
+    "text": "create_react_agent 综合运用 StateGraph、MessagesState、ToolNode、条件边和 Checkpoint 构建完整的可持久化 ReAct Agent",
+    "lesson": "99-capstone",
+    "confidence": "high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-create-react-agent-full-code",
+      "ev-react-agent-graph-structure",
+      "ev-test-react-agent-with-checkpoint",
+      "ev-test-react-agent-interrupt"
     ],
     "status": "generated"
   }

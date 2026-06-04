@@ -1,242 +1,354 @@
 [
   {
-    "id": "lesson:01-runnable",
-    "name": "LangGraph 的可执行图：从 Runnable 到 CompiledStateGraph",
-    "type": "lesson",
-    "lesson": "01-runnable",
-    "description": "把图看成一个可调用程序：输入状态进入 START，节点函数写入局部更新，运行时把更新合并成下一轮状态，直到 END。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/graph/state.py",
-        "symbol": "StateGraph.compile"
-      }
-    ]
+    "id": "entity-stategraph",
+    "name": "StateGraph",
+    "type": "symbol",
+    "description": "图构建器类，通过 add_node/add_edge/add_conditional_edges 定义图拓扑，compile() 生成可执行图",
+    "source_path": "libs/langgraph/langgraph/graph/state.py",
+    "lesson": "01-runnable"
   },
   {
-    "id": "concept:01-runnable",
-    "name": "StateGraph, CompiledStateGraph",
+    "id": "entity-compiled-stategraph",
+    "name": "CompiledStateGraph",
+    "type": "symbol",
+    "description": "StateGraph.compile() 的产物，继承 Pregel，实现 invoke/stream/ainvoke/astream 等 Runnable 接口",
+    "source_path": "libs/langgraph/langgraph/graph/state.py",
+    "lesson": "01-runnable"
+  },
+  {
+    "id": "entity-pregel",
+    "name": "Pregel",
+    "type": "symbol",
+    "description": "核心执行引擎，基于 Pregel 模型实现超步调度、Channel 读写和节点并行执行",
+    "source_path": "libs/langgraph/langgraph/pregel/main.py",
+    "lesson": "01-runnable"
+  },
+  {
+    "id": "entity-compile-method",
+    "name": "StateGraph.compile",
+    "type": "symbol",
+    "description": "将 builder 模式的 StateGraph 编译为可执行的 CompiledStateGraph 实例",
+    "source_path": "libs/langgraph/langgraph/graph/state.py",
+    "lesson": "01-runnable"
+  },
+  {
+    "id": "entity-typeddict-state",
+    "name": "TypedDict State",
     "type": "concept",
-    "lesson": "01-runnable",
-    "description": "Agent 不是单次函数调用，而是可暂停、可恢复、可观测的状态机。可执行图让工程师把复杂流程拆成节点、边和稳定的调用入口。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/graph/state.py",
-        "symbol": "StateGraph.compile"
-      }
-    ]
+    "description": "LangGraph 使用 Python TypedDict 定义图状态 schema，每个字段对应一个 Channel",
+    "source_path": "libs/langgraph/langgraph/graph/state.py",
+    "lesson": "02-message-schema"
   },
   {
-    "id": "lesson:02-message-schema",
-    "name": "状态与消息：TypedDict、Reducer 与 MessagesState",
-    "type": "lesson",
-    "lesson": "02-message-schema",
-    "description": "状态不是一个普通 dict；每个字段可以有合并规则。消息字段通常用 reducer 追加、覆盖或按 id 更新。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/graph/message.py",
-        "symbol": "MessagesState"
-      }
-    ]
+    "id": "entity-basechannel",
+    "name": "BaseChannel",
+    "type": "symbol",
+    "description": "所有 Channel 的抽象基类，定义 get/update/checkpoint/from_checkpoint 接口",
+    "source_path": "libs/langgraph/langgraph/channels/base.py",
+    "lesson": "02-message-schema"
   },
   {
-    "id": "concept:02-message-schema",
-    "name": "MessagesState, add_messages, Overwrite",
+    "id": "entity-lastvalue",
+    "name": "LastValue",
+    "type": "symbol",
+    "description": "默认 Channel 类型，存储最后写入的值，无 Annotated reducer 的字段使用此 Channel",
+    "source_path": "libs/langgraph/langgraph/channels/last_value.py",
+    "lesson": "02-message-schema"
+  },
+  {
+    "id": "entity-binop-aggregate",
+    "name": "BinaryOperatorAggregate",
+    "type": "symbol",
+    "description": "带 reducer 的 Channel，通过 Annotated[type, operator] 定义，使用二元操作符聚合多节点写入",
+    "source_path": "libs/langgraph/langgraph/channels/binop.py",
+    "lesson": "02-message-schema"
+  },
+  {
+    "id": "entity-messages-state",
+    "name": "MessagesState",
+    "type": "symbol",
+    "description": "预定义的 TypedDict，包含 Annotated[list[AnyMessage], add_messages] 字段",
+    "source_path": "libs/langgraph/langgraph/graph/message.py",
+    "lesson": "02-message-schema"
+  },
+  {
+    "id": "entity-add-messages",
+    "name": "add_messages",
+    "type": "symbol",
+    "description": "消息列表的 reducer 函数，按 ID 合并消息，支持 RemoveMessage 删除和格式化",
+    "source_path": "libs/langgraph/langgraph/graph/message.py",
+    "lesson": "02-message-schema"
+  },
+  {
+    "id": "entity-node-function",
+    "name": "Node Function",
     "type": "concept",
-    "lesson": "02-message-schema",
-    "description": "多节点并发写入时必须有确定性合并策略，否则同一 super-step 的两个节点会把状态写乱。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/graph/message.py",
-        "symbol": "MessagesState"
-      }
-    ]
+    "description": "图节点的核心：接收 State 返回 Partial<State> 的普通 Python 函数，作为提示装配层",
+    "source_path": "libs/langgraph/langgraph/graph/state.py",
+    "lesson": "03-prompt-template"
   },
   {
-    "id": "lesson:03-prompt-template",
-    "name": "节点函数即提示装配层：把业务上下文变成模型输入",
-    "type": "lesson",
-    "lesson": "03-prompt-template",
-    "description": "LangGraph 不把 prompt 固定成特殊类；节点函数负责读取状态、上下文和历史消息，决定下一次模型调用的输入。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
-        "symbol": "create_react_agent"
-      }
-    ]
+    "id": "entity-add-node",
+    "name": "StateGraph.add_node",
+    "type": "symbol",
+    "description": "注册节点函数到图中，自动推断函数名为节点名，支持 input_schema 参数",
+    "source_path": "libs/langgraph/langgraph/graph/state.py",
+    "lesson": "03-prompt-template"
   },
   {
-    "id": "concept:03-prompt-template",
-    "name": "Runtime, prompt, pre_model_hook",
+    "id": "entity-prompt-runnable",
+    "name": "Prompt Runnable",
     "type": "concept",
-    "lesson": "03-prompt-template",
-    "description": "Agent 需要把检索结果、用户上下文、工具结果和系统规则组合起来。把装配逻辑放进节点，比把 prompt 写死更适合生产流程。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
-        "symbol": "create_react_agent"
-      }
-    ]
+    "description": "create_react_agent 中将 prompt 参数（str/SystemMessage/Callable）转为 RunnableCallable",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "lesson": "03-prompt-template"
   },
   {
-    "id": "lesson:04-chat-model-adapter",
-    "name": "模型适配：把 ChatModel 当成图节点的一部分",
-    "type": "lesson",
-    "lesson": "04-chat-model-adapter",
-    "description": "模型不是全局魔法；它是节点调用链里的一个可替换组件。节点根据状态调用模型，模型返回 AIMessage 或工具调用请求。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
-        "symbol": "create_react_agent"
-      }
-    ]
+    "id": "entity-state-node-spec",
+    "name": "StateNodeSpec",
+    "type": "symbol",
+    "description": "节点规格数据类，包含 runnable、metadata、input_schema、retry_policy 等配置",
+    "source_path": "libs/langgraph/langgraph/graph/_node.py",
+    "lesson": "03-prompt-template"
   },
   {
-    "id": "concept:04-chat-model-adapter",
-    "name": "call_model, model.bind_tools, dynamic model",
+    "id": "entity-chatmodel-node",
+    "name": "ChatModel as Node",
     "type": "concept",
-    "lesson": "04-chat-model-adapter",
-    "description": "生产 Agent 要支持静态模型、动态模型选择、绑定工具、结构化输出和错误重试。适配层让这些变化不破坏图结构。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
-        "symbol": "create_react_agent"
-      }
-    ]
+    "description": "在 create_react_agent 中，ChatModel 通过 bind_tools 绑定工具后作为图节点执行",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "lesson": "04-chat-model-adapter"
   },
   {
-    "id": "lesson:05-tool-interface",
-    "name": "工具接口：ToolNode、InjectedState 与 ToolMessage",
-    "type": "lesson",
-    "lesson": "05-tool-interface",
-    "description": "工具调用是模型提出的结构化动作，ToolNode 把动作解析、注入隐藏参数、执行工具，再把结果写回消息流。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
-        "symbol": "ToolNode"
-      }
-    ]
+    "id": "entity-create-react-agent",
+    "name": "create_react_agent",
+    "type": "symbol",
+    "description": "预构建函数，组装 model_node + ToolNode 形成 ReAct 循环图",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "lesson": "04-chat-model-adapter"
   },
   {
-    "id": "concept:05-tool-interface",
-    "name": "ToolNode, tools_condition, InjectedState, InjectedStore",
+    "id": "entity-model-node",
+    "name": "model_node (agent)",
+    "type": "workflow",
+    "description": "create_react_agent 内部的 agent 节点，调用 prompt_runnable | model 生成 AIMessage",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "lesson": "04-chat-model-adapter"
+  },
+  {
+    "id": "entity-language-model-like",
+    "name": "LanguageModelLike",
     "type": "concept",
-    "lesson": "05-tool-interface",
-    "description": "让 LLM 只负责选择工具和公开参数，权限、状态、存储和运行时对象由系统注入，能降低提示泄露和参数伪造风险。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
-        "symbol": "ToolNode"
-      }
-    ]
+    "description": "langchain_core 中的协议类型，任何实现 invoke(messages) 的对象均可作为模型节点",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "lesson": "04-chat-model-adapter"
   },
   {
-    "id": "lesson:06-callback-tracing",
-    "name": "流式输出、调试事件与追踪",
-    "type": "lesson",
-    "lesson": "06-callback-tracing",
-    "description": "图运行不是黑盒返回值；Pregel 运行时可以按 values、updates、debug、messages 等模式暴露中间事件。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/pregel/main.py",
-        "symbol": "Pregel.stream"
-      }
-    ]
+    "id": "entity-tool-node",
+    "name": "ToolNode",
+    "type": "symbol",
+    "description": "预构建节点类，从 AIMessage.tool_calls 提取调用并并行执行工具，返回 ToolMessage 列表",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
+    "lesson": "05-tool-interface"
   },
   {
-    "id": "concept:06-callback-tracing",
-    "name": "stream, astream, debug events",
+    "id": "entity-injected-state",
+    "name": "InjectedState",
+    "type": "symbol",
+    "description": "工具参数注解，允许工具函数通过类型标注注入当前图状态",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
+    "lesson": "05-tool-interface"
+  },
+  {
+    "id": "entity-tools-condition",
+    "name": "tools_condition",
+    "type": "symbol",
+    "description": "条件边辅助函数，检查最后消息是否包含 tool_calls 决定路由到 tools 或 END",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
+    "lesson": "05-tool-interface"
+  },
+  {
+    "id": "entity-tool-message",
+    "name": "ToolMessage",
     "type": "concept",
-    "lesson": "06-callback-tracing",
-    "description": "Agent 的失败常发生在中间步骤。流式事件、checkpoint 事件和 tracing 让工程师能定位是哪一步、哪个节点、哪个工具导致偏差。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/pregel/main.py",
-        "symbol": "Pregel.stream"
-      }
-    ]
+    "description": "工具执行结果的标准消息类型，包含 tool_call_id 与 content 字段",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
+    "lesson": "05-tool-interface"
   },
   {
-    "id": "lesson:07-agent-loop",
-    "name": "Agent Loop：条件边、Command、interrupt 与 ReAct 循环",
-    "type": "lesson",
-    "lesson": "07-agent-loop",
-    "description": "Agent loop 是一个状态机循环：模型节点决定继续、调用工具或结束；工具结果回到模型；interrupt/Command 可以暂停、恢复或跳转。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/types.py",
-        "symbol": "Command, interrupt"
-      }
-    ]
+    "id": "entity-tool-call-request",
+    "name": "ToolCallRequest",
+    "type": "symbol",
+    "description": "工具调用请求数据类，包含 tool_call、tool、state、runtime，支持 interceptor 模式",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/tool_node.py",
+    "lesson": "05-tool-interface"
   },
   {
-    "id": "concept:07-agent-loop",
-    "name": "add_conditional_edges, Command, interrupt, create_react_agent",
+    "id": "entity-stream-mode",
+    "name": "StreamMode",
+    "type": "symbol",
+    "description": "流式输出模式枚举：values/updates/messages/custom/checkpoints/tasks/debug",
+    "source_path": "libs/langgraph/langgraph/types.py",
+    "lesson": "06-callback-tracing"
+  },
+  {
+    "id": "entity-stream-writer",
+    "name": "StreamWriter",
+    "type": "symbol",
+    "description": "注入节点的 Callable，用于在 stream_mode='custom' 时向输出流写入自定义数据",
+    "source_path": "libs/langgraph/langgraph/types.py",
+    "lesson": "06-callback-tracing"
+  },
+  {
+    "id": "entity-stream-messages-handler",
+    "name": "StreamMessagesHandler",
+    "type": "symbol",
+    "description": "回调处理器，拦截 LLM token 级别输出并以 messages stream mode 发送给客户端",
+    "source_path": "libs/langgraph/langgraph/pregel/_messages.py",
+    "lesson": "06-callback-tracing"
+  },
+  {
+    "id": "entity-graph-callback-handler",
+    "name": "GraphCallbackHandler",
+    "type": "symbol",
+    "description": "图级回调处理器，发射 GraphInterruptEvent 和 GraphResumeEvent 等生命周期事件",
+    "source_path": "libs/langgraph/langgraph/callbacks.py",
+    "lesson": "06-callback-tracing"
+  },
+  {
+    "id": "entity-pregel-loop",
+    "name": "SyncPregelLoop / AsyncPregelLoop",
+    "type": "symbol",
+    "description": "Pregel 执行循环的同步/异步实现，管理超步迭代、Channel 更新和中断检查",
+    "source_path": "libs/langgraph/langgraph/pregel/_loop.py",
+    "lesson": "06-callback-tracing"
+  },
+  {
+    "id": "entity-conditional-edges",
+    "name": "add_conditional_edges",
+    "type": "symbol",
+    "description": "添加条件边：源节点完成后调用路由函数决定下一步走向哪个节点",
+    "source_path": "libs/langgraph/langgraph/graph/state.py",
+    "lesson": "07-agent-loop"
+  },
+  {
+    "id": "entity-command",
+    "name": "Command",
+    "type": "symbol",
+    "description": "节点返回的控制流原语，可同时更新状态(update)、路由(goto)和恢复中断(resume)",
+    "source_path": "libs/langgraph/langgraph/types.py",
+    "lesson": "07-agent-loop"
+  },
+  {
+    "id": "entity-interrupt-func",
+    "name": "interrupt()",
+    "type": "symbol",
+    "description": "在节点内暂停图执行的函数，抛出 GraphInterrupt 异常，支持 human-in-the-loop",
+    "source_path": "libs/langgraph/langgraph/types.py",
+    "lesson": "07-agent-loop"
+  },
+  {
+    "id": "entity-send",
+    "name": "Send",
+    "type": "symbol",
+    "description": "动态调度原语，在条件边中向指定节点发送自定义输入，支持 map-reduce 模式",
+    "source_path": "libs/langgraph/langgraph/types.py",
+    "lesson": "07-agent-loop"
+  },
+  {
+    "id": "entity-react-loop",
+    "name": "ReAct Loop",
+    "type": "workflow",
+    "description": "agent → tools_condition → (tools → agent 循环 | END) 的经典 ReAct 循环模式",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "lesson": "07-agent-loop"
+  },
+  {
+    "id": "entity-branch-spec",
+    "name": "BranchSpec",
+    "type": "symbol",
+    "description": "条件边规格，存储路由函数和路径映射，在编译时绑定到源节点",
+    "source_path": "libs/langgraph/langgraph/graph/_branch.py",
+    "lesson": "07-agent-loop"
+  },
+  {
+    "id": "entity-base-checkpoint-saver",
+    "name": "BaseCheckpointSaver",
+    "type": "symbol",
+    "description": "Checkpoint 持久化抽象基类，定义 get_tuple/put/put_writes/list 等接口",
+    "source_path": "libs/checkpoint/langgraph/checkpoint/base/__init__.py",
+    "lesson": "08-provider-integration"
+  },
+  {
+    "id": "entity-checkpoint",
+    "name": "Checkpoint",
+    "type": "symbol",
+    "description": "TypedDict 格式的状态快照，包含 channel_values、channel_versions、versions_seen",
+    "source_path": "libs/checkpoint/langgraph/checkpoint/base/__init__.py",
+    "lesson": "08-provider-integration"
+  },
+  {
+    "id": "entity-inmemory-saver",
+    "name": "InMemorySaver",
+    "type": "symbol",
+    "description": "内存实现的 CheckpointSaver，用于开发测试，生产环境应使用 PostgresSaver",
+    "source_path": "libs/checkpoint/langgraph/checkpoint/memory/__init__.py",
+    "lesson": "08-provider-integration"
+  },
+  {
+    "id": "entity-serializer-protocol",
+    "name": "SerializerProtocol",
+    "type": "symbol",
+    "description": "序列化协议，定义 dumps_typed/loads_typed 接口，默认实现为 JsonPlusSerializer",
+    "source_path": "libs/checkpoint/langgraph/checkpoint/serde/base.py",
+    "lesson": "08-provider-integration"
+  },
+  {
+    "id": "entity-remote-graph",
+    "name": "RemoteGraph",
+    "type": "symbol",
+    "description": "通过 HTTP SDK 连接远程 LangGraph 部署的代理类，实现 PregelProtocol 接口",
+    "source_path": "libs/langgraph/langgraph/pregel/remote.py",
+    "lesson": "08-provider-integration"
+  },
+  {
+    "id": "entity-langgraph-client",
+    "name": "LangGraphClient",
+    "type": "symbol",
+    "description": "异步 Python SDK 客户端，提供 threads/runs/assistants 等 API 的类型安全访问",
+    "source_path": "libs/sdk-py/langgraph_sdk/client.py",
+    "lesson": "08-provider-integration"
+  },
+  {
+    "id": "entity-state-snapshot",
+    "name": "StateSnapshot",
+    "type": "symbol",
+    "description": "get_state() 返回的命名元组，包含 values/next/config/metadata/tasks/interrupts",
+    "source_path": "libs/langgraph/langgraph/types.py",
+    "lesson": "08-provider-integration"
+  },
+  {
+    "id": "entity-capstone-full-agent",
+    "name": "Full Agent System",
+    "type": "workflow",
+    "description": "综合项目：集成 StateGraph + ToolNode + Checkpoint + 流式输出 + 中断恢复的完整 Agent",
+    "source_path": "libs/prebuilt/langgraph/prebuilt/chat_agent_executor.py",
+    "lesson": "99-capstone"
+  },
+  {
+    "id": "entity-retry-policy",
+    "name": "RetryPolicy",
+    "type": "symbol",
+    "description": "节点重试配置，支持指数退避、最大重试次数和自定义异常过滤",
+    "source_path": "libs/langgraph/langgraph/types.py",
+    "lesson": "99-capstone"
+  },
+  {
+    "id": "entity-subgraph",
+    "name": "Subgraph",
     "type": "concept",
-    "lesson": "07-agent-loop",
-    "description": "真实 Agent 必须支持分支、循环、人工确认、跨节点跳转和恢复。LangGraph 把这些控制流显式化。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/langgraph/langgraph/types.py",
-        "symbol": "Command, interrupt"
-      }
-    ]
-  },
-  {
-    "id": "lesson:08-provider-integration",
-    "name": "持久化与远程集成：Checkpoint、Store、SDK 与部署边界",
-    "type": "lesson",
-    "lesson": "08-provider-integration",
-    "description": "Checkpoint 保存线程的执行状态，Store 保存跨线程记忆，SDK 负责与远程 LangGraph 服务交互。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/checkpoint/langgraph/checkpoint/base/__init__.py",
-        "symbol": "BaseCheckpointSaver"
-      }
-    ]
-  },
-  {
-    "id": "concept:08-provider-integration",
-    "name": "BaseCheckpointSaver, InMemorySaver, client.stream",
-    "type": "concept",
-    "lesson": "08-provider-integration",
-    "description": "生产系统需要重试、回放、时间旅行、跨请求记忆、远程运行和并发订阅；这些都要求执行状态与 API 边界可序列化。",
-    "source_refs": [
-      {
-        "repo": "langchain-ai/langgraph",
-        "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
-        "path": "libs/checkpoint/langgraph/checkpoint/base/__init__.py",
-        "symbol": "BaseCheckpointSaver"
-      }
-    ]
+    "description": "将 CompiledStateGraph 作为另一个图的节点嵌套，支持 checkpointer 继承/隔离",
+    "source_path": "libs/langgraph/langgraph/pregel/main.py",
+    "lesson": "99-capstone"
   }
 ]
