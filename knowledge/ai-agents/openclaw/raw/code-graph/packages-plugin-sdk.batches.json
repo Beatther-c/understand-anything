@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 26,
+  "totalBatches": 2,
+  "exportsByPath": {
+    "src/browser-config.ts": [],
+    "src/config-runtime.ts": [],
+    "src/exec-approvals-runtime.ts": [],
+    "src/gateway-method-runtime.ts": [],
+    "src/plugin-entry.ts": [],
+    "src/plugin-runtime.ts": [],
+    "src/provider-auth-runtime.ts": [],
+    "src/provider-auth.ts": [],
+    "src/provider-entry.ts": [],
+    "src/provider-http.ts": [],
+    "src/provider-model-shared.ts": [],
+    "src/provider-model-types.ts": [],
+    "src/provider-onboard.ts": [],
+    "src/provider-stream-shared.ts": [],
+    "src/provider-tools.ts": [],
+    "src/provider-web-search-config-contract.ts": [],
+    "src/provider-web-search.ts": [],
+    "src/runtime-doctor.ts": [],
+    "src/runtime-env.ts": [],
+    "src/secret-input.ts": [],
+    "src/security-runtime.ts": [],
+    "src/testing.ts": [],
+    "src/text-runtime.ts": [],
+    "src/video-generation.ts": []
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 256,
+          "fileCategory": "config"
+        },
+        {
+          "path": "src/browser-config.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/config-runtime.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/exec-approvals-runtime.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/gateway-method-runtime.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/plugin-entry.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/plugin-runtime.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-auth-runtime.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-auth.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-entry.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-http.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-model-shared.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-model-types.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-onboard.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-stream-shared.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-tools.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-web-search-config-contract.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/provider-web-search.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/runtime-doctor.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/runtime-env.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/secret-input.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/security-runtime.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/testing.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/text-runtime.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/video-generation.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "package.json": [],
+        "src/browser-config.ts": [],
+        "src/config-runtime.ts": [],
+        "src/exec-approvals-runtime.ts": [],
+        "src/gateway-method-runtime.ts": [],
+        "src/plugin-entry.ts": [],
+        "src/plugin-runtime.ts": [],
+        "src/provider-auth-runtime.ts": [],
+        "src/provider-auth.ts": [],
+        "src/provider-entry.ts": [],
+        "src/provider-http.ts": [],
+        "src/provider-model-shared.ts": [],
+        "src/provider-model-types.ts": [],
+        "src/provider-onboard.ts": [],
+        "src/provider-stream-shared.ts": [],
+        "src/provider-tools.ts": [],
+        "src/provider-web-search-config-contract.ts": [],
+        "src/provider-web-search.ts": [],
+        "src/runtime-doctor.ts": [],
+        "src/runtime-env.ts": [],
+        "src/secret-input.ts": [],
+        "src/security-runtime.ts": [],
+        "src/testing.ts": [],
+        "src/text-runtime.ts": [],
+        "src/video-generation.ts": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "tsconfig.json",
+          "language": "json",
+          "sizeLines": 36,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "tsconfig.json": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+[
+  {
+    "id": "langchain.runnable",
+    "name": "Runnable",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "01-runnable",
+    "description": "LangChain 的统一执行抽象，支持 invoke、batch、stream、async 和组合。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/runnables/base.py",
+        "line": 125,
+        "symbol": "Runnable"
+      }
+    ]
+  },
+  {
+    "id": "langchain.runnable_sequence",
+    "name": "RunnableSequence",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "01-runnable",
+    "description": "按顺序组合多个 Runnable，使前一个输出成为后一个输入。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/runnables/base.py",
+        "line": 2995,
+        "symbol": "RunnableSequence"
+      }
+    ]
+  },
+  {
+    "id": "langchain.runnable_lambda",
+    "name": "RunnableLambda",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "01-runnable",
+    "description": "把 Python callable 包装成 Runnable，使普通函数进入 LangChain 组合体系。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/runnables/base.py",
+        "line": 4577,
+        "symbol": "RunnableLambda"
+      }
+    ]
+  },
+  {
+    "id": "langchain.runnable_config",
+    "name": "RunnableConfig",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "01-runnable",
+    "description": "Runnable 执行时的配置对象，承载 callbacks、tags、metadata、max_concurrency 等运行时信息。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/runnables/config.py",
+        "line": 49,
+        "symbol": "RunnableConfig"
+      }
+    ]
+  },
+  {
+    "id": "langchain.base_message",
+    "name": "BaseMessage",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "02-message-schema",
+    "description": "LangChain Core 的消息基类，用 content、role/type、metadata 等字段统一对话状态。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/messages/base.py",
+        "line": 93,
+        "symbol": "BaseMessage"
+      }
+    ]
+  },
+  {
+    "id": "langchain.prompt_template",
+    "name": "BasePromptTemplate",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "03-prompt-template",
+    "description": "Prompt 模板基类，负责输入变量声明、校验、partial binding 和 Runnable 化调用。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/prompts/base.py",
+        "line": 40,
+        "symbol": "BasePromptTemplate"
+      }
+    ]
+  },
+  {
+    "id": "langchain.base_chat_model",
+    "name": "BaseChatModel",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "04-chat-model-adapter",
+    "description": "Chat model 的统一适配层，把不同 provider 的 chat API 归一到 invoke、stream、bind_tools 等接口。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/language_models/chat_models.py",
+        "line": 270,
+        "symbol": "BaseChatModel"
+      }
+    ]
+  },
+  {
+    "id": "langchain.base_tool",
+    "name": "BaseTool",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "05-tool-interface",
+    "description": "工具接口基类，描述 tool name、description、args_schema、run/invoke 和 tool call schema。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/tools/base.py",
+        "line": 405,
+        "symbol": "BaseTool"
+      }
+    ]
+  },
+  {
+    "id": "langchain.callback_manager",
+    "name": "CallbackManager",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "06-callback-tracing",
+    "description": "Callback / tracing 的事件分发入口，用于记录 chain、model、tool 等运行生命周期。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/callbacks/manager.py",
+        "line": 1343,
+        "symbol": "CallbackManager"
+      }
+    ]
+  },
+  {
+    "id": "langchain.agent_action",
+    "name": "AgentAction",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "07-agent-loop",
+    "description": "Agent 决策出的工具调用意图，包含 tool、tool_input 和 log。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/core/langchain_core/agents.py",
+        "line": 44,
+        "symbol": "AgentAction"
+      }
+    ]
+  },
+  {
+    "id": "langchain.create_agent",
+    "name": "create_agent",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "07-agent-loop",
+    "description": "LangChain v1 的 agent 工厂函数，生成以模型、工具和中间件组成的 compiled graph。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/langchain_v1/langchain/agents/factory.py",
+        "line": 696,
+        "symbol": "create_agent"
+      }
+    ]
+  },
+  {
+    "id": "langchain.chat_openai",
+    "name": "ChatOpenAI",
+    "type": "source_symbol",
+    "project": "langchain",
+    "lesson": "08-provider-integration",
+    "description": "OpenAI partner 包中的 chat model adapter，处理 OpenAI API 参数、streaming、tool schema 和 tool_choice 差异。",
+    "source_refs": [
+      {
+        "repo": "langchain-ai/langchain",
+        "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+        "path": "libs/partners/openai/langchain_openai/chat_models/base.py",
+        "line": 2534,
+        "symbol": "ChatOpenAI"
+      }
+    ]
+  }
+]

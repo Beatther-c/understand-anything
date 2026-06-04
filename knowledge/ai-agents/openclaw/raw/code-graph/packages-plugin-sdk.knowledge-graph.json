@@ -1,0 +1,1723 @@
+{
+  "schemaVersion": "understand-anything.learning-graph.v1",
+  "generatedAt": "2026-06-02T13:19:01.886Z",
+  "language": "zh",
+  "source": {
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "root": "/Users/chenkun/Documents/understand-anything/repos/openclaw/packages/plugin-sdk",
+    "scan": "/Users/chenkun/Documents/understand-anything/repos/openclaw/packages/plugin-sdk/.understand-anything/intermediate/scan-result.json",
+    "batches": "/Users/chenkun/Documents/understand-anything/repos/openclaw/packages/plugin-sdk/.understand-anything/intermediate/batches.json"
+  },
+  "status": {
+    "deterministicScan": "complete",
+    "semanticBatching": "complete",
+    "llmEntityExtraction": "complete_from_learning_pack",
+    "architectureAssembly": "complete_from_scan_and_lessons",
+    "graphReview": "complete_with_residual_notes"
+  },
+  "stats": {
+    "analyzedFiles": 26,
+    "totalBatches": 2,
+    "nodes": 50,
+    "edges": 122,
+    "sourceSymbols": 17,
+    "relations": 7
+  },
+  "layers": [
+    {
+      "id": "layer:source-files",
+      "label": "Source Files",
+      "summary": "Files discovered by Understand Anything deterministic scan."
+    },
+    {
+      "id": "layer:semantic-entities",
+      "label": "Semantic Entities",
+      "summary": "LLM-compiled concepts and source symbols from the learning pack."
+    },
+    {
+      "id": "layer:test-evidence",
+      "label": "Test Evidence",
+      "summary": "Tests referenced by claims and lessons."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "project:source-scope",
+      "label": "plugin-sdk",
+      "type": "project",
+      "path": "/Users/chenkun/Documents/understand-anything/repos/openclaw/packages/plugin-sdk",
+      "summary": "Understand Anything scan scope combined with the learning-pack semantic graph.",
+      "tags": [
+        "ua-scan",
+        "learning-pack"
+      ]
+    },
+    {
+      "id": "module:package.json",
+      "label": "package.json",
+      "type": "module",
+      "path": "package.json",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:package.json",
+      "label": "package.json",
+      "type": "file",
+      "path": "package.json",
+      "language": "json",
+      "category": "config",
+      "sizeLines": 256,
+      "summary": "config file, language json, about 256 lines.",
+      "tags": [
+        "ua-scan",
+        "config",
+        "json"
+      ]
+    },
+    {
+      "id": "module:src",
+      "label": "src",
+      "type": "module",
+      "path": "src",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:src/browser-config.ts",
+      "label": "src/browser-config.ts",
+      "type": "file",
+      "path": "src/browser-config.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/config-runtime.ts",
+      "label": "src/config-runtime.ts",
+      "type": "file",
+      "path": "src/config-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/exec-approvals-runtime.ts",
+      "label": "src/exec-approvals-runtime.ts",
+      "type": "file",
+      "path": "src/exec-approvals-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/gateway-method-runtime.ts",
+      "label": "src/gateway-method-runtime.ts",
+      "type": "file",
+      "path": "src/gateway-method-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/plugin-entry.ts",
+      "label": "src/plugin-entry.ts",
+      "type": "file",
+      "path": "src/plugin-entry.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/plugin-runtime.ts",
+      "label": "src/plugin-runtime.ts",
+      "type": "file",
+      "path": "src/plugin-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-auth-runtime.ts",
+      "label": "src/provider-auth-runtime.ts",
+      "type": "file",
+      "path": "src/provider-auth-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-auth.ts",
+      "label": "src/provider-auth.ts",
+      "type": "file",
+      "path": "src/provider-auth.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-entry.ts",
+      "label": "src/provider-entry.ts",
+      "type": "file",
+      "path": "src/provider-entry.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-http.ts",
+      "label": "src/provider-http.ts",
+      "type": "file",
+      "path": "src/provider-http.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-model-shared.ts",
+      "label": "src/provider-model-shared.ts",
+      "type": "file",
+      "path": "src/provider-model-shared.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-model-types.ts",
+      "label": "src/provider-model-types.ts",
+      "type": "file",
+      "path": "src/provider-model-types.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-onboard.ts",
+      "label": "src/provider-onboard.ts",
+      "type": "file",
+      "path": "src/provider-onboard.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-stream-shared.ts",
+      "label": "src/provider-stream-shared.ts",
+      "type": "file",
+      "path": "src/provider-stream-shared.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-tools.ts",
+      "label": "src/provider-tools.ts",
+      "type": "file",
+      "path": "src/provider-tools.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-web-search-config-contract.ts",
+      "label": "src/provider-web-search-config-contract.ts",
+      "type": "file",
+      "path": "src/provider-web-search-config-contract.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/provider-web-search.ts",
+      "label": "src/provider-web-search.ts",
+      "type": "file",
+      "path": "src/provider-web-search.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/runtime-doctor.ts",
+      "label": "src/runtime-doctor.ts",
+      "type": "file",
+      "path": "src/runtime-doctor.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/runtime-env.ts",
+      "label": "src/runtime-env.ts",
+      "type": "file",
+      "path": "src/runtime-env.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/secret-input.ts",
+      "label": "src/secret-input.ts",
+      "type": "file",
+      "path": "src/secret-input.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/security-runtime.ts",
+      "label": "src/security-runtime.ts",
+      "type": "file",
+      "path": "src/security-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/testing.ts",
+      "label": "src/testing.ts",
+      "type": "file",
+      "path": "src/testing.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/text-runtime.ts",
+      "label": "src/text-runtime.ts",
+      "type": "file",
+      "path": "src/text-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:src/video-generation.ts",
+      "label": "src/video-generation.ts",
+      "type": "file",
+      "path": "src/video-generation.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1,
+      "summary": "code file, language typescript, about 1 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:tsconfig.json",
+      "label": "tsconfig.json",
+      "type": "module",
+      "path": "tsconfig.json",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:tsconfig.json",
+      "label": "tsconfig.json",
+      "type": "file",
+      "path": "tsconfig.json",
+      "language": "json",
+      "category": "config",
+      "sizeLines": 36,
+      "summary": "config file, language json, about 36 lines.",
+      "tags": [
+        "ua-scan",
+        "config",
+        "json"
+      ]
+    },
+    {
+      "id": "entity:lesson:01-platform-map",
+      "label": "OpenClaw 全局架构：本地优先个人 AI 助手",
+      "type": "lesson",
+      "path": "README.md",
+      "symbol": "OpenClaw 全局架构：本地优先个人 AI 助手",
+      "lesson": "01-platform-map",
+      "summary": "把 OpenClaw 先看成一个由 Gateway 调度的本地优先 agent 操作系统：消息入口、agent runtime、工具、插件、设备节点和 UI 都围绕同一个控制面工作。",
+      "tags": [
+        "llm-entity",
+        "01-platform-map"
+      ]
+    },
+    {
+      "id": "entity:concept:01-platform-map",
+      "label": "本地优先个人 AI 助手",
+      "type": "concept",
+      "path": "README.md",
+      "symbol": "concept",
+      "lesson": "01-platform-map",
+      "summary": "把 OpenClaw 先看成一个由 Gateway 调度的本地优先 agent 操作系统：消息入口、agent runtime、工具、插件、设备节点和 UI 都围绕同一个控制面工作。",
+      "tags": [
+        "llm-entity",
+        "01-platform-map"
+      ]
+    },
+    {
+      "id": "entity:lesson:02-agent-core-loop",
+      "label": "Agent Core：从消息到工具调用的最小循环",
+      "type": "lesson",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "Agent Core：从消息到工具调用的最小循环",
+      "lesson": "02-agent-core-loop",
+      "summary": "agent loop 的本质是一个事件驱动的状态机：追加用户消息，调用模型流，提取工具调用，执行工具，把工具结果写回上下文，再决定是否继续。",
+      "tags": [
+        "llm-entity",
+        "02-agent-core-loop"
+      ]
+    },
+    {
+      "id": "entity:concept:02-agent-core-loop",
+      "label": "从消息到工具调用的最小循环",
+      "type": "concept",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "concept",
+      "lesson": "02-agent-core-loop",
+      "summary": "agent loop 的本质是一个事件驱动的状态机：追加用户消息，调用模型流，提取工具调用，执行工具，把工具结果写回上下文，再决定是否继续。",
+      "tags": [
+        "llm-entity",
+        "02-agent-core-loop"
+      ]
+    },
+    {
+      "id": "entity:symbol:agentLoop",
+      "label": "agentLoop/runLoop",
+      "type": "source_symbol",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "agentLoop",
+      "lesson": "02-agent-core-loop",
+      "summary": "agent-core 的低层循环入口与主状态机。",
+      "tags": [
+        "llm-entity",
+        "02-agent-core-loop"
+      ]
+    },
+    {
+      "id": "entity:lesson:03-message-context-stream",
+      "label": "消息、上下文与流式事件",
+      "type": "lesson",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "消息、上下文与流式事件",
+      "lesson": "03-message-context-stream",
+      "summary": "LLM 应用不是一次请求一次字符串，而是一组消息、系统提示、工具定义和流式事件的组合。OpenClaw 把 partial assistant message 放入上下文并随事件更新。",
+      "tags": [
+        "llm-entity",
+        "03-message-context-stream"
+      ]
+    },
+    {
+      "id": "entity:concept:03-message-context-stream",
+      "label": "",
+      "type": "concept",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "concept",
+      "lesson": "03-message-context-stream",
+      "summary": "LLM 应用不是一次请求一次字符串，而是一组消息、系统提示、工具定义和流式事件的组合。OpenClaw 把 partial assistant message 放入上下文并随事件更新。",
+      "tags": [
+        "llm-entity",
+        "03-message-context-stream"
+      ]
+    },
+    {
+      "id": "entity:lesson:04-tools-policy-sandbox",
+      "label": "工具系统：定义、策略、沙箱与执行前后钩子",
+      "type": "lesson",
+      "path": "src/agents/agent-tools.ts",
+      "symbol": "工具系统：定义、策略、沙箱与执行前后钩子",
+      "lesson": "04-tools-policy-sandbox",
+      "summary": "工具调用是 agent 产生外部影响的边界。OpenClaw 同时处理 schema 规范化、allow/deny 策略、沙箱路径、before/after hook、执行顺序和错误归一化。",
+      "tags": [
+        "llm-entity",
+        "04-tools-policy-sandbox"
+      ]
+    },
+    {
+      "id": "entity:concept:04-tools-policy-sandbox",
+      "label": "定义、策略、沙箱与执行前后钩子",
+      "type": "concept",
+      "path": "src/agents/agent-tools.ts",
+      "symbol": "concept",
+      "lesson": "04-tools-policy-sandbox",
+      "summary": "工具调用是 agent 产生外部影响的边界。OpenClaw 同时处理 schema 规范化、allow/deny 策略、沙箱路径、before/after hook、执行顺序和错误归一化。",
+      "tags": [
+        "llm-entity",
+        "04-tools-policy-sandbox"
+      ]
+    },
+    {
+      "id": "entity:lesson:05-embedded-runtime-provider",
+      "label": "内置 Runtime：模型选择、Provider、重试与故障转移",
+      "type": "lesson",
+      "path": "src/agents/embedded-agent-runner/run.ts",
+      "symbol": "内置 Runtime：模型选择、Provider、重试与故障转移",
+      "lesson": "05-embedded-runtime-provider",
+      "summary": "OpenClaw 的内置 runner 把低层 loop 包装成可运营的运行时：选择模型、准备认证、构建 prompt 和工具、处理空回复/溢出/限流/计费错误、记录 usage，并在必要时故障转移。",
+      "tags": [
+        "llm-entity",
+        "05-embedded-runtime-provider"
+      ]
+    },
+    {
+      "id": "entity:concept:05-embedded-runtime-provider",
+      "label": "模型选择、Provider、重试与故障转移",
+      "type": "concept",
+      "path": "src/agents/embedded-agent-runner/run.ts",
+      "symbol": "concept",
+      "lesson": "05-embedded-runtime-provider",
+      "summary": "OpenClaw 的内置 runner 把低层 loop 包装成可运营的运行时：选择模型、准备认证、构建 prompt 和工具、处理空回复/溢出/限流/计费错误、记录 usage，并在必要时故障转移。",
+      "tags": [
+        "llm-entity",
+        "05-embedded-runtime-provider"
+      ]
+    },
+    {
+      "id": "entity:lesson:06-sessions-acp-control-plane",
+      "label": "会话与 ACP 控制面：把一次 turn 变成可管理任务",
+      "type": "lesson",
+      "path": "src/acp/control-plane/manager.core.ts",
+      "symbol": "会话与 ACP 控制面：把一次 turn 变成可管理任务",
+      "lesson": "06-sessions-acp-control-plane",
+      "summary": "agent 不是孤立函数调用，而是有 session key、runtime handle、active turn、取消、超时、后台任务进度和 backend failover 的长生命周期对象。",
+      "tags": [
+        "llm-entity",
+        "06-sessions-acp-control-plane"
+      ]
+    },
+    {
+      "id": "entity:concept:06-sessions-acp-control-plane",
+      "label": "把一次 turn 变成可管理任务",
+      "type": "concept",
+      "path": "src/acp/control-plane/manager.core.ts",
+      "symbol": "concept",
+      "lesson": "06-sessions-acp-control-plane",
+      "summary": "agent 不是孤立函数调用，而是有 session key、runtime handle、active turn、取消、超时、后台任务进度和 backend failover 的长生命周期对象。",
+      "tags": [
+        "llm-entity",
+        "06-sessions-acp-control-plane"
+      ]
+    },
+    {
+      "id": "entity:lesson:07-plugin-sdk-providers",
+      "label": "插件 SDK 与 Provider 扩展：把生态接入运行时",
+      "type": "lesson",
+      "path": "src/plugin-sdk/plugin-entry.ts",
+      "symbol": "插件 SDK 与 Provider 扩展：把生态接入运行时",
+      "lesson": "07-plugin-sdk-providers",
+      "summary": "插件 SDK 是 OpenClaw 的扩展边界：插件可以注册 provider、工具、命令、会话 action、hook、UI、模型目录和安全审计能力。",
+      "tags": [
+        "llm-entity",
+        "07-plugin-sdk-providers"
+      ]
+    },
+    {
+      "id": "entity:concept:07-plugin-sdk-providers",
+      "label": "把生态接入运行时",
+      "type": "concept",
+      "path": "src/plugin-sdk/plugin-entry.ts",
+      "symbol": "concept",
+      "lesson": "07-plugin-sdk-providers",
+      "summary": "插件 SDK 是 OpenClaw 的扩展边界：插件可以注册 provider、工具、命令、会话 action、hook、UI、模型目录和安全审计能力。",
+      "tags": [
+        "llm-entity",
+        "07-plugin-sdk-providers"
+      ]
+    },
+    {
+      "id": "entity:lesson:08-devices-channels-security",
+      "label": "渠道、设备节点与安全默认值",
+      "type": "lesson",
+      "path": "README.md",
+      "symbol": "渠道、设备节点与安全默认值",
+      "lesson": "08-devices-channels-security",
+      "summary": "OpenClaw 面对真实外部渠道和本机设备能力，所以安全模型必须默认把 inbound DM 当成不可信输入，并用 pairing、allowlist、sandbox、工具策略和节点权限收口。",
+      "tags": [
+        "llm-entity",
+        "08-devices-channels-security"
+      ]
+    },
+    {
+      "id": "entity:concept:08-devices-channels-security",
+      "label": "",
+      "type": "concept",
+      "path": "README.md",
+      "symbol": "concept",
+      "lesson": "08-devices-channels-security",
+      "summary": "OpenClaw 面对真实外部渠道和本机设备能力，所以安全模型必须默认把 inbound DM 当成不可信输入，并用 pairing、allowlist、sandbox、工具策略和节点权限收口。",
+      "tags": [
+        "llm-entity",
+        "08-devices-channels-security"
+      ]
+    },
+    {
+      "id": "layer:source-files",
+      "label": "Source Files",
+      "summary": "Files discovered by Understand Anything deterministic scan.",
+      "type": "layer",
+      "tags": [
+        "architecture-layer"
+      ]
+    },
+    {
+      "id": "layer:semantic-entities",
+      "label": "Semantic Entities",
+      "summary": "LLM-compiled concepts and source symbols from the learning pack.",
+      "type": "layer",
+      "tags": [
+        "architecture-layer"
+      ]
+    },
+    {
+      "id": "layer:test-evidence",
+      "label": "Test Evidence",
+      "summary": "Tests referenced by claims and lessons.",
+      "type": "layer",
+      "tags": [
+        "architecture-layer"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "project:source-scope",
+      "target": "module:package.json",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:package.json",
+      "target": "file:package.json",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/browser-config.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/config-runtime.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/exec-approvals-runtime.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/gateway-method-runtime.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/plugin-entry.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/plugin-runtime.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-auth-runtime.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-auth.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-entry.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-http.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-model-shared.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-model-types.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-onboard.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-stream-shared.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-tools.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-web-search-config-contract.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/provider-web-search.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/runtime-doctor.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/runtime-env.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/secret-input.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/security-runtime.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/testing.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/text-runtime.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:src",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:src",
+      "target": "file:src/video-generation.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:tsconfig.json",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:tsconfig.json",
+      "target": "file:tsconfig.json",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:01-platform-map",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:01-platform-map",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:02-agent-core-loop",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:symbol:agentLoop",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:03-message-context-stream",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:03-message-context-stream",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:04-tools-policy-sandbox",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:04-tools-policy-sandbox",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:05-embedded-runtime-provider",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:06-sessions-acp-control-plane",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:06-sessions-acp-control-plane",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:07-plugin-sdk-providers",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:07-plugin-sdk-providers",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:08-devices-channels-security",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:08-devices-channels-security",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "entity:concept:02-agent-core-loop",
+      "target": "entity:symbol:agentLoop",
+      "type": "explained_by",
+      "label": "concept:02-agent-core-loop explained_by symbol:agentLoop",
+      "evidence": [
+        "ev-code-agent-loop-entry",
+        "ev-code-run-loop-tools"
+      ]
+    },
+    {
+      "source": "entity:concept:03-message-context-stream",
+      "target": "entity:symbol:agentLoop",
+      "type": "depends_on",
+      "label": "concept:03-message-context-stream depends_on symbol:agentLoop",
+      "evidence": [
+        "ev-code-stream-response",
+        "ev-code-agent-types"
+      ]
+    },
+    {
+      "source": "entity:concept:04-tools-policy-sandbox",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "extends",
+      "label": "concept:04-tools-policy-sandbox extends concept:02-agent-core-loop",
+      "evidence": [
+        "ev-code-run-loop-tools",
+        "ev-code-tool-factory"
+      ]
+    },
+    {
+      "source": "entity:concept:05-embedded-runtime-provider",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "adapts",
+      "label": "concept:05-embedded-runtime-provider adapts concept:02-agent-core-loop",
+      "evidence": [
+        "ev-code-embedded-run",
+        "ev-code-agent-loop-entry"
+      ]
+    },
+    {
+      "source": "entity:concept:06-sessions-acp-control-plane",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "composes",
+      "label": "concept:06-sessions-acp-control-plane composes concept:05-embedded-runtime-provider",
+      "evidence": [
+        "ev-code-acp-manager",
+        "ev-code-acp-stream"
+      ]
+    },
+    {
+      "source": "entity:concept:07-plugin-sdk-providers",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "extends",
+      "label": "concept:07-plugin-sdk-providers extends concept:05-embedded-runtime-provider",
+      "evidence": [
+        "ev-code-plugin-entry",
+        "ev-code-provider-entry"
+      ]
+    },
+    {
+      "source": "entity:concept:08-devices-channels-security",
+      "target": "entity:concept:06-sessions-acp-control-plane",
+      "type": "depends_on",
+      "label": "concept:08-devices-channels-security depends_on concept:06-sessions-acp-control-plane",
+      "evidence": [
+        "ev-readme-security",
+        "ev-test-android-device-auth"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "layer:source-files",
+      "type": "has_layer",
+      "evidence": [
+        "llm-architecture-pass"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "layer:semantic-entities",
+      "type": "has_layer",
+      "evidence": [
+        "llm-architecture-pass"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "layer:test-evidence",
+      "type": "has_layer",
+      "evidence": [
+        "llm-architecture-pass"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:package.json",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/browser-config.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/config-runtime.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/exec-approvals-runtime.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/gateway-method-runtime.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/plugin-entry.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/plugin-runtime.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-auth-runtime.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-auth.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-entry.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-http.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-model-shared.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-model-types.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-onboard.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-stream-shared.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-tools.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-web-search-config-contract.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/provider-web-search.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/runtime-doctor.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/runtime-env.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/secret-input.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/security-runtime.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/testing.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/text-runtime.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:src/video-generation.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:tsconfig.json",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:01-platform-map",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:01-platform-map",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:02-agent-core-loop",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:symbol:agentLoop",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:03-message-context-stream",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:03-message-context-stream",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:04-tools-policy-sandbox",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:04-tools-policy-sandbox",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:05-embedded-runtime-provider",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:06-sessions-acp-control-plane",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:06-sessions-acp-control-plane",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:07-plugin-sdk-providers",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:07-plugin-sdk-providers",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:08-devices-channels-security",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:08-devices-channels-security",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    }
+  ],
+  "review": {
+    "summary": "UA deterministic scan/batch merged with learning-pack entities and relations.",
+    "residualRisks": [
+      "If native Understand Anything slash-command subagents were unavailable, this graph is a UA-compatible learning graph rather than a full native session artifact.",
+      "Cross-scope entities may be represented semantically even when the source scope only scanned one subdirectory."
+    ]
+  }
+}

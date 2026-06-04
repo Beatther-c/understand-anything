@@ -1,0 +1,3122 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 158,
+  "totalBatches": 8,
+  "exportsByPath": {
+    "bench/__init__.py": [],
+    "bench/__main__.py": [
+      "arun",
+      "arun_first_event_latency",
+      "run",
+      "run_first_event_latency",
+      "compile_graph"
+    ],
+    "bench/fanout_to_subgraph.py": [
+      "fanout_to_subgraph",
+      "fanout_to_subgraph_sync"
+    ],
+    "bench/pydantic_state.py": [
+      "pydantic_state"
+    ],
+    "bench/react_agent.py": [
+      "react_agent"
+    ],
+    "bench/sequential.py": [
+      "create_sequential"
+    ],
+    "bench/serde_allowlist.py": [
+      "Color",
+      "InnerDataclass",
+      "InnerModel",
+      "InnerTyped",
+      "Node",
+      "NestedDataclass",
+      "DummyChannel",
+      "collect_allowlist_small",
+      "collect_allowlist_large"
+    ],
+    "bench/wide_dict.py": [
+      "wide_dict"
+    ],
+    "bench/wide_state.py": [
+      "wide_state"
+    ],
+    "langgraph/_internal/__init__.py": [],
+    "langgraph/_internal/_cache.py": [
+      "_freeze",
+      "default_cache_key"
+    ],
+    "langgraph/_internal/_config.py": [
+      "recast_checkpoint_ns",
+      "patch_configurable",
+      "patch_checkpoint_map",
+      "_merge_callbacks",
+      "merge_configs",
+      "patch_config",
+      "get_callback_manager_for_config",
+      "get_async_callback_manager_for_config",
+      "_is_not_empty",
+      "ensure_config",
+      "_exclude_as_metadata",
+      "_get_tracing_metadata_defaults",
+      "filter_to_user_tags"
+    ],
+    "langgraph/_internal/_constants.py": [],
+    "langgraph/_internal/_fields.py": [
+      "_is_optional_type",
+      "_is_required_type",
+      "_is_readonly_type",
+      "get_field_default",
+      "get_enhanced_type_hints",
+      "get_update_as_tuples",
+      "get_cached_annotated_keys"
+    ],
+    "langgraph/_internal/_future.py": [
+      "_get_loop",
+      "_convert_future_exc",
+      "_set_concurrent_future_state",
+      "_copy_future_state",
+      "_chain_future",
+      "chain_future",
+      "_ensure_future",
+      "_wrap_awaitable",
+      "run_coroutine_threadsafe"
+    ],
+    "langgraph/_internal/_pydantic.py": [
+      "get_fields",
+      "get_fields",
+      "get_fields",
+      "_create_root_model",
+      "_create_root_model_cached",
+      "_create_model_cached",
+      "_remap_field_definitions",
+      "create_model",
+      "is_supported_by_pydantic"
+    ],
+    "langgraph/_internal/_queue.py": [
+      "AsyncQueue",
+      "Semaphore",
+      "SyncQueue"
+    ],
+    "langgraph/_internal/_replay.py": [
+      "ReplayState"
+    ],
+    "langgraph/_internal/_retry.py": [
+      "default_retry_on"
+    ],
+    "langgraph/_internal/_runnable.py": [
+      "_set_config_context",
+      "_unset_config_context",
+      "set_config_context",
+      "create_task_in_config_context",
+      "StrEnum",
+      "_RunnableWithWriter",
+      "_RunnableWithStore",
+      "_RunnableWithWriterStore",
+      "_RunnableWithConfigWriter",
+      "_RunnableWithConfigStore",
+      "_RunnableWithConfigWriterStore",
+      "RunnableCallable",
+      "is_async_callable",
+      "is_async_generator",
+      "coerce_to_runnable",
+      "RunnableSeq",
+      "_consume_iter",
+      "_consume_aiter"
+    ],
+    "langgraph/_internal/_scratchpad.py": [
+      "PregelScratchpad"
+    ],
+    "langgraph/_internal/_serde.py": [
+      "_supports_checkpointer_allowlist",
+      "apply_checkpointer_allowlist",
+      "curated_core_allowlist",
+      "build_serde_allowlist",
+      "collect_allowlist_from_schemas",
+      "_collect_from_type",
+      "_already_seen",
+      "_safe_get_type_hints",
+      "_is_pydantic_model",
+      "_pydantic_field_types"
+    ],
+    "langgraph/_internal/_timeout.py": [
+      "coerce_timeout_policy",
+      "sync_timeout_unsupported"
+    ],
+    "langgraph/_internal/_typing.py": [
+      "TypedDictLikeV1",
+      "TypedDictLikeV2",
+      "DataclassLike",
+      "DeprecatedKwargs"
+    ],
+    "langgraph/callbacks.py": [
+      "GraphInterruptEvent",
+      "GraphResumeEvent",
+      "GraphCallbackHandler",
+      "_filter_graph_handlers",
+      "_init_base_manager",
+      "_configure_graph_callbacks",
+      "_copy_graph_manager",
+      "_GraphCallbackManager",
+      "_AsyncGraphCallbackManager",
+      "get_sync_graph_callback_manager_for_config",
+      "get_async_graph_callback_manager_for_config"
+    ],
+    "langgraph/channels/__init__.py": [],
+    "langgraph/channels/any_value.py": [
+      "AnyValue"
+    ],
+    "langgraph/channels/base.py": [
+      "BaseChannel"
+    ],
+    "langgraph/channels/binop.py": [
+      "_strip_extras",
+      "_get_overwrite",
+      "_operators_equal",
+      "BinaryOperatorAggregate"
+    ],
+    "langgraph/channels/delta.py": [
+      "DeltaChannel"
+    ],
+    "langgraph/channels/ephemeral_value.py": [
+      "EphemeralValue"
+    ],
+    "langgraph/channels/last_value.py": [
+      "LastValue",
+      "LastValueAfterFinish"
+    ],
+    "langgraph/channels/named_barrier_value.py": [
+      "NamedBarrierValue",
+      "NamedBarrierValueAfterFinish"
+    ],
+    "langgraph/channels/topic.py": [
+      "_flatten",
+      "Topic"
+    ],
+    "langgraph/channels/untracked_value.py": [
+      "UntrackedValue"
+    ],
+    "langgraph/config.py": [
+      "_no_op_stream_writer",
+      "get_config",
+      "get_store",
+      "get_stream_writer"
+    ],
+    "langgraph/constants.py": [
+      "__getattr__"
+    ],
+    "langgraph/errors.py": [
+      "ErrorCode",
+      "create_error_message",
+      "GraphBubbleUp",
+      "GraphDrained",
+      "GraphRecursionError",
+      "InvalidUpdateError",
+      "GraphInterrupt",
+      "NodeInterrupt",
+      "ParentCommand",
+      "EmptyInputError",
+      "TaskNotFound",
+      "NodeError",
+      "NodeCancelledError",
+      "NodeTimeoutError"
+    ],
+    "langgraph/func/__init__.py": [
+      "_TaskFunction",
+      "task",
+      "task",
+      "task",
+      "task",
+      "entrypoint"
+    ],
+    "langgraph/graph/__init__.py": [],
+    "langgraph/graph/_branch.py": [
+      "_get_branch_path_input_schema",
+      "BranchSpec"
+    ],
+    "langgraph/graph/_node.py": [
+      "_Node",
+      "_NodeWithConfig",
+      "_NodeWithWriter",
+      "_NodeWithStore",
+      "_NodeWithWriterStore",
+      "_NodeWithConfigWriter",
+      "_NodeWithConfigStore",
+      "_NodeWithConfigWriterStore",
+      "_NodeWithRuntime",
+      "StateNodeSpec"
+    ],
+    "langgraph/graph/message.py": [
+      "_add_messages_wrapper",
+      "add_messages",
+      "_messages_delta_reducer",
+      "MessageGraph",
+      "MessagesState",
+      "_format_messages",
+      "push_message"
+    ],
+    "langgraph/graph/state.py": [
+      "_NodeDefaults",
+      "_warn_invalid_state_schema",
+      "_get_node_name",
+      "StateGraph",
+      "CompiledStateGraph",
+      "_pick_mapper",
+      "_coerce_state",
+      "_control_branch",
+      "_control_static",
+      "_get_root",
+      "_get_channels",
+      "_get_channel",
+      "_get_channel",
+      "_get_channel",
+      "_is_field_channel",
+      "_is_field_binop",
+      "_is_field_managed_value",
+      "_get_json_schema"
+    ],
+    "langgraph/graph/ui.py": [
+      "UIMessage",
+      "RemoveUIMessage",
+      "push_ui_message",
+      "delete_ui_message",
+      "ui_message_reducer"
+    ],
+    "langgraph/managed/__init__.py": [],
+    "langgraph/managed/base.py": [
+      "ManagedValue",
+      "is_managed_value"
+    ],
+    "langgraph/managed/is_last_step.py": [
+      "IsLastStepManager",
+      "RemainingStepsManager"
+    ],
+    "langgraph/pregel/__init__.py": [],
+    "langgraph/pregel/_algo.py": [
+      "WritesProtocol",
+      "PregelTaskWrites",
+      "Call",
+      "should_interrupt",
+      "local_read",
+      "increment",
+      "apply_writes",
+      "prepare_next_tasks",
+      "prepare_next_tasks",
+      "prepare_next_tasks",
+      "_TaskIDFn",
+      "prepare_single_task",
+      "_coerce_pending_error",
+      "_read_errors_from_pending_writes",
+      "_read_error_for_task_id_from_pending_writes",
+      "_read_error_source_node_from_pending_writes",
+      "prepare_push_task_functional",
+      "prepare_push_task_send",
+      "prepare_node_error_handler_task",
+      "checkpoint_null_version",
+      "_triggers",
+      "_scratchpad",
+      "_proc_input",
+      "_uuid5_str",
+      "_xxhash_str",
+      "task_path_str",
+      "LazyAtomicCounter",
+      "sanitize_untracked_values_in_send"
+    ],
+    "langgraph/pregel/_call.py": [
+      "_getattribute",
+      "_whichmodule",
+      "identifier",
+      "_lookup_module_and_qualname",
+      "_explode_args_trace_inputs",
+      "get_runnable_for_entrypoint",
+      "get_runnable_for_task",
+      "SyncAsyncFuture",
+      "call",
+      "_call_with_options"
+    ],
+    "langgraph/pregel/_checkpoint.py": [
+      "empty_checkpoint",
+      "delta_channels_to_snapshot",
+      "create_checkpoint",
+      "_needs_replay",
+      "channels_from_checkpoint",
+      "achannels_from_checkpoint",
+      "copy_checkpoint"
+    ],
+    "langgraph/pregel/_config.py": [],
+    "langgraph/pregel/_draw.py": [
+      "Edge",
+      "TriggerEdge",
+      "draw_graph",
+      "add_edge"
+    ],
+    "langgraph/pregel/_executor.py": [
+      "Submit",
+      "BackgroundExecutor",
+      "AsyncBackgroundExecutor",
+      "gated",
+      "next_tick"
+    ],
+    "langgraph/pregel/_io.py": [
+      "read_channel",
+      "read_channels",
+      "map_command",
+      "map_input",
+      "map_output_values",
+      "map_output_updates"
+    ],
+    "langgraph/pregel/_log.py": [],
+    "langgraph/pregel/_loop.py": [
+      "DuplexStream",
+      "PregelLoop",
+      "SyncPregelLoop",
+      "AsyncPregelLoop"
+    ],
+    "langgraph/pregel/_messages.py": [
+      "_state_values",
+      "StreamMessagesHandler",
+      "StreamMessagesHandlerV2",
+      "_is_message_dict",
+      "ensure_message_ids"
+    ],
+    "langgraph/pregel/_read.py": [
+      "ChannelRead",
+      "PregelNode"
+    ],
+    "langgraph/pregel/_remote_run_stream.py": [
+      "_translate_command_input",
+      "_ChannelProjection",
+      "_ProjectionRegistry",
+      "_RemoteGraphRunStream",
+      "_AsyncRemoteGraphRunStream"
+    ],
+    "langgraph/pregel/_retry.py": [
+      "_timeout_secs",
+      "_ResolvedTimeout",
+      "_resolve_timeout",
+      "_AttemptContext",
+      "_AttemptEvent",
+      "_TimedAttemptScope",
+      "_IdleProgressCallbackHandler",
+      "_is_user_raised_cancelled",
+      "_drain_cancelled",
+      "_start_timed_attempt",
+      "_finish_timed_attempt",
+      "_emit_progress",
+      "_dispatch_observer",
+      "_run_timeout_watchdog",
+      "_arun_with_timeout",
+      "_ensure_execution_info",
+      "_checkpoint_ns_for_parent_command",
+      "run_with_retry",
+      "arun_with_retry",
+      "_should_retry_on"
+    ],
+    "langgraph/pregel/_runner.py": [
+      "FuturesDict",
+      "PregelRunner",
+      "_should_stop_others",
+      "_exception",
+      "_panic_or_proceed",
+      "_call",
+      "_acall",
+      "_acall_impl"
+    ],
+    "langgraph/pregel/_tools.py": [
+      "StreamToolCallHandler"
+    ],
+    "langgraph/pregel/_utils.py": [
+      "get_new_channel_versions",
+      "find_subgraph_pregel",
+      "_sequence_steps",
+      "_parallel_steps",
+      "_has_method_override",
+      "_is_executor_backed_afunc",
+      "_has_native_async",
+      "_runnable_has_native_async",
+      "validate_timeout_supported",
+      "get_function_nonlocals",
+      "FunctionNonLocals",
+      "NonLocals",
+      "is_xxh3_128_hexdigest"
+    ],
+    "langgraph/pregel/_validate.py": [
+      "validate_graph",
+      "validate_keys"
+    ],
+    "langgraph/pregel/_write.py": [
+      "ChannelWriteEntry",
+      "ChannelWriteTupleEntry",
+      "ChannelWrite",
+      "_assemble_writes"
+    ],
+    "langgraph/pregel/debug.py": [
+      "map_debug_tasks",
+      "is_multiple_channel_write",
+      "map_task_result_writes",
+      "map_debug_task_results",
+      "rm_pregel_keys",
+      "map_debug_checkpoint",
+      "tasks_w_writes",
+      "get_colored_text",
+      "get_bolded_text"
+    ],
+    "langgraph/pregel/main.py": [
+      "NodeBuilder",
+      "_reject_v3_invariant_kwargs",
+      "_collect_stream_modes",
+      "_normalize_stream_transformer_factories",
+      "Pregel",
+      "_trigger_to_nodes",
+      "_output",
+      "_coerce_checkpoint_values",
+      "_resolve_parent_ns",
+      "_build_server_info",
+      "_coerce_context"
+    ],
+    "langgraph/pregel/protocol.py": [
+      "PregelProtocol",
+      "StreamProtocol"
+    ],
+    "langgraph/pregel/remote.py": [
+      "_sanitize_config_value",
+      "RemoteException",
+      "RemoteGraph",
+      "_merge_tracing_headers"
+    ],
+    "langgraph/pregel/types.py": [],
+    "langgraph/py.typed": [],
+    "langgraph/runtime.py": [
+      "ExecutionInfo",
+      "ServerInfo",
+      "RunControl",
+      "_no_op_stream_writer",
+      "_no_op_heartbeat",
+      "_RuntimeOverrides",
+      "Runtime",
+      "get_runtime"
+    ],
+    "langgraph/stream/__init__.py": [],
+    "langgraph/stream/_convert.py": [
+      "convert_to_protocol_event"
+    ],
+    "langgraph/stream/_mux.py": [
+      "StreamMux"
+    ],
+    "langgraph/stream/_types.py": [
+      "_ProtocolEventParams",
+      "ProtocolEvent",
+      "StreamTransformer",
+      "transformer_requires_async"
+    ],
+    "langgraph/stream/run_stream.py": [
+      "_drive_until_done",
+      "_adrive_until_done",
+      "GraphRunStream",
+      "AsyncGraphRunStream",
+      "_SubgraphRunStreamMixin",
+      "SubgraphRunStream",
+      "AsyncSubgraphRunStream"
+    ],
+    "langgraph/stream/stream_channel.py": [
+      "StreamChannel"
+    ],
+    "langgraph/stream/transformers.py": [
+      "ValuesTransformer",
+      "CustomTransformer",
+      "UpdatesTransformer",
+      "MessagesTransformer",
+      "_parse_ns_segment",
+      "LifecyclePayload",
+      "_TasksLifecycleBase",
+      "_status_from_exception",
+      "_terminal_from_result",
+      "LifecycleTransformer",
+      "SubgraphTransformer",
+      "CheckpointsTransformer",
+      "DebugTransformer",
+      "TasksTransformer"
+    ],
+    "langgraph/types.py": [
+      "ensure_valid_checkpointer",
+      "TaskPayload",
+      "TaskResultPayload",
+      "CheckpointTask",
+      "CheckpointPayload",
+      "_DebugCheckpointPayload",
+      "_DebugTaskPayload",
+      "_DebugTaskResultPayload",
+      "ValuesStreamPart",
+      "UpdatesStreamPart",
+      "MessagesStreamPart",
+      "CustomStreamPart",
+      "CheckpointStreamPart",
+      "TasksStreamPart",
+      "DebugStreamPart",
+      "GraphOutput",
+      "RetryPolicy",
+      "_coerce_timeout_seconds",
+      "TimeoutPolicy",
+      "CachePolicy",
+      "Interrupt",
+      "StateUpdate",
+      "PregelTask",
+      "CacheKey",
+      "PregelExecutableTask",
+      "StateSnapshot",
+      "Send",
+      "Command",
+      "interrupt",
+      "Overwrite"
+    ],
+    "langgraph/typing.py": [],
+    "langgraph/utils/__init__.py": [],
+    "langgraph/utils/config.py": [],
+    "langgraph/utils/runnable.py": [],
+    "langgraph/version.py": [],
+    "langgraph/warnings.py": [
+      "LangGraphDeprecationWarning",
+      "LangGraphDeprecatedSinceV05",
+      "LangGraphDeprecatedSinceV10",
+      "LangGraphDeprecatedSinceV11"
+    ],
+    "tests/__init__.py": [],
+    "tests/__snapshots__/test_large_cases.ambr": [],
+    "tests/__snapshots__/test_pregel_async.ambr": [],
+    "tests/__snapshots__/test_pregel.ambr": [],
+    "tests/agents.py": [
+      "AgentAction",
+      "AgentFinish"
+    ],
+    "tests/any_int.py": [
+      "AnyInt"
+    ],
+    "tests/any_str.py": [
+      "AnyObject",
+      "FloatBetween",
+      "AnyStr",
+      "AnyDict",
+      "AnyVersion",
+      "UnsortedSequence"
+    ],
+    "tests/conftest_checkpointer.py": [
+      "_strict_msgpack_serde",
+      "_apply_strict_msgpack",
+      "_checkpointer_memory",
+      "_checkpointer_memory_migrate_sends",
+      "_checkpointer_sqlite",
+      "_checkpointer_sqlite_aes",
+      "_checkpointer_postgres",
+      "_checkpointer_postgres_pipe",
+      "_checkpointer_postgres_pool",
+      "_checkpointer_sqlite_aio",
+      "_checkpointer_postgres_aio",
+      "_checkpointer_postgres_aio_pipe",
+      "_checkpointer_postgres_aio_pool"
+    ],
+    "tests/conftest_store.py": [
+      "_store_memory",
+      "_store_postgres",
+      "_store_postgres_pipe",
+      "_store_postgres_pool",
+      "_store_postgres_aio",
+      "_store_postgres_aio_pipe",
+      "_store_postgres_aio_pool"
+    ],
+    "tests/conftest.py": [
+      "anyio_backend",
+      "deterministic_uuids",
+      "durability",
+      "cache",
+      "sync_store",
+      "async_store",
+      "sync_checkpointer",
+      "async_checkpointer"
+    ],
+    "tests/example_app/example_graph.py": [
+      "AgentState",
+      "search_api",
+      "get_model",
+      "foo",
+      "app"
+    ],
+    "tests/fake_chat.py": [
+      "FakeChatModel"
+    ],
+    "tests/fake_tracer.py": [
+      "FakeTracer"
+    ],
+    "tests/memory_assert.py": [
+      "NoopSerializer",
+      "MemorySaverNeedsPendingSendsMigration",
+      "MemorySaverAssertImmutable",
+      "MemorySaverNoPending"
+    ],
+    "tests/messages.py": [
+      "_AnyIdDocument",
+      "_AnyIdAIMessage",
+      "_AnyIdAIMessageChunk",
+      "_AnyIdHumanMessage",
+      "_AnyIdToolMessage"
+    ],
+    "tests/test_algo.py": [
+      "test_prepare_next_tasks",
+      "test_tuple_str"
+    ],
+    "tests/test_channels.py": [
+      "test_last_value",
+      "test_topic",
+      "test_topic_accumulate",
+      "test_binop",
+      "test_untracked_value",
+      "test_delta_channel_basic_two_steps",
+      "test_delta_channel_from_checkpoint_writes_list",
+      "test_delta_channel_from_checkpoint_backwards_compat",
+      "test_delta_channel_overwrite",
+      "test_delta_channel_remove_message_and_replay",
+      "test_delta_channel_update_by_id_and_replay",
+      "test_delta_channel_dict_coercion",
+      "test_messages_delta_reducer_coerces_state",
+      "test_messages_delta_reducer_tuple_write_is_one_message",
+      "test_delta_channel_checkpoint_returns_missing",
+      "test_delta_channel_snapshot_version_based",
+      "test_delta_channel_inmemory_saver_assembles_writes",
+      "_delta_channel_with_type",
+      "test_delta_channel_dict_reducer_fresh_channel",
+      "test_delta_channel_dict_reducer_basic_updates",
+      "test_delta_channel_dict_reducer_writes_reconstruction",
+      "test_delta_channel_dict_reducer_with_deletions",
+      "test_delta_channel_dict_reducer_overwrite_in_update",
+      "test_delta_channel_dict_reducer_overwrite_in_writes_replay",
+      "test_delta_channel_dict_reducer_with_notrequired_annotation",
+      "test_delta_channel_dict_reducer_end_to_end_filesystem",
+      "test_delta_channel_dict_reducer_backwards_compat",
+      "test_delta_channel_from_checkpoint_honors_seed",
+      "test_delta_channel_from_checkpoint_seed_without_writes",
+      "test_delta_channel_from_checkpoint_seed_none_is_distinct_from_sentinel"
+    ],
+    "tests/test_checkpoint_migration.py": [
+      "get_expected_history",
+      "make_state_graph",
+      "test_migrate_checkpoints",
+      "test_latest_checkpoint_state_graph",
+      "test_latest_checkpoint_state_graph_async",
+      "test_saved_checkpoint_state_graph",
+      "test_saved_checkpoint_state_graph_async"
+    ],
+    "tests/test_config_async.py": [
+      "test_new_async_manager_includes_tags",
+      "test_new_async_manager_merges_tags_with_config",
+      "_TrackingCallback",
+      "test_with_config_callbacks_preserved_in_astream_events",
+      "test_with_config_configurable_preserved_on_invoke",
+      "test_with_config_metadata_preserved_on_invoke",
+      "test_with_config_tags_preserved_on_invoke"
+    ],
+    "tests/test_delta_channel_benchmark.py": [
+      "_human_content",
+      "_make_state_cls",
+      "_make_graph",
+      "_inmemory_blob_bytes",
+      "_postgres_storage_bytes",
+      "_run_scenario",
+      "_pg_saver",
+      "_checkpointers",
+      "_fmt_bytes",
+      "_print_scenario_table",
+      "run_benchmark",
+      "test_delta_channel_benchmark"
+    ],
+    "tests/test_delta_channel_exit_mode.py": [
+      "_build_graph",
+      "test_exit_first_run_no_delta_writes",
+      "test_exit_first_run_all_snapshot",
+      "test_exit_first_run_sub_freq_with_writes",
+      "test_exit_resumed_run_sub_freq",
+      "test_exit_count_parity_sync_vs_exit",
+      "test_exit_snapshot_fires_at_frequency",
+      "test_exit_mixed_snapshot_and_non_snapshot",
+      "test_exit_multi_run_replay_chain",
+      "test_exit_metadata_round_trip",
+      "test_exit_mixed_durability_round_trip",
+      "test_exit_snapshot_then_tail_deltas"
+    ],
+    "tests/test_delta_channel_id_stability.py": [
+      "_append_reducer",
+      "_build_graph",
+      "test_delta_channel_message_gets_id_and_stays_stable",
+      "test_delta_channel_message_gets_id_and_stays_stable_async",
+      "test_delta_channel_dict_style_message_gets_stable_id"
+    ],
+    "tests/test_delta_channel_migration.py": [
+      "_noop",
+      "_list_concat",
+      "_binop_graph",
+      "_delta_graph",
+      "_drive",
+      "_adrive",
+      "_settled_boundaries",
+      "test_basic_migration_preserves_pre_migration_state",
+      "test_basic_migration_preserves_pre_migration_state_async",
+      "test_time_travel_into_pre_migration_checkpoint",
+      "test_continuing_migrated_thread_folds_deltas_on_seed",
+      "_ThirdPartyStyleSaver",
+      "test_base_saver_fallback_matches_optimized_override",
+      "test_delta_and_migrated_threads_do_not_cross_contaminate",
+      "test_tip_of_pre_migration_hydrates_directly",
+      "test_tip_of_pre_migration_hydrates_directly_async",
+      "test_update_state_after_migration_uses_written_value",
+      "test_fork_from_update_state_checkpoint",
+      "_add_messages_graph",
+      "_delta_messages_graph",
+      "test_add_messages_to_delta_migration_preserves_message_history",
+      "test_add_messages_to_delta_migration_preserves_message_history_async"
+    ],
+    "tests/test_delta_channel_supersteps_bound.py": [
+      "_simple_reducer",
+      "_build_two_channel_graph",
+      "test_forced_snapshot_single_run",
+      "test_forced_snapshot_accumulates_across_runs",
+      "test_predicate_fires_on_supersteps_overflow",
+      "test_counter_reset_after_supersteps_snapshot"
+    ],
+    "tests/test_deprecation.py": [
+      "PlainState",
+      "test_add_node_retry_arg",
+      "test_task_retry_arg",
+      "test_entrypoint_retry_arg",
+      "test_state_graph_input_schema",
+      "test_state_graph_output_schema",
+      "test_add_node_input_schema",
+      "test_constants_deprecation",
+      "test_pregel_types_deprecation",
+      "test_config_schema_deprecation",
+      "test_config_schema_deprecation_on_entrypoint",
+      "test_config_type_deprecation_pregel",
+      "test_interrupt_attributes_deprecation",
+      "test_node_interrupt_deprecation",
+      "test_deprecated_import",
+      "test_checkpoint_during_deprecation_state_graph",
+      "test_config_parameter_incorrect_typing",
+      "test_message_graph_deprecation",
+      "test_graph_output_getitem_deprecation",
+      "test_graph_output_contains_deprecation",
+      "test_graph_output_getitem_interrupt_deprecation"
+    ],
+    "tests/test_graph_callbacks.py": [
+      "_GraphEventHandler",
+      "_LangChainCustomEventHandler",
+      "_RaisingGraphEventHandler",
+      "_AsyncRaisingGraphEventHandler",
+      "_State",
+      "_build_interrupt_graph",
+      "test_graph_callbacks_interrupt_and_resume_sync",
+      "test_graph_callbacks_interrupt_and_resume_async",
+      "test_graph_callbacks_continue_when_interrupt_handler_raises_sync",
+      "test_graph_callbacks_continue_when_resume_handler_raises_sync",
+      "test_graph_callbacks_raise_error_propagates_sync",
+      "test_graph_callbacks_continue_when_handler_raises_async",
+      "test_graph_callbacks_raise_error_propagates_async",
+      "test_graph_callbacks_accept_base_callback_manager",
+      "test_non_graph_handler_via_add_handler_does_not_crash",
+      "test_non_graph_handler_does_not_receive_lifecycle_events",
+      "test_non_graph_handler_does_not_receive_lifecycle_events_async"
+    ],
+    "tests/test_interleave_arrival_order.py": [
+      "_TwoChannelTransformer",
+      "SimpleState",
+      "_build_simple_graph",
+      "TestPushStamps",
+      "TestInterleaveArrivalOrder",
+      "TestInterleaveIntegration"
+    ],
+    "tests/test_interrupt_migration.py": [
+      "test_interrupt_legacy_ns",
+      "test_serialization_roundtrip",
+      "test_serialization_roundtrip_complex_ns"
+    ],
+    "tests/test_interruption.py": [
+      "test_interruption_without_state_updates",
+      "test_interruption_without_state_updates_async"
+    ],
+    "tests/test_large_cases_async.py": [
+      "test_invoke_two_processes_in_out_interrupt",
+      "test_fork_always_re_runs_nodes",
+      "test_conditional_graph_state",
+      "test_prebuilt_tool_chat",
+      "test_state_graph_packets",
+      "test_message_graph",
+      "test_in_one_fan_out_out_one_graph_state",
+      "test_nested_graph_state",
+      "test_doubly_nested_graph_state",
+      "test_send_to_nested_graphs",
+      "test_weather_subgraph"
+    ],
+    "tests/test_large_cases.py": [
+      "test_invoke_two_processes_in_out_interrupt",
+      "test_fork_always_re_runs_nodes",
+      "test_conditional_state_graph",
+      "test_prebuilt_tool_chat",
+      "test_state_graph_packets",
+      "test_message_graph",
+      "test_root_graph",
+      "test_in_one_fan_out_out_one_graph_state",
+      "test_dynamic_interrupt",
+      "test_partial_pending_checkpoint",
+      "test_dynamic_interrupt_subgraph",
+      "test_send_dedupe_on_resume",
+      "test_nested_graph_state",
+      "test_doubly_nested_graph_state",
+      "test_send_to_nested_graphs",
+      "test_send_react_interrupt",
+      "test_send_react_interrupt_control",
+      "test_weather_subgraph",
+      "test_subgraph_to_end_does_not_warn"
+    ],
+    "tests/test_managed_values.py": [
+      "StatePlain",
+      "StateNotRequired",
+      "StateRequired",
+      "test_managed_values_recognized"
+    ],
+    "tests/test_messages_state.py": [
+      "test_add_single_message",
+      "test_add_multiple_messages",
+      "test_update_existing_message",
+      "test_missing_ids",
+      "test_duplicates_in_input",
+      "test_duplicates_in_input_with_remove",
+      "test_remove_message",
+      "test_duplicate_remove_message",
+      "test_remove_nonexistent_message",
+      "test_mixed_operations",
+      "test_empty_inputs",
+      "test_non_list_inputs",
+      "test_delete_all",
+      "MessagesStatePydantic",
+      "test_messages_state",
+      "test_messages_state_format_openai",
+      "test_remove_all_messages",
+      "test_push_messages_in_graph"
+    ],
+    "tests/test_parent_command_async.py": [
+      "test_parent_command_from_nested_subgraph"
+    ],
+    "tests/test_parent_command.py": [
+      "test_parent_command_from_nested_subgraph"
+    ],
+    "tests/test_pregel_async.py": [
+      "test_checkpoint_errors",
+      "test_request_drain_allows_inflight_acall_scheduling",
+      "test_py_async_with_cancel_behavior",
+      "test_checkpoint_put_after_cancellation",
+      "test_checkpoint_put_after_cancellation_stream_anext",
+      "test_checkpoint_put_after_cancellation_stream_events_anext",
+      "test_node_cancellation_on_external_cancel",
+      "test_node_cancellation_on_other_node_exception",
+      "test_node_cancellation_on_other_node_exception_two",
+      "test_dynamic_interrupt",
+      "test_dynamic_interrupt_subgraph",
+      "test_partial_pending_checkpoint",
+      "test_node_not_cancelled_on_other_node_interrupted",
+      "test_step_timeout_on_stream_hang",
+      "test_cancel_graph_astream",
+      "test_cancel_graph_astream_events_v2",
+      "test_node_schemas_custom_output",
+      "test_invoke_single_process_in_out",
+      "test_invoke_single_process_in_write_kwargs",
+      "test_invoke_single_process_in_out_dict",
+      "test_invoke_single_process_in_dict_out_dict",
+      "test_invoke_two_processes_in_out",
+      "test_batch_two_processes_in_out",
+      "test_invoke_many_processes_in_out",
+      "test_batch_many_processes_in_out",
+      "test_invoke_two_processes_two_in_two_out_invalid",
+      "test_invoke_two_processes_two_in_two_out_valid",
+      "test_invoke_checkpoint",
+      "test_pending_writes_resume",
+      "test_run_from_checkpoint_id_retains_previous_writes",
+      "test_cond_edge_after_send",
+      "test_concurrent_emit_sends",
+      "test_send_sequences",
+      "test_imp_task",
+      "test_imp_nested",
+      "test_imp_task_cancel",
+      "test_imp_sync_from_async",
+      "test_imp_stream_order",
+      "test_send_dedupe_on_resume",
+      "test_send_react_interrupt",
+      "test_send_react_interrupt_control",
+      "test_max_concurrency",
+      "test_max_concurrency_control",
+      "test_invoke_checkpoint_three",
+      "test_invoke_two_processes_two_in_join_two_out",
+      "test_invoke_two_processes_one_in_two_out",
+      "test_invoke_two_processes_no_out",
+      "test_conditional_entrypoint_graph_state",
+      "test_in_one_fan_out_state_graph_waiting_edge",
+      "test_in_one_fan_out_state_graph_defer_node",
+      "test_in_one_fan_out_state_graph_waiting_edge_via_branch",
+      "test_nested_pydantic_models",
+      "test_in_one_fan_out_state_graph_waiting_edge_custom_state_class",
+      "test_in_one_fan_out_state_graph_waiting_edge_custom_state_class_pydantic2",
+      "test_in_one_fan_out_state_graph_waiting_edge_plus_regular",
+      "test_in_one_fan_out_state_graph_waiting_edge_multiple",
+      "test_in_one_fan_out_state_graph_waiting_edge_multiple_cond_edge",
+      "test_nested_graph",
+      "test_subgraph_checkpoint_true",
+      "test_subgraph_durability_inherited",
+      "test_subgraph_checkpoint_true_interrupt",
+      "test_stream_subgraphs_during_execution",
+      "test_stream_buffering_single_node",
+      "test_nested_graph_interrupts_parallel",
+      "test_doubly_nested_graph_interrupts",
+      "test_checkpoint_metadata",
+      "test_checkpointer_null_pending_writes",
+      "test_store_injected_async",
+      "test_debug_retry",
+      "test_debug_subgraphs",
+      "test_debug_nested_subgraphs",
+      "test_parent_command",
+      "test_delta_channel_durability_exit_stores_snapshot_async",
+      "test_interrupt_subgraph",
+      "test_interrupt_multiple",
+      "test_interrupt_loop",
+      "test_interrupt_functional",
+      "test_interrupt_task_functional",
+      "test_command_with_static_breakpoints",
+      "test_multistep_plan",
+      "test_command_goto_with_static_breakpoints",
+      "test_parallel_node_execution",
+      "test_multiple_interrupt_state_persistence",
+      "test_concurrent_execution",
+      "test_checkpoint_recovery_async",
+      "test_multiple_updates_root",
+      "test_multiple_updates",
+      "test_falsy_return_from_task",
+      "test_multiple_interrupts_functional",
+      "test_multiple_interrupts_functional_cache",
+      "test_double_interrupt_subgraph",
+      "test_async_streaming_with_functional_api",
+      "test_multiple_subgraphs",
+      "test_multiple_subgraphs_functional",
+      "test_multiple_subgraphs_mixed_entrypoint",
+      "test_multiple_subgraphs_mixed_state_graph",
+      "test_multiple_subgraphs_checkpointer",
+      "test_async_entrypoint_without_checkpointer",
+      "test_entrypoint_without_checkpointer",
+      "test_entrypoint_stateful",
+      "test_entrypoint_stateful_update_state",
+      "test_entrypoint_from_async_generator",
+      "test_named_tasks_functional",
+      "test_overriding_injectable_args_with_async_task",
+      "test_tags_stream_mode_messages",
+      "test_configurable_propagates_to_stream_metadata",
+      "test_stream_mode_messages_command",
+      "test_stream_messages_dedupe_inputs",
+      "test_stream_messages_dedupe_state",
+      "test_interrupt_subgraph_reenter_checkpointer_true",
+      "test_handles_multiple_interrupts_from_tasks",
+      "test_interrupts_in_tasks_surfaced_once",
+      "test_task_before_interrupt_resume",
+      "test_multiple_tasks_before_interrupt_resume",
+      "test_no_redundant_put_writes_for_cached_task",
+      "test_node_before_interrupt_resume_graph_api",
+      "test_multiple_nodes_before_interrupt_resume_graph_api",
+      "test_node_before_multiple_interrupt_cycles_graph_api",
+      "test_pregel_loop_refcount",
+      "test_bulk_state_updates",
+      "test_update_as_input",
+      "test_batch_update_as_input",
+      "test_draw_invalid",
+      "test_imp_exception",
+      "test_parent_command_goto",
+      "test_timeout_with_parent_command",
+      "test_fork_and_update_task_results",
+      "test_subgraph_streaming_async",
+      "test_null_resume_disallowed_with_multiple_interrupts",
+      "test_astream_waiter_cleanup_on_cancel",
+      "test_interrupt_stream_mode_values",
+      "test_supersteps_populate_task_results",
+      "test_fork_does_not_apply_pending_writes",
+      "test_graph_error_handler_async_runtime_info",
+      "test_graph_error_handler_does_not_swallow_interrupt_concurrent",
+      "test_node_error_handler_handles_subgraph_internal_failure_async"
+    ],
+    "tests/test_pregel_debug.py": [
+      "_FakeTask",
+      "test_map_debug_tasks_forwards_metadata_when_present",
+      "test_map_debug_tasks_omits_metadata_when_empty",
+      "test_map_debug_tasks_omits_metadata_when_absent",
+      "test_map_debug_tasks_handles_none_config",
+      "test_map_debug_tasks_filters_framework_metadata_keys",
+      "test_map_debug_tasks_omits_metadata_when_only_framework_keys",
+      "test_map_debug_tasks_metadata_is_copied_not_referenced",
+      "test_map_debug_tasks_folds_filtered_tags_into_metadata",
+      "test_map_debug_tasks_omits_tags_when_only_seq_step",
+      "test_map_debug_tasks_adds_tags_even_without_other_metadata"
+    ],
+    "tests/test_pregel_stream_events_v3.py": [
+      "_event",
+      "SimpleState",
+      "_build_simple_graph",
+      "_build_interrupt_graph",
+      "_build_error_graph",
+      "_build_custom_stream_graph",
+      "_CustomPassthroughTransformer",
+      "TestStreamChannelLocal",
+      "TestStreamChannelNamed",
+      "TestStreamV2Sync",
+      "TestStreamV2SyncErrors",
+      "TestStreamV2SyncInterrupt",
+      "TestStreamV2Async",
+      "TestStreamV2AsyncErrors",
+      "TestStreamV2AsyncInterrupt",
+      "TestConvertToProtocolEvent",
+      "TestStreamMux",
+      "TestValuesTransformer",
+      "TestOutputWithoutValuesTransformer",
+      "TestMessagesTransformer",
+      "TestStreamMuxResilience",
+      "TestCustomTransformer",
+      "TestStreamChannelAutoLifecycle",
+      "TestStreamTransformerSchedule",
+      "TestAsyncTransformerLane",
+      "TestMemoryBounds",
+      "TestDrainOnConsume"
+    ],
+    "tests/test_pregel.py": [
+      "test_graph_validation",
+      "test_request_drain_allows_inflight_call_scheduling",
+      "test_invalid_checkpointer_type",
+      "test_graph_validation_with_command",
+      "test_checkpoint_errors",
+      "test_context_json_schema",
+      "test_node_schemas_custom_output",
+      "test_reducer_before_first_node",
+      "test_invoke_single_process_in_out",
+      "test_invoke_single_process_in_write_kwargs",
+      "test_invoke_single_process_in_out_dict",
+      "test_invoke_single_process_in_dict_out_dict",
+      "test_invoke_two_processes_in_out",
+      "test_run_from_checkpoint_id_retains_previous_writes",
+      "test_batch_two_processes_in_out",
+      "test_invoke_many_processes_in_out",
+      "test_batch_many_processes_in_out",
+      "test_invoke_two_processes_two_in_two_out_invalid",
+      "test_invoke_two_processes_two_in_two_out_valid",
+      "test_invoke_checkpoint_two",
+      "test_pending_writes_resume",
+      "test_cond_edge_after_send",
+      "test_concurrent_emit_sends",
+      "test_send_sequences",
+      "test_imp_task",
+      "test_imp_nested",
+      "test_imp_stream_order",
+      "test_invoke_checkpoint_three",
+      "test_invoke_two_processes_two_in_join_two_out",
+      "test_invoke_join_then_call_other_pregel",
+      "test_invoke_two_processes_one_in_two_out",
+      "test_invoke_two_processes_no_out",
+      "test_invoke_two_processes_no_in",
+      "test_conditional_entrypoint_to_multiple_state_graph",
+      "test_conditional_state_graph_with_list_edge_inputs",
+      "test_state_graph_w_config_inherited_state_keys",
+      "test_conditional_entrypoint_graph_state",
+      "test_in_one_fan_out_state_graph_waiting_edge",
+      "test_in_one_fan_out_state_graph_defer_node",
+      "test_in_one_fan_out_state_graph_waiting_edge_via_branch",
+      "test_in_one_fan_out_state_graph_waiting_edge_custom_state_class_pydantic2",
+      "test_in_one_fan_out_state_graph_waiting_edge_custom_state_class_pydantic_input",
+      "test_in_one_fan_out_state_graph_waiting_edge_plus_regular",
+      "test_in_one_fan_out_state_graph_waiting_edge_multiple",
+      "test_callable_in_conditional_edges_with_no_path_map",
+      "test_function_in_conditional_edges_with_no_path_map",
+      "test_in_one_fan_out_state_graph_waiting_edge_multiple_cond_edge",
+      "test_simple_multi_edge",
+      "test_nested_graph_xray",
+      "test_nested_graph",
+      "test_subgraph_checkpoint_true",
+      "test_subgraph_durability_inherited",
+      "test_subgraph_checkpoint_true_interrupt",
+      "test_stream_subgraphs_during_execution",
+      "test_stream_buffering_single_node",
+      "test_nested_graph_interrupts_parallel",
+      "test_doubly_nested_graph_interrupts",
+      "test_repeat_condition",
+      "test_checkpoint_metadata",
+      "test_remove_message_via_state_update",
+      "test_remove_message_from_node",
+      "test_xray_lance",
+      "test_channel_values",
+      "test_xray_issue",
+      "test_xray_bool",
+      "test_multiple_sinks_subgraphs",
+      "test_store_injected",
+      "test_enum_node_names",
+      "test_debug_retry",
+      "test_debug_subgraphs",
+      "test_debug_nested_subgraphs",
+      "test_add_sequence",
+      "test_runnable_passthrough_node_graph",
+      "test_parent_command",
+      "test_interrupt_subgraph",
+      "test_interrupt_multiple",
+      "test_interrupt_loop",
+      "test_interrupt_functional",
+      "test_interrupt_task_functional",
+      "test_root_mixed_return",
+      "test_dict_mixed_return",
+      "test_command_pydantic_dataclass",
+      "test_command_with_static_breakpoints",
+      "test_multistep_plan",
+      "test_command_goto_with_static_breakpoints",
+      "test_parallel_node_execution",
+      "test_multiple_interrupt_state_persistence",
+      "test_concurrent_execution_thread_safety",
+      "test_checkpoint_recovery",
+      "test_multiple_updates_root",
+      "test_multiple_updates",
+      "test_falsy_return_from_task",
+      "test_multiple_interrupts_functional",
+      "test_multiple_interrupts_functional_cache",
+      "test_task_before_interrupt_resume",
+      "test_multiple_tasks_before_interrupt_resume",
+      "test_no_redundant_put_writes_for_cached_task",
+      "test_node_before_interrupt_resume_graph_api",
+      "test_multiple_nodes_before_interrupt_resume_graph_api",
+      "test_node_before_multiple_interrupt_cycles_graph_api",
+      "test_double_interrupt_subgraph",
+      "test_multi_resume",
+      "test_sync_streaming_with_functional_api",
+      "test_entrypoint_without_checkpointer",
+      "test_entrypoint_stateful",
+      "test_entrypoint_stateful_update_state",
+      "test_entrypoint_from_sync_generator",
+      "test_multiple_subgraphs",
+      "test_multiple_subgraphs_functional",
+      "test_multiple_subgraphs_mixed_entrypoint",
+      "test_multiple_subgraphs_mixed_state_graph",
+      "test_multiple_subgraphs_checkpointer",
+      "test_entrypoint_output_schema_with_return_and_save",
+      "test_entrypoint_with_return_and_save",
+      "test_overriding_injectable_args_with_tasks",
+      "test_named_tasks_functional",
+      "test_tags_stream_mode_messages",
+      "test_configurable_propagates_to_stream_metadata",
+      "test_stream_mode_messages_command",
+      "test_node_destinations",
+      "test_pydantic_none_state_update",
+      "test_pydantic_state_update_command",
+      "test_pydantic_state_mutation",
+      "test_pydantic_state_mutation_command",
+      "test_get_stream_writer",
+      "test_stream_messages_dedupe_inputs",
+      "test_stream_messages_dedupe_state",
+      "test_stream_messages_dedupe_pydantic_subgraph_interrupt",
+      "test_interrupt_subgraph_reenter_checkpointer_true",
+      "test_empty_invoke",
+      "test_parallel_interrupts",
+      "test_parallel_interrupts_double",
+      "test_pregel_loop_refcount",
+      "test_bulk_state_updates",
+      "test_pregel_node_copy",
+      "test_update_as_input",
+      "test_batch_update_as_input",
+      "test_migration_graph",
+      "test_get_graph_loop",
+      "test_get_graph_self_loop",
+      "test_get_graph_root_channel",
+      "test_imp_exception",
+      "test_parent_command_goto",
+      "test_parent_command_goto_deeply_nested",
+      "test_timeout_with_parent_command",
+      "test_fork_and_update_task_results",
+      "test_subgraph_streaming_sync",
+      "test_get_graph_nonterminal_last_step_source",
+      "test_null_resume_disallowed_with_multiple_interrupts",
+      "test_interrupt_stream_mode_values",
+      "test_supersteps_populate_task_results",
+      "test_multiple_writes_same_channel_from_same_node",
+      "test_send_with_untracked_value",
+      "test_send_with_untracked_value_overlapping_keys",
+      "test_overwrite_sequential",
+      "test_overwrite_parallel",
+      "test_overwrite_parallel_error",
+      "test_fork_does_not_apply_pending_writes",
+      "test_delta_channel_end_to_end_inmemory",
+      "test_delta_channel_time_travel",
+      "test_delta_channel_remove_message_end_to_end",
+      "test_delta_channel_update_by_id_end_to_end",
+      "test_delta_channel_durability_exit_stores_snapshot",
+      "test_delta_channel_async_write_ordering"
+    ],
+    "tests/test_pydantic.py": [
+      "test_is_supported_by_pydantic",
+      "test_nested_pydantic_models",
+      "test_pydantic_state_field_validator",
+      "FunctionalState",
+      "test_interrupt_functional_pydantic"
+    ],
+    "tests/test_remote_graph_v3.py": [
+      "_make_sync_adapter",
+      "test_enter_calls_sdk_enter_then_run_start_and_captures_run_id",
+      "test_exit_delegates_to_sdk_exit_with_exc_info",
+      "test_enter_unwinds_sdk_cm_when_run_start_raises",
+      "test_output_interrupted_interrupts_passthrough",
+      "test_sync_projection_attrs_forward_to_sdk",
+      "test_projection_registry_typed_decoded_and_custom",
+      "test_channel_projection_decodes_params_data",
+      "test_channel_projection_decodes_params_data_async",
+      "test_sync_adapter_translates_command_input",
+      "test_iter_caches_first_subscription",
+      "test_abort_cancels_run_and_closes_sdk",
+      "test_abort_before_enter_skips_cancel_but_closes_sdk",
+      "test_abort_is_idempotent",
+      "test_abort_swallows_cancel_failure_and_still_closes",
+      "test_sync_interleave_delegates_to_interleave_projections",
+      "test_async_adapter_has_no_interleave",
+      "_make_async_adapter",
+      "test_aenter_calls_sdk_aenter_then_run_start_and_captures_run_id",
+      "test_aexit_delegates_to_sdk_aexit",
+      "test_aenter_unwinds_sdk_cm_when_run_start_raises",
+      "test_async_output_interrupted_interrupts_passthrough",
+      "test_async_projection_attrs_forward_to_sdk",
+      "test_aiter_caches_first_subscription",
+      "test_async_abort_cancels_run_and_closes_sdk",
+      "test_async_abort_before_aenter_skips_cancel",
+      "test_async_abort_swallows_cancel_failure",
+      "_make_remote_graph",
+      "test_reject_v3_unsupported_passes_when_all_clear",
+      "test_reject_v3_unsupported_raises_per_kwarg",
+      "test_reject_v3_unsupported_raises_on_unknown_extra_kwarg",
+      "test_reject_v3_unsupported_allows_metadata_and_headers",
+      "test_translate_command_input_surfaces_raw_resume_value",
+      "test_translate_command_input_rejects_goto_and_update",
+      "test_translate_command_input_passes_through_non_command",
+      "test_v3_supported_kwargs_known_set",
+      "test_stream_events_v3_constructs_sdk_thread_with_sanitized_args",
+      "test_stream_events_v3_passes_none_thread_id_when_absent",
+      "test_stream_events_v3_rejects_unsupported_kwargs_before_sdk_call",
+      "test_stream_events_v3_translates_command_input",
+      "test_stream_events_v3_rejects_goto_update_command",
+      "test_stream_events_v3_strips_checkpoint_keys_from_configurable",
+      "test_stream_events_v3_merges_tracing_headers_when_distributed_tracing",
+      "test_stream_events_v3_passes_headers_unchanged_without_tracing",
+      "test_stream_events_non_v3_delegates_to_super",
+      "test_astream_events_v3_constructs_sdk_thread",
+      "test_astream_events_v3_rejects_unsupported_kwargs",
+      "test_astream_events_non_v3_raises_not_implemented"
+    ],
+    "tests/test_remote_graph.py": [
+      "test_with_config",
+      "test_get_graph",
+      "test_aget_graph",
+      "test_get_state",
+      "test_aget_state",
+      "test_get_state_history",
+      "test_aget_state_history",
+      "test_update_state",
+      "test_aupdate_state",
+      "test_stream",
+      "test_astream",
+      "test_invoke",
+      "test_invoke_sanitizes_thread_id",
+      "test_stream_sanitizes_thread_id",
+      "test_ainvoke",
+      "test_stream_context",
+      "test_stream_context_none",
+      "test_astream_context",
+      "test_invoke_context",
+      "test_ainvoke_context",
+      "test_stream_context_dataclass",
+      "test_stream_context_base_model",
+      "test_langgraph_cloud_integration",
+      "test_sanitize_config",
+      "remote_graph",
+      "nested_remote_graph",
+      "nested_graph",
+      "get_message_dict",
+      "test_remote_graph_basic_invoke",
+      "monotonic_uid",
+      "test_remote_graph_stream_messages_tuple",
+      "test_include_headers"
+    ],
+    "tests/test_retry.py": [
+      "test_should_retry_on_single_exception",
+      "test_should_retry_on_sequence_of_exceptions",
+      "test_should_retry_on_subclass_of_exception",
+      "test_should_retry_on_callable",
+      "test_should_retry_on_invalid_type",
+      "test_should_retry_on_empty_sequence",
+      "test_checkpoint_ns_for_parent_command",
+      "test_should_retry_default_retry_on",
+      "test_graph_with_single_retry_policy",
+      "test_runtime_execution_info_defaults_without_retry",
+      "test_graph_with_jitter_retry_policy",
+      "test_graph_with_multiple_retry_policies",
+      "test_graph_with_max_attempts_exceeded",
+      "test_execution_info_identity_fields_populated_on_retry",
+      "test_ensure_execution_info_noop_when_already_set",
+      "test_ensure_execution_info_creates_from_config",
+      "test_ensure_execution_info_falls_back_to_task_id",
+      "test_run_with_retry_creates_execution_info_when_missing",
+      "_make_task",
+      "_idle_timeout",
+      "test_coerce_timeout_policy_scalar_is_run_timeout",
+      "test_coerce_timeout_policy_returns_same_instance_for_already_coerced",
+      "test_send_timeout_round_trips_through_msgpack_serde",
+      "test_send_without_timeout_round_trips_through_msgpack_serde",
+      "test_run_with_retry_rejects_sync_timeout_without_starting_proc",
+      "test_run_with_retry_without_timeout_runs_sync_directly",
+      "test_idle_timeout_guard_call_does_not_hold_scope_lock",
+      "test_idle_timeout_guard_stream_does_not_hold_scope_lock",
+      "test_idle_timeout_guard_stream_writer_does_not_hold_scope_lock",
+      "test_arun_with_retry_timeout_ok_when_fast",
+      "test_arun_with_retry_timeout_retries_when_retry_on_timeout",
+      "test_entrypoint_timeout_allows_pre_timeout_child_task_to_run",
+      "test_arun_with_retry_timeout_accepts_timedelta",
+      "test_arun_with_retry_timeout_fires_async",
+      "test_arun_with_retry_run_timeout_is_not_refreshed_by_heartbeat",
+      "test_node_timeout_error_carries_both_configured_timeouts",
+      "test_arun_with_retry_does_not_swallow_proc_asyncio_timeout",
+      "test_arun_with_retry_does_not_swallow_proc_node_timeout",
+      "test_arun_with_retry_idle_timeout_resets_on_stream_event",
+      "test_arun_with_retry_idle_timeout_resets_on_runtime_stream_writer",
+      "test_astream_with_retry_idle_timeout_resets_on_yielded_chunks",
+      "_HandlerEmittingProc",
+      "test_arun_with_retry_idle_timeout_resets_on_runtime_heartbeat",
+      "test_arun_with_retry_heartbeat_refresh_mode_ignores_stream_events",
+      "test_arun_with_retry_heartbeat_refresh_mode_accepts_heartbeat",
+      "test_runtime_heartbeat_outside_idle_attempt_is_no_op",
+      "test_arun_with_retry_idle_timeout_resets_on_callback_event",
+      "test_arun_with_retry_idle_timeout_preserves_existing_callbacks",
+      "test_arun_with_retry_timeout_discards_stale_executor_writes",
+      "test_arun_with_retry_timeout_discards_pre_timeout_writes",
+      "test_astream_with_retry_timeout_discards_pre_timeout_writes",
+      "test_arun_with_retry_timeout_cannot_be_swallowed",
+      "test_astream_with_retry_timeout_cannot_be_swallowed",
+      "_TimeoutState",
+      "test_timeout_validation_is_eager_across_apis",
+      "test_timeout_rejects_sync_functional_apis_at_declaration_time",
+      "test_state_graph_compile_rejects_sync_node_timeout",
+      "test_pregel_validate_rejects_sync_writer_timeout",
+      "test_pregel_validate_rejects_wrapped_sync_runnable_lambda_timeout",
+      "test_pregel_validate_accepts_wrapped_async_runnable_lambda_timeout",
+      "test_pregel_validate_rejects_parallel_sync_branch_timeout",
+      "test_pregel_validate_rejects_sync_node_timeout",
+      "test_pregel_validate_accepts_async_runnable_lambda_timeout",
+      "test_pregel_validate_accepts_runnable_callable_with_sync_and_async_timeout",
+      "test_state_graph_add_node_timeout_e2e",
+      "test_send_timeout_overrides_target_node_timeout",
+      "test_state_graph_add_node_timeout_composes_with_retry",
+      "test_task_decorator_timeout_e2e",
+      "test_task_decorator_preserves_user_idle_timeout_kwarg",
+      "test_task_decorator_preserves_user_timeout_kwarg",
+      "test_entrypoint_timeout_e2e",
+      "_MessageStreamState",
+      "_SlowStreamingChatModel",
+      "test_idle_timeout_resets_on_message_stream_callbacks",
+      "test_node_builder_timeout_e2e",
+      "test_arun_with_retry_timeout_observer_tracks_attempts",
+      "test_arun_with_retry_timeout_observer_emits_progress_on_heartbeat",
+      "test_arun_with_retry_timeout_observer_treats_parent_command_as_non_error",
+      "test_arun_with_retry_timeout_observer_finishes_when_parent_writer_errors",
+      "test_arun_with_retry_timeout_observer_treats_bubble_up_as_non_error",
+      "test_arun_with_retry_observer_emits_finish_before_retry_backoff",
+      "test_state_graph_observer_emits_finish_before_error_handler_start",
+      "test_arun_with_retry_observer_emits_finish_before_final_raise_on_exhaustion",
+      "test_sync_sleep_in_async_node_bypasses_timeout_and_emits_finish_success",
+      "test_graph_error_handler_runs_after_retry_exhaustion",
+      "test_graph_error_handler_can_route_with_command",
+      "test_graph_error_handler_failure_fails_run",
+      "test_graph_error_handler_handles_subgraph_internal_failure",
+      "test_graph_error_handler_error_context_survives_checkpoint_resume",
+      "test_graph_error_handler_does_not_swallow_interrupt_concurrent",
+      "test_node_error_handlers_route_to_matching_handler",
+      "test_node_without_error_handler_still_fails_run",
+      "test_set_node_defaults_error_handler_catches_all_nodes",
+      "test_set_node_defaults_error_handler_overridden_by_node_handler",
+      "test_set_node_defaults_error_handler_skips_per_node_handler_nodes",
+      "test_set_node_defaults_error_handler_failure_fails_run",
+      "test_set_node_defaults_error_handler_receives_runnable_config",
+      "test_set_node_defaults_error_handler_collides_with_user_node",
+      "test_set_node_defaults_retry_policy",
+      "test_set_node_defaults_retry_policy_per_node_wins",
+      "test_set_node_defaults_timeout",
+      "test_set_node_defaults_timeout_per_node_wins",
+      "test_set_node_defaults_chaining",
+      "test_set_node_defaults_combined_retry_and_error_handler",
+      "test_error_handler_resumes_after_crash",
+      "test_error_handler_resumes_after_crash_multiple_nodes",
+      "test_arun_with_retry_user_raised_cancelled_becomes_node_cancelled",
+      "test_arun_with_retry_user_raised_cancelled_with_timeout_policy",
+      "test_run_with_retry_sync_node_raising_cancelled_becomes_node_cancelled",
+      "test_arun_with_retry_external_cancel_propagates_as_cancelled",
+      "test_pregel_user_raised_cancellederror_fails_run"
+    ],
+    "tests/test_runnable.py": [
+      "test_runnable_callable_func_accepts",
+      "test_runnable_callable_basic",
+      "test_runnable_callable_injectable_arguments",
+      "test_runnable_callable_injectable_arguments_async",
+      "test_config_injection",
+      "test_config_ensured",
+      "test_config_ensured_async"
+    ],
+    "tests/test_runtime.py": [
+      "test_injected_runtime",
+      "test_context_runtime",
+      "test_override_runtime",
+      "test_merge_runtime",
+      "test_merge_runtime_preserves_run_control",
+      "test_run_control_request_drain_stops_future_steps",
+      "test_run_control_request_drain_stops_future_steps_async",
+      "test_drain_requested_in_terminal_step_finishes_normally",
+      "test_drain_with_exit_durability_persists_resume_checkpoint",
+      "test_drain_from_subgraph_can_resume_parent",
+      "test_drain_requested_in_terminal_step_finishes_normally_async",
+      "test_runtime_propogated_to_subgraph",
+      "test_context_coercion_dataclass",
+      "test_context_coercion_pydantic",
+      "test_context_coercion_typeddict",
+      "test_context_coercion_none",
+      "test_context_coercion_errors",
+      "test_context_coercion_async",
+      "test_context_coercion_stream",
+      "test_context_coercion_pydantic_validation_errors",
+      "test_external_drain_concurrent_sync",
+      "test_external_drain_concurrent_async",
+      "test_drain_then_cancel_after_graceful_timeout",
+      "test_cancel_ainvoke_with_async_node",
+      "test_cancel_ainvoke_with_sync_node",
+      "test_drain_with_control_parameter_sync",
+      "test_execution_info_defaults_and_patch",
+      "test_server_info_and_runtime_merge",
+      "_make_capture_graph",
+      "test_execution_info_populated_in_graph",
+      "test_execution_info_populated_in_graph_async",
+      "test_server_info_from_configurable",
+      "test_server_info_none_without_configurable",
+      "test_server_info_user_from_auth_user",
+      "test_execution_info_inherited_by_subgraph"
+    ],
+    "tests/test_serde_allowlist.py": [
+      "Color",
+      "InnerDataclass",
+      "InnerModel",
+      "Node",
+      "MissingRefDataclass",
+      "Payload",
+      "NestedDataclass",
+      "DummyChannel",
+      "test_curated_core_allowlist_includes_messages",
+      "test_collect_allowlist_basic_models",
+      "test_collect_allowlist_nested_containers",
+      "test_collect_allowlist_annotated_and_union",
+      "test_collect_allowlist_literal_and_any",
+      "test_collect_allowlist_typeddict_fields_only",
+      "test_collect_allowlist_forward_refs",
+      "test_collect_allowlist_missing_forward_ref",
+      "test_collect_allowlist_newtype_supertype",
+      "test_collect_allowlist_channels",
+      "test_collect_allowlist_pep604_union",
+      "test_collect_allowlist_typing_union_optional"
+    ],
+    "tests/test_state.py": [
+      "State",
+      "State2",
+      "test_warns_invalid_schema",
+      "test_doesnt_warn_valid_schema",
+      "test_state_schema_with_type_hint",
+      "test_state_schema_optional_values",
+      "test_state_schema_default_values",
+      "test__get_node_name",
+      "test_input_schema_conditional_edge",
+      "test_private_input_schema_conditional_edge",
+      "test_is_field_channel"
+    ],
+    "tests/test_stream_before_builtins.py": [
+      "_messages_event",
+      "_Tap",
+      "_PreTap",
+      "_TextRedactor",
+      "test_before_builtins_factories_run_before_others",
+      "test_within_lane_order_preserved",
+      "test_redactor_runs_before_messages_transformer",
+      "test_lifecycle_unaffected_by_pre_lane_observer",
+      "test_default_is_false",
+      "test_pre_lane_mutation_lands_in_messages_projection"
+    ],
+    "tests/test_stream_data_transformers.py": [
+      "_custom_event",
+      "_checkpoints_event",
+      "_debug_event",
+      "_tasks_event",
+      "_updates_event",
+      "_arm",
+      "_unstamped",
+      "_drain",
+      "test_custom_captures_root_scope_events",
+      "test_custom_ignores_subgraph_scope_events",
+      "test_custom_scoped_transformer_captures_own_scope",
+      "test_custom_preserves_any_payload_type",
+      "test_custom_does_not_suppress_from_main_log",
+      "test_custom_ignores_other_methods",
+      "test_custom_required_stream_modes",
+      "test_custom_is_native",
+      "test_custom_init_returns_correct_key",
+      "test_checkpoints_captures_root_scope_events",
+      "test_checkpoints_ignores_subgraph_events",
+      "test_checkpoints_scoped_transformer",
+      "test_checkpoints_does_not_suppress_from_main_log",
+      "test_checkpoints_required_stream_modes",
+      "test_checkpoints_is_native",
+      "test_debug_captures_root_scope_events",
+      "test_debug_ignores_subgraph_events",
+      "test_debug_captures_multiple_event_types",
+      "test_debug_does_not_suppress_from_main_log",
+      "test_debug_required_stream_modes",
+      "test_debug_is_native",
+      "test_tasks_captures_root_scope_events",
+      "test_tasks_captures_start_and_result",
+      "test_tasks_ignores_subgraph_events",
+      "test_tasks_scoped_transformer",
+      "test_tasks_does_not_suppress_from_main_log",
+      "test_tasks_required_stream_modes",
+      "test_tasks_is_native",
+      "test_updates_captures_root_scope_events",
+      "test_updates_captures_multiple_steps",
+      "test_updates_ignores_subgraph_events",
+      "test_updates_scoped_transformer",
+      "test_updates_does_not_suppress_from_main_log",
+      "test_updates_required_stream_modes",
+      "test_updates_is_native",
+      "test_unrelated_events_ignored_by_all",
+      "_State",
+      "_my_node",
+      "_make_simple_graph",
+      "test_stream_events_v3_custom_projection_opt_in",
+      "test_stream_events_v3_custom_and_values_coexist",
+      "test_stream_events_v3_tasks_projection_opt_in",
+      "test_stream_events_v3_debug_projection_opt_in",
+      "test_stream_events_v3_updates_projection_opt_in",
+      "test_stream_events_v3_all_transformers_interleaved",
+      "test_stream_events_v3_all_transformers_with_checkpointer",
+      "test_stream_events_v3_checkpoints_projection_opt_in",
+      "test_tasks_and_lifecycle_coregistration",
+      "test_tasks_and_lifecycle_coregistration_e2e"
+    ],
+    "tests/test_stream_events_v3_e2e.py": [
+      "AgentState",
+      "_make_nested_graph",
+      "_make_messages_graph",
+      "_make_messages_subgraph",
+      "_make_custom_writer_graph",
+      "_make_interrupt_graph",
+      "_make_error_subgraph",
+      "_CustomPassthroughTransformer",
+      "_CounterTransformer",
+      "TestStreamV2E2ESync",
+      "TestStreamV2E2EMessages",
+      "TestStreamV2E2ECustom",
+      "TestStreamV2E2EInterrupt",
+      "TestStreamV2E2EErrors",
+      "TestStreamV2E2EAsync",
+      "TestStreamV2E2ECombined"
+    ],
+    "tests/test_stream_events_v3_kwarg_forwarding.py": [
+      "_Ctx",
+      "_State",
+      "_build_context_reading_graph",
+      "TestKwargForwardingSync",
+      "TestKwargForwardingAsync"
+    ],
+    "tests/test_stream_events_v3.py": [
+      "SimpleState",
+      "_make_simple_graph",
+      "_make_messages_graph",
+      "_make_custom_graph",
+      "_make_subgraph",
+      "_assert_stream_part_shape",
+      "TestV1BackwardsCompat",
+      "TestV2Stream",
+      "TestV2Invoke",
+      "TestV2StreamAsync",
+      "TestV2InvokeAsync",
+      "PydanticState",
+      "DataclassState",
+      "TestV2TypeSafeStreaming",
+      "_make_pydantic_graph",
+      "TestV2ValidationErrors",
+      "_check_type_narrowing"
+    ],
+    "tests/test_stream_lifecycle_transformer.py": [
+      "_tasks_start",
+      "_tasks_result",
+      "_arm",
+      "_unstamped",
+      "_drain_lifecycle",
+      "_build_lifecycle_mux",
+      "test_started_emitted_on_first_direct_child_task",
+      "test_started_dedup_on_repeat_namespace",
+      "test_grandchild_namespace_discovered",
+      "test_nested_chain_emits_started_at_each_depth",
+      "test_nested_chain_emits_completed_at_each_depth",
+      "test_completed_on_parent_task_result",
+      "test_failed_on_parent_task_result_with_error",
+      "test_interrupted_on_parent_task_result_with_interrupts",
+      "test_interrupt_takes_precedence_over_error",
+      "test_finalize_completes_open_subgraphs",
+      "test_fail_emits_interrupted_for_graph_interrupt",
+      "test_fail_emits_failed_for_other_exceptions",
+      "test_unrelated_methods_pass_through",
+      "test_scoped_transformer_filters_outside_scope_but_tracks_all_depths",
+      "test_required_stream_modes_declared",
+      "test_protocol_event_method_is_native",
+      "test_tasks_events_suppressed_from_main_log",
+      "_State",
+      "_passthrough",
+      "_make_two_level_nested",
+      "test_stream_events_v3_real_graph_emits_lifecycle_at_each_depth",
+      "test_stream_events_v3_with_nested_parent_ns_scopes_lifecycle",
+      "test_no_metadata_falls_through_to_existing_behavior",
+      "test_empty_metadata_dict_falls_through",
+      "test_lifecycle_uses_lc_agent_name_for_subagent",
+      "test_lifecycle_subagent_cause_from_legacy_list_input",
+      "test_lifecycle_same_name_nested_run_is_surfaced",
+      "test_lifecycle_unnamed_nested_agent_is_not_subagent",
+      "test_lifecycle_subagent_terminal_roundtrip"
+    ],
+    "tests/test_stream_messages_transformer.py": [
+      "_unstamped",
+      "_proto_event",
+      "_v1_chunk",
+      "_whole_msg",
+      "_make_sync_transformer",
+      "_make_async_transformer",
+      "_lifecycle",
+      "_simple_graph",
+      "TestProtocolEventRouting",
+      "TestWholeMessageFallback",
+      "TestFiltering",
+      "TestLifecycle",
+      "TestAsyncMode",
+      "TestWireRequestMore",
+      "TestViaMux",
+      "TestEndToEnd",
+      "TestEndToEndV2Invoke",
+      "TestDirectMessagesModeStaysV1",
+      "TestStreamMessagesHandlerV2Unit"
+    ],
+    "tests/test_stream_subgraph_transformer.py": [
+      "_tasks_start",
+      "_tasks_result",
+      "_native_factories",
+      "_stream_part",
+      "_astream_parts",
+      "_arm",
+      "_arm_recursive",
+      "_build_root_mux",
+      "_subgraph_transformer",
+      "_unstamped",
+      "_drain_subgraphs",
+      "_child_mux",
+      "_event_items",
+      "_lifecycle_payloads",
+      "test_handle_created_on_first_direct_child_task",
+      "test_handle_status_completes_on_parent_result",
+      "test_handle_status_failed_with_error",
+      "test_handle_status_interrupted",
+      "test_grandchild_discovered_via_child_mini_mux",
+      "test_finalize_completes_open_handles",
+      "test_fail_marks_open_handles_interrupted_for_graph_interrupt",
+      "test_fail_marks_open_handles_failed_for_other_errors",
+      "test_child_mux_requires_factories",
+      "test_subgraph_and_lifecycle_agree_on_terminal_status",
+      "test_required_stream_modes_declared",
+      "test_tasks_events_suppressed_from_main_log",
+      "_ChildEventObserver",
+      "test_child_forwarding_reuses_event_without_assigning_seq",
+      "_AsyncProbeTransformer",
+      "test_async_child_mini_mux_uses_async_lane",
+      "test_async_child_mini_mux_fail_uses_async_lane",
+      "_StandardCtorTransformer",
+      "_ScopedTransformer",
+      "_ConfigurableFactoryTransformer",
+      "_ChildExploder",
+      "_ChildFinalizeExploder",
+      "test_normalize_transformer_factories_supports_scoped_classes",
+      "test_normalize_transformer_factories_supports_configured_factories",
+      "test_normalize_transformer_factories_rejects_instances",
+      "test_child_forwarding_errors_fail_sync_run",
+      "test_child_forwarding_errors_fail_async_run",
+      "test_child_finalize_errors_propagate_to_sync_run",
+      "test_child_finalize_errors_propagate_to_async_run",
+      "_State",
+      "_passthrough",
+      "_make_two_level_nested",
+      "_item_node",
+      "_make_two_sibling_subgraphs",
+      "_failing_node",
+      "_make_failing_nested",
+      "test_stream_events_v3_real_graph_yields_subgraph_handles",
+      "test_stream_events_v3_grandchild_visible_on_child_handle",
+      "test_subgraph_output_stops_at_own_terminal_without_draining_siblings",
+      "test_aborted_subgraph_handle_does_not_fail_parent_forwarding",
+      "test_failed_subgraph_output_raises_terminal_error"
+    ],
+    "tests/test_subgraph_persistence_async.py": [
+      "ParentState",
+      "test_stateless_interrupt_resume_async",
+      "test_stateless_state_resets_async",
+      "test_stateless_state_resets_with_interrupt_async",
+      "test_checkpointer_false_no_persistence_async",
+      "test_stateful_state_accumulates_async",
+      "test_stateful_state_accumulates_with_interrupt_async",
+      "test_stateful_interrupt_resume_async",
+      "test_stateful_namespace_isolation_async"
+    ],
+    "tests/test_subgraph_persistence.py": [
+      "ParentState",
+      "test_stateless_interrupt_resume",
+      "test_stateless_state_resets",
+      "test_stateless_state_resets_with_interrupt",
+      "test_checkpointer_false_no_persistence",
+      "test_stateful_state_accumulates",
+      "test_stateful_state_accumulates_with_interrupt",
+      "test_stateful_interrupt_resume",
+      "test_stateful_namespace_isolation"
+    ],
+    "tests/test_time_travel_async.py": [
+      "State",
+      "_checkpoint_summary",
+      "test_replay_reruns_nodes_after_checkpoint",
+      "test_replay_from_final_checkpoint_is_noop",
+      "test_fork_reruns_with_modified_state",
+      "test_multiple_forks_from_same_checkpoint",
+      "test_replay_from_before_interrupt_refires",
+      "test_replay_interrupt_stable_across_replays",
+      "test_fork_from_before_interrupt_refires",
+      "test_fork_from_interrupt_checkpoint_refires",
+      "test_sequential_interrupts_fork_from_middle",
+      "test_multiple_interrupts_in_one_node",
+      "test_subgraph_replay_from_before",
+      "test_subgraph_fork_from_before",
+      "test_subgraph_interrupt_replay_from_parent",
+      "test_subgraph_interrupt_replay_from_interrupt_checkpoint",
+      "test_subgraph_interrupt_full_flow",
+      "test_subgraph_interrupt_full_flow_no_sub_checkpointer",
+      "test_subgraph_time_travel_to_first_interrupt_async",
+      "test_subgraph_time_travel_to_second_interrupt_async",
+      "test_subgraph_time_travel_after_completion_async",
+      "test_replay_from_before_interrupt_then_resume_async",
+      "test_subgraph_time_travel_resume_from_first_interrupt_async",
+      "test_subgraph_time_travel_resume_from_second_interrupt_async",
+      "test_subgraph_time_travel_checkpoint_pattern_async",
+      "test_3_levels_deep_time_travel_to_first_interrupt_async",
+      "test_3_levels_deep_time_travel_to_second_interrupt_async",
+      "test_3_levels_deep_time_travel_to_middle_subgraph_async",
+      "test_3_levels_deep_middle_has_interrupts_async",
+      "test_copy_fork_retriggers_interrupt",
+      "test_copy_fork_creates_sibling_checkpoint",
+      "test_update_state_with_none_values",
+      "test_get_state_with_subgraphs_returns_subgraph_state",
+      "test_checkpoint_ns_accessible_in_subgraph",
+      "test_stateful_subgraph_retains_state_on_parent_replay",
+      "test_stateful_subgraph_retains_state_on_parent_fork",
+      "test_replay_creates_branch_preserving_old_checkpoints",
+      "test_replay_creates_branch_in_subgraph",
+      "test_fork_creates_branch_preserving_old_checkpoints",
+      "test_fork_creates_branch_in_subgraph",
+      "test_stateless_subgraph_starts_fresh_on_parent_replay",
+      "test_stateful_subgraph_loads_latest_after_replay",
+      "test_three_level_nested_subgraph_loads_state_on_replay",
+      "test_three_level_nested_subgraph_loads_state_on_fork",
+      "test_replay_from_first_invocation_checkpoint"
+    ],
+    "tests/test_time_travel.py": [
+      "State",
+      "_checkpoint_summary",
+      "test_replay_reruns_nodes_after_checkpoint",
+      "test_replay_from_final_checkpoint_is_noop",
+      "test_fork_reruns_with_modified_state",
+      "test_multiple_forks_from_same_checkpoint",
+      "test_replay_from_before_interrupt_refires",
+      "test_replay_from_before_interrupt_then_resume",
+      "test_replay_interrupt_stable_across_replays",
+      "test_fork_from_before_interrupt_refires",
+      "test_fork_from_interrupt_checkpoint_refires",
+      "test_sequential_interrupts_fork_from_middle",
+      "test_multiple_interrupts_in_one_node",
+      "test_subgraph_replay_from_before",
+      "test_subgraph_fork_from_before",
+      "test_subgraph_interrupt_replay_from_parent",
+      "test_subgraph_interrupt_replay_from_interrupt_checkpoint",
+      "test_subgraph_interrupt_replay_from_parent_then_resume",
+      "test_subgraph_interrupt_resume_with_explicit_head_checkpoint_id",
+      "test_subgraph_replay_loads_accumulated_state_then_resume",
+      "test_subgraph_interrupt_full_flow",
+      "test_subgraph_interrupt_full_flow_no_sub_checkpointer",
+      "test_subgraph_replay_from_subgraph_checkpoint",
+      "test_subgraph_time_travel_to_first_interrupt",
+      "test_subgraph_time_travel_to_second_interrupt",
+      "test_subgraph_time_travel_resume_from_first_interrupt",
+      "test_subgraph_time_travel_resume_from_second_interrupt",
+      "test_subgraph_time_travel_checkpoint_pattern",
+      "test_subgraph_time_travel_after_completion",
+      "test_3_levels_deep_time_travel_to_first_interrupt",
+      "test_3_levels_deep_time_travel_to_second_interrupt",
+      "test_3_levels_deep_time_travel_to_middle_subgraph",
+      "test_3_levels_deep_middle_has_interrupts",
+      "test_copy_fork_retriggers_interrupt",
+      "test_copy_fork_creates_sibling_checkpoint",
+      "test_update_state_with_none_values",
+      "test_get_state_with_subgraphs_returns_subgraph_state",
+      "test_checkpoint_ns_accessible_in_subgraph",
+      "test_stateful_subgraph_retains_state_on_parent_replay",
+      "test_stateful_subgraph_retains_state_on_parent_fork",
+      "test_stateful_subgraph_loads_state_across_ticks",
+      "test_replay_creates_branch_preserving_old_checkpoints",
+      "test_replay_creates_branch_in_subgraph",
+      "test_fork_creates_branch_preserving_old_checkpoints",
+      "test_fork_creates_branch_in_subgraph",
+      "test_stateless_subgraph_starts_fresh_on_parent_replay",
+      "test_stateful_subgraph_loads_latest_after_replay",
+      "test_three_level_nested_subgraph_loads_state_on_replay",
+      "test_three_level_nested_subgraph_loads_state_on_fork",
+      "test_replay_from_first_invocation_checkpoint",
+      "test_parallel_subgraph_nodes_load_correct_state_on_replay",
+      "test_subgraph_called_in_loop_loads_state_on_replay"
+    ],
+    "tests/test_tool_stream_handler.py": [
+      "_State",
+      "_caller_sync",
+      "_caller_async",
+      "_build_graph",
+      "_tool_events",
+      "TestSyncGraphSyncTool",
+      "TestAsyncGraphAsyncTool",
+      "TestConcurrentToolCalls",
+      "TestSubgraphNamespacePropagation"
+    ],
+    "tests/test_tracing_interops.py": [
+      "_get_mock_client",
+      "_get_calls",
+      "wait_for",
+      "test_nested_tracing"
+    ],
+    "tests/test_type_checking.py": [
+      "test_typed_dict_state",
+      "test_dataclass_state",
+      "test_base_model_state",
+      "test_plain_class_not_allowed",
+      "test_input_state_specified",
+      "test_invoke_with_all_valid_types",
+      "test_add_node_with_explicit_input_schema"
+    ],
+    "tests/test_utils.py": [
+      "test_is_async",
+      "test_is_generator",
+      "rt_graph",
+      "test_runnable_callable_tracing_nested",
+      "test_runnable_callable_tracing_nested_async",
+      "test_is_optional_type",
+      "test_is_required",
+      "test_enhanced_type_hints",
+      "test_is_not_empty",
+      "test_configurable_metadata",
+      "test_callback_manager_copies_whitelisted_configurable_ids_to_metadata",
+      "test_callback_manager_copies_configurable_ids_to_tracing_metadata",
+      "_TrackingCB",
+      "test_merge_callbacks_none_base_list_new",
+      "test_merge_callbacks_list_base_list_new",
+      "test_merge_callbacks_list_base_manager_new",
+      "test_merge_callbacks_manager_base_list_new",
+      "test_merge_callbacks_manager_base_manager_new",
+      "test_merge_callbacks_none_base_none_new",
+      "test_ensure_config_merges_configurable_across_configs",
+      "test_ensure_config_configurable_later_wins_per_key",
+      "test_ensure_config_merges_metadata_across_configs",
+      "test_ensure_config_metadata_later_wins_per_key",
+      "test_ensure_config_merges_tags_across_configs",
+      "test_ensure_config_tags_concat_preserves_order_and_duplicates",
+      "test_ensure_config_merges_callbacks_across_configs",
+      "test_ensure_config_none_inputs_ignored",
+      "test_ensure_config_empty_inputs"
+    ]
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "Makefile",
+          "language": "makefile",
+          "sizeLines": 160,
+          "fileCategory": "infra"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 101,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "pyproject.toml",
+          "language": "toml",
+          "sizeLines": 128,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "Makefile": [],
+        "README.md": [],
+        "pyproject.toml": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "bench/__init__.py",
+          "language": "python",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/__main__.py",
+          "language": "python",
+          "sizeLines": 520,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/fanout_to_subgraph.py",
+          "language": "python",
+          "sizeLines": 134,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/pydantic_state.py",
+          "language": "python",
+          "sizeLines": 327,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/react_agent.py",
+          "language": "python",
+          "sizeLines": 80,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/sequential.py",
+          "language": "python",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/serde_allowlist.py",
+          "language": "python",
+          "sizeLines": 81,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/wide_dict.py",
+          "language": "python",
+          "sizeLines": 151,
+          "fileCategory": "code"
+        },
+        {
+          "path": "bench/wide_state.py",
+          "language": "python",
+          "sizeLines": 163,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/__init__.py",
+          "language": "python",
+          "sizeLines": 4,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_cache.py",
+          "language": "python",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_config.py",
+          "language": "python",
+          "sizeLines": 418,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_constants.py",
+          "language": "python",
+          "sizeLines": 131,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_fields.py",
+          "language": "python",
+          "sizeLines": 213,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_future.py",
+          "language": "python",
+          "sizeLines": 220,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_pydantic.py",
+          "language": "python",
+          "sizeLines": 275,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_queue.py",
+          "language": "python",
+          "sizeLines": 124,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_replay.py",
+          "language": "python",
+          "sizeLines": 90,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_retry.py",
+          "language": "python",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_runnable.py",
+          "language": "python",
+          "sizeLines": 942,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_scratchpad.py",
+          "language": "python",
+          "sizeLines": 19,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_serde.py",
+          "language": "python",
+          "sizeLines": 253,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_timeout.py",
+          "language": "python",
+          "sizeLines": 25,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/_internal/_typing.py",
+          "language": "python",
+          "sizeLines": 54,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/callbacks.py",
+          "language": "python",
+          "sizeLines": 394,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "bench/__init__.py": [],
+        "bench/__main__.py": [],
+        "bench/fanout_to_subgraph.py": [],
+        "bench/pydantic_state.py": [],
+        "bench/react_agent.py": [],
+        "bench/sequential.py": [],
+        "bench/serde_allowlist.py": [],
+        "bench/wide_dict.py": [],
+        "bench/wide_state.py": [],
+        "langgraph/_internal/__init__.py": [],
+        "langgraph/_internal/_cache.py": [],
+        "langgraph/_internal/_config.py": [],
+        "langgraph/_internal/_constants.py": [],
+        "langgraph/_internal/_fields.py": [],
+        "langgraph/_internal/_future.py": [],
+        "langgraph/_internal/_pydantic.py": [],
+        "langgraph/_internal/_queue.py": [],
+        "langgraph/_internal/_replay.py": [],
+        "langgraph/_internal/_retry.py": [],
+        "langgraph/_internal/_runnable.py": [],
+        "langgraph/_internal/_scratchpad.py": [],
+        "langgraph/_internal/_serde.py": [],
+        "langgraph/_internal/_timeout.py": [],
+        "langgraph/_internal/_typing.py": [],
+        "langgraph/callbacks.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "langgraph/channels/__init__.py",
+          "language": "python",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/any_value.py",
+          "language": "python",
+          "sizeLines": 72,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/base.py",
+          "language": "python",
+          "sizeLines": 121,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/binop.py",
+          "language": "python",
+          "sizeLines": 141,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/delta.py",
+          "language": "python",
+          "sizeLines": 204,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/ephemeral_value.py",
+          "language": "python",
+          "sizeLines": 79,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/last_value.py",
+          "language": "python",
+          "sizeLines": 151,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/named_barrier_value.py",
+          "language": "python",
+          "sizeLines": 167,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/topic.py",
+          "language": "python",
+          "sizeLines": 94,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/channels/untracked_value.py",
+          "language": "python",
+          "sizeLines": 73,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/config.py",
+          "language": "python",
+          "sizeLines": 196,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/constants.py",
+          "language": "python",
+          "sizeLines": 64,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/errors.py",
+          "language": "python",
+          "sizeLines": 241,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/func/__init__.py",
+          "language": "python",
+          "sizeLines": 620,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/graph/__init__.py",
+          "language": "python",
+          "sizeLines": 12,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/graph/_branch.py",
+          "language": "python",
+          "sizeLines": 225,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/graph/_node.py",
+          "language": "python",
+          "sizeLines": 95,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/graph/message.py",
+          "language": "python",
+          "sizeLines": 437,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/graph/state.py",
+          "language": "python",
+          "sizeLines": 1964,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/graph/ui.py",
+          "language": "python",
+          "sizeLines": 227,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/managed/__init__.py",
+          "language": "python",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/managed/base.py",
+          "language": "python",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/managed/is_last_step.py",
+          "language": "python",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/__init__.py",
+          "language": "python",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_algo.py",
+          "language": "python",
+          "sizeLines": 1460,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "langgraph/channels/__init__.py": [],
+        "langgraph/channels/any_value.py": [],
+        "langgraph/channels/base.py": [],
+        "langgraph/channels/binop.py": [],
+        "langgraph/channels/delta.py": [],
+        "langgraph/channels/ephemeral_value.py": [],
+        "langgraph/channels/last_value.py": [],
+        "langgraph/channels/named_barrier_value.py": [],
+        "langgraph/channels/topic.py": [],
+        "langgraph/channels/untracked_value.py": [],
+        "langgraph/config.py": [],
+        "langgraph/constants.py": [],
+        "langgraph/errors.py": [],
+        "langgraph/func/__init__.py": [],
+        "langgraph/graph/__init__.py": [],
+        "langgraph/graph/_branch.py": [],
+        "langgraph/graph/_node.py": [],
+        "langgraph/graph/message.py": [],
+        "langgraph/graph/state.py": [],
+        "langgraph/graph/ui.py": [],
+        "langgraph/managed/__init__.py": [],
+        "langgraph/managed/base.py": [],
+        "langgraph/managed/is_last_step.py": [],
+        "langgraph/pregel/__init__.py": [],
+        "langgraph/pregel/_algo.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "langgraph/pregel/_call.py",
+          "language": "python",
+          "sizeLines": 298,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_checkpoint.py",
+          "language": "python",
+          "sizeLines": 238,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_config.py",
+          "language": "python",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_draw.py",
+          "language": "python",
+          "sizeLines": 294,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_executor.py",
+          "language": "python",
+          "sizeLines": 223,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_io.py",
+          "language": "python",
+          "sizeLines": 174,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_log.py",
+          "language": "python",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_loop.py",
+          "language": "python",
+          "sizeLines": 1963,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_messages.py",
+          "language": "python",
+          "sizeLines": 461,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_read.py",
+          "language": "python",
+          "sizeLines": 298,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_remote_run_stream.py",
+          "language": "python",
+          "sizeLines": 374,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_retry.py",
+          "language": "python",
+          "sizeLines": 854,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_runner.py",
+          "language": "python",
+          "sizeLines": 941,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_tools.py",
+          "language": "python",
+          "sizeLines": 268,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_utils.py",
+          "language": "python",
+          "sizeLines": 291,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_validate.py",
+          "language": "python",
+          "sizeLines": 120,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/_write.py",
+          "language": "python",
+          "sizeLines": 192,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/debug.py",
+          "language": "python",
+          "sizeLines": 302,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/main.py",
+          "language": "python",
+          "sizeLines": 4314,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/protocol.py",
+          "language": "python",
+          "sizeLines": 288,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/remote.py",
+          "language": "python",
+          "sizeLines": 1308,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/pregel/types.py",
+          "language": "python",
+          "sizeLines": 38,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/py.typed",
+          "language": "typed",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/runtime.py",
+          "language": "python",
+          "sizeLines": 310,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/stream/__init__.py",
+          "language": "python",
+          "sizeLines": 45,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "langgraph/pregel/_call.py": [],
+        "langgraph/pregel/_checkpoint.py": [],
+        "langgraph/pregel/_config.py": [],
+        "langgraph/pregel/_draw.py": [],
+        "langgraph/pregel/_executor.py": [],
+        "langgraph/pregel/_io.py": [],
+        "langgraph/pregel/_log.py": [],
+        "langgraph/pregel/_loop.py": [],
+        "langgraph/pregel/_messages.py": [],
+        "langgraph/pregel/_read.py": [],
+        "langgraph/pregel/_remote_run_stream.py": [],
+        "langgraph/pregel/_retry.py": [],
+        "langgraph/pregel/_runner.py": [],
+        "langgraph/pregel/_tools.py": [],
+        "langgraph/pregel/_utils.py": [],
+        "langgraph/pregel/_validate.py": [],
+        "langgraph/pregel/_write.py": [],
+        "langgraph/pregel/debug.py": [],
+        "langgraph/pregel/main.py": [],
+        "langgraph/pregel/protocol.py": [],
+        "langgraph/pregel/remote.py": [],
+        "langgraph/pregel/types.py": [],
+        "langgraph/py.typed": [],
+        "langgraph/runtime.py": [],
+        "langgraph/stream/__init__.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": "langgraph/stream/_convert.py",
+          "language": "python",
+          "sizeLines": 32,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/stream/_mux.py",
+          "language": "python",
+          "sizeLines": 523,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/stream/_types.py",
+          "language": "python",
+          "sizeLines": 330,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/stream/run_stream.py",
+          "language": "python",
+          "sizeLines": 608,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/stream/stream_channel.py",
+          "language": "python",
+          "sizeLines": 341,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/stream/transformers.py",
+          "language": "python",
+          "sizeLines": 1034,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/types.py",
+          "language": "python",
+          "sizeLines": 978,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/typing.py",
+          "language": "python",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/utils/__init__.py",
+          "language": "python",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/utils/config.py",
+          "language": "python",
+          "sizeLines": 4,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/utils/runnable.py",
+          "language": "python",
+          "sizeLines": 3,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/version.py",
+          "language": "python",
+          "sizeLines": 12,
+          "fileCategory": "code"
+        },
+        {
+          "path": "langgraph/warnings.py",
+          "language": "python",
+          "sizeLines": 69,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/__init__.py",
+          "language": "python",
+          "sizeLines": 0,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/__snapshots__/test_large_cases.ambr",
+          "language": "ambr",
+          "sizeLines": 311,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/__snapshots__/test_pregel_async.ambr",
+          "language": "ambr",
+          "sizeLines": 143,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/__snapshots__/test_pregel.ambr",
+          "language": "ambr",
+          "sizeLines": 1274,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/agents.py",
+          "language": "python",
+          "sizeLines": 30,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/any_int.py",
+          "language": "python",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/any_str.py",
+          "language": "python",
+          "sizeLines": 92,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/compose-postgres.yml",
+          "language": "yaml",
+          "sizeLines": 17,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tests/compose-redis.yml",
+          "language": "yaml",
+          "sizeLines": 16,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tests/conftest_checkpointer.py",
+          "language": "python",
+          "sizeLines": 239,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/conftest_store.py",
+          "language": "python",
+          "sizeLines": 145,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/conftest.py",
+          "language": "python",
+          "sizeLines": 226,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "langgraph/stream/_convert.py": [],
+        "langgraph/stream/_mux.py": [],
+        "langgraph/stream/_types.py": [],
+        "langgraph/stream/run_stream.py": [],
+        "langgraph/stream/stream_channel.py": [],
+        "langgraph/stream/transformers.py": [],
+        "langgraph/types.py": [],
+        "langgraph/typing.py": [],
+        "langgraph/utils/__init__.py": [],
+        "langgraph/utils/config.py": [],
+        "langgraph/utils/runnable.py": [],
+        "langgraph/version.py": [],
+        "langgraph/warnings.py": [],
+        "tests/__init__.py": [],
+        "tests/__snapshots__/test_large_cases.ambr": [],
+        "tests/__snapshots__/test_pregel_async.ambr": [],
+        "tests/__snapshots__/test_pregel.ambr": [],
+        "tests/agents.py": [],
+        "tests/any_int.py": [],
+        "tests/any_str.py": [],
+        "tests/compose-postgres.yml": [],
+        "tests/compose-redis.yml": [],
+        "tests/conftest_checkpointer.py": [],
+        "tests/conftest_store.py": [],
+        "tests/conftest.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": "tests/example_app/example_graph.py",
+          "language": "python",
+          "sizeLines": 89,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/example_app/langgraph.json",
+          "language": "json",
+          "sizeLines": 7,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tests/example_app/requirements.txt",
+          "language": "txt",
+          "sizeLines": 1,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "tests/fake_chat.py",
+          "language": "python",
+          "sizeLines": 157,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/fake_tracer.py",
+          "language": "python",
+          "sizeLines": 91,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/memory_assert.py",
+          "language": "python",
+          "sizeLines": 101,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/messages.py",
+          "language": "python",
+          "sizeLines": 50,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_algo.py",
+          "language": "python",
+          "sizeLines": 67,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_channels.py",
+          "language": "python",
+          "sizeLines": 672,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_checkpoint_migration.py",
+          "language": "python",
+          "sizeLines": 1727,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_config_async.py",
+          "language": "python",
+          "sizeLines": 116,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_delta_channel_benchmark.py",
+          "language": "python",
+          "sizeLines": 321,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_delta_channel_exit_mode.py",
+          "language": "python",
+          "sizeLines": 372,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_delta_channel_id_stability.py",
+          "language": "python",
+          "sizeLines": 140,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_delta_channel_migration.py",
+          "language": "python",
+          "sizeLines": 618,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_delta_channel_supersteps_bound.py",
+          "language": "python",
+          "sizeLines": 195,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_deprecation.py",
+          "language": "python",
+          "sizeLines": 379,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_graph_callbacks.py",
+          "language": "python",
+          "sizeLines": 344,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_interleave_arrival_order.py",
+          "language": "python",
+          "sizeLines": 359,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_interrupt_migration.py",
+          "language": "python",
+          "sizeLines": 50,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_interruption.py",
+          "language": "python",
+          "sizeLines": 92,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_large_cases_async.py",
+          "language": "python",
+          "sizeLines": 4049,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_large_cases.py",
+          "language": "python",
+          "sizeLines": 6979,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_managed_values.py",
+          "language": "python",
+          "sizeLines": 27,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_messages_state.py",
+          "language": "python",
+          "sizeLines": 369,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "tests/example_app/example_graph.py": [],
+        "tests/example_app/langgraph.json": [],
+        "tests/example_app/requirements.txt": [],
+        "tests/fake_chat.py": [],
+        "tests/fake_tracer.py": [],
+        "tests/memory_assert.py": [],
+        "tests/messages.py": [],
+        "tests/test_algo.py": [],
+        "tests/test_channels.py": [],
+        "tests/test_checkpoint_migration.py": [],
+        "tests/test_config_async.py": [],
+        "tests/test_delta_channel_benchmark.py": [],
+        "tests/test_delta_channel_exit_mode.py": [],
+        "tests/test_delta_channel_id_stability.py": [],
+        "tests/test_delta_channel_migration.py": [],
+        "tests/test_delta_channel_supersteps_bound.py": [],
+        "tests/test_deprecation.py": [],
+        "tests/test_graph_callbacks.py": [],
+        "tests/test_interleave_arrival_order.py": [],
+        "tests/test_interrupt_migration.py": [],
+        "tests/test_interruption.py": [],
+        "tests/test_large_cases_async.py": [],
+        "tests/test_large_cases.py": [],
+        "tests/test_managed_values.py": [],
+        "tests/test_messages_state.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": "tests/test_parent_command_async.py",
+          "language": "python",
+          "sizeLines": 57,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_parent_command.py",
+          "language": "python",
+          "sizeLines": 53,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_pregel_async.py",
+          "language": "python",
+          "sizeLines": 9890,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_pregel_debug.py",
+          "language": "python",
+          "sizeLines": 185,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_pregel_stream_events_v3.py",
+          "language": "python",
+          "sizeLines": 1622,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_pregel.py",
+          "language": "python",
+          "sizeLines": 9686,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_pydantic.py",
+          "language": "python",
+          "sizeLines": 362,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_remote_graph_v3.py",
+          "language": "python",
+          "sizeLines": 658,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_remote_graph.py",
+          "language": "python",
+          "sizeLines": 1485,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_retry.py",
+          "language": "python",
+          "sizeLines": 2943,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_runnable.py",
+          "language": "python",
+          "sizeLines": 414,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_runtime.py",
+          "language": "python",
+          "sizeLines": 1166,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_serde_allowlist.py",
+          "language": "python",
+          "sizeLines": 159,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_state.py",
+          "language": "python",
+          "sizeLines": 373,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_before_builtins.py",
+          "language": "python",
+          "sizeLines": 296,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_data_transformers.py",
+          "language": "python",
+          "sizeLines": 707,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_events_v3_e2e.py",
+          "language": "python",
+          "sizeLines": 808,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_events_v3_kwarg_forwarding.py",
+          "language": "python",
+          "sizeLines": 108,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_events_v3.py",
+          "language": "python",
+          "sizeLines": 1180,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_lifecycle_transformer.py",
+          "language": "python",
+          "sizeLines": 680,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_messages_transformer.py",
+          "language": "python",
+          "sizeLines": 940,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_stream_subgraph_transformer.py",
+          "language": "python",
+          "sizeLines": 856,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_subgraph_persistence_async.py",
+          "language": "python",
+          "sizeLines": 662,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_subgraph_persistence.py",
+          "language": "python",
+          "sizeLines": 641,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_time_travel_async.py",
+          "language": "python",
+          "sizeLines": 3211,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "tests/test_parent_command_async.py": [],
+        "tests/test_parent_command.py": [],
+        "tests/test_pregel_async.py": [],
+        "tests/test_pregel_debug.py": [],
+        "tests/test_pregel_stream_events_v3.py": [],
+        "tests/test_pregel.py": [],
+        "tests/test_pydantic.py": [],
+        "tests/test_remote_graph_v3.py": [],
+        "tests/test_remote_graph.py": [],
+        "tests/test_retry.py": [],
+        "tests/test_runnable.py": [],
+        "tests/test_runtime.py": [],
+        "tests/test_serde_allowlist.py": [],
+        "tests/test_state.py": [],
+        "tests/test_stream_before_builtins.py": [],
+        "tests/test_stream_data_transformers.py": [],
+        "tests/test_stream_events_v3_e2e.py": [],
+        "tests/test_stream_events_v3_kwarg_forwarding.py": [],
+        "tests/test_stream_events_v3.py": [],
+        "tests/test_stream_lifecycle_transformer.py": [],
+        "tests/test_stream_messages_transformer.py": [],
+        "tests/test_stream_subgraph_transformer.py": [],
+        "tests/test_subgraph_persistence_async.py": [],
+        "tests/test_subgraph_persistence.py": [],
+        "tests/test_time_travel_async.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": "tests/test_time_travel.py",
+          "language": "python",
+          "sizeLines": 3966,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_tool_stream_handler.py",
+          "language": "python",
+          "sizeLines": 290,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_tracing_interops.py",
+          "language": "python",
+          "sizeLines": 118,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_type_checking.py",
+          "language": "python",
+          "sizeLines": 161,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_utils.py",
+          "language": "python",
+          "sizeLines": 556,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "tests/test_time_travel.py": [],
+        "tests/test_tool_stream_handler.py": [],
+        "tests/test_tracing_interops.py": [],
+        "tests/test_type_checking.py": [],
+        "tests/test_utils.py": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

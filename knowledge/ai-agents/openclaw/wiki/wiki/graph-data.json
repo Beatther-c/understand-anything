@@ -1,0 +1,126 @@
+{
+  "nodes": [
+    {
+      "id": "lesson:01-platform-map",
+      "label": "OpenClaw 全局架构：本地优先个人 AI 助手",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:01-platform-map",
+      "label": "本地优先个人 AI 助手",
+      "type": "concept"
+    },
+    {
+      "id": "lesson:02-agent-core-loop",
+      "label": "Agent Core：从消息到工具调用的最小循环",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:02-agent-core-loop",
+      "label": "从消息到工具调用的最小循环",
+      "type": "concept"
+    },
+    {
+      "id": "symbol:agentLoop",
+      "label": "agentLoop/runLoop",
+      "type": "source_symbol"
+    },
+    {
+      "id": "lesson:03-message-context-stream",
+      "label": "消息、上下文与流式事件",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:03-message-context-stream",
+      "label": "",
+      "type": "concept"
+    },
+    {
+      "id": "lesson:04-tools-policy-sandbox",
+      "label": "工具系统：定义、策略、沙箱与执行前后钩子",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:04-tools-policy-sandbox",
+      "label": "定义、策略、沙箱与执行前后钩子",
+      "type": "concept"
+    },
+    {
+      "id": "lesson:05-embedded-runtime-provider",
+      "label": "内置 Runtime：模型选择、Provider、重试与故障转移",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:05-embedded-runtime-provider",
+      "label": "模型选择、Provider、重试与故障转移",
+      "type": "concept"
+    },
+    {
+      "id": "lesson:06-sessions-acp-control-plane",
+      "label": "会话与 ACP 控制面：把一次 turn 变成可管理任务",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:06-sessions-acp-control-plane",
+      "label": "把一次 turn 变成可管理任务",
+      "type": "concept"
+    },
+    {
+      "id": "lesson:07-plugin-sdk-providers",
+      "label": "插件 SDK 与 Provider 扩展：把生态接入运行时",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:07-plugin-sdk-providers",
+      "label": "把生态接入运行时",
+      "type": "concept"
+    },
+    {
+      "id": "lesson:08-devices-channels-security",
+      "label": "渠道、设备节点与安全默认值",
+      "type": "lesson"
+    },
+    {
+      "id": "concept:08-devices-channels-security",
+      "label": "",
+      "type": "concept"
+    }
+  ],
+  "edges": [
+    {
+      "source": "concept:02-agent-core-loop",
+      "target": "symbol:agentLoop",
+      "label": "explained_by"
+    },
+    {
+      "source": "concept:03-message-context-stream",
+      "target": "symbol:agentLoop",
+      "label": "depends_on"
+    },
+    {
+      "source": "concept:04-tools-policy-sandbox",
+      "target": "concept:02-agent-core-loop",
+      "label": "extends"
+    },
+    {
+      "source": "concept:05-embedded-runtime-provider",
+      "target": "concept:02-agent-core-loop",
+      "label": "adapts"
+    },
+    {
+      "source": "concept:06-sessions-acp-control-plane",
+      "target": "concept:05-embedded-runtime-provider",
+      "label": "composes"
+    },
+    {
+      "source": "concept:07-plugin-sdk-providers",
+      "target": "concept:05-embedded-runtime-provider",
+      "label": "extends"
+    },
+    {
+      "source": "concept:08-devices-channels-security",
+      "target": "concept:06-sessions-acp-control-plane",
+      "label": "depends_on"
+    }
+  ]
+}

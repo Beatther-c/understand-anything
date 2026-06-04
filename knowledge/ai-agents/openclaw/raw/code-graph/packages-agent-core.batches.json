@@ -1,0 +1,511 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 40,
+  "totalBatches": 2,
+  "exportsByPath": {
+    "src/agent-loop.test.ts": [],
+    "src/agent-loop.ts": [
+      "agentLoop",
+      "agentLoopContinue",
+      "runAgentLoop",
+      "runAgentLoopContinue"
+    ],
+    "src/agent.ts": [
+      "QueueMode",
+      "Agent"
+    ],
+    "src/harness/agent-harness.ts": [
+      "CoreAgentHarness",
+      "AgentHarness"
+    ],
+    "src/harness/compaction/branch-summarization.ts": [
+      "FileOperations",
+      "collectEntriesForBranchSummaryFromBranches",
+      "collectEntriesForBranchSummary",
+      "prepareBranchEntries",
+      "generateBranchSummary"
+    ],
+    "src/harness/compaction/compaction.ts": [
+      "DEFAULT_COMPACTION_SETTINGS",
+      "calculateContextTokens",
+      "getLastAssistantUsage",
+      "estimateContextTokens",
+      "shouldCompact",
+      "estimateTokens",
+      "findTurnStartIndex",
+      "findCutPoint",
+      "SUMMARIZATION_SYSTEM_PROMPT",
+      "generateSummary",
+      "prepareCompaction",
+      "serializeConversation",
+      "compact"
+    ],
+    "src/harness/compaction/utils.ts": [
+      "createFileOps",
+      "extractFileOpsFromMessage",
+      "computeFileLists",
+      "formatFileOperations",
+      "serializeConversation"
+    ],
+    "src/harness/env/kill-tree.ts": [
+      "killProcessTree",
+      "signalProcessTree"
+    ],
+    "src/harness/env/nodejs.test.ts": [],
+    "src/harness/env/nodejs.ts": [
+      "resolveExecTimeoutMs",
+      "NodeExecutionEnv"
+    ],
+    "src/harness/file-loader-utils.ts": [
+      "parseFrontmatter",
+      "resolveFileInfoKind",
+      "joinEnvPath",
+      "dirnameEnvPath",
+      "basenameEnvPath",
+      "relativeEnvPath"
+    ],
+    "src/harness/messages.test.ts": [],
+    "src/harness/messages.ts": [
+      "BashExecutionMessage",
+      "BranchSummaryMessage",
+      "CompactionSummaryMessage",
+      "CustomMessage",
+      "asAgentMessage",
+      "COMPACTION_SUMMARY_PREFIX",
+      "COMPACTION_SUMMARY_SUFFIX",
+      "BRANCH_SUMMARY_PREFIX",
+      "BRANCH_SUMMARY_SUFFIX",
+      "bashExecutionToText",
+      "createBranchSummaryMessage",
+      "createCompactionSummaryMessage",
+      "createCustomMessage",
+      "convertToLlm"
+    ],
+    "src/harness/prompt-template-arguments.ts": [
+      "parseCommandArgs",
+      "substituteArgs"
+    ],
+    "src/harness/prompt-templates.test.ts": [],
+    "src/harness/prompt-templates.ts": [
+      "parseCommandArgs",
+      "substituteArgs",
+      "loadPromptTemplates",
+      "loadSourcedPromptTemplates",
+      "formatPromptTemplateInvocation"
+    ],
+    "src/harness/session/jsonl-repo.ts": [
+      "JsonlSessionRepo"
+    ],
+    "src/harness/session/jsonl-storage.test.ts": [],
+    "src/harness/session/jsonl-storage.ts": [
+      "loadJsonlSessionMetadata",
+      "JsonlSessionStorage"
+    ],
+    "src/harness/session/memory-repo.ts": [
+      "InMemorySessionRepo"
+    ],
+    "src/harness/session/memory-storage.test.ts": [],
+    "src/harness/session/memory-storage.ts": [
+      "InMemorySessionStorage"
+    ],
+    "src/harness/session/repo-utils.ts": [
+      "createSessionId",
+      "createTimestamp",
+      "toSession",
+      "getFileSystemResultOrThrow",
+      "getEntriesToFork"
+    ],
+    "src/harness/session/session.ts": [
+      "buildSessionContext",
+      "Session"
+    ],
+    "src/harness/session/storage-base.ts": [
+      "leafIdAfterEntry"
+    ],
+    "src/harness/session/timestamps.ts": [
+      "parseSessionTimestampMs",
+      "requireSessionTimestampMs"
+    ],
+    "src/harness/session/uuid.ts": [
+      "uuidv7"
+    ],
+    "src/harness/skills.ts": [
+      "formatSkillInvocation",
+      "loadSkills",
+      "loadSourcedSkills"
+    ],
+    "src/harness/system-prompt.ts": [
+      "formatSkillsForSystemPrompt"
+    ],
+    "src/harness/types.ts": [
+      "ok",
+      "err",
+      "getOrThrow",
+      "getOrUndefined",
+      "toError",
+      "FileError",
+      "ExecutionError",
+      "CompactionError",
+      "BranchSummaryError",
+      "SessionError",
+      "AgentHarnessError",
+      "Session",
+      "AgentHarness"
+    ],
+    "src/harness/utils/shell-output.ts": [
+      "sanitizeBinaryOutput",
+      "executeShellWithCapture"
+    ],
+    "src/harness/utils/truncate.test.ts": [],
+    "src/harness/utils/truncate.ts": [
+      "DEFAULT_MAX_LINES",
+      "DEFAULT_MAX_BYTES",
+      "GREP_MAX_LINE_LENGTH",
+      "formatSize",
+      "truncateHead",
+      "truncateTail",
+      "truncateLine"
+    ],
+    "src/index.ts": [
+      "uuidv7",
+      "BranchPreparation",
+      "BranchPathEntry",
+      "BranchSummaryDetails",
+      "CollectBranchPathEntriesResult",
+      "CollectEntriesResult",
+      "collectEntriesForBranchSummary",
+      "collectEntriesForBranchSummaryFromBranches",
+      "generateBranchSummary",
+      "prepareBranchEntries",
+      "calculateContextTokens",
+      "compact",
+      "DEFAULT_COMPACTION_SETTINGS",
+      "estimateContextTokens",
+      "estimateTokens",
+      "findCutPoint",
+      "findTurnStartIndex",
+      "generateSummary",
+      "getLastAssistantUsage",
+      "prepareCompaction",
+      "serializeConversation",
+      "shouldCompact",
+      "CompactionDetails",
+      "CompactionPreparation",
+      "CompactionResult",
+      "CompactionSettings",
+      "ContextUsageEstimate"
+    ],
+    "src/llm.ts": [],
+    "src/node.ts": [
+      "NodeExecutionEnv"
+    ],
+    "src/runtime-deps.ts": [
+      "resolveAgentCoreStreamFn",
+      "resolveAgentCoreCompleteFn"
+    ],
+    "src/types.ts": [],
+    "src/validation.ts": [
+      "validateToolArguments",
+      "validateToolCall"
+    ]
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 123,
+          "fileCategory": "config"
+        },
+        {
+          "path": "src/agent-loop.test.ts",
+          "language": "typescript",
+          "sizeLines": 74,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/agent-loop.ts",
+          "language": "typescript",
+          "sizeLines": 851,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/agent.ts",
+          "language": "typescript",
+          "sizeLines": 611,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/agent-harness.ts",
+          "language": "typescript",
+          "sizeLines": 1205,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/compaction/branch-summarization.ts",
+          "language": "typescript",
+          "sizeLines": 323,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/compaction/compaction.ts",
+          "language": "typescript",
+          "sizeLines": 872,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/compaction/utils.ts",
+          "language": "typescript",
+          "sizeLines": 167,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/env/kill-tree.ts",
+          "language": "typescript",
+          "sizeLines": 137,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/env/nodejs.test.ts",
+          "language": "typescript",
+          "sizeLines": 21,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/env/nodejs.ts",
+          "language": "typescript",
+          "sizeLines": 618,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/file-loader-utils.ts",
+          "language": "typescript",
+          "sizeLines": 106,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/messages.test.ts",
+          "language": "typescript",
+          "sizeLines": 40,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/messages.ts",
+          "language": "typescript",
+          "sizeLines": 178,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/prompt-template-arguments.ts",
+          "language": "typescript",
+          "sizeLines": 78,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/prompt-templates.test.ts",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/prompt-templates.ts",
+          "language": "typescript",
+          "sizeLines": 199,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/jsonl-repo.ts",
+          "language": "typescript",
+          "sizeLines": 205,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/jsonl-storage.test.ts",
+          "language": "typescript",
+          "sizeLines": 57,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/jsonl-storage.ts",
+          "language": "typescript",
+          "sizeLines": 238,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/memory-repo.ts",
+          "language": "typescript",
+          "sizeLines": 50,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/memory-storage.test.ts",
+          "language": "typescript",
+          "sizeLines": 62,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/memory-storage.ts",
+          "language": "typescript",
+          "sizeLines": 23,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/repo-utils.ts",
+          "language": "typescript",
+          "sizeLines": 61,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/session.ts",
+          "language": "typescript",
+          "sizeLines": 285,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "package.json": [],
+        "src/agent-loop.test.ts": [],
+        "src/agent-loop.ts": [],
+        "src/agent.ts": [],
+        "src/harness/agent-harness.ts": [],
+        "src/harness/compaction/branch-summarization.ts": [],
+        "src/harness/compaction/compaction.ts": [],
+        "src/harness/compaction/utils.ts": [],
+        "src/harness/env/kill-tree.ts": [],
+        "src/harness/env/nodejs.test.ts": [],
+        "src/harness/env/nodejs.ts": [],
+        "src/harness/file-loader-utils.ts": [],
+        "src/harness/messages.test.ts": [],
+        "src/harness/messages.ts": [],
+        "src/harness/prompt-template-arguments.ts": [],
+        "src/harness/prompt-templates.test.ts": [],
+        "src/harness/prompt-templates.ts": [],
+        "src/harness/session/jsonl-repo.ts": [],
+        "src/harness/session/jsonl-storage.test.ts": [],
+        "src/harness/session/jsonl-storage.ts": [],
+        "src/harness/session/memory-repo.ts": [],
+        "src/harness/session/memory-storage.test.ts": [],
+        "src/harness/session/memory-storage.ts": [],
+        "src/harness/session/repo-utils.ts": [],
+        "src/harness/session/session.ts": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "src/harness/session/storage-base.ts",
+          "language": "typescript",
+          "sizeLines": 159,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/timestamps.ts",
+          "language": "typescript",
+          "sizeLines": 15,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/session/uuid.ts",
+          "language": "typescript",
+          "sizeLines": 54,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/skills.ts",
+          "language": "typescript",
+          "sizeLines": 383,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/system-prompt.ts",
+          "language": "typescript",
+          "sizeLines": 39,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/types.ts",
+          "language": "typescript",
+          "sizeLines": 908,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/utils/shell-output.ts",
+          "language": "typescript",
+          "sizeLines": 174,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/utils/truncate.test.ts",
+          "language": "typescript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/harness/utils/truncate.ts",
+          "language": "typescript",
+          "sizeLines": 370,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/index.ts",
+          "language": "typescript",
+          "sizeLines": 52,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/llm.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/node.ts",
+          "language": "typescript",
+          "sizeLines": 2,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/runtime-deps.ts",
+          "language": "typescript",
+          "sizeLines": 44,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/types.ts",
+          "language": "typescript",
+          "sizeLines": 508,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/validation.ts",
+          "language": "typescript",
+          "sizeLines": 1,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/harness/session/storage-base.ts": [],
+        "src/harness/session/timestamps.ts": [],
+        "src/harness/session/uuid.ts": [],
+        "src/harness/skills.ts": [],
+        "src/harness/system-prompt.ts": [],
+        "src/harness/types.ts": [],
+        "src/harness/utils/shell-output.ts": [],
+        "src/harness/utils/truncate.test.ts": [],
+        "src/harness/utils/truncate.ts": [],
+        "src/index.ts": [],
+        "src/llm.ts": [],
+        "src/node.ts": [],
+        "src/runtime-deps.ts": [],
+        "src/types.ts": [],
+        "src/validation.ts": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

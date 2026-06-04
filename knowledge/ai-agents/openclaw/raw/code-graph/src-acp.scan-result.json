@@ -1,0 +1,605 @@
+{
+  "scriptCompleted": true,
+  "files": [
+    {
+      "path": "approval-classifier.test.ts",
+      "language": "typescript",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "approval-classifier.ts",
+      "language": "typescript",
+      "sizeLines": 228,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client-helpers.ts",
+      "language": "typescript",
+      "sizeLines": 232,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client.test.ts",
+      "language": "typescript",
+      "sizeLines": 915,
+      "fileCategory": "code"
+    },
+    {
+      "path": "client.ts",
+      "language": "typescript",
+      "sizeLines": 240,
+      "fileCategory": "code"
+    },
+    {
+      "path": "commands.ts",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/active-turns.ts",
+      "language": "typescript",
+      "sizeLines": 46,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.backend-failover.test.ts",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.backend-failover.ts",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.background-task.ts",
+      "language": "typescript",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.cancel-session.test.ts",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.cancel-session.ts",
+      "language": "typescript",
+      "sizeLines": 113,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.close-session.ts",
+      "language": "typescript",
+      "sizeLines": 146,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.core.ts",
+      "language": "typescript",
+      "sizeLines": 626,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.failover.test.ts",
+      "language": "typescript",
+      "sizeLines": 259,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.identity-reconcile.ts",
+      "language": "typescript",
+      "sizeLines": 174,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.initialize-session.test.ts",
+      "language": "typescript",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.initialize-session.ts",
+      "language": "typescript",
+      "sizeLines": 173,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.runtime-config.test.ts",
+      "language": "typescript",
+      "sizeLines": 924,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.runtime-controls.ts",
+      "language": "typescript",
+      "sizeLines": 206,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.runtime-handle-cache.ts",
+      "language": "typescript",
+      "sizeLines": 197,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.runtime-handle-ensure.ts",
+      "language": "typescript",
+      "sizeLines": 226,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.runtime-handles.test.ts",
+      "language": "typescript",
+      "sizeLines": 587,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.runtime-options-commands.ts",
+      "language": "typescript",
+      "sizeLines": 238,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.runtime-resume-state.ts",
+      "language": "typescript",
+      "sizeLines": 213,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.startup-identity-reconcile.test.ts",
+      "language": "typescript",
+      "sizeLines": 170,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.startup-identity-reconcile.ts",
+      "language": "typescript",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.status.ts",
+      "language": "typescript",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.test-helpers.ts",
+      "language": "typescript",
+      "sizeLines": 312,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.test.ts",
+      "language": "typescript",
+      "sizeLines": 1642,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.ts",
+      "language": "typescript",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.turn-results.test.ts",
+      "language": "typescript",
+      "sizeLines": 1060,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.turn-runner.ts",
+      "language": "typescript",
+      "sizeLines": 402,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.turn-stream.ts",
+      "language": "typescript",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.turn-timeout.ts",
+      "language": "typescript",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.types.ts",
+      "language": "typescript",
+      "sizeLines": 205,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/manager.utils.ts",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/runtime-cache.test.ts",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/runtime-cache.ts",
+      "language": "typescript",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/runtime-options.test.ts",
+      "language": "typescript",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/runtime-options.ts",
+      "language": "typescript",
+      "sizeLines": 455,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/session-actor-queue.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "control-plane/spawn.ts",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "conversation-id.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "event-ledger.test.ts",
+      "language": "typescript",
+      "sizeLines": 528,
+      "fileCategory": "code"
+    },
+    {
+      "path": "event-ledger.ts",
+      "language": "typescript",
+      "sizeLines": 953,
+      "fileCategory": "code"
+    },
+    {
+      "path": "event-mapper.test.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "event-mapper.ts",
+      "language": "typescript",
+      "sizeLines": 409,
+      "fileCategory": "code"
+    },
+    {
+      "path": "permission-relay.test.ts",
+      "language": "typescript",
+      "sizeLines": 152,
+      "fileCategory": "code"
+    },
+    {
+      "path": "permission-relay.ts",
+      "language": "typescript",
+      "sizeLines": 163,
+      "fileCategory": "code"
+    },
+    {
+      "path": "persistent-bindings.lifecycle.test.ts",
+      "language": "typescript",
+      "sizeLines": 304,
+      "fileCategory": "code"
+    },
+    {
+      "path": "persistent-bindings.lifecycle.ts",
+      "language": "typescript",
+      "sizeLines": 193,
+      "fileCategory": "code"
+    },
+    {
+      "path": "persistent-bindings.resolve.ts",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "persistent-bindings.test.ts",
+      "language": "typescript",
+      "sizeLines": 808,
+      "fileCategory": "code"
+    },
+    {
+      "path": "persistent-bindings.types.ts",
+      "language": "typescript",
+      "sizeLines": 172,
+      "fileCategory": "code"
+    },
+    {
+      "path": "policy.test.ts",
+      "language": "typescript",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "policy.ts",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "protocol-schema.test.ts",
+      "language": "typescript",
+      "sizeLines": 136,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/adapter-contract.testkit.ts",
+      "language": "typescript",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/availability.ts",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/errors.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/registry.test.ts",
+      "language": "typescript",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/registry.ts",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/session-meta.test.ts",
+      "language": "typescript",
+      "sizeLines": 319,
+      "fileCategory": "code"
+    },
+    {
+      "path": "runtime/session-meta.ts",
+      "language": "typescript",
+      "sizeLines": 495,
+      "fileCategory": "code"
+    },
+    {
+      "path": "secret-file.test.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "secret-file.ts",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server.startup.test.ts",
+      "language": "typescript",
+      "sizeLines": 399,
+      "fileCategory": "code"
+    },
+    {
+      "path": "server.ts",
+      "language": "typescript",
+      "sizeLines": 278,
+      "fileCategory": "code"
+    },
+    {
+      "path": "session-mapper.test.ts",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "session-mapper.ts",
+      "language": "typescript",
+      "sizeLines": 98,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.bridge-test-helpers.ts",
+      "language": "typescript",
+      "sizeLines": 172,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.cancel-scoping.test.ts",
+      "language": "typescript",
+      "sizeLines": 328,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.error-kind.test.ts",
+      "language": "typescript",
+      "sizeLines": 59,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.event-ledger.test.ts",
+      "language": "typescript",
+      "sizeLines": 390,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.final-snapshots.test.ts",
+      "language": "typescript",
+      "sizeLines": 152,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.lifecycle.test.ts",
+      "language": "typescript",
+      "sizeLines": 458,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.permission-relay.test.ts",
+      "language": "typescript",
+      "sizeLines": 469,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.presentation.ts",
+      "language": "typescript",
+      "sizeLines": 266,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.prompt-harness.test-support.ts",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.prompt-prefix.test.ts",
+      "language": "typescript",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.prompt-size.test.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.replay.test.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.replay.ts",
+      "language": "typescript",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-config.test.ts",
+      "language": "typescript",
+      "sizeLines": 360,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-lineage-meta.test.ts",
+      "language": "typescript",
+      "sizeLines": 221,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-list.test.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-list.ts",
+      "language": "typescript",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-rate-limit.test.ts",
+      "language": "typescript",
+      "sizeLines": 71,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-setup.test.ts",
+      "language": "typescript",
+      "sizeLines": 264,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-snapshot.test.ts",
+      "language": "typescript",
+      "sizeLines": 146,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.session-updates.ts",
+      "language": "typescript",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.set-session-mode.test.ts",
+      "language": "typescript",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.stop-reason.test.ts",
+      "language": "typescript",
+      "sizeLines": 603,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.test-helpers.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.tool-streaming.test.ts",
+      "language": "typescript",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "translator.ts",
+      "language": "typescript",
+      "sizeLines": 1689,
+      "fileCategory": "code"
+    },
+    {
+      "path": "types.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 98,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "moderate",
+  "stats": {
+    "filesScanned": 98,
+    "byCategory": {
+      "code": 98
+    },
+    "byLanguage": {
+      "typescript": 98
+    }
+  }
+}

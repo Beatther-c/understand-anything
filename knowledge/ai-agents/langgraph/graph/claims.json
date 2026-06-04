@@ -1,0 +1,115 @@
+[
+  {
+    "id": "claim-01-runnable",
+    "text": "StateGraph.compile 会把声明式节点/边转换为可 invoke/stream 的 CompiledStateGraph，而不是直接执行节点函数。",
+    "lesson": "01-runnable",
+    "confidence": "high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-stategraph-code",
+      "ev-compiled-code",
+      "ev-test-state-basic",
+      "ev-test-runnable"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-02-message-schema",
+    "text": "MessagesState 通过预定义 messages 字段和 add_messages reducer 支撑对话状态的增量合并。",
+    "lesson": "02-message-schema",
+    "confidence": "medium-high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-messages-state-code",
+      "ev-add-messages-code",
+      "ev-test-messages-state",
+      "ev-test-channels-overwrite"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-03-prompt-template",
+    "text": "LangGraph 的 prompt 装配通常发生在节点或 pre_model_hook 中，运行时通过 state/context/store 注入所需上下文。",
+    "lesson": "03-prompt-template",
+    "confidence": "medium-high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-runtime-code",
+      "ev-react-prompt-code",
+      "ev-test-react-prompt",
+      "ev-test-runtime-context"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-04-chat-model-adapter",
+    "text": "预构建 ReAct agent 会把模型调用封装成图节点，并校验模型绑定工具与传入工具集合的一致性。",
+    "lesson": "04-chat-model-adapter",
+    "confidence": "medium-high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-react-call-model-code",
+      "ev-tool-binding-code",
+      "ev-test-dynamic-model",
+      "ev-test-model-tool-mismatch"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-05-tool-interface",
+    "text": "ToolNode 会识别 AIMessage 中的工具调用，并把 InjectedState/InjectedStore 等系统参数从 LLM 可见 schema 中隔离出来。",
+    "lesson": "05-tool-interface",
+    "confidence": "medium-high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-toolnode-code",
+      "ev-injected-state-code",
+      "ev-test-toolnode",
+      "ev-test-injected-state"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-06-callback-tracing",
+    "text": "Pregel.stream/astream 提供多种 stream_mode，使调用方可以观察值、更新、消息、debug 和 checkpoint 事件。",
+    "lesson": "06-callback-tracing",
+    "confidence": "medium-high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-pregel-stream-code",
+      "ev-debug-code",
+      "ev-test-stream-events",
+      "ev-test-debug-checkpoints"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-07-agent-loop",
+    "text": "LangGraph 用条件边和 Command 表达 agent 的循环、跳转、暂停和恢复，而不是把控制流藏在 while 循环里。",
+    "lesson": "07-agent-loop",
+    "confidence": "medium-high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-command-code",
+      "ev-interrupt-code",
+      "ev-react-loop-code",
+      "ev-test-interrupt-loop",
+      "ev-test-parent-command"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-08-provider-integration",
+    "text": "LangGraph 把本地运行时的 checkpoint/store 契约与远程 SDK 契约分离，使同一图可以本地执行或通过服务端线程/运行接口执行。",
+    "lesson": "08-provider-integration",
+    "confidence": "medium-high",
+    "evidence_level": "code+tests",
+    "evidence_ids": [
+      "ev-checkpoint-code",
+      "ev-sdk-client-code",
+      "ev-test-checkpoint",
+      "ev-test-sdk-stream"
+    ],
+    "status": "generated"
+  }
+]

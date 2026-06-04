@@ -1,0 +1,119 @@
+[
+  {
+    "from": "langchain.runnable_sequence",
+    "to": "langchain.runnable",
+    "type": "implements_execution_contract",
+    "description": "RunnableSequence 继承 RunnableSerializable，并提供 invoke、batch、stream 等执行方法。",
+    "evidence_ids": [
+      "ev-runnable-sequence-class",
+      "ev-runnable-sequence-invoke"
+    ]
+  },
+  {
+    "from": "langchain.runnable",
+    "to": "langchain.runnable_sequence",
+    "type": "composes_into",
+    "description": "Runnable.__or__ 和 pipe 都会把 Runnable-like 对象组合成 RunnableSequence。",
+    "evidence_ids": [
+      "ev-runnable-or",
+      "ev-runnable-pipe"
+    ]
+  },
+  {
+    "from": "langchain.runnable_lambda",
+    "to": "langchain.runnable",
+    "type": "wraps_callable_as",
+    "description": "RunnableLambda 将 Python callable 转换为 Runnable。",
+    "evidence_ids": [
+      "ev-runnable-lambda-class"
+    ]
+  },
+  {
+    "from": "langchain.runnable_config",
+    "to": "langchain.runnable",
+    "type": "configures_execution",
+    "description": "RunnableConfig 为 Runnable 调用提供 tracing、metadata、并发限制等配置。",
+    "evidence_ids": [
+      "ev-runnable-config"
+    ]
+  },
+  {
+    "from": "langchain.prompt_template",
+    "to": "langchain.runnable",
+    "type": "implements_runnable_interface",
+    "description": "BasePromptTemplate 暴露 invoke，使 prompt formatting 能作为 Runnable pipeline 的一步。",
+    "evidence_ids": [
+      "ev-prompt-template-invoke"
+    ]
+  },
+  {
+    "from": "langchain.base_chat_model",
+    "to": "langchain.runnable",
+    "type": "implements_runnable_interface",
+    "description": "BaseChatModel 提供 invoke 和 stream，是模型调用在 Runnable 体系中的适配层。",
+    "evidence_ids": [
+      "ev-base-chat-model-invoke",
+      "ev-base-chat-model-stream"
+    ]
+  },
+  {
+    "from": "langchain.base_tool",
+    "to": "langchain.base_message",
+    "type": "returns_observation_for",
+    "description": "工具执行结果需要回填到消息历史中，ToolMessage 通过 tool_call_id 关联模型生成的 tool call。",
+    "evidence_ids": [
+      "ev-tool-message-tool-call-id",
+      "ev-base-tool-run"
+    ]
+  },
+  {
+    "from": "langchain.callback_manager",
+    "to": "langchain.runnable_config",
+    "type": "configured_by",
+    "description": "RunnableConfig 中的 callbacks 字段把调用过程接到 callback/tracing 体系。",
+    "evidence_ids": [
+      "ev-runnable-config",
+      "ev-callback-manager"
+    ]
+  },
+  {
+    "from": "langchain.agent_action",
+    "to": "langchain.base_tool",
+    "type": "selects_tool",
+    "description": "AgentAction 表示 agent 要调用哪个工具以及传入什么参数。",
+    "evidence_ids": [
+      "ev-agent-action",
+      "ev-base-tool-invoke"
+    ]
+  },
+  {
+    "from": "langchain.create_agent",
+    "to": "langchain.agent_action",
+    "type": "orchestrates_agent_loop",
+    "description": "create_agent 构建模型、工具和中间件组成的 agent graph；AgentAction/AgentStep 是低层 loop 数据结构。",
+    "evidence_ids": [
+      "ev-create-agent",
+      "ev-agent-step"
+    ]
+  },
+  {
+    "from": "langchain.chat_openai",
+    "to": "langchain.base_chat_model",
+    "type": "provider_adapter_for",
+    "description": "ChatOpenAI/BaseChatOpenAI 是 OpenAI provider 在 BaseChatModel 抽象下的实现。",
+    "evidence_ids": [
+      "ev-base-chat-openai",
+      "ev-chat-openai"
+    ]
+  },
+  {
+    "from": "langchain.chat_openai",
+    "to": "langchain.base_tool",
+    "type": "binds_tool_schema",
+    "description": "OpenAI adapter 的 bind_tools 会将 LangChain tool-like 对象转换为 OpenAI tool schema。",
+    "evidence_ids": [
+      "ev-openai-bind-tools",
+      "ev-openai-tool-conversion"
+    ]
+  }
+]

@@ -1,0 +1,1286 @@
+{
+  "meta": {
+    "build_date": "2026-06-01T17:24:54Z",
+    "wiki_title": "研究目的与方向",
+    "total_nodes": 23,
+    "total_edges": 67,
+    "initial_view": [
+      "2026-06-01-07-agent-loop-research-pack",
+      "runnable-config",
+      "langchain-agent-engineering-pack",
+      "message-schema",
+      "prompt-template",
+      "runnable",
+      "agent-loop",
+      "tool-interface",
+      "runnable-abstraction",
+      "base-chat-model",
+      "runnable-sequence",
+      "provider-integration",
+      "base-tool",
+      "chat-openai",
+      "runnable-lambda",
+      "callback-tracing",
+      "chat-model-adapter",
+      "2026-06-01-runnable-research-pack",
+      "agent-action",
+      "base-message",
+      "base-prompt-template",
+      "callback-manager",
+      "create-agent"
+    ],
+    "degraded": false,
+    "insights_degraded": false
+  },
+  "nodes": [
+    {
+      "id": "agent-action",
+      "label": "AgentAction",
+      "type": "entity",
+      "community": "message-schema",
+      "content": "# AgentAction\n\n<!-- confidence: EXTRACTED -->\n\n`AgentAction` 是 LangChain Core 中表示 agent 工具调用意图的数据结构，源码位于 `libs/core/langchain_core/agents.py:44`。\n\n## 关联\n\n- 属于主题：[[agent-loop]]\n- 选择 [[base-tool]] 并提供输入\n\n## 证据\n\n- `agents.py:44`：定义 `AgentAction`。\n- `agents.py:51`：定义 `tool`。\n- `agents.py:54`：定义 `tool_input`。\n- `agents.py:58`：定义 `log`。"
+    },
+    {
+      "id": "base-chat-model",
+      "label": "BaseChatModel",
+      "type": "entity",
+      "community": "langchain-agent-engineering-pack",
+      "content": "# BaseChatModel\n\n<!-- confidence: EXTRACTED -->\n\n`BaseChatModel` 是 LangChain Core 的 chat model 统一抽象，源码位于 `libs/core/langchain_core/language_models/chat_models.py:270`。\n\n## 关联\n\n- 属于主题：[[chat-model-adapter]]\n- 被 [[chat-openai]] 实现/扩展\n- 使用 [[message-schema]] 作为输入输出模型\n\n## 证据\n\n- `chat_models.py:270`：定义 `BaseChatModel`。\n- `chat_models.py:461`：定义 `invoke`。\n- `chat_models.py:713`：定义 `stream`。\n- `chat_models.py:2325`：定义 `bind_tools`。"
+    },
+    {
+      "id": "base-message",
+      "label": "BaseMessage",
+      "type": "entity",
+      "community": "message-schema",
+      "content": "# BaseMessage\n\n<!-- confidence: EXTRACTED -->\n\n`BaseMessage` 是 LangChain Core 的消息基类，源码位于 `libs/core/langchain_core/messages/base.py:93`。\n\n## 关联\n\n- 属于主题：[[message-schema]]\n- 被 [[agent-loop]] 用来承载对话状态\n- 与 [[tool-interface]] 通过 ToolMessage / tool call 关联\n\n## 证据\n\n- `base.py:93`：定义 `BaseMessage`。\n- `base.py:103`：定义 `content`。\n- `base.py:106`：定义 `additional_kwargs`。\n- `base.py:117`：定义 `type`。"
+    },
+    {
+      "id": "base-prompt-template",
+      "label": "BasePromptTemplate",
+      "type": "entity",
+      "community": "prompt-template",
+      "content": "# BasePromptTemplate\n\n<!-- confidence: EXTRACTED -->\n\n`BasePromptTemplate` 是 LangChain Core 的 prompt 模板基类，源码位于 `libs/core/langchain_core/prompts/base.py:40`。\n\n## 关联\n\n- 属于主题：[[prompt-template]]\n- 作为 [[runnable]] pipeline 的一步执行\n\n## 证据\n\n- `base.py:45`：定义 `input_variables`。\n- `base.py:66`：定义 `partial_variables`。\n- `base.py:160`：校验输入。\n- `base.py:207`：定义 `invoke`。"
+    },
+    {
+      "id": "base-tool",
+      "label": "BaseTool",
+      "type": "entity",
+      "community": "message-schema",
+      "content": "# BaseTool\n\n<!-- confidence: EXTRACTED -->\n\n`BaseTool` 是 LangChain Core 的工具接口基类，源码位于 `libs/core/langchain_core/tools/base.py:405`。\n\n## 关联\n\n- 属于主题：[[tool-interface]]\n- 被 [[agent-action]] 选择和执行\n- 与 [[message-schema]] 通过 ToolMessage 形成闭环\n\n## 证据\n\n- `base.py:446`：定义 `name`。\n- `base.py:449`：定义 `description`。\n- `base.py:455`：定义 `args_schema`。\n- `base.py:587`：定义 `tool_call_schema`。\n- `base.py:635`：定义 `invoke`。\n- `base.py:878`：定义 `run`。"
+    },
+    {
+      "id": "callback-manager",
+      "label": "CallbackManager",
+      "type": "entity",
+      "community": "callback-tracing",
+      "content": "# CallbackManager\n\n<!-- confidence: EXTRACTED -->\n\n`CallbackManager` 是 LangChain Core 的 callback / tracing 事件分发入口，源码位于 `libs/core/langchain_core/callbacks/manager.py:1343`。\n\n## 关联\n\n- 属于主题：[[callback-tracing]]\n- 由 [[runnable-config]] 挂载到运行过程\n\n## 证据\n\n- `manager.py:1343`：定义 `CallbackManager`。\n- `manager.py:1346`：定义 `on_llm_start`。\n- `manager.py:1397`：定义 `on_chat_model_start`。\n- `manager.py:1451`：定义 `on_chain_start`。"
+    },
+    {
+      "id": "chat-openai",
+      "label": "ChatOpenAI",
+      "type": "entity",
+      "community": "langchain-agent-engineering-pack",
+      "content": "# ChatOpenAI\n\n<!-- confidence: EXTRACTED -->\n\n`ChatOpenAI` 是 OpenAI partner 包中的 chat model adapter，源码位于 `libs/partners/openai/langchain_openai/chat_models/base.py:2534`。\n\n## 关联\n\n- 属于主题：[[provider-integration]]\n- 实现/扩展 [[base-chat-model]]\n- 支持 [[tool-interface]] 的 OpenAI tool schema 转换\n\n## 证据\n\n- `base.py:581`：定义 `BaseChatOpenAI`。\n- `base.py:1549`：定义 `_stream`。\n- `base.py:1624`：定义 `_generate`。\n- `base.py:2131`：定义 `bind_tools`。\n- `base.py:2534`：定义 `ChatOpenAI`。"
+    },
+    {
+      "id": "create-agent",
+      "label": "create_agent",
+      "type": "entity",
+      "community": "message-schema",
+      "content": "# create_agent\n\n<!-- confidence: EXTRACTED -->\n\n`create_agent` 是 LangChain v1 的 agent 工厂函数，源码位于 `libs/langchain_v1/langchain/agents/factory.py:696`。\n\n## 关联\n\n- 属于主题：[[agent-loop]]\n- 生成 compiled graph\n- 使用模型、工具和中间件组成 agent workflow\n\n## 证据\n\n- `factory.py:696`：定义 `create_agent`。\n- `factory.py:1670`：返回 compiled graph 相关逻辑。"
+    },
+    {
+      "id": "runnable-config",
+      "label": "RunnableConfig",
+      "type": "entity",
+      "community": "callback-tracing",
+      "content": "# RunnableConfig\n\n<!-- confidence: EXTRACTED -->\n\n`RunnableConfig` 是 [[runnable]] 执行时的配置对象，源码位于 `libs/core/langchain_core/runnables/config.py:49`。\n\n## 关联\n\n- 为 [[runnable]] 提供 callbacks、tags、metadata、run_name、max_concurrency 等运行信息。\n- 与 tracing、batch 并发控制相关。\n\n## 证据\n\n- `config.py:49`：定义 `RunnableConfig`。\n- `config.py:95`：定义 `max_concurrency`。"
+    },
+    {
+      "id": "runnable-lambda",
+      "label": "RunnableLambda",
+      "type": "entity",
+      "community": "runnable-abstraction",
+      "content": "# RunnableLambda\n\n<!-- confidence: EXTRACTED -->\n\n`RunnableLambda` 把 Python callable 包装为 [[runnable]]，源码位于 `libs/core/langchain_core/runnables/base.py:4577`。\n\n## 关联\n\n- 包装普通函数进入 Runnable 体系。\n- 可以参与 [[runnable-sequence]]。\n- 默认不适合真正 transform 级 streaming。\n\n## 证据\n\n- `base.py:4577`：定义 `RunnableLambda`。\n- `base.py:5175`：同步 `invoke` 调用包装函数。\n- `base.py:5314`：`stream` 进入 transform 路径。"
+    },
+    {
+      "id": "runnable-sequence",
+      "label": "RunnableSequence",
+      "type": "entity",
+      "community": "runnable-abstraction",
+      "content": "# RunnableSequence\n\n<!-- confidence: EXTRACTED -->\n\n`RunnableSequence` 是顺序组合多个 [[runnable]] 的核心对象，源码位于 `libs/core/langchain_core/runnables/base.py:2995`。\n\n## 关联\n\n- 由 `Runnable.__or__` 创建。\n- 用于表达 pipeline：前一步输出作为后一步输入。\n- 相关主题：[[runnable-abstraction]]\n\n## 证据\n\n- `base.py:619`：`Runnable.__or__` 返回 `RunnableSequence(...)`。\n- `base.py:3309`：`RunnableSequence.invoke` 遍历 `self.steps`。"
+    },
+    {
+      "id": "runnable",
+      "label": "Runnable",
+      "type": "entity",
+      "community": "runnable-abstraction",
+      "content": "# Runnable\n\n<!-- confidence: EXTRACTED -->\n\n`Runnable` 是 LangChain Core 的统一执行抽象，源码位于 `libs/core/langchain_core/runnables/base.py:125`。\n\n## 关联\n\n- 属于主题：[[runnable-abstraction]]\n- 组合为：[[runnable-sequence]]\n- 可由普通函数包装为：[[runnable-lambda]]\n- 执行时使用：[[runnable-config]]\n\n## 证据\n\n- `base.py:125`：定义 `Runnable`。\n- `base.py:823`：定义 `invoke` 契约。\n- `base.py:868`：定义默认 `batch`。\n- `base.py:1131`：定义默认 `stream`。"
+    },
+    {
+      "id": "agent-loop",
+      "label": "Agent Loop",
+      "type": "topic",
+      "community": "message-schema",
+      "content": "# Agent Loop\n\n<!-- confidence: EXTRACTED -->\n\nAgent Loop 把一次模型输出扩展为“决策、行动、观察、继续决策或结束”的循环。\n\n## 核心节点\n\n- [[agent-action]]\n- [[create-agent]]\n- [[tool-interface]]\n- [[message-schema]]\n\n## 核心结论\n\n<!-- confidence: INFERRED -->\nLangChain 的底层 agent 数据结构围绕 action、observation 和 finish 建模；v1 的 `create_agent` 会生成 compiled graph。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/07-agent-loop.md`\n- `knowledge/ai-agents/langchain/mastery/07-agent-loop.mastery.md`\n- `knowledge/ai-agents/langchain/labs/07-mini-agent-loop/README.md`"
+    },
+    {
+      "id": "callback-tracing",
+      "label": "Callback Tracing",
+      "type": "topic",
+      "community": "callback-tracing",
+      "content": "# Callback Tracing\n\n<!-- confidence: EXTRACTED -->\n\nCallback / Tracing 让 LangChain 能记录 chain、model、tool 等运行生命周期，而不是只看到最终输出。\n\n## 核心节点\n\n- [[callback-manager]]\n- [[runnable-config]]\n- [[runnable-abstraction]]\n\n## 核心结论\n\n<!-- confidence: EXTRACTED -->\n[[callback-manager]] 提供 `on_llm_start`、`on_chat_model_start`、`on_chain_start` 等事件入口。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/06-callback-tracing.md`\n- `knowledge/ai-agents/langchain/mastery/06-callback-tracing.mastery.md`\n- `knowledge/ai-agents/langchain/labs/06-mini-callback-tracer/README.md`"
+    },
+    {
+      "id": "chat-model-adapter",
+      "label": "Chat Model Adapter",
+      "type": "topic",
+      "community": "langchain-agent-engineering-pack",
+      "content": "# Chat Model Adapter\n\n<!-- confidence: EXTRACTED -->\n\nChat Model Adapter 用统一接口屏蔽不同模型 provider 在消息格式、streaming、tool call 和 token usage 上的差异。\n\n## 核心节点\n\n- [[base-chat-model]]\n- [[provider-integration]]\n- [[message-schema]]\n\n## 核心结论\n\n<!-- confidence: EXTRACTED -->\n[[base-chat-model]] 把 provider 调用统一到 `invoke`、`stream`、`batch`、`bind_tools` 等接口。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/04-chat-model-adapter.md`\n- `knowledge/ai-agents/langchain/mastery/04-chat-model-adapter.mastery.md`\n- `knowledge/ai-agents/langchain/labs/04-mini-chat-model-adapter/README.md`"
+    },
+    {
+      "id": "langchain-agent-engineering-pack",
+      "label": "LangChain Agent Engineering Pack",
+      "type": "topic",
+      "community": "langchain-agent-engineering-pack",
+      "content": "# LangChain Agent Engineering Pack\n\n<!-- confidence: EXTRACTED -->\n\nLangChain Agent Engineering Pack 是本项目的第一套代码学习知识包，目标是通过 `langchain-ai/langchain` 学习 AI Agent 工程的核心抽象。\n\n## 学习单元\n\n- [[runnable-abstraction]]\n- [[message-schema]]\n- [[prompt-template]]\n- [[chat-model-adapter]]\n- [[tool-interface]]\n- [[callback-tracing]]\n- [[agent-loop]]\n- [[provider-integration]]\n\n## 结构化产物\n\n- `knowledge/ai-agents/langchain/graph/entities.json`\n- `knowledge/ai-agents/langchain/graph/relations.json`\n- `knowledge/ai-agents/langchain/graph/claims.json`\n- `knowledge/ai-agents/langchain/graph/evidence.json`\n- `knowledge/ai-agents/langchain/graph/learning-map.json`\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/README.md`\n- `knowledge/ai-agents/langchain/learning-path.md`\n- `knowledge/ai-agents/langchain/lessons/`\n- `knowledge/ai-agents/langchain/quizzes/`\n- `knowledge/ai-agents/langchain/mastery/`\n- `knowledge/ai-agents/langchain/labs/`"
+    },
+    {
+      "id": "message-schema",
+      "label": "Message Schema",
+      "type": "topic",
+      "community": "message-schema",
+      "content": "# Message Schema\n\n<!-- confidence: EXTRACTED -->\n\nMessage Schema 是 LangChain 用来表达 system、human、ai、tool 等对话状态的结构化模型。\n\n## 核心节点\n\n- [[base-message]]\n- [[tool-interface]]\n- [[agent-loop]]\n\n## 核心结论\n\n<!-- confidence: EXTRACTED -->\n[[base-message]] 不只是字符串包装，它还承载 metadata、message type、tool calls 和 provider response 信息。\n\n<!-- confidence: EXTRACTED -->\nTool result 通过 ToolMessage 的 `tool_call_id` 回填到消息历史中，是 agent loop 能继续推理的关键。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/02-message-schema.md`\n- `knowledge/ai-agents/langchain/mastery/02-message-schema.mastery.md`\n- `knowledge/ai-agents/langchain/labs/02-message-types/README.md`"
+    },
+    {
+      "id": "prompt-template",
+      "label": "Prompt Template",
+      "type": "topic",
+      "community": "prompt-template",
+      "content": "# Prompt Template\n\n<!-- confidence: EXTRACTED -->\n\nPrompt Template 是 LangChain 把 prompt 从字符串拼接升级为可校验、可组合、可 partial binding 的工程对象。\n\n## 核心节点\n\n- [[base-prompt-template]]\n- [[runnable]]\n- [[message-schema]]\n\n## 核心结论\n\n<!-- confidence: EXTRACTED -->\n[[base-prompt-template]] 暴露 `invoke`，因此 prompt formatting 可以成为 Runnable pipeline 的一步。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/03-prompt-template.md`\n- `knowledge/ai-agents/langchain/mastery/03-prompt-template.mastery.md`\n- `knowledge/ai-agents/langchain/labs/03-mini-prompt-template/README.md`"
+    },
+    {
+      "id": "provider-integration",
+      "label": "Provider Integration",
+      "type": "topic",
+      "community": "langchain-agent-engineering-pack",
+      "content": "# Provider Integration\n\n<!-- confidence: EXTRACTED -->\n\nProvider Integration 处理不同模型供应商的 API 参数、streaming、tool schema、错误和兼容差异。\n\n## 核心节点\n\n- [[chat-openai]]\n- [[base-chat-model]]\n- [[tool-interface]]\n\n## 核心结论\n\n<!-- confidence: EXTRACTED -->\n[[chat-openai]] / BaseChatOpenAI 负责把 LangChain 的标准 chat model 抽象适配到 OpenAI API。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/08-provider-integration.md`\n- `knowledge/ai-agents/langchain/mastery/08-provider-integration.mastery.md`\n- `knowledge/ai-agents/langchain/labs/08-mini-provider-adapter/README.md`"
+    },
+    {
+      "id": "runnable-abstraction",
+      "label": "Runnable Abstraction",
+      "type": "topic",
+      "community": "runnable-abstraction",
+      "content": "# Runnable Abstraction\n\n<!-- confidence: EXTRACTED -->\n\nRunnable Abstraction 是 LangChain Core 用来统一 LLM 应用组件执行方式的模式。\n\n## 核心节点\n\n- [[runnable]]\n- [[runnable-sequence]]\n- [[runnable-lambda]]\n- [[runnable-config]]\n\n## 核心结论\n\n<!-- confidence: EXTRACTED -->\n[[runnable]] 统一 `invoke`、`batch`、`stream` 和组合。\n\n<!-- confidence: EXTRACTED -->\n`|` 操作符将 Runnable-like 对象组合为 [[runnable-sequence]]。\n\n<!-- confidence: EXTRACTED -->\n[[runnable-lambda]] 让普通 Python 函数进入 Runnable 体系。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/01-runnable.md`\n- `knowledge/ai-agents/langchain/mastery/01-runnable.mastery.md`\n- `knowledge/ai-agents/langchain/labs/01-mini-runnable/README.md`"
+    },
+    {
+      "id": "tool-interface",
+      "label": "Tool Interface",
+      "type": "topic",
+      "community": "message-schema",
+      "content": "# Tool Interface\n\n<!-- confidence: EXTRACTED -->\n\nTool Interface 描述模型可调用工具的 schema、参数校验、执行入口和结果回填方式。\n\n## 核心节点\n\n- [[base-tool]]\n- [[message-schema]]\n- [[agent-loop]]\n\n## 核心结论\n\n<!-- confidence: EXTRACTED -->\n模型并不直接调用函数；它生成结构化调用意图，框架再用 [[base-tool]] 解析、执行并把结果回填为消息。\n\n## 学习材料\n\n- `knowledge/ai-agents/langchain/lessons/05-tool-interface.md`\n- `knowledge/ai-agents/langchain/mastery/05-tool-interface.mastery.md`\n- `knowledge/ai-agents/langchain/labs/05-mini-tool-calling/README.md`"
+    },
+    {
+      "id": "2026-06-01-07-agent-loop-research-pack",
+      "label": "Research Pack: 07 Agent Loop",
+      "type": "source",
+      "community": null,
+      "content": "# Research Pack: 07 Agent Loop\n\n## 研究目标\n\n解释 LangChain agent loop 如何围绕 action、observation、finish 建模，并理解 v1 `create_agent` 为什么返回 compiled graph。\n\n## 核心实体\n\n- `AgentAction`\n- `AgentActionMessageLog`\n- `AgentStep`\n- `AgentFinish`\n- `create_agent`\n\n## 源码入口\n\n- `libs/core/langchain_core/agents.py:15`\n- `libs/core/langchain_core/agents.py:44`\n- `libs/core/langchain_core/agents.py:105`\n- `libs/core/langchain_core/agents.py:131`\n- `libs/core/langchain_core/agents.py:146`\n- `libs/core/langchain_core/agents.py:209`\n- `libs/langchain_v1/langchain/agents/factory.py:696`\n- `libs/langchain_v1/langchain/agents/factory.py:1670`\n- `libs/langchain_v1/tests/unit_tests/agents/test_injected_runtime_create_agent.py:36`\n- `libs/langchain_v1/tests/unit_tests/agents/middleware/core/test_tools.py:101`\n\n## 候选 claims\n\n- agent 基本循环是 LLM 请求 action、执行工具、返回 observation、达到停止条件后返回最终值。\n- `AgentAction` 表示工具调用请求。\n- `AgentStep` 将 action 和 observation 配对。\n- `AgentFinish` 表示最终返回。\n- v1 `create_agent` 创建 compiled graph，而不是普通 while loop。\n- `create_agent` compiled graph 的真实测试路径覆盖 model tool call、tools node 执行、`ToolMessage` 回填和 runtime 注入。\n\n## 关键关系\n\n- `AIMessage.tool_calls -> AgentAction`\n- `AgentAction -> BaseTool`\n- `BaseTool result -> AgentStep / ToolMessage`\n- `create_agent -> graph.compile`\n- `AIMessage.tool_calls -> tools node -> ToolMessage`\n- `middleware -> tools node`\n\n## 已补充追踪\n\n- `raw/source-notes/agent-loop-compiled-graph-trace.md` 记录了一次基于仓库 unit test 的 compiled graph 执行追踪。\n- 强证据来自 `test_tool_runtime_basic_injection`：输入 `HumanMessage` 后，模型产出 `runtime_tool` 的 tool call，tools node 执行工具并生成带 `tool_call_id` 的 `ToolMessage`，随后回到模型并停止。\n- 另一个证据来自 middleware tools 测试：middleware 能改写 tools node 的可用工具集合，graph 执行后只产生目标工具对应的 `ToolMessage`。\n\n## 仍可后续研究\n\n- LangGraph 本身的状态图、checkpoint、interrupt 和 streaming 可以作为第二阶段专门学习包。"
+    },
+    {
+      "id": "2026-06-01-runnable-research-pack",
+      "label": "Runnable Research Pack",
+      "type": "source",
+      "community": "runnable-abstraction",
+      "content": "# Runnable Research Pack\n\n<!-- confidence: EXTRACTED -->\n\n来源：`wiki/raw/notes/2026-06-01-runnable-research-pack.md`\n\n## 摘要\n\n本素材来自 `01-runnable.research.md`，用于把 LangChain `Runnable` 相关源码证据编译成 llm-wiki 风格实体和主题页面。\n\n## 提取实体\n\n- [[runnable]]\n- [[runnable-sequence]]\n- [[runnable-lambda]]\n- [[runnable-config]]\n\n## 主题\n\n- [[runnable-abstraction]]"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "from": "agent-action",
+      "to": "agent-loop",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e2",
+      "from": "agent-action",
+      "to": "base-tool",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e3",
+      "from": "base-chat-model",
+      "to": "chat-model-adapter",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e4",
+      "from": "base-chat-model",
+      "to": "chat-openai",
+      "type": "EXTRACTED",
+      "weight": 0.667,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.333,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e5",
+      "from": "base-chat-model",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.563,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.125,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e6",
+      "from": "base-message",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e7",
+      "from": "base-message",
+      "to": "agent-loop",
+      "type": "EXTRACTED",
+      "weight": 0.583,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.167,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e8",
+      "from": "base-message",
+      "to": "tool-interface",
+      "type": "EXTRACTED",
+      "weight": 0.571,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.143,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e9",
+      "from": "base-prompt-template",
+      "to": "prompt-template",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e10",
+      "from": "base-prompt-template",
+      "to": "runnable",
+      "type": "EXTRACTED",
+      "weight": 0.571,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.143,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e11",
+      "from": "base-tool",
+      "to": "tool-interface",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e12",
+      "from": "base-tool",
+      "to": "agent-action",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e13",
+      "from": "base-tool",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.563,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.125,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e14",
+      "from": "callback-manager",
+      "to": "callback-tracing",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e15",
+      "from": "callback-manager",
+      "to": "runnable-config",
+      "type": "EXTRACTED",
+      "weight": 0.6,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.2,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e16",
+      "from": "chat-openai",
+      "to": "provider-integration",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e17",
+      "from": "chat-openai",
+      "to": "base-chat-model",
+      "type": "EXTRACTED",
+      "weight": 0.667,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.333,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e18",
+      "from": "chat-openai",
+      "to": "tool-interface",
+      "type": "EXTRACTED",
+      "weight": 0.571,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.143,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e19",
+      "from": "create-agent",
+      "to": "agent-loop",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e20",
+      "from": "runnable-config",
+      "to": "runnable",
+      "type": "EXTRACTED",
+      "weight": 0.643,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.286,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e21",
+      "from": "runnable-lambda",
+      "to": "runnable",
+      "type": "EXTRACTED",
+      "weight": 0.643,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.286,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e22",
+      "from": "runnable-lambda",
+      "to": "runnable-sequence",
+      "type": "EXTRACTED",
+      "weight": 0.875,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.75,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e23",
+      "from": "runnable-sequence",
+      "to": "runnable",
+      "type": "EXTRACTED",
+      "weight": 0.714,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.429,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e24",
+      "from": "runnable-sequence",
+      "to": "runnable-abstraction",
+      "type": "EXTRACTED",
+      "weight": 0.7,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.4,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e25",
+      "from": "runnable",
+      "to": "runnable-abstraction",
+      "type": "EXTRACTED",
+      "weight": 0.643,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.286,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e26",
+      "from": "runnable",
+      "to": "runnable-sequence",
+      "type": "EXTRACTED",
+      "weight": 0.714,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.429,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e27",
+      "from": "runnable",
+      "to": "runnable-lambda",
+      "type": "EXTRACTED",
+      "weight": 0.643,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.286,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e28",
+      "from": "runnable",
+      "to": "runnable-config",
+      "type": "EXTRACTED",
+      "weight": 0.643,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.286,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e29",
+      "from": "agent-loop",
+      "to": "agent-action",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e30",
+      "from": "agent-loop",
+      "to": "create-agent",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e31",
+      "from": "agent-loop",
+      "to": "tool-interface",
+      "type": "EXTRACTED",
+      "weight": 0.614,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.429,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e32",
+      "from": "agent-loop",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.588,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.375,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e33",
+      "from": "callback-tracing",
+      "to": "callback-manager",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e34",
+      "from": "callback-tracing",
+      "to": "runnable-config",
+      "type": "EXTRACTED",
+      "weight": 0.6,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.2,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e35",
+      "from": "callback-tracing",
+      "to": "runnable-abstraction",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.2,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e36",
+      "from": "chat-model-adapter",
+      "to": "base-chat-model",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e37",
+      "from": "chat-model-adapter",
+      "to": "provider-integration",
+      "type": "EXTRACTED",
+      "weight": 0.567,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.333,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e38",
+      "from": "chat-model-adapter",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.525,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.25,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e39",
+      "from": "langchain-agent-engineering-pack",
+      "to": "runnable-abstraction",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e40",
+      "from": "langchain-agent-engineering-pack",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e41",
+      "from": "langchain-agent-engineering-pack",
+      "to": "prompt-template",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e42",
+      "from": "langchain-agent-engineering-pack",
+      "to": "chat-model-adapter",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e43",
+      "from": "langchain-agent-engineering-pack",
+      "to": "tool-interface",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e44",
+      "from": "langchain-agent-engineering-pack",
+      "to": "callback-tracing",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e45",
+      "from": "langchain-agent-engineering-pack",
+      "to": "agent-loop",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e46",
+      "from": "langchain-agent-engineering-pack",
+      "to": "provider-integration",
+      "type": "EXTRACTED",
+      "weight": 0.4,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e47",
+      "from": "message-schema",
+      "to": "base-message",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e48",
+      "from": "message-schema",
+      "to": "tool-interface",
+      "type": "EXTRACTED",
+      "weight": 0.65,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.5,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e49",
+      "from": "message-schema",
+      "to": "agent-loop",
+      "type": "EXTRACTED",
+      "weight": 0.588,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.375,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e50",
+      "from": "prompt-template",
+      "to": "base-prompt-template",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e51",
+      "from": "prompt-template",
+      "to": "runnable",
+      "type": "EXTRACTED",
+      "weight": 0.571,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.143,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e52",
+      "from": "prompt-template",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.463,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.125,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e53",
+      "from": "provider-integration",
+      "to": "chat-openai",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e54",
+      "from": "provider-integration",
+      "to": "base-chat-model",
+      "type": "EXTRACTED",
+      "weight": 0.833,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.667,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e55",
+      "from": "provider-integration",
+      "to": "tool-interface",
+      "type": "EXTRACTED",
+      "weight": 0.543,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.286,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e56",
+      "from": "runnable-abstraction",
+      "to": "runnable",
+      "type": "EXTRACTED",
+      "weight": 0.643,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.286,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e57",
+      "from": "runnable-abstraction",
+      "to": "runnable-sequence",
+      "type": "EXTRACTED",
+      "weight": 0.7,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.4,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e58",
+      "from": "runnable-abstraction",
+      "to": "runnable-lambda",
+      "type": "EXTRACTED",
+      "weight": 0.7,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.4,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e59",
+      "from": "runnable-abstraction",
+      "to": "runnable-config",
+      "type": "EXTRACTED",
+      "weight": 0.8,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.6,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e60",
+      "from": "tool-interface",
+      "to": "base-tool",
+      "type": "EXTRACTED",
+      "weight": 0.5,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 1
+      }
+    },
+    {
+      "id": "e61",
+      "from": "tool-interface",
+      "to": "message-schema",
+      "type": "EXTRACTED",
+      "weight": 0.65,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.5,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e62",
+      "from": "tool-interface",
+      "to": "agent-loop",
+      "type": "EXTRACTED",
+      "weight": 0.614,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0.429,
+        "source_overlap": null,
+        "type_affinity": 0.8
+      }
+    },
+    {
+      "id": "e63",
+      "from": "2026-06-01-runnable-research-pack",
+      "to": "runnable",
+      "type": "EXTRACTED",
+      "weight": 0.3,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.6
+      }
+    },
+    {
+      "id": "e64",
+      "from": "2026-06-01-runnable-research-pack",
+      "to": "runnable-sequence",
+      "type": "EXTRACTED",
+      "weight": 0.3,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.6
+      }
+    },
+    {
+      "id": "e65",
+      "from": "2026-06-01-runnable-research-pack",
+      "to": "runnable-lambda",
+      "type": "EXTRACTED",
+      "weight": 0.3,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.6
+      }
+    },
+    {
+      "id": "e66",
+      "from": "2026-06-01-runnable-research-pack",
+      "to": "runnable-config",
+      "type": "EXTRACTED",
+      "weight": 0.3,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.6
+      }
+    },
+    {
+      "id": "e67",
+      "from": "2026-06-01-runnable-research-pack",
+      "to": "runnable-abstraction",
+      "type": "EXTRACTED",
+      "weight": 0.25,
+      "source_signal_available": false,
+      "signals": {
+        "co_citation": 0,
+        "source_overlap": null,
+        "type_affinity": 0.5
+      }
+    }
+  ],
+  "insights": {
+    "surprising_connections": [
+      {
+        "from": "runnable-abstraction",
+        "to": "runnable-config",
+        "weight": 0.8,
+        "from_community": "runnable-abstraction",
+        "to_community": "callback-tracing"
+      }
+    ],
+    "isolated_nodes": [
+      {
+        "id": "2026-06-01-07-agent-loop-research-pack",
+        "label": "Research Pack: 07 Agent Loop",
+        "degree": 0,
+        "community": null
+      }
+    ],
+    "bridge_nodes": [
+      {
+        "id": "callback-tracing",
+        "label": "Callback Tracing",
+        "community": "callback-tracing",
+        "connected_communities": [
+          "langchain-agent-engineering-pack",
+          "runnable-abstraction"
+        ],
+        "community_count": 2
+      },
+      {
+        "id": "langchain-agent-engineering-pack",
+        "label": "LangChain Agent Engineering Pack",
+        "community": "langchain-agent-engineering-pack",
+        "connected_communities": [
+          "callback-tracing",
+          "message-schema",
+          "prompt-template",
+          "runnable-abstraction"
+        ],
+        "community_count": 4
+      },
+      {
+        "id": "message-schema",
+        "label": "Message Schema",
+        "community": "message-schema",
+        "connected_communities": [
+          "langchain-agent-engineering-pack",
+          "prompt-template"
+        ],
+        "community_count": 2
+      },
+      {
+        "id": "prompt-template",
+        "label": "Prompt Template",
+        "community": "prompt-template",
+        "connected_communities": [
+          "langchain-agent-engineering-pack",
+          "message-schema",
+          "runnable-abstraction"
+        ],
+        "community_count": 3
+      },
+      {
+        "id": "runnable",
+        "label": "Runnable",
+        "community": "runnable-abstraction",
+        "connected_communities": [
+          "callback-tracing",
+          "prompt-template"
+        ],
+        "community_count": 2
+      },
+      {
+        "id": "runnable-abstraction",
+        "label": "Runnable Abstraction",
+        "community": "runnable-abstraction",
+        "connected_communities": [
+          "callback-tracing",
+          "langchain-agent-engineering-pack"
+        ],
+        "community_count": 2
+      }
+    ],
+    "sparse_communities": [],
+    "meta": {
+      "degraded": false,
+      "node_count": 23,
+      "edge_count": 67,
+      "max_insight_nodes": 250,
+      "max_insight_edges": 1000
+    }
+  },
+  "learning": {
+    "version": 1,
+    "entry": {
+      "recommended_start_node_id": "message-schema",
+      "recommended_start_reason": "community_hub",
+      "default_mode": "global"
+    },
+    "views": {
+      "path": {
+        "enabled": true,
+        "start_node_id": "message-schema",
+        "node_ids": [
+          "message-schema",
+          "agent-loop",
+          "base-message",
+          "base-tool",
+          "tool-interface"
+        ],
+        "degraded": false
+      },
+      "community": {
+        "enabled": true,
+        "community_id": "message-schema",
+        "label": "Message Schema",
+        "node_ids": [
+          "agent-action",
+          "agent-loop",
+          "base-message",
+          "base-tool",
+          "create-agent",
+          "message-schema",
+          "tool-interface"
+        ],
+        "is_weak": false,
+        "degraded": false
+      },
+      "global": {
+        "enabled": true,
+        "node_ids": [
+          "message-schema",
+          "runnable",
+          "agent-loop",
+          "tool-interface",
+          "runnable-abstraction",
+          "langchain-agent-engineering-pack",
+          "base-chat-model",
+          "provider-integration",
+          "runnable-config",
+          "runnable-sequence",
+          "2026-06-01-runnable-research-pack",
+          "base-tool",
+          "callback-tracing",
+          "chat-model-adapter",
+          "chat-openai",
+          "prompt-template",
+          "runnable-lambda",
+          "agent-action",
+          "base-message",
+          "base-prompt-template",
+          "callback-manager",
+          "create-agent",
+          "2026-06-01-07-agent-loop-research-pack"
+        ],
+        "degraded": false
+      }
+    },
+    "communities": [
+      {
+        "id": "message-schema",
+        "label": "Message Schema",
+        "node_count": 7,
+        "source_count": 0,
+        "internal_edge_weight": 10.421,
+        "is_primary": true,
+        "is_weak": false,
+        "recommended_start_node_id": "message-schema"
+      },
+      {
+        "id": "runnable-abstraction",
+        "label": "Runnable Abstraction",
+        "node_count": 5,
+        "source_count": 1,
+        "internal_edge_weight": 8.125,
+        "is_primary": false,
+        "is_weak": false,
+        "recommended_start_node_id": "runnable"
+      },
+      {
+        "id": "langchain-agent-engineering-pack",
+        "label": "LangChain Agent Engineering Pack",
+        "node_count": 5,
+        "source_count": 0,
+        "internal_edge_weight": 5.534,
+        "is_primary": false,
+        "is_weak": false,
+        "recommended_start_node_id": "langchain-agent-engineering-pack"
+      },
+      {
+        "id": "callback-tracing",
+        "label": "Callback Tracing",
+        "node_count": 3,
+        "source_count": 0,
+        "internal_edge_weight": 2.2,
+        "is_primary": false,
+        "is_weak": false,
+        "recommended_start_node_id": "runnable-config"
+      },
+      {
+        "id": "prompt-template",
+        "label": "Prompt Template",
+        "node_count": 2,
+        "source_count": 0,
+        "internal_edge_weight": 1,
+        "is_primary": false,
+        "is_weak": true,
+        "recommended_start_node_id": "prompt-template"
+      }
+    ],
+    "degraded": {
+      "path_to_community": false,
+      "community_to_global": false
+    }
+  }
+}

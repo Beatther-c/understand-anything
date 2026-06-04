@@ -1,0 +1,24 @@
+{
+  "skill_name": "agent-code-learning-pack",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我想基于 langchain-ai/langchain 生成一个完整的 AI Agent 源码学习知识库，要求八节课都不是 draft，而是完整课程；还要有 claims/evidence、quiz、mastery、labs、弱证据报告和静态 HTML 学习页。",
+      "expected_output": "Creates or updates a complete learning pack with eight full lessons, graph JSON, quizzes, mastery tasks, labs, weak evidence report, and learning.html.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "按照 weak-evidence.md 里面的问题继续补齐这个课程包：Understand Anything 图谱还不完整、02-08 测试证据不均匀、Agent Loop 需要完整追踪一次真实 compiled graph 执行。执行后把所有相关文件都更新。",
+      "expected_output": "Updates UA-compatible graph, balances test evidence in evidence/claims/lessons, adds an Agent Loop trace, updates review files, rebuilds HTML and llm-wiki graph, and verifies completion.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我已经有 README 和 lessons 文件夹了，但 Obsidian 里学习路线还是不清楚。帮我在 README 同级生成一个静态 HTML 学习页，左边能切换八节课，每节课有课程、测试、掌握度、实验标签页，右边有当前 markdown 的二级目录。",
+      "expected_output": "Builds learning.html with lesson navigation, course/quiz/mastery/lab tabs, markdown rendering, and active-page table of contents.",
+      "files": []
+    }
+  ]
+}
+

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "claim-01-platform-map",
+    "text": "把 OpenClaw 先看成一个由 Gateway 调度的本地优先 agent 操作系统：消息入口、agent runtime、工具、插件、设备节点和 UI 都围绕同一个控制面工作。",
+    "lesson": "01-platform-map",
+    "confidence": "medium",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-readme-product",
+      "ev-doc-runtime-layout",
+      "ev-test-agent-loop-basic",
+      "ev-test-acp-manager"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-02-agent-core-loop",
+    "text": "agent loop 的本质是一个事件驱动的状态机：追加用户消息，调用模型流，提取工具调用，执行工具，把工具结果写回上下文，再决定是否继续。",
+    "lesson": "02-agent-core-loop",
+    "confidence": "high",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-code-agent-loop-entry",
+      "ev-code-run-agent-loop",
+      "ev-code-run-loop-tools",
+      "ev-test-agent-loop-basic",
+      "ev-test-agent-loop-tool"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-03-message-context-stream",
+    "text": "LLM 应用不是一次请求一次字符串，而是一组消息、系统提示、工具定义和流式事件的组合。OpenClaw 把 partial assistant message 放入上下文并随事件更新。",
+    "lesson": "03-message-context-stream",
+    "confidence": "high",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-code-stream-response",
+      "ev-code-agent-types",
+      "ev-test-agent-loop-basic",
+      "ev-test-llm-validation",
+      "ev-test-acp-turn-stream"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-04-tools-policy-sandbox",
+    "text": "工具调用是 agent 产生外部影响的边界。OpenClaw 同时处理 schema 规范化、allow/deny 策略、沙箱路径、before/after hook、执行顺序和错误归一化。",
+    "lesson": "04-tools-policy-sandbox",
+    "confidence": "high",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-code-tool-factory",
+      "ev-code-tool-adapter",
+      "ev-code-tool-construction",
+      "ev-test-tool-adapter",
+      "ev-test-tool-policy",
+      "ev-test-tool-construction"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-05-embedded-runtime-provider",
+    "text": "OpenClaw 的内置 runner 把低层 loop 包装成可运营的运行时：选择模型、准备认证、构建 prompt 和工具、处理空回复/溢出/限流/计费错误、记录 usage，并在必要时故障转移。",
+    "lesson": "05-embedded-runtime-provider",
+    "confidence": "high",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-code-embedded-run",
+      "ev-test-run-failover",
+      "ev-test-run-overflow",
+      "ev-test-model-forward"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-06-sessions-acp-control-plane",
+    "text": "agent 不是孤立函数调用，而是有 session key、runtime handle、active turn、取消、超时、后台任务进度和 backend failover 的长生命周期对象。",
+    "lesson": "06-sessions-acp-control-plane",
+    "confidence": "high",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-code-acp-manager",
+      "ev-code-acp-turn",
+      "ev-code-acp-stream",
+      "ev-test-acp-manager",
+      "ev-test-acp-turn-runner",
+      "ev-test-acp-runtime-cache"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-07-plugin-sdk-providers",
+    "text": "插件 SDK 是 OpenClaw 的扩展边界：插件可以注册 provider、工具、命令、会话 action、hook、UI、模型目录和安全审计能力。",
+    "lesson": "07-plugin-sdk-providers",
+    "confidence": "high",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-code-plugin-entry",
+      "ev-code-provider-entry",
+      "ev-code-provider-tools",
+      "ev-test-plugin-entry",
+      "ev-test-provider-entry",
+      "ev-test-provider-tools"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-08-devices-channels-security",
+    "text": "OpenClaw 面对真实外部渠道和本机设备能力，所以安全模型必须默认把 inbound DM 当成不可信输入，并用 pairing、allowlist、sandbox、工具策略和节点权限收口。",
+    "lesson": "08-devices-channels-security",
+    "confidence": "high",
+    "evidence_level": "code+test",
+    "evidence_ids": [
+      "ev-readme-security",
+      "ev-test-android-device-auth",
+      "ev-test-gateway-protocol",
+      "ev-test-android-node-handlers"
+    ],
+    "status": "generated"
+  }
+]

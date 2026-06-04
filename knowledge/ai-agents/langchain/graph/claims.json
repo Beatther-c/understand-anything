@@ -1,0 +1,180 @@
+[
+  {
+    "id": "claim-runnable-unifies-execution",
+    "text": "LangChain 使用 Runnable 统一单次调用、批处理、流式输出、异步调用和组合能力。",
+    "lesson": "01-runnable",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-runnable-class-doc",
+      "ev-runnable-invoke",
+      "ev-runnable-batch",
+      "ev-runnable-stream"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-or-creates-sequence",
+    "text": "`|` 操作符会把两个 Runnable-like 对象组合成 RunnableSequence。",
+    "lesson": "01-runnable",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-runnable-or"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-batch-default-parallel-invoke",
+    "text": "Runnable.batch 默认通过 executor 并发调用 invoke，适合 IO bound runnable。",
+    "lesson": "01-runnable",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-runnable-batch",
+      "ev-test-batch-concurrency"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-stream-default-wraps-invoke",
+    "text": "Runnable.stream 的默认实现只是 yield 一次 invoke 结果，真正流式能力需要子类覆盖 transform/stream。",
+    "lesson": "01-runnable",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-runnable-stream"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-lambda-wraps-callable",
+    "text": "RunnableLambda 把 Python callable 包装成 Runnable，使普通函数可以参与 LangChain 组合和 tracing。",
+    "lesson": "01-runnable",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-runnable-lambda-class",
+      "ev-runnable-lambda-invoke"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-message-schema-carries-agent-state",
+    "text": "LangChain message schema 不只是字符串包装，而是用 role/type、metadata、tool_calls 和 tool_call_id 承载 agent loop 状态。",
+    "lesson": "02-message-schema",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-base-message",
+      "ev-ai-message-tool-calls",
+      "ev-tool-message-tool-call-id",
+      "ev-test-message-tool-call-serde",
+      "ev-test-message-chunk-tool-calls",
+      "ev-test-tool-message-serde-dict"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-prompt-template-is-runnable-step",
+    "text": "Prompt template 在 LangChain 中是可校验、可 partial binding、可作为 Runnable pipeline 步骤调用的对象。",
+    "lesson": "03-prompt-template",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-base-prompt-template",
+      "ev-prompt-template-invoke",
+      "ev-chat-prompt-template",
+      "ev-test-prompt-from-template",
+      "ev-test-prompt-partial-validation",
+      "ev-test-chat-prompt-formatting",
+      "ev-test-chat-prompt-invoke"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-chat-model-adapter-normalizes-providers",
+    "text": "BaseChatModel 把不同 provider 的 chat model 调用统一到 invoke、stream、batch、bind_tools 等接口上。",
+    "lesson": "04-chat-model-adapter",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-base-chat-model",
+      "ev-base-chat-model-invoke",
+      "ev-base-chat-model-stream",
+      "ev-test-chat-model-batch-tracing",
+      "ev-test-chat-model-stream-fallback",
+      "ev-test-fake-chat-model-modes"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-tool-interface-separates-intent-and-execution",
+    "text": "LangChain 的工具接口把模型生成的工具调用意图、参数 schema、实际函数执行和结果回填分开处理。",
+    "lesson": "05-tool-interface",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-base-tool",
+      "ev-base-tool-invoke",
+      "ev-base-tool-run",
+      "ev-tool-message-tool-call-id",
+      "ev-test-tool-structured-args",
+      "ev-test-structured-tool-schema",
+      "ev-test-tool-call-to-tool-message",
+      "ev-test-tool-schema-dict"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-callback-manager-observes-run-lifecycle",
+    "text": "CallbackManager 和 callback handler 用生命周期事件观测 chain、model、tool 等运行过程。",
+    "lesson": "06-callback-tracing",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-callback-handler",
+      "ev-callback-manager",
+      "ev-runnable-config",
+      "ev-test-callback-manager-merge",
+      "ev-test-async-callback-dispatch",
+      "ev-test-tracer-nested-run",
+      "ev-test-tracer-usage-metadata"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-agent-loop-uses-action-observation-finish",
+    "text": "LangChain 的 agent loop 数据结构围绕 action、observation 和 finish 建模，v1 的 create_agent 将模型、工具和中间件编译成 graph。",
+    "lesson": "07-agent-loop",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-agent-action",
+      "ev-agent-step",
+      "ev-create-agent",
+      "ev-create-agent-compiled-graph",
+      "ev-test-agent-create-agent-tool-runtime",
+      "ev-test-agent-middleware-tools-node"
+    ],
+    "status": "generated"
+  },
+  {
+    "id": "claim-openai-provider-adapter-handles-api-drift",
+    "text": "OpenAI provider adapter 需要处理模型参数、stream/generate、tool schema 转换和 tool_choice 兼容差异。",
+    "lesson": "08-provider-integration",
+    "confidence": "high",
+    "evidence_level": "code",
+    "evidence_ids": [
+      "ev-base-chat-openai",
+      "ev-openai-stream-generate",
+      "ev-openai-bind-tools",
+      "ev-openai-tool-conversion",
+      "ev-chat-openai",
+      "ev-test-openai-responses-tool-call-conversion",
+      "ev-test-openai-bind-tools-responses",
+      "ev-test-openai-custom-tool"
+    ],
+    "status": "generated"
+  }
+]

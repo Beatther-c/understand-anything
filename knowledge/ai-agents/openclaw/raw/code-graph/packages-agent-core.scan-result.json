@@ -1,0 +1,259 @@
+{
+  "scriptCompleted": true,
+  "files": [
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 123,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/agent-loop.test.ts",
+      "language": "typescript",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/agent-loop.ts",
+      "language": "typescript",
+      "sizeLines": 851,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/agent.ts",
+      "language": "typescript",
+      "sizeLines": 611,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/agent-harness.ts",
+      "language": "typescript",
+      "sizeLines": 1205,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/compaction/branch-summarization.ts",
+      "language": "typescript",
+      "sizeLines": 323,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/compaction/compaction.ts",
+      "language": "typescript",
+      "sizeLines": 872,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/compaction/utils.ts",
+      "language": "typescript",
+      "sizeLines": 167,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/env/kill-tree.ts",
+      "language": "typescript",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/env/nodejs.test.ts",
+      "language": "typescript",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/env/nodejs.ts",
+      "language": "typescript",
+      "sizeLines": 618,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/file-loader-utils.ts",
+      "language": "typescript",
+      "sizeLines": 106,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/messages.test.ts",
+      "language": "typescript",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/messages.ts",
+      "language": "typescript",
+      "sizeLines": 178,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/prompt-template-arguments.ts",
+      "language": "typescript",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/prompt-templates.test.ts",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/prompt-templates.ts",
+      "language": "typescript",
+      "sizeLines": 199,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/jsonl-repo.ts",
+      "language": "typescript",
+      "sizeLines": 205,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/jsonl-storage.test.ts",
+      "language": "typescript",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/jsonl-storage.ts",
+      "language": "typescript",
+      "sizeLines": 238,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/memory-repo.ts",
+      "language": "typescript",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/memory-storage.test.ts",
+      "language": "typescript",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/memory-storage.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/repo-utils.ts",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/session.ts",
+      "language": "typescript",
+      "sizeLines": 285,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/storage-base.ts",
+      "language": "typescript",
+      "sizeLines": 159,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/timestamps.ts",
+      "language": "typescript",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/session/uuid.ts",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/skills.ts",
+      "language": "typescript",
+      "sizeLines": 383,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/system-prompt.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/types.ts",
+      "language": "typescript",
+      "sizeLines": 908,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/utils/shell-output.ts",
+      "language": "typescript",
+      "sizeLines": 174,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/utils/truncate.test.ts",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/harness/utils/truncate.ts",
+      "language": "typescript",
+      "sizeLines": 370,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/index.ts",
+      "language": "typescript",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/llm.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/node.ts",
+      "language": "typescript",
+      "sizeLines": 2,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/runtime-deps.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/types.ts",
+      "language": "typescript",
+      "sizeLines": 508,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/validation.ts",
+      "language": "typescript",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 40,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "moderate",
+  "stats": {
+    "filesScanned": 40,
+    "byCategory": {
+      "config": 1,
+      "code": 39
+    },
+    "byLanguage": {
+      "json": 1,
+      "typescript": 39
+    }
+  }
+}

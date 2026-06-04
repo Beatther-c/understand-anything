@@ -1,0 +1,74 @@
+{
+  "project": "langchain",
+  "current_unit": "01-runnable",
+  "units": [
+    {
+      "id": "01-runnable",
+      "title": "Runnable",
+      "status": "complete-course",
+      "depends_on": []
+    },
+    {
+      "id": "02-message-schema",
+      "title": "Message Schema",
+      "status": "complete-course",
+      "depends_on": [
+        "01-runnable"
+      ]
+    },
+    {
+      "id": "03-prompt-template",
+      "title": "Prompt Template",
+      "status": "complete-course",
+      "depends_on": [
+        "01-runnable",
+        "02-message-schema"
+      ]
+    },
+    {
+      "id": "04-chat-model-adapter",
+      "title": "ChatModel Adapter",
+      "status": "complete-course",
+      "depends_on": [
+        "01-runnable",
+        "02-message-schema"
+      ]
+    },
+    {
+      "id": "05-tool-interface",
+      "title": "Tool Interface",
+      "status": "complete-course",
+      "depends_on": [
+        "01-runnable",
+        "02-message-schema"
+      ]
+    },
+    {
+      "id": "06-callback-tracing",
+      "title": "Callback / Tracing",
+      "status": "complete-course",
+      "depends_on": [
+        "01-runnable"
+      ]
+    },
+    {
+      "id": "07-agent-loop",
+      "title": "Agent Loop",
+      "status": "complete-course",
+      "depends_on": [
+        "01-runnable",
+        "02-message-schema",
+        "05-tool-interface"
+      ]
+    },
+    {
+      "id": "08-provider-integration",
+      "title": "Provider Integration",
+      "status": "complete-course",
+      "depends_on": [
+        "04-chat-model-adapter",
+        "05-tool-interface"
+      ]
+    }
+  ]
+}

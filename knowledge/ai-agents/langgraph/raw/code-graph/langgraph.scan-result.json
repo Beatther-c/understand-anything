@@ -1,0 +1,976 @@
+{
+  "scriptCompleted": true,
+  "files": [
+    {
+      "path": "bench/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/__main__.py",
+      "language": "python",
+      "sizeLines": 520,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/fanout_to_subgraph.py",
+      "language": "python",
+      "sizeLines": 134,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/pydantic_state.py",
+      "language": "python",
+      "sizeLines": 327,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/react_agent.py",
+      "language": "python",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/sequential.py",
+      "language": "python",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/serde_allowlist.py",
+      "language": "python",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/wide_dict.py",
+      "language": "python",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    },
+    {
+      "path": "bench/wide_state.py",
+      "language": "python",
+      "sizeLines": 163,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/__init__.py",
+      "language": "python",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_cache.py",
+      "language": "python",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_config.py",
+      "language": "python",
+      "sizeLines": 418,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_constants.py",
+      "language": "python",
+      "sizeLines": 131,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_fields.py",
+      "language": "python",
+      "sizeLines": 213,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_future.py",
+      "language": "python",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_pydantic.py",
+      "language": "python",
+      "sizeLines": 275,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_queue.py",
+      "language": "python",
+      "sizeLines": 124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_replay.py",
+      "language": "python",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_retry.py",
+      "language": "python",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_runnable.py",
+      "language": "python",
+      "sizeLines": 942,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_scratchpad.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_serde.py",
+      "language": "python",
+      "sizeLines": 253,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_timeout.py",
+      "language": "python",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/_internal/_typing.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/callbacks.py",
+      "language": "python",
+      "sizeLines": 394,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/__init__.py",
+      "language": "python",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/any_value.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/base.py",
+      "language": "python",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/binop.py",
+      "language": "python",
+      "sizeLines": 141,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/delta.py",
+      "language": "python",
+      "sizeLines": 204,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/ephemeral_value.py",
+      "language": "python",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/last_value.py",
+      "language": "python",
+      "sizeLines": 151,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/named_barrier_value.py",
+      "language": "python",
+      "sizeLines": 167,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/topic.py",
+      "language": "python",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/channels/untracked_value.py",
+      "language": "python",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/config.py",
+      "language": "python",
+      "sizeLines": 196,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/constants.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/errors.py",
+      "language": "python",
+      "sizeLines": 241,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/func/__init__.py",
+      "language": "python",
+      "sizeLines": 620,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/graph/__init__.py",
+      "language": "python",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/graph/_branch.py",
+      "language": "python",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/graph/_node.py",
+      "language": "python",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/graph/message.py",
+      "language": "python",
+      "sizeLines": 437,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/graph/state.py",
+      "language": "python",
+      "sizeLines": 1964,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/graph/ui.py",
+      "language": "python",
+      "sizeLines": 227,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/managed/__init__.py",
+      "language": "python",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/managed/base.py",
+      "language": "python",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/managed/is_last_step.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/__init__.py",
+      "language": "python",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_algo.py",
+      "language": "python",
+      "sizeLines": 1460,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_call.py",
+      "language": "python",
+      "sizeLines": 298,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_checkpoint.py",
+      "language": "python",
+      "sizeLines": 238,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_config.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_draw.py",
+      "language": "python",
+      "sizeLines": 294,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_executor.py",
+      "language": "python",
+      "sizeLines": 223,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_io.py",
+      "language": "python",
+      "sizeLines": 174,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_log.py",
+      "language": "python",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_loop.py",
+      "language": "python",
+      "sizeLines": 1963,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_messages.py",
+      "language": "python",
+      "sizeLines": 461,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_read.py",
+      "language": "python",
+      "sizeLines": 298,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_remote_run_stream.py",
+      "language": "python",
+      "sizeLines": 374,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_retry.py",
+      "language": "python",
+      "sizeLines": 854,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_runner.py",
+      "language": "python",
+      "sizeLines": 941,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_tools.py",
+      "language": "python",
+      "sizeLines": 268,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_utils.py",
+      "language": "python",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_validate.py",
+      "language": "python",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/_write.py",
+      "language": "python",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/debug.py",
+      "language": "python",
+      "sizeLines": 302,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/main.py",
+      "language": "python",
+      "sizeLines": 4314,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/protocol.py",
+      "language": "python",
+      "sizeLines": 288,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/remote.py",
+      "language": "python",
+      "sizeLines": 1308,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/pregel/types.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/py.typed",
+      "language": "typed",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/runtime.py",
+      "language": "python",
+      "sizeLines": 310,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/stream/__init__.py",
+      "language": "python",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/stream/_convert.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/stream/_mux.py",
+      "language": "python",
+      "sizeLines": 523,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/stream/_types.py",
+      "language": "python",
+      "sizeLines": 330,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/stream/run_stream.py",
+      "language": "python",
+      "sizeLines": 608,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/stream/stream_channel.py",
+      "language": "python",
+      "sizeLines": 341,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/stream/transformers.py",
+      "language": "python",
+      "sizeLines": 1034,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/types.py",
+      "language": "python",
+      "sizeLines": 978,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/typing.py",
+      "language": "python",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/utils/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/utils/config.py",
+      "language": "python",
+      "sizeLines": 4,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/utils/runnable.py",
+      "language": "python",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/version.py",
+      "language": "python",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langgraph/warnings.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Makefile",
+      "language": "makefile",
+      "sizeLines": 160,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "sizeLines": 128,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 101,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/__snapshots__/test_large_cases.ambr",
+      "language": "ambr",
+      "sizeLines": 311,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/__snapshots__/test_pregel_async.ambr",
+      "language": "ambr",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/__snapshots__/test_pregel.ambr",
+      "language": "ambr",
+      "sizeLines": 1274,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/agents.py",
+      "language": "python",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/any_int.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/any_str.py",
+      "language": "python",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/compose-postgres.yml",
+      "language": "yaml",
+      "sizeLines": 17,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/compose-redis.yml",
+      "language": "yaml",
+      "sizeLines": 16,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/conftest_checkpointer.py",
+      "language": "python",
+      "sizeLines": 239,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/conftest_store.py",
+      "language": "python",
+      "sizeLines": 145,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/conftest.py",
+      "language": "python",
+      "sizeLines": 226,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/example_app/example_graph.py",
+      "language": "python",
+      "sizeLines": 89,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/example_app/langgraph.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/example_app/requirements.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/fake_chat.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fake_tracer.py",
+      "language": "python",
+      "sizeLines": 91,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/memory_assert.py",
+      "language": "python",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/messages.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_algo.py",
+      "language": "python",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_channels.py",
+      "language": "python",
+      "sizeLines": 672,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_checkpoint_migration.py",
+      "language": "python",
+      "sizeLines": 1727,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_config_async.py",
+      "language": "python",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_delta_channel_benchmark.py",
+      "language": "python",
+      "sizeLines": 321,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_delta_channel_exit_mode.py",
+      "language": "python",
+      "sizeLines": 372,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_delta_channel_id_stability.py",
+      "language": "python",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_delta_channel_migration.py",
+      "language": "python",
+      "sizeLines": 618,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_delta_channel_supersteps_bound.py",
+      "language": "python",
+      "sizeLines": 195,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_deprecation.py",
+      "language": "python",
+      "sizeLines": 379,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_graph_callbacks.py",
+      "language": "python",
+      "sizeLines": 344,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_interleave_arrival_order.py",
+      "language": "python",
+      "sizeLines": 359,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_interrupt_migration.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_interruption.py",
+      "language": "python",
+      "sizeLines": 92,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_large_cases_async.py",
+      "language": "python",
+      "sizeLines": 4049,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_large_cases.py",
+      "language": "python",
+      "sizeLines": 6979,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_managed_values.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_messages_state.py",
+      "language": "python",
+      "sizeLines": 369,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_parent_command_async.py",
+      "language": "python",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_parent_command.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_pregel_async.py",
+      "language": "python",
+      "sizeLines": 9890,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_pregel_debug.py",
+      "language": "python",
+      "sizeLines": 185,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_pregel_stream_events_v3.py",
+      "language": "python",
+      "sizeLines": 1622,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_pregel.py",
+      "language": "python",
+      "sizeLines": 9686,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_pydantic.py",
+      "language": "python",
+      "sizeLines": 362,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_remote_graph_v3.py",
+      "language": "python",
+      "sizeLines": 658,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_remote_graph.py",
+      "language": "python",
+      "sizeLines": 1485,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_retry.py",
+      "language": "python",
+      "sizeLines": 2943,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_runnable.py",
+      "language": "python",
+      "sizeLines": 414,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_runtime.py",
+      "language": "python",
+      "sizeLines": 1166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_serde_allowlist.py",
+      "language": "python",
+      "sizeLines": 159,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_state.py",
+      "language": "python",
+      "sizeLines": 373,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_before_builtins.py",
+      "language": "python",
+      "sizeLines": 296,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_data_transformers.py",
+      "language": "python",
+      "sizeLines": 707,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_events_v3_e2e.py",
+      "language": "python",
+      "sizeLines": 808,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_events_v3_kwarg_forwarding.py",
+      "language": "python",
+      "sizeLines": 108,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_events_v3.py",
+      "language": "python",
+      "sizeLines": 1180,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_lifecycle_transformer.py",
+      "language": "python",
+      "sizeLines": 680,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_messages_transformer.py",
+      "language": "python",
+      "sizeLines": 940,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_stream_subgraph_transformer.py",
+      "language": "python",
+      "sizeLines": 856,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_subgraph_persistence_async.py",
+      "language": "python",
+      "sizeLines": 662,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_subgraph_persistence.py",
+      "language": "python",
+      "sizeLines": 641,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_time_travel_async.py",
+      "language": "python",
+      "sizeLines": 3211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_time_travel.py",
+      "language": "python",
+      "sizeLines": 3966,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_tool_stream_handler.py",
+      "language": "python",
+      "sizeLines": 290,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_tracing_interops.py",
+      "language": "python",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_type_checking.py",
+      "language": "python",
+      "sizeLines": 161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_utils.py",
+      "language": "python",
+      "sizeLines": 556,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 158,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "large",
+  "stats": {
+    "filesScanned": 158,
+    "byCategory": {
+      "code": 151,
+      "infra": 1,
+      "config": 4,
+      "docs": 2
+    },
+    "byLanguage": {
+      "python": 147,
+      "typed": 1,
+      "makefile": 1,
+      "toml": 1,
+      "markdown": 1,
+      "ambr": 3,
+      "yaml": 2,
+      "json": 1,
+      "txt": 1
+    }
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "from": "concept:02-agent-core-loop",
+    "to": "symbol:agentLoop",
+    "type": "explained_by",
+    "description": "concept:02-agent-core-loop explained_by symbol:agentLoop",
+    "evidence_ids": [
+      "ev-code-agent-loop-entry",
+      "ev-code-run-loop-tools"
+    ]
+  },
+  {
+    "from": "concept:03-message-context-stream",
+    "to": "symbol:agentLoop",
+    "type": "depends_on",
+    "description": "concept:03-message-context-stream depends_on symbol:agentLoop",
+    "evidence_ids": [
+      "ev-code-stream-response",
+      "ev-code-agent-types"
+    ]
+  },
+  {
+    "from": "concept:04-tools-policy-sandbox",
+    "to": "concept:02-agent-core-loop",
+    "type": "extends",
+    "description": "concept:04-tools-policy-sandbox extends concept:02-agent-core-loop",
+    "evidence_ids": [
+      "ev-code-run-loop-tools",
+      "ev-code-tool-factory"
+    ]
+  },
+  {
+    "from": "concept:05-embedded-runtime-provider",
+    "to": "concept:02-agent-core-loop",
+    "type": "adapts",
+    "description": "concept:05-embedded-runtime-provider adapts concept:02-agent-core-loop",
+    "evidence_ids": [
+      "ev-code-embedded-run",
+      "ev-code-agent-loop-entry"
+    ]
+  },
+  {
+    "from": "concept:06-sessions-acp-control-plane",
+    "to": "concept:05-embedded-runtime-provider",
+    "type": "composes",
+    "description": "concept:06-sessions-acp-control-plane composes concept:05-embedded-runtime-provider",
+    "evidence_ids": [
+      "ev-code-acp-manager",
+      "ev-code-acp-stream"
+    ]
+  },
+  {
+    "from": "concept:07-plugin-sdk-providers",
+    "to": "concept:05-embedded-runtime-provider",
+    "type": "extends",
+    "description": "concept:07-plugin-sdk-providers extends concept:05-embedded-runtime-provider",
+    "evidence_ids": [
+      "ev-code-plugin-entry",
+      "ev-code-provider-entry"
+    ]
+  },
+  {
+    "from": "concept:08-devices-channels-security",
+    "to": "concept:06-sessions-acp-control-plane",
+    "type": "depends_on",
+    "description": "concept:08-devices-channels-security depends_on concept:06-sessions-acp-control-plane",
+    "evidence_ids": [
+      "ev-readme-security",
+      "ev-test-android-device-auth"
+    ]
+  }
+]

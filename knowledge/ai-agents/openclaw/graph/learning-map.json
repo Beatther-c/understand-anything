@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "agent-code-learning-pack.v1",
+  "repo": "openclaw/openclaw",
+  "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+  "generatedAt": "2026-06-02T13:19:15.675Z",
+  "reader": "有经验的后端工程师，想通过源码学习 AI/Agent 系统工程。",
+  "units": [
+    {
+      "id": "01-platform-map",
+      "title": "OpenClaw 全局架构：本地优先个人 AI 助手",
+      "status": "complete",
+      "depends_on": [],
+      "estimated_hours": 2,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "package.json"
+      ],
+      "claim_ids": [
+        "claim-01-platform-map"
+      ],
+      "evidence_ids": [
+        "ev-readme-product",
+        "ev-doc-runtime-layout",
+        "ev-test-agent-loop-basic",
+        "ev-test-acp-manager"
+      ]
+    },
+    {
+      "id": "02-agent-core-loop",
+      "title": "Agent Core：从消息到工具调用的最小循环",
+      "status": "complete",
+      "depends_on": [
+        "01-platform-map"
+      ],
+      "estimated_hours": 3,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "packages/agent-core/src/agent-loop.ts",
+        "packages/agent-core/src/types.ts",
+        "packages/agent-core/src/agent-loop.test.ts"
+      ],
+      "claim_ids": [
+        "claim-02-agent-core-loop"
+      ],
+      "evidence_ids": [
+        "ev-code-agent-loop-entry",
+        "ev-code-run-agent-loop",
+        "ev-code-run-loop-tools",
+        "ev-test-agent-loop-basic",
+        "ev-test-agent-loop-tool"
+      ]
+    },
+    {
+      "id": "03-message-context-stream",
+      "title": "消息、上下文与流式事件",
+      "status": "complete",
+      "depends_on": [
+        "02-agent-core-loop"
+      ],
+      "estimated_hours": 3,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "packages/agent-core/src/agent-loop.ts",
+        "packages/agent-core/src/types.ts",
+        "packages/llm-core/src/index.ts 与 packages/llm-core/src/types.ts"
+      ],
+      "claim_ids": [
+        "claim-03-message-context-stream"
+      ],
+      "evidence_ids": [
+        "ev-code-stream-response",
+        "ev-code-agent-types",
+        "ev-test-agent-loop-basic",
+        "ev-test-llm-validation",
+        "ev-test-acp-turn-stream"
+      ]
+    },
+    {
+      "id": "04-tools-policy-sandbox",
+      "title": "工具系统：定义、策略、沙箱与执行前后钩子",
+      "status": "complete",
+      "depends_on": [
+        "03-message-context-stream"
+      ],
+      "estimated_hours": 3,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "src/agents/agent-tools.ts",
+        "src/agents/agent-tool-definition-adapter.ts",
+        "src/agents/embedded-agent-runner/run/attempt-tool-construction-plan.ts"
+      ],
+      "claim_ids": [
+        "claim-04-tools-policy-sandbox"
+      ],
+      "evidence_ids": [
+        "ev-code-tool-factory",
+        "ev-code-tool-adapter",
+        "ev-code-tool-construction",
+        "ev-test-tool-adapter",
+        "ev-test-tool-policy",
+        "ev-test-tool-construction"
+      ]
+    },
+    {
+      "id": "05-embedded-runtime-provider",
+      "title": "内置 Runtime：模型选择、Provider、重试与故障转移",
+      "status": "complete",
+      "depends_on": [
+        "04-tools-policy-sandbox"
+      ],
+      "estimated_hours": 3,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "src/agents/embedded-agent-runner/run.ts",
+        "src/agents/embedded-agent-runner/run/failover-policy.ts 与 assistant-failover.ts",
+        "src/agents/embedded-agent-runner/model.ts"
+      ],
+      "claim_ids": [
+        "claim-05-embedded-runtime-provider"
+      ],
+      "evidence_ids": [
+        "ev-code-embedded-run",
+        "ev-test-run-failover",
+        "ev-test-run-overflow",
+        "ev-test-model-forward"
+      ]
+    },
+    {
+      "id": "06-sessions-acp-control-plane",
+      "title": "会话与 ACP 控制面：把一次 turn 变成可管理任务",
+      "status": "complete",
+      "depends_on": [
+        "05-embedded-runtime-provider"
+      ],
+      "estimated_hours": 3,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "src/acp/control-plane/manager.core.ts",
+        "src/acp/control-plane/manager.turn-runner.ts",
+        "src/acp/control-plane/session-actor-queue.ts"
+      ],
+      "claim_ids": [
+        "claim-06-sessions-acp-control-plane"
+      ],
+      "evidence_ids": [
+        "ev-code-acp-manager",
+        "ev-code-acp-turn",
+        "ev-code-acp-stream",
+        "ev-test-acp-manager",
+        "ev-test-acp-turn-runner",
+        "ev-test-acp-runtime-cache"
+      ]
+    },
+    {
+      "id": "07-plugin-sdk-providers",
+      "title": "插件 SDK 与 Provider 扩展：把生态接入运行时",
+      "status": "complete",
+      "depends_on": [
+        "06-sessions-acp-control-plane"
+      ],
+      "estimated_hours": 3,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "src/plugin-sdk/plugin-entry.ts",
+        "src/plugin-sdk/provider-entry.ts",
+        "src/plugin-sdk/provider-tools.ts"
+      ],
+      "claim_ids": [
+        "claim-07-plugin-sdk-providers"
+      ],
+      "evidence_ids": [
+        "ev-code-plugin-entry",
+        "ev-code-provider-entry",
+        "ev-code-provider-tools",
+        "ev-test-plugin-entry",
+        "ev-test-provider-entry",
+        "ev-test-provider-tools"
+      ]
+    },
+    {
+      "id": "08-devices-channels-security",
+      "title": "渠道、设备节点与安全默认值",
+      "status": "complete",
+      "depends_on": [
+        "07-plugin-sdk-providers"
+      ],
+      "estimated_hours": 3,
+      "source_scope": [
+        "README.md",
+        "docs/agent-runtime-architecture.md",
+        "README.md",
+        "packages/gateway-protocol/src/schema.ts",
+        "apps/android/app/src/test/java/.../node 与 gateway 测试"
+      ],
+      "claim_ids": [
+        "claim-08-devices-channels-security"
+      ],
+      "evidence_ids": [
+        "ev-readme-security",
+        "ev-test-android-device-auth",
+        "ev-test-gateway-protocol",
+        "ev-test-android-node-handlers"
+      ]
+    }
+  ]
+}

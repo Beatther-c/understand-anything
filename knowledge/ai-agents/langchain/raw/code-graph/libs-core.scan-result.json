@@ -1,0 +1,2360 @@
+{
+  "scriptCompleted": true,
+  "files": [
+    {
+      "path": "extended_testing_deps.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "langchain_core/__init__.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_api/__init__.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_api/beta_decorator.py",
+      "language": "python",
+      "sizeLines": 253,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_api/deprecation.py",
+      "language": "python",
+      "sizeLines": 617,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_api/internal.py",
+      "language": "python",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_api/path.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_import_utils.py",
+      "language": "python",
+      "sizeLines": 41,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_security/__init__.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_security/_exceptions.py",
+      "language": "python",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_security/_policy.py",
+      "language": "python",
+      "sizeLines": 306,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_security/_ssrf_protection.py",
+      "language": "python",
+      "sizeLines": 155,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/_security/_transport.py",
+      "language": "python",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/agents.py",
+      "language": "python",
+      "sizeLines": 256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/caches.py",
+      "language": "python",
+      "sizeLines": 272,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/callbacks/__init__.py",
+      "language": "python",
+      "sizeLines": 132,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/callbacks/base.py",
+      "language": "python",
+      "sizeLines": 1223,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/callbacks/file.py",
+      "language": "python",
+      "sizeLines": 267,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/callbacks/manager.py",
+      "language": "python",
+      "sizeLines": 2792,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/callbacks/stdout.py",
+      "language": "python",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/callbacks/streaming_stdout.py",
+      "language": "python",
+      "sizeLines": 152,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/callbacks/usage.py",
+      "language": "python",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/chat_history.py",
+      "language": "python",
+      "sizeLines": 246,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/chat_loaders.py",
+      "language": "python",
+      "sizeLines": 26,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/chat_sessions.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/cross_encoders.py",
+      "language": "python",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/document_loaders/__init__.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/document_loaders/base.py",
+      "language": "python",
+      "sizeLines": 155,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/document_loaders/blob_loaders.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/document_loaders/langsmith.py",
+      "language": "python",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/documents/__init__.py",
+      "language": "python",
+      "sizeLines": 55,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/documents/base.py",
+      "language": "python",
+      "sizeLines": 347,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/documents/compressor.py",
+      "language": "python",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/documents/transformers.py",
+      "language": "python",
+      "sizeLines": 79,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/embeddings/__init__.py",
+      "language": "python",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/embeddings/embeddings.py",
+      "language": "python",
+      "sizeLines": 78,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/embeddings/fake.py",
+      "language": "python",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/env.py",
+      "language": "python",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/example_selectors/__init__.py",
+      "language": "python",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/example_selectors/base.py",
+      "language": "python",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/example_selectors/length_based.py",
+      "language": "python",
+      "sizeLines": 128,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/example_selectors/semantic_similarity.py",
+      "language": "python",
+      "sizeLines": 358,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/exceptions.py",
+      "language": "python",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/globals.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/indexing/__init__.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/indexing/api.py",
+      "language": "python",
+      "sizeLines": 954,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/indexing/base.py",
+      "language": "python",
+      "sizeLines": 661,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/indexing/in_memory.py",
+      "language": "python",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/__init__.py",
+      "language": "python",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/_compat_bridge.py",
+      "language": "python",
+      "sizeLines": 825,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/_utils.py",
+      "language": "python",
+      "sizeLines": 343,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/base.py",
+      "language": "python",
+      "sizeLines": 391,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/chat_model_stream.py",
+      "language": "python",
+      "sizeLines": 1441,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/chat_models.py",
+      "language": "python",
+      "sizeLines": 2699,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/fake_chat_models.py",
+      "language": "python",
+      "sizeLines": 396,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/fake.py",
+      "language": "python",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/llms.py",
+      "language": "python",
+      "sizeLines": 1553,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/language_models/model_profile.py",
+      "language": "python",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/load/__init__.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/load/_validation.py",
+      "language": "python",
+      "sizeLines": 191,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/load/dump.py",
+      "language": "python",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/load/load.py",
+      "language": "python",
+      "sizeLines": 819,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/load/mapping.py",
+      "language": "python",
+      "sizeLines": 1085,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/load/serializable.py",
+      "language": "python",
+      "sizeLines": 388,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/load/validators.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/__init__.py",
+      "language": "python",
+      "sizeLines": 198,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/ai.py",
+      "language": "python",
+      "sizeLines": 840,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/base.py",
+      "language": "python",
+      "sizeLines": 518,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/__init__.py",
+      "language": "python",
+      "sizeLines": 112,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/anthropic.py",
+      "language": "python",
+      "sizeLines": 499,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/bedrock_converse.py",
+      "language": "python",
+      "sizeLines": 319,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/bedrock.py",
+      "language": "python",
+      "sizeLines": 108,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/google_genai.py",
+      "language": "python",
+      "sizeLines": 566,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/google_vertexai.py",
+      "language": "python",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/groq.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/langchain_v0.py",
+      "language": "python",
+      "sizeLines": 301,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/block_translators/openai.py",
+      "language": "python",
+      "sizeLines": 1086,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/chat.py",
+      "language": "python",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/content.py",
+      "language": "python",
+      "sizeLines": 1488,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/function.py",
+      "language": "python",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/human.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/modifier.py",
+      "language": "python",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/system.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/tool.py",
+      "language": "python",
+      "sizeLines": 416,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/messages/utils.py",
+      "language": "python",
+      "sizeLines": 2395,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/__init__.py",
+      "language": "python",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/base.py",
+      "language": "python",
+      "sizeLines": 348,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/format_instructions.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/json.py",
+      "language": "python",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/list.py",
+      "language": "python",
+      "sizeLines": 249,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/openai_functions.py",
+      "language": "python",
+      "sizeLines": 313,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/openai_tools.py",
+      "language": "python",
+      "sizeLines": 384,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/pydantic.py",
+      "language": "python",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/string.py",
+      "language": "python",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/transform.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/output_parsers/xml.py",
+      "language": "python",
+      "sizeLines": 300,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/outputs/__init__.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/outputs/chat_generation.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/outputs/chat_result.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/outputs/generation.py",
+      "language": "python",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/outputs/llm_result.py",
+      "language": "python",
+      "sizeLines": 112,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/outputs/run_info.py",
+      "language": "python",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompt_values.py",
+      "language": "python",
+      "sizeLines": 161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/__init__.py",
+      "language": "python",
+      "sizeLines": 101,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/base.py",
+      "language": "python",
+      "sizeLines": 478,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/chat.py",
+      "language": "python",
+      "sizeLines": 1491,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/dict.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/few_shot_with_templates.py",
+      "language": "python",
+      "sizeLines": 237,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/few_shot.py",
+      "language": "python",
+      "sizeLines": 483,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/image.py",
+      "language": "python",
+      "sizeLines": 177,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/loading.py",
+      "language": "python",
+      "sizeLines": 289,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/message.py",
+      "language": "python",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/prompt.py",
+      "language": "python",
+      "sizeLines": 312,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/string.py",
+      "language": "python",
+      "sizeLines": 399,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/prompts/structured.py",
+      "language": "python",
+      "sizeLines": 183,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/py.typed",
+      "language": "typed",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/rate_limiters.py",
+      "language": "python",
+      "sizeLines": 256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/retrievers.py",
+      "language": "python",
+      "sizeLines": 328,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/__init__.py",
+      "language": "python",
+      "sizeLines": 136,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/base.py",
+      "language": "python",
+      "sizeLines": 6574,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/branch.py",
+      "language": "python",
+      "sizeLines": 461,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/config.py",
+      "language": "python",
+      "sizeLines": 672,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/configurable.py",
+      "language": "python",
+      "sizeLines": 716,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/fallbacks.py",
+      "language": "python",
+      "sizeLines": 664,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/graph_ascii.py",
+      "language": "python",
+      "sizeLines": 366,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/graph_mermaid.py",
+      "language": "python",
+      "sizeLines": 503,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/graph_png.py",
+      "language": "python",
+      "sizeLines": 215,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/graph.py",
+      "language": "python",
+      "sizeLines": 739,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/history.py",
+      "language": "python",
+      "sizeLines": 631,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/passthrough.py",
+      "language": "python",
+      "sizeLines": 841,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/retry.py",
+      "language": "python",
+      "sizeLines": 379,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/router.py",
+      "language": "python",
+      "sizeLines": 239,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/schema.py",
+      "language": "python",
+      "sizeLines": 188,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/runnables/utils.py",
+      "language": "python",
+      "sizeLines": 779,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/stores.py",
+      "language": "python",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/structured_query.py",
+      "language": "python",
+      "sizeLines": 203,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/sys_info.py",
+      "language": "python",
+      "sizeLines": 137,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tools/__init__.py",
+      "language": "python",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tools/base.py",
+      "language": "python",
+      "sizeLines": 1593,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tools/convert.py",
+      "language": "python",
+      "sizeLines": 476,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tools/render.py",
+      "language": "python",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tools/retriever.py",
+      "language": "python",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tools/simple.py",
+      "language": "python",
+      "sizeLines": 204,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tools/structured.py",
+      "language": "python",
+      "sizeLines": 271,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/__init__.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/_compat.py",
+      "language": "python",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/_streaming.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/base.py",
+      "language": "python",
+      "sizeLines": 955,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/context.py",
+      "language": "python",
+      "sizeLines": 205,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/core.py",
+      "language": "python",
+      "sizeLines": 724,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/evaluation.py",
+      "language": "python",
+      "sizeLines": 226,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/event_stream.py",
+      "language": "python",
+      "sizeLines": 1100,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/langchain.py",
+      "language": "python",
+      "sizeLines": 490,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/log_stream.py",
+      "language": "python",
+      "sizeLines": 769,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/memory_stream.py",
+      "language": "python",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/root_listeners.py",
+      "language": "python",
+      "sizeLines": 130,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/run_collector.py",
+      "language": "python",
+      "sizeLines": 40,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/schemas.py",
+      "language": "python",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/tracers/stdout.py",
+      "language": "python",
+      "sizeLines": 205,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/__init__.py",
+      "language": "python",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/_merge.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/aiter.py",
+      "language": "python",
+      "sizeLines": 347,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/env.py",
+      "language": "python",
+      "sizeLines": 86,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/formatting.py",
+      "language": "python",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/function_calling.py",
+      "language": "python",
+      "sizeLines": 829,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/html.py",
+      "language": "python",
+      "sizeLines": 132,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/image.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/input.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/interactive_env.py",
+      "language": "python",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/iter.py",
+      "language": "python",
+      "sizeLines": 223,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/json_schema.py",
+      "language": "python",
+      "sizeLines": 273,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/json.py",
+      "language": "python",
+      "sizeLines": 228,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/mustache.py",
+      "language": "python",
+      "sizeLines": 704,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/pydantic.py",
+      "language": "python",
+      "sizeLines": 589,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/strings.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/usage.py",
+      "language": "python",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/utils.py",
+      "language": "python",
+      "sizeLines": 521,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/utils/uuid.py",
+      "language": "python",
+      "sizeLines": 57,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/vectorstores/__init__.py",
+      "language": "python",
+      "sizeLines": 53,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/vectorstores/base.py",
+      "language": "python",
+      "sizeLines": 1111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/vectorstores/in_memory.py",
+      "language": "python",
+      "sizeLines": 546,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/vectorstores/utils.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "langchain_core/version.py",
+      "language": "python",
+      "sizeLines": 3,
+      "fileCategory": "code"
+    },
+    {
+      "path": "Makefile",
+      "language": "makefile",
+      "sizeLines": 89,
+      "fileCategory": "infra"
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "sizeLines": 154,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 47,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "scripts/check_imports.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/check_version.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/lint_imports.sh",
+      "language": "shell",
+      "sizeLines": 18,
+      "fileCategory": "script"
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/benchmarks/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/benchmarks/test_async_callbacks.py",
+      "language": "python",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/benchmarks/test_imports.py",
+      "language": "python",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/integration_tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/integration_tests/test_compile.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/_api/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/_api/test_beta_decorator.py",
+      "language": "python",
+      "sizeLines": 382,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/_api/test_deprecation.py",
+      "language": "python",
+      "sizeLines": 632,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/_api/test_imports.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/_api/test_path.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/caches/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/caches/test_in_memory_cache.py",
+      "language": "python",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/callbacks/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/callbacks/test_async_callback_manager.py",
+      "language": "python",
+      "sizeLines": 212,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/callbacks/test_dispatch_custom_event.py",
+      "language": "python",
+      "sizeLines": 157,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/callbacks/test_handle_event.py",
+      "language": "python",
+      "sizeLines": 134,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/callbacks/test_imports.py",
+      "language": "python",
+      "sizeLines": 42,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/callbacks/test_sync_callback_manager.py",
+      "language": "python",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/callbacks/test_usage_callback.py",
+      "language": "python",
+      "sizeLines": 122,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/chat_history/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/chat_history/test_chat_history.py",
+      "language": "python",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/conftest.py",
+      "language": "python",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/data/prompt_file.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/unit_tests/data/prompts/prompt_extra_args.json",
+      "language": "json",
+      "sizeLines": 4,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/data/prompts/prompt_missing_args.json",
+      "language": "json",
+      "sizeLines": 2,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/data/prompts/simple_prompt.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/dependencies/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/dependencies/test_dependencies.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/document_loaders/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/document_loaders/test_base.py",
+      "language": "python",
+      "sizeLines": 72,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/document_loaders/test_langsmith.py",
+      "language": "python",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/documents/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/documents/test_document.py",
+      "language": "python",
+      "sizeLines": 12,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/documents/test_imports.py",
+      "language": "python",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/documents/test_str.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/embeddings/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/embeddings/test_deterministic_embedding.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/example_selectors/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/example_selectors/test_base.py",
+      "language": "python",
+      "sizeLines": 27,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/example_selectors/test_imports.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/example_selectors/test_length_based_example_selector.py",
+      "language": "python",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/example_selectors/test_similarity.py",
+      "language": "python",
+      "sizeLines": 247,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/examples/example_prompt.json",
+      "language": "json",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/example-non-utf8.csv",
+      "language": "csv",
+      "sizeLines": 10,
+      "fileCategory": "data"
+    },
+    {
+      "path": "tests/unit_tests/examples/example-non-utf8.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/unit_tests/examples/example-utf8.csv",
+      "language": "csv",
+      "sizeLines": 10,
+      "fileCategory": "data"
+    },
+    {
+      "path": "tests/unit_tests/examples/example-utf8.txt",
+      "language": "txt",
+      "sizeLines": 6,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/unit_tests/examples/examples.json",
+      "language": "json",
+      "sizeLines": 4,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/examples.yaml",
+      "language": "yaml",
+      "sizeLines": 4,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/few_shot_prompt_example_prompt.json",
+      "language": "json",
+      "sizeLines": 8,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/few_shot_prompt_examples_in.json",
+      "language": "json",
+      "sizeLines": 15,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/few_shot_prompt_yaml_examples.yaml",
+      "language": "yaml",
+      "sizeLines": 15,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/few_shot_prompt.json",
+      "language": "json",
+      "sizeLines": 12,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/few_shot_prompt.yaml",
+      "language": "yaml",
+      "sizeLines": 15,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/jinja_injection_prompt.json",
+      "language": "json",
+      "sizeLines": 11,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/jinja_injection_prompt.yaml",
+      "language": "yaml",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/prompt_with_output_parser.json",
+      "language": "json",
+      "sizeLines": 19,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/simple_prompt_with_template_file.json",
+      "language": "json",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/simple_prompt.json",
+      "language": "json",
+      "sizeLines": 5,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/simple_prompt.yaml",
+      "language": "yaml",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/examples/simple_template.txt",
+      "language": "txt",
+      "sizeLines": 0,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/unit_tests/fake/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/fake/callbacks.py",
+      "language": "python",
+      "sizeLines": 432,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/fake/test_fake_chat_model.py",
+      "language": "python",
+      "sizeLines": 255,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/indexing/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/indexing/test_hashed_document.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/indexing/test_in_memory_indexer.py",
+      "language": "python",
+      "sizeLines": 50,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/indexing/test_in_memory_record_manager.py",
+      "language": "python",
+      "sizeLines": 279,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/indexing/test_indexing.py",
+      "language": "python",
+      "sizeLines": 2963,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/indexing/test_public_api.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/chat_models/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/chat_models/test_base.py",
+      "language": "python",
+      "sizeLines": 1604,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/chat_models/test_benchmark.py",
+      "language": "python",
+      "sizeLines": 21,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/chat_models/test_cache.py",
+      "language": "python",
+      "sizeLines": 535,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/chat_models/test_rate_limiting.py",
+      "language": "python",
+      "sizeLines": 272,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/llms/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/llms/test_base.py",
+      "language": "python",
+      "sizeLines": 378,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/llms/test_cache.py",
+      "language": "python",
+      "sizeLines": 111,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/test_chat_model_stream.py",
+      "language": "python",
+      "sizeLines": 904,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/test_chat_model_streamer.py",
+      "language": "python",
+      "sizeLines": 484,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/test_chat_model_v3_stream.py",
+      "language": "python",
+      "sizeLines": 1364,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/test_compat_bridge.py",
+      "language": "python",
+      "sizeLines": 1380,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/test_imports.py",
+      "language": "python",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/test_model_profile.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/language_models/test_v1_parity.py",
+      "language": "python",
+      "sizeLines": 392,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/load/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/load/test_imports.py",
+      "language": "python",
+      "sizeLines": 14,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/load/test_secret_injection.py",
+      "language": "python",
+      "sizeLines": 431,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/load/test_serializable.py",
+      "language": "python",
+      "sizeLines": 1417,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_anthropic.py",
+      "language": "python",
+      "sizeLines": 509,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_bedrock_converse.py",
+      "language": "python",
+      "sizeLines": 379,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_bedrock.py",
+      "language": "python",
+      "sizeLines": 405,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_google_genai.py",
+      "language": "python",
+      "sizeLines": 218,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_groq.py",
+      "language": "python",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_langchain_v0.py",
+      "language": "python",
+      "sizeLines": 113,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_openai.py",
+      "language": "python",
+      "sizeLines": 605,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/block_translators/test_registration.py",
+      "language": "python",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/test_ai.py",
+      "language": "python",
+      "sizeLines": 504,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/test_imports.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/messages/test_utils.py",
+      "language": "python",
+      "sizeLines": 3105,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_base_parsers.py",
+      "language": "python",
+      "sizeLines": 93,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_imports.py",
+      "language": "python",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_json.py",
+      "language": "python",
+      "sizeLines": 630,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_list_parser.py",
+      "language": "python",
+      "sizeLines": 314,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_openai_functions.py",
+      "language": "python",
+      "sizeLines": 196,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_openai_tools.py",
+      "language": "python",
+      "sizeLines": 1454,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_pydantic_parser.py",
+      "language": "python",
+      "sizeLines": 215,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/output_parsers/test_xml_parser.py",
+      "language": "python",
+      "sizeLines": 158,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/outputs/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/outputs/test_chat_generation.py",
+      "language": "python",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/outputs/test_imports.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompt_file.txt",
+      "language": "txt",
+      "sizeLines": 1,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/unit_tests/prompts/__init__.py",
+      "language": "python",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/__snapshots__/test_chat.ambr",
+      "language": "ambr",
+      "sizeLines": 3312,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/__snapshots__/test_prompt.ambr",
+      "language": "ambr",
+      "sizeLines": 180,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/prompt_extra_args.json",
+      "language": "json",
+      "sizeLines": 4,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/prompts/prompt_missing_args.json",
+      "language": "json",
+      "sizeLines": 2,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/prompts/simple_prompt.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_chat.py",
+      "language": "python",
+      "sizeLines": 2003,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_dict.py",
+      "language": "python",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_few_shot_with_templates.py",
+      "language": "python",
+      "sizeLines": 83,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_few_shot.py",
+      "language": "python",
+      "sizeLines": 543,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_image.py",
+      "language": "python",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_imports.py",
+      "language": "python",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_loading.py",
+      "language": "python",
+      "sizeLines": 425,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_prompt.py",
+      "language": "python",
+      "sizeLines": 730,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_string.py",
+      "language": "python",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_structured.py",
+      "language": "python",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/prompts/test_utils.py",
+      "language": "python",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/pydantic_utils.py",
+      "language": "python",
+      "sizeLines": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/rate_limiters/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/rate_limiters/test_in_memory_rate_limiter.py",
+      "language": "python",
+      "sizeLines": 110,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/__snapshots__/test_fallbacks.ambr",
+      "language": "ambr",
+      "sizeLines": 369,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/__snapshots__/test_graph.ambr",
+      "language": "ambr",
+      "sizeLines": 2156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/__snapshots__/test_runnable.ambr",
+      "language": "ambr",
+      "sizeLines": 13963,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_concurrency.py",
+      "language": "python",
+      "sizeLines": 142,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_config.py",
+      "language": "python",
+      "sizeLines": 322,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_configurable.py",
+      "language": "python",
+      "sizeLines": 273,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_fallbacks.py",
+      "language": "python",
+      "sizeLines": 402,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_graph.py",
+      "language": "python",
+      "sizeLines": 719,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_history.py",
+      "language": "python",
+      "sizeLines": 906,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_imports.py",
+      "language": "python",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_runnable_events_v1.py",
+      "language": "python",
+      "sizeLines": 2159,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_runnable_events_v2.py",
+      "language": "python",
+      "sizeLines": 2910,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_runnable_events_v3.py",
+      "language": "python",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_runnable.py",
+      "language": "python",
+      "sizeLines": 5769,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_tracing_interops.py",
+      "language": "python",
+      "sizeLines": 1301,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/runnables/test_utils.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/stores/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/stores/test_in_memory.py",
+      "language": "python",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/stubs.py",
+      "language": "python",
+      "sizeLines": 49,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_globals.py",
+      "language": "python",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_imports.py",
+      "language": "python",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_messages.py",
+      "language": "python",
+      "sizeLines": 1429,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_outputs.py",
+      "language": "python",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_prompt_values.py",
+      "language": "python",
+      "sizeLines": 25,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_pydantic_imports.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_pydantic_serde.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_retrievers.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_setup.py",
+      "language": "python",
+      "sizeLines": 15,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_ssrf_policy_transport.py",
+      "language": "python",
+      "sizeLines": 427,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_ssrf_protection.py",
+      "language": "python",
+      "sizeLines": 238,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_sys_info.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/test_tools.py",
+      "language": "python",
+      "sizeLines": 3743,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_async_base_tracer.py",
+      "language": "python",
+      "sizeLines": 649,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_automatic_metadata.py",
+      "language": "python",
+      "sizeLines": 155,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_base_tracer.py",
+      "language": "python",
+      "sizeLines": 679,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_imports.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_langchain.py",
+      "language": "python",
+      "sizeLines": 951,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_memory_stream.py",
+      "language": "python",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_run_collector.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/tracers/test_schemas.py",
+      "language": "python",
+      "sizeLines": 16,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_aiter.py",
+      "language": "python",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_env.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_formatting.py",
+      "language": "python",
+      "sizeLines": 127,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_function_calling.py",
+      "language": "python",
+      "sizeLines": 1257,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_html.py",
+      "language": "python",
+      "sizeLines": 209,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_imports.py",
+      "language": "python",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_iter.py",
+      "language": "python",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_json_schema.py",
+      "language": "python",
+      "sizeLines": 906,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_pydantic.py",
+      "language": "python",
+      "sizeLines": 207,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_rm_titles.py",
+      "language": "python",
+      "sizeLines": 233,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_strings.py",
+      "language": "python",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_usage.py",
+      "language": "python",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_utils.py",
+      "language": "python",
+      "sizeLines": 503,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/utils/test_uuid_utils.py",
+      "language": "python",
+      "sizeLines": 37,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/vectorstores/__init__.py",
+      "language": "python",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/vectorstores/test_in_memory.py",
+      "language": "python",
+      "sizeLines": 222,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/vectorstores/test_utils.py",
+      "language": "python",
+      "sizeLines": 164,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/unit_tests/vectorstores/test_vectorstore.py",
+      "language": "python",
+      "sizeLines": 294,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 388,
+  "filteredByIgnore": 0,
+  "estimatedComplexity": "large",
+  "stats": {
+    "filesScanned": 388,
+    "byCategory": {
+      "docs": 7,
+      "code": 356,
+      "infra": 1,
+      "config": 21,
+      "script": 1,
+      "data": 2
+    },
+    "byLanguage": {
+      "txt": 6,
+      "python": 350,
+      "typed": 1,
+      "makefile": 1,
+      "toml": 1,
+      "markdown": 1,
+      "shell": 1,
+      "json": 15,
+      "csv": 2,
+      "yaml": 5,
+      "ambr": 5
+    }
+  }
+}

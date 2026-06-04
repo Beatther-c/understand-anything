@@ -1,0 +1,756 @@
+[
+  {
+    "id": "ev-runnable-class-doc",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      125,
+      169
+    ],
+    "symbol": "Runnable",
+    "evidence_type": "code",
+    "summary": "Runnable 文档说明它可 invoke、batch、stream、transform 和 compose，并介绍 RunnableSequence / RunnableParallel。"
+  },
+  {
+    "id": "ev-runnable-or",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      619,
+      638
+    ],
+    "symbol": "Runnable.__or__",
+    "evidence_type": "code",
+    "summary": "__or__ 返回 RunnableSequence(self, coerce_to_runnable(other))。"
+  },
+  {
+    "id": "ev-runnable-pipe",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      661,
+      705
+    ],
+    "symbol": "Runnable.pipe",
+    "evidence_type": "code",
+    "summary": "pipe 文档说明它等价于 RunnableSequence(self, *others) 或 self | others[0] | ...。"
+  },
+  {
+    "id": "ev-runnable-invoke",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      823,
+      866
+    ],
+    "symbol": "Runnable.invoke",
+    "evidence_type": "code",
+    "summary": "invoke 定义单输入到单输出的执行契约，ainvoke 默认通过 executor 调用同步实现。"
+  },
+  {
+    "id": "ev-runnable-batch",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      868,
+      916
+    ],
+    "symbol": "Runnable.batch",
+    "evidence_type": "code",
+    "summary": "batch 默认实现为空输入返回空列表，单输入直接 invoke，多输入通过 executor.map 并发调用 invoke。"
+  },
+  {
+    "id": "ev-runnable-stream",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      1131,
+      1150
+    ],
+    "symbol": "Runnable.stream",
+    "evidence_type": "code",
+    "summary": "stream 默认实现 yield self.invoke(...)，说明默认不提供真正 token/chunk 级流式。"
+  },
+  {
+    "id": "ev-runnable-sequence-class",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      2995,
+      3029
+    ],
+    "symbol": "RunnableSequence",
+    "evidence_type": "code",
+    "summary": "RunnableSequence 文档说明它按顺序调用多个 Runnable，并讨论 batch 和 streaming 行为。"
+  },
+  {
+    "id": "ev-runnable-sequence-invoke",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      3309,
+      3342
+    ],
+    "symbol": "RunnableSequence.invoke",
+    "evidence_type": "code",
+    "summary": "RunnableSequence.invoke 循环执行 self.steps，把每一步输出作为下一步输入。"
+  },
+  {
+    "id": "ev-runnable-lambda-class",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      4577,
+      4592
+    ],
+    "symbol": "RunnableLambda",
+    "evidence_type": "code",
+    "summary": "RunnableLambda 文档说明它将 Python callable 转为 Runnable，并可参与组合和 tracing。"
+  },
+  {
+    "id": "ev-runnable-lambda-invoke",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/base.py",
+    "line_range": [
+      5175,
+      5203
+    ],
+    "symbol": "RunnableLambda.invoke",
+    "evidence_type": "code",
+    "summary": "RunnableLambda.invoke 通过 _call_with_config 调用包装的函数。"
+  },
+  {
+    "id": "ev-runnable-config",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/runnables/config.py",
+    "line_range": [
+      49,
+      120
+    ],
+    "symbol": "RunnableConfig",
+    "evidence_type": "code",
+    "summary": "RunnableConfig 定义 tags、metadata、callbacks、run_name、max_concurrency、recursion_limit、configurable、run_id 等执行配置。"
+  },
+  {
+    "id": "ev-test-batch-concurrency",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/runnables/test_concurrency.py",
+    "line_range": [
+      13,
+      41
+    ],
+    "symbol": "test_abatch_concurrency",
+    "evidence_type": "test",
+    "summary": "测试验证 RunnableLambda 的 abatch 尊重 RunnableConfig.max_concurrency。"
+  },
+  {
+    "id": "ev-base-message",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/messages/base.py",
+    "line_range": [
+      93,
+      123
+    ],
+    "symbol": "BaseMessage",
+    "evidence_type": "code",
+    "summary": "BaseMessage 定义 content、additional_kwargs、response_metadata、type、name、id 等消息字段。"
+  },
+  {
+    "id": "ev-ai-message-tool-calls",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/messages/ai.py",
+    "line_range": [
+      160,
+      182
+    ],
+    "symbol": "AIMessage",
+    "evidence_type": "code",
+    "summary": "AIMessage 包含 tool_calls、invalid_tool_calls、usage_metadata 和 type='ai'。"
+  },
+  {
+    "id": "ev-tool-message-tool-call-id",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/messages/tool.py",
+    "line_range": [
+      26,
+      70
+    ],
+    "symbol": "ToolMessage",
+    "evidence_type": "code",
+    "summary": "ToolMessage 用 tool_call_id 把工具结果关联回模型产生的 tool call。"
+  },
+  {
+    "id": "ev-base-prompt-template",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/prompts/base.py",
+    "line_range": [
+      40,
+      79
+    ],
+    "symbol": "BasePromptTemplate",
+    "evidence_type": "code",
+    "summary": "BasePromptTemplate 定义 input_variables、optional_variables、partial_variables 和输入 schema 相关字段。"
+  },
+  {
+    "id": "ev-prompt-template-invoke",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/prompts/base.py",
+    "line_range": [
+      160,
+      217
+    ],
+    "symbol": "BasePromptTemplate.invoke",
+    "evidence_type": "code",
+    "summary": "_validate_input 校验变量，invoke 通过 _call_with_config 调用 _format_prompt_with_error_handling。"
+  },
+  {
+    "id": "ev-chat-prompt-template",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/prompts/chat.py",
+    "line_range": [
+      790,
+      1067
+    ],
+    "symbol": "ChatPromptTemplate",
+    "evidence_type": "code",
+    "summary": "ChatPromptTemplate 建模消息模板列表，并在校验阶段推导/检查 input_variables。"
+  },
+  {
+    "id": "ev-base-chat-model",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/language_models/chat_models.py",
+    "line_range": [
+      270,
+      288
+    ],
+    "symbol": "BaseChatModel",
+    "evidence_type": "code",
+    "summary": "BaseChatModel 文档表列出 invoke、stream、batch、bind_tools、with_structured_output 等统一接口。"
+  },
+  {
+    "id": "ev-base-chat-model-invoke",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/language_models/chat_models.py",
+    "line_range": [
+      461,
+      481
+    ],
+    "symbol": "BaseChatModel.invoke",
+    "evidence_type": "code",
+    "summary": "invoke 将输入转换为 messages，并通过 generate_prompt 得到 ChatGeneration.message。"
+  },
+  {
+    "id": "ev-base-chat-model-stream",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/language_models/chat_models.py",
+    "line_range": [
+      713,
+      760
+    ],
+    "symbol": "BaseChatModel.stream",
+    "evidence_type": "code",
+    "summary": "stream 处理 callbacks、metadata、rate limiter，并逐块 yield stream_iter 结果。"
+  },
+  {
+    "id": "ev-base-tool",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/tools/base.py",
+    "line_range": [
+      405,
+      507
+    ],
+    "symbol": "BaseTool",
+    "evidence_type": "code",
+    "summary": "BaseTool 定义 name、description、args_schema、return_direct 和 response_format 等工具元数据。"
+  },
+  {
+    "id": "ev-base-tool-invoke",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/tools/base.py",
+    "line_range": [
+      587,
+      650
+    ],
+    "symbol": "BaseTool.tool_call_schema/invoke",
+    "evidence_type": "code",
+    "summary": "tool_call_schema 生成工具调用 schema，invoke 负责解析输入并调用 run。"
+  },
+  {
+    "id": "ev-base-tool-run",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/tools/base.py",
+    "line_range": [
+      878,
+      940
+    ],
+    "symbol": "BaseTool.run",
+    "evidence_type": "code",
+    "summary": "run 执行工具逻辑并接入 callback manager。"
+  },
+  {
+    "id": "ev-callback-handler",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/callbacks/base.py",
+    "line_range": [
+      386,
+      496
+    ],
+    "symbol": "BaseCallbackHandler",
+    "evidence_type": "code",
+    "summary": "Callback handler 定义 on_chain_start、on_tool_start 等生命周期事件。"
+  },
+  {
+    "id": "ev-callback-manager",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/callbacks/manager.py",
+    "line_range": [
+      1343,
+      1458
+    ],
+    "symbol": "CallbackManager",
+    "evidence_type": "code",
+    "summary": "CallbackManager 提供 on_llm_start、on_chat_model_start、on_chain_start 等事件入口。"
+  },
+  {
+    "id": "ev-agent-action",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/agents.py",
+    "line_range": [
+      44,
+      58
+    ],
+    "symbol": "AgentAction",
+    "evidence_type": "code",
+    "summary": "AgentAction 表示 agent 要执行的动作，包含 tool、tool_input 和 log。"
+  },
+  {
+    "id": "ev-agent-step",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/langchain_core/agents.py",
+    "line_range": [
+      131,
+      150
+    ],
+    "symbol": "AgentStep/AgentFinish",
+    "evidence_type": "code",
+    "summary": "AgentStep 保存 action 和 observation，AgentFinish 表示最终返回。"
+  },
+  {
+    "id": "ev-create-agent",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/langchain_v1/langchain/agents/factory.py",
+    "line_range": [
+      696,
+      728
+    ],
+    "symbol": "create_agent",
+    "evidence_type": "code",
+    "summary": "create_agent 文档说明它基于 model、tools、system_prompt、middleware 等参数创建 agent graph。"
+  },
+  {
+    "id": "ev-create-agent-compiled-graph",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/langchain_v1/langchain/agents/factory.py",
+    "line_range": [
+      1670,
+      1683
+    ],
+    "symbol": "create_agent return",
+    "evidence_type": "code",
+    "summary": "create_agent 返回 compiled graph，并附带 recursion_limit 等配置。"
+  },
+  {
+    "id": "ev-base-chat-openai",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/langchain_openai/chat_models/base.py",
+    "line_range": [
+      581,
+      608
+    ],
+    "symbol": "BaseChatOpenAI",
+    "evidence_type": "code",
+    "summary": "BaseChatOpenAI 定义 model_name、temperature、openai_api_key 等 OpenAI adapter 参数。"
+  },
+  {
+    "id": "ev-openai-stream-generate",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/langchain_openai/chat_models/base.py",
+    "line_range": [
+      1549,
+      1644
+    ],
+    "symbol": "BaseChatOpenAI._stream/_generate",
+    "evidence_type": "code",
+    "summary": "OpenAI adapter 分别实现 _stream 和 _generate，将 LangChain 调用转成 provider 请求并归一化响应。"
+  },
+  {
+    "id": "ev-openai-bind-tools",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/langchain_openai/chat_models/base.py",
+    "line_range": [
+      2131,
+      2203
+    ],
+    "symbol": "BaseChatOpenAI.bind_tools",
+    "evidence_type": "code",
+    "summary": "bind_tools 支持 tool_choice、strict、parallel_tool_calls，并处理 OpenAI tool_choice='required' 兼容。"
+  },
+  {
+    "id": "ev-openai-tool-conversion",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/langchain_openai/chat_models/base.py",
+    "line_range": [
+      2171,
+      2178
+    ],
+    "symbol": "convert_to_openai_tool",
+    "evidence_type": "code",
+    "summary": "OpenAI adapter 使用 convert_to_openai_tool 将 LangChain tool-like 对象转换为 OpenAI 工具 schema。"
+  },
+  {
+    "id": "ev-chat-openai",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/langchain_openai/chat_models/base.py",
+    "line_range": [
+      2534,
+      2554
+    ],
+    "symbol": "ChatOpenAI",
+    "evidence_type": "code",
+    "summary": "ChatOpenAI 是面向用户的 OpenAI chat model 集成类。"
+  },
+  {
+    "id": "ev-test-message-tool-call-serde",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/test_messages.py",
+    "line_range": [
+      412,
+      433
+    ],
+    "symbol": "test_messages",
+    "evidence_type": "test",
+    "summary": "messages_to_dict/messages_from_dict 对普通消息和含 tool_calls 的 AIMessage 做往返序列化验证。"
+  },
+  {
+    "id": "ev-test-message-chunk-tool-calls",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/test_messages.py",
+    "line_range": [
+      465,
+      487
+    ],
+    "symbol": "message_chunk_to_message",
+    "evidence_type": "test",
+    "summary": "AIMessageChunk 的 tool_call_chunks 会被转换成 tool_calls 和 invalid_tool_calls。"
+  },
+  {
+    "id": "ev-test-tool-message-serde-dict",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/test_messages.py",
+    "line_range": [
+      989,
+      1054
+    ],
+    "symbol": "ToolMessage",
+    "evidence_type": "test",
+    "summary": "ToolMessage 的 artifact、status、tool_call_id 会参与 dump/load 和 message_to_dict。"
+  },
+  {
+    "id": "ev-test-prompt-from-template",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/prompts/test_prompt.py",
+    "line_range": [
+      21,
+      69
+    ],
+    "symbol": "PromptTemplate.from_template",
+    "evidence_type": "test",
+    "summary": "PromptTemplate 能从模板推断 input_variables，并处理重复变量。"
+  },
+  {
+    "id": "ev-test-prompt-partial-validation",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/prompts/test_prompt.py",
+    "line_range": [
+      250,
+      305
+    ],
+    "symbol": "PromptTemplate.partial_variables",
+    "evidence_type": "test",
+    "summary": "partial_variables 会减少待输入变量，validate_template 会捕获缺失或错误变量。"
+  },
+  {
+    "id": "ev-test-chat-prompt-formatting",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/prompts/test_chat.py",
+    "line_range": [
+      86,
+      107
+    ],
+    "symbol": "ChatPromptTemplate.from_template",
+    "evidence_type": "test",
+    "summary": "ChatPromptTemplate.from_template 支持 partial variables 并生成 HumanMessagePromptTemplate。"
+  },
+  {
+    "id": "ev-test-chat-prompt-invoke",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/prompts/test_chat.py",
+    "line_range": [
+      350,
+      357
+    ],
+    "symbol": "ChatPromptTemplate.invoke",
+    "evidence_type": "test",
+    "summary": "ChatPromptTemplate.invoke 返回格式化后的 SystemMessage 和 HumanMessage。"
+  },
+  {
+    "id": "ev-test-chat-model-batch-tracing",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/language_models/chat_models/test_base.py",
+    "line_range": [
+      111,
+      132
+    ],
+    "symbol": "BaseChatModel.batch/invoke/stream",
+    "evidence_type": "test",
+    "summary": "FakeListChatModel 的 batch/invoke/stream 都被 tracing 捕获，并记录 batch_size。"
+  },
+  {
+    "id": "ev-test-chat-model-stream-fallback",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/language_models/chat_models/test_base.py",
+    "line_range": [
+      197,
+      220
+    ],
+    "symbol": "BaseChatModel.stream",
+    "evidence_type": "test",
+    "summary": "只有 _generate 的 BaseChatModel 子类仍可通过 stream fallback 得到结果。"
+  },
+  {
+    "id": "ev-test-fake-chat-model-modes",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/fake/test_fake_chat_model.py",
+    "line_range": [
+      26,
+      72
+    ],
+    "symbol": "GenericFakeChatModel",
+    "evidence_type": "test",
+    "summary": "Fake chat model 验证 invoke、ainvoke、stream、astream 的统一接口和 chunk 输出。"
+  },
+  {
+    "id": "ev-test-tool-structured-args",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/test_tools.py",
+    "line_range": [
+      148,
+      158
+    ],
+    "symbol": "BaseTool.run",
+    "evidence_type": "test",
+    "summary": "结构化工具用 dict 参数执行并返回预期结果。"
+  },
+  {
+    "id": "ev-test-structured-tool-schema",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/test_tools.py",
+    "line_range": [
+      478,
+      485
+    ],
+    "symbol": "StructuredTool.from_function",
+    "evidence_type": "test",
+    "summary": "StructuredTool.from_function 能从函数签名推断 args schema。"
+  },
+  {
+    "id": "ev-test-tool-call-to-tool-message",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/test_tools.py",
+    "line_range": [
+      1480,
+      1507
+    ],
+    "symbol": "BaseTool.invoke ToolCall",
+    "evidence_type": "test",
+    "summary": "ToolCall 输入会执行工具并返回带 tool_call_id/name 的 ToolMessage。"
+  },
+  {
+    "id": "ev-test-tool-schema-dict",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/test_tools.py",
+    "line_range": [
+      2653,
+      2673
+    ],
+    "symbol": "StructuredTool args_schema dict",
+    "evidence_type": "test",
+    "summary": "StructuredTool 支持 dict 形式 args_schema，并把它作为 tool_call_schema 暴露。"
+  },
+  {
+    "id": "ev-test-callback-manager-merge",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/callbacks/test_sync_callback_manager.py",
+    "line_range": [
+      18,
+      38
+    ],
+    "symbol": "BaseCallbackManager.merge",
+    "evidence_type": "test",
+    "summary": "BaseCallbackManager.merge 保留普通 handler 与 inheritable handler 的区别。"
+  },
+  {
+    "id": "ev-test-async-callback-dispatch",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/callbacks/test_async_callback_manager.py",
+    "line_range": [
+      31,
+      75
+    ],
+    "symbol": "AsyncCallbackManager.on_llm_start",
+    "evidence_type": "test",
+    "summary": "AsyncCallbackManager 作为 dispatcher 调用 handler，并区分 run_inline 行为。"
+  },
+  {
+    "id": "ev-test-tracer-nested-run",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/tracers/test_base_tracer.py",
+    "line_range": [
+      254,
+      286
+    ],
+    "symbol": "BaseTracer nested runs",
+    "evidence_type": "test",
+    "summary": "tracer 使用 parent_run_id 记录 chain、tool、llm 的嵌套运行关系。"
+  },
+  {
+    "id": "ev-test-tracer-usage-metadata",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/core/tests/unit_tests/tracers/test_langchain.py",
+    "line_range": [
+      308,
+      352
+    ],
+    "symbol": "LangChainTracer usage_metadata",
+    "evidence_type": "test",
+    "summary": "LangChainTracer 在 LLM end 时把 AIMessage usage_metadata 写入 run.extra.metadata。"
+  },
+  {
+    "id": "ev-test-agent-create-agent-tool-runtime",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/langchain_v1/tests/unit_tests/agents/test_injected_runtime_create_agent.py",
+    "line_range": [
+      36,
+      81
+    ],
+    "symbol": "create_agent ToolRuntime",
+    "evidence_type": "test",
+    "summary": "create_agent 编译出的 agent graph 能执行模型 tool call、回填 ToolMessage，并向工具注入 runtime/state/config。"
+  },
+  {
+    "id": "ev-test-agent-middleware-tools-node",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/langchain_v1/tests/unit_tests/agents/middleware/core/test_tools.py",
+    "line_range": [
+      101,
+      123
+    ],
+    "symbol": "create_agent middleware tools",
+    "evidence_type": "test",
+    "summary": "create_agent 支持 middleware 改写可用工具集合，并让 tools node 执行匹配 tool call。"
+  },
+  {
+    "id": "ev-test-openai-responses-tool-call-conversion",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/tests/unit_tests/chat_models/test_base.py",
+    "line_range": [
+      2323,
+      2458
+    ],
+    "symbol": "_construct_responses_api_input",
+    "evidence_type": "test",
+    "summary": "OpenAI adapter 把 AIMessage.tool_calls 转成 Responses API function_call，并把 ToolMessage 转成 function_call_output。"
+  },
+  {
+    "id": "ev-test-openai-bind-tools-responses",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/tests/unit_tests/chat_models/test_base.py",
+    "line_range": [
+      2627,
+      2673
+    ],
+    "symbol": "ChatOpenAI.bind_tools",
+    "evidence_type": "test",
+    "summary": "ChatOpenAI 在 Responses API 模式下 bind_tools 后能通过 mock client 调用并进入 tracing。"
+  },
+  {
+    "id": "ev-test-openai-custom-tool",
+    "repo": "langchain-ai/langchain",
+    "commit": "bc5f1517cf7ac27addd4286e388228b8172b93b9",
+    "path": "libs/partners/openai/tests/unit_tests/test_tools.py",
+    "line_range": [
+      39,
+      82
+    ],
+    "symbol": "ChatOpenAI custom_tool",
+    "evidence_type": "test",
+    "summary": "OpenAI custom_tool 被 bind_tools 转成 custom tool 定义，并可回放 custom tool call message history。"
+  }
+]

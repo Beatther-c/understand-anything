@@ -1,0 +1,5061 @@
+{
+  "schemaVersion": "understand-anything.learning-graph.v1",
+  "generatedAt": "2026-06-02T13:19:01.850Z",
+  "language": "zh",
+  "source": {
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "root": "/Users/chenkun/Documents/understand-anything/repos/openclaw/src/acp",
+    "scan": "/Users/chenkun/Documents/understand-anything/repos/openclaw/src/acp/.understand-anything/intermediate/scan-result.json",
+    "batches": "/Users/chenkun/Documents/understand-anything/repos/openclaw/src/acp/.understand-anything/intermediate/batches.json"
+  },
+  "status": {
+    "deterministicScan": "complete",
+    "semanticBatching": "complete",
+    "llmEntityExtraction": "complete_from_learning_pack",
+    "architectureAssembly": "complete_from_scan_and_lessons",
+    "graphReview": "complete_with_residual_notes"
+  },
+  "stats": {
+    "analyzedFiles": 98,
+    "totalBatches": 4,
+    "nodes": 175,
+    "edges": 338,
+    "sourceSymbols": 17,
+    "relations": 7
+  },
+  "layers": [
+    {
+      "id": "layer:source-files",
+      "label": "Source Files",
+      "summary": "Files discovered by Understand Anything deterministic scan."
+    },
+    {
+      "id": "layer:semantic-entities",
+      "label": "Semantic Entities",
+      "summary": "LLM-compiled concepts and source symbols from the learning pack."
+    },
+    {
+      "id": "layer:test-evidence",
+      "label": "Test Evidence",
+      "summary": "Tests referenced by claims and lessons."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "project:source-scope",
+      "label": "acp",
+      "type": "project",
+      "path": "/Users/chenkun/Documents/understand-anything/repos/openclaw/src/acp",
+      "summary": "Understand Anything scan scope combined with the learning-pack semantic graph.",
+      "tags": [
+        "ua-scan",
+        "learning-pack"
+      ]
+    },
+    {
+      "id": "module:approval-classifier.test.ts",
+      "label": "approval-classifier.test.ts",
+      "type": "module",
+      "path": "approval-classifier.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:approval-classifier.test.ts",
+      "label": "approval-classifier.test.ts",
+      "type": "file",
+      "path": "approval-classifier.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 140,
+      "summary": "code file, language typescript, about 140 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:approval-classifier.ts",
+      "label": "approval-classifier.ts",
+      "type": "module",
+      "path": "approval-classifier.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:approval-classifier.ts",
+      "label": "approval-classifier.ts",
+      "type": "file",
+      "path": "approval-classifier.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 228,
+      "summary": "code file, language typescript, about 228 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:client-helpers.ts",
+      "label": "client-helpers.ts",
+      "type": "module",
+      "path": "client-helpers.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:client-helpers.ts",
+      "label": "client-helpers.ts",
+      "type": "file",
+      "path": "client-helpers.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 232,
+      "summary": "code file, language typescript, about 232 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:client.test.ts",
+      "label": "client.test.ts",
+      "type": "module",
+      "path": "client.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:client.test.ts",
+      "label": "client.test.ts",
+      "type": "file",
+      "path": "client.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 915,
+      "summary": "code file, language typescript, about 915 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:client.ts",
+      "label": "client.ts",
+      "type": "module",
+      "path": "client.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:client.ts",
+      "label": "client.ts",
+      "type": "file",
+      "path": "client.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 240,
+      "summary": "code file, language typescript, about 240 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:commands.ts",
+      "label": "commands.ts",
+      "type": "module",
+      "path": "commands.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:commands.ts",
+      "label": "commands.ts",
+      "type": "file",
+      "path": "commands.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 50,
+      "summary": "code file, language typescript, about 50 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:control-plane",
+      "label": "control-plane",
+      "type": "module",
+      "path": "control-plane",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:control-plane/active-turns.ts",
+      "label": "control-plane/active-turns.ts",
+      "type": "file",
+      "path": "control-plane/active-turns.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 46,
+      "summary": "code file, language typescript, about 46 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.backend-failover.test.ts",
+      "label": "control-plane/manager.backend-failover.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.backend-failover.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 61,
+      "summary": "code file, language typescript, about 61 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.backend-failover.ts",
+      "label": "control-plane/manager.backend-failover.ts",
+      "type": "file",
+      "path": "control-plane/manager.backend-failover.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 54,
+      "summary": "code file, language typescript, about 54 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.background-task.ts",
+      "label": "control-plane/manager.background-task.ts",
+      "type": "file",
+      "path": "control-plane/manager.background-task.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 211,
+      "summary": "code file, language typescript, about 211 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.cancel-session.test.ts",
+      "label": "control-plane/manager.cancel-session.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.cancel-session.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 73,
+      "summary": "code file, language typescript, about 73 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.cancel-session.ts",
+      "label": "control-plane/manager.cancel-session.ts",
+      "type": "file",
+      "path": "control-plane/manager.cancel-session.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 113,
+      "summary": "code file, language typescript, about 113 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.close-session.ts",
+      "label": "control-plane/manager.close-session.ts",
+      "type": "file",
+      "path": "control-plane/manager.close-session.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 146,
+      "summary": "code file, language typescript, about 146 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.core.ts",
+      "label": "control-plane/manager.core.ts",
+      "type": "file",
+      "path": "control-plane/manager.core.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 626,
+      "summary": "code file, language typescript, about 626 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.failover.test.ts",
+      "label": "control-plane/manager.failover.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.failover.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 259,
+      "summary": "code file, language typescript, about 259 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.identity-reconcile.ts",
+      "label": "control-plane/manager.identity-reconcile.ts",
+      "type": "file",
+      "path": "control-plane/manager.identity-reconcile.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 174,
+      "summary": "code file, language typescript, about 174 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.initialize-session.test.ts",
+      "label": "control-plane/manager.initialize-session.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.initialize-session.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 166,
+      "summary": "code file, language typescript, about 166 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.initialize-session.ts",
+      "label": "control-plane/manager.initialize-session.ts",
+      "type": "file",
+      "path": "control-plane/manager.initialize-session.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 173,
+      "summary": "code file, language typescript, about 173 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.runtime-config.test.ts",
+      "label": "control-plane/manager.runtime-config.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.runtime-config.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 924,
+      "summary": "code file, language typescript, about 924 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.runtime-controls.ts",
+      "label": "control-plane/manager.runtime-controls.ts",
+      "type": "file",
+      "path": "control-plane/manager.runtime-controls.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 206,
+      "summary": "code file, language typescript, about 206 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.runtime-handle-cache.ts",
+      "label": "control-plane/manager.runtime-handle-cache.ts",
+      "type": "file",
+      "path": "control-plane/manager.runtime-handle-cache.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 197,
+      "summary": "code file, language typescript, about 197 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.runtime-handle-ensure.ts",
+      "label": "control-plane/manager.runtime-handle-ensure.ts",
+      "type": "file",
+      "path": "control-plane/manager.runtime-handle-ensure.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 226,
+      "summary": "code file, language typescript, about 226 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.runtime-handles.test.ts",
+      "label": "control-plane/manager.runtime-handles.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.runtime-handles.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 587,
+      "summary": "code file, language typescript, about 587 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.runtime-options-commands.ts",
+      "label": "control-plane/manager.runtime-options-commands.ts",
+      "type": "file",
+      "path": "control-plane/manager.runtime-options-commands.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 238,
+      "summary": "code file, language typescript, about 238 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.runtime-resume-state.ts",
+      "label": "control-plane/manager.runtime-resume-state.ts",
+      "type": "file",
+      "path": "control-plane/manager.runtime-resume-state.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 213,
+      "summary": "code file, language typescript, about 213 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.startup-identity-reconcile.test.ts",
+      "label": "control-plane/manager.startup-identity-reconcile.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.startup-identity-reconcile.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 170,
+      "summary": "code file, language typescript, about 170 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.startup-identity-reconcile.ts",
+      "label": "control-plane/manager.startup-identity-reconcile.ts",
+      "type": "file",
+      "path": "control-plane/manager.startup-identity-reconcile.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 88,
+      "summary": "code file, language typescript, about 88 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.status.ts",
+      "label": "control-plane/manager.status.ts",
+      "type": "file",
+      "path": "control-plane/manager.status.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 91,
+      "summary": "code file, language typescript, about 91 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.test-helpers.ts",
+      "label": "control-plane/manager.test-helpers.ts",
+      "type": "file",
+      "path": "control-plane/manager.test-helpers.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 312,
+      "summary": "code file, language typescript, about 312 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.test.ts",
+      "label": "control-plane/manager.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1642,
+      "summary": "code file, language typescript, about 1642 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.ts",
+      "label": "control-plane/manager.ts",
+      "type": "file",
+      "path": "control-plane/manager.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 33,
+      "summary": "code file, language typescript, about 33 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.turn-results.test.ts",
+      "label": "control-plane/manager.turn-results.test.ts",
+      "type": "file",
+      "path": "control-plane/manager.turn-results.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1060,
+      "summary": "code file, language typescript, about 1060 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.turn-runner.ts",
+      "label": "control-plane/manager.turn-runner.ts",
+      "type": "file",
+      "path": "control-plane/manager.turn-runner.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 402,
+      "summary": "code file, language typescript, about 402 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.turn-stream.ts",
+      "label": "control-plane/manager.turn-stream.ts",
+      "type": "file",
+      "path": "control-plane/manager.turn-stream.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 192,
+      "summary": "code file, language typescript, about 192 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.turn-timeout.ts",
+      "label": "control-plane/manager.turn-timeout.ts",
+      "type": "file",
+      "path": "control-plane/manager.turn-timeout.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 203,
+      "summary": "code file, language typescript, about 203 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.types.ts",
+      "label": "control-plane/manager.types.ts",
+      "type": "file",
+      "path": "control-plane/manager.types.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 205,
+      "summary": "code file, language typescript, about 205 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/manager.utils.ts",
+      "label": "control-plane/manager.utils.ts",
+      "type": "file",
+      "path": "control-plane/manager.utils.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 137,
+      "summary": "code file, language typescript, about 137 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/runtime-cache.test.ts",
+      "label": "control-plane/runtime-cache.test.ts",
+      "type": "file",
+      "path": "control-plane/runtime-cache.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 60,
+      "summary": "code file, language typescript, about 60 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/runtime-cache.ts",
+      "label": "control-plane/runtime-cache.ts",
+      "type": "file",
+      "path": "control-plane/runtime-cache.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 104,
+      "summary": "code file, language typescript, about 104 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/runtime-options.test.ts",
+      "label": "control-plane/runtime-options.test.ts",
+      "type": "file",
+      "path": "control-plane/runtime-options.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 42,
+      "summary": "code file, language typescript, about 42 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/runtime-options.ts",
+      "label": "control-plane/runtime-options.ts",
+      "type": "file",
+      "path": "control-plane/runtime-options.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 455,
+      "summary": "code file, language typescript, about 455 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/session-actor-queue.ts",
+      "label": "control-plane/session-actor-queue.ts",
+      "type": "file",
+      "path": "control-plane/session-actor-queue.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 38,
+      "summary": "code file, language typescript, about 38 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:control-plane/spawn.ts",
+      "label": "control-plane/spawn.ts",
+      "type": "file",
+      "path": "control-plane/spawn.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 77,
+      "summary": "code file, language typescript, about 77 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:conversation-id.ts",
+      "label": "conversation-id.ts",
+      "type": "module",
+      "path": "conversation-id.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:conversation-id.ts",
+      "label": "conversation-id.ts",
+      "type": "file",
+      "path": "conversation-id.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 9,
+      "summary": "code file, language typescript, about 9 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:event-ledger.test.ts",
+      "label": "event-ledger.test.ts",
+      "type": "module",
+      "path": "event-ledger.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:event-ledger.test.ts",
+      "label": "event-ledger.test.ts",
+      "type": "file",
+      "path": "event-ledger.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 528,
+      "summary": "code file, language typescript, about 528 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:event-ledger.ts",
+      "label": "event-ledger.ts",
+      "type": "module",
+      "path": "event-ledger.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:event-ledger.ts",
+      "label": "event-ledger.ts",
+      "type": "file",
+      "path": "event-ledger.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 953,
+      "summary": "code file, language typescript, about 953 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:event-mapper.test.ts",
+      "label": "event-mapper.test.ts",
+      "type": "module",
+      "path": "event-mapper.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:event-mapper.test.ts",
+      "label": "event-mapper.test.ts",
+      "type": "file",
+      "path": "event-mapper.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 19,
+      "summary": "code file, language typescript, about 19 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:event-mapper.ts",
+      "label": "event-mapper.ts",
+      "type": "module",
+      "path": "event-mapper.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:event-mapper.ts",
+      "label": "event-mapper.ts",
+      "type": "file",
+      "path": "event-mapper.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 409,
+      "summary": "code file, language typescript, about 409 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:permission-relay.test.ts",
+      "label": "permission-relay.test.ts",
+      "type": "module",
+      "path": "permission-relay.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:permission-relay.test.ts",
+      "label": "permission-relay.test.ts",
+      "type": "file",
+      "path": "permission-relay.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 152,
+      "summary": "code file, language typescript, about 152 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:permission-relay.ts",
+      "label": "permission-relay.ts",
+      "type": "module",
+      "path": "permission-relay.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:permission-relay.ts",
+      "label": "permission-relay.ts",
+      "type": "file",
+      "path": "permission-relay.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 163,
+      "summary": "code file, language typescript, about 163 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:persistent-bindings.lifecycle.test.ts",
+      "label": "persistent-bindings.lifecycle.test.ts",
+      "type": "module",
+      "path": "persistent-bindings.lifecycle.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:persistent-bindings.lifecycle.test.ts",
+      "label": "persistent-bindings.lifecycle.test.ts",
+      "type": "file",
+      "path": "persistent-bindings.lifecycle.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 304,
+      "summary": "code file, language typescript, about 304 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:persistent-bindings.lifecycle.ts",
+      "label": "persistent-bindings.lifecycle.ts",
+      "type": "module",
+      "path": "persistent-bindings.lifecycle.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:persistent-bindings.lifecycle.ts",
+      "label": "persistent-bindings.lifecycle.ts",
+      "type": "file",
+      "path": "persistent-bindings.lifecycle.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 193,
+      "summary": "code file, language typescript, about 193 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:persistent-bindings.resolve.ts",
+      "label": "persistent-bindings.resolve.ts",
+      "type": "module",
+      "path": "persistent-bindings.resolve.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:persistent-bindings.resolve.ts",
+      "label": "persistent-bindings.resolve.ts",
+      "type": "file",
+      "path": "persistent-bindings.resolve.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 30,
+      "summary": "code file, language typescript, about 30 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:persistent-bindings.test.ts",
+      "label": "persistent-bindings.test.ts",
+      "type": "module",
+      "path": "persistent-bindings.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:persistent-bindings.test.ts",
+      "label": "persistent-bindings.test.ts",
+      "type": "file",
+      "path": "persistent-bindings.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 808,
+      "summary": "code file, language typescript, about 808 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:persistent-bindings.types.ts",
+      "label": "persistent-bindings.types.ts",
+      "type": "module",
+      "path": "persistent-bindings.types.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:persistent-bindings.types.ts",
+      "label": "persistent-bindings.types.ts",
+      "type": "file",
+      "path": "persistent-bindings.types.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 172,
+      "summary": "code file, language typescript, about 172 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:policy.test.ts",
+      "label": "policy.test.ts",
+      "type": "module",
+      "path": "policy.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:policy.test.ts",
+      "label": "policy.test.ts",
+      "type": "file",
+      "path": "policy.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 92,
+      "summary": "code file, language typescript, about 92 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:policy.ts",
+      "label": "policy.ts",
+      "type": "module",
+      "path": "policy.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:policy.ts",
+      "label": "policy.ts",
+      "type": "file",
+      "path": "policy.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 77,
+      "summary": "code file, language typescript, about 77 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:protocol-schema.test.ts",
+      "label": "protocol-schema.test.ts",
+      "type": "module",
+      "path": "protocol-schema.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:protocol-schema.test.ts",
+      "label": "protocol-schema.test.ts",
+      "type": "file",
+      "path": "protocol-schema.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 136,
+      "summary": "code file, language typescript, about 136 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:runtime",
+      "label": "runtime",
+      "type": "module",
+      "path": "runtime",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:runtime/adapter-contract.testkit.ts",
+      "label": "runtime/adapter-contract.testkit.ts",
+      "type": "file",
+      "path": "runtime/adapter-contract.testkit.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 119,
+      "summary": "code file, language typescript, about 119 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:runtime/availability.ts",
+      "label": "runtime/availability.ts",
+      "type": "file",
+      "path": "runtime/availability.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 28,
+      "summary": "code file, language typescript, about 28 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:runtime/errors.ts",
+      "label": "runtime/errors.ts",
+      "type": "file",
+      "path": "runtime/errors.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 6,
+      "summary": "code file, language typescript, about 6 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:runtime/registry.test.ts",
+      "label": "runtime/registry.test.ts",
+      "type": "file",
+      "path": "runtime/registry.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 125,
+      "summary": "code file, language typescript, about 125 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:runtime/registry.ts",
+      "label": "runtime/registry.ts",
+      "type": "file",
+      "path": "runtime/registry.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 120,
+      "summary": "code file, language typescript, about 120 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:runtime/session-meta.test.ts",
+      "label": "runtime/session-meta.test.ts",
+      "type": "file",
+      "path": "runtime/session-meta.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 319,
+      "summary": "code file, language typescript, about 319 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "file:runtime/session-meta.ts",
+      "label": "runtime/session-meta.ts",
+      "type": "file",
+      "path": "runtime/session-meta.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 495,
+      "summary": "code file, language typescript, about 495 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:secret-file.test.ts",
+      "label": "secret-file.test.ts",
+      "type": "module",
+      "path": "secret-file.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:secret-file.test.ts",
+      "label": "secret-file.test.ts",
+      "type": "file",
+      "path": "secret-file.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 19,
+      "summary": "code file, language typescript, about 19 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:secret-file.ts",
+      "label": "secret-file.ts",
+      "type": "module",
+      "path": "secret-file.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:secret-file.ts",
+      "label": "secret-file.ts",
+      "type": "file",
+      "path": "secret-file.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 10,
+      "summary": "code file, language typescript, about 10 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:server.startup.test.ts",
+      "label": "server.startup.test.ts",
+      "type": "module",
+      "path": "server.startup.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:server.startup.test.ts",
+      "label": "server.startup.test.ts",
+      "type": "file",
+      "path": "server.startup.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 399,
+      "summary": "code file, language typescript, about 399 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:server.ts",
+      "label": "server.ts",
+      "type": "module",
+      "path": "server.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:server.ts",
+      "label": "server.ts",
+      "type": "file",
+      "path": "server.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 278,
+      "summary": "code file, language typescript, about 278 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:session-mapper.test.ts",
+      "label": "session-mapper.test.ts",
+      "type": "module",
+      "path": "session-mapper.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:session-mapper.test.ts",
+      "label": "session-mapper.test.ts",
+      "type": "file",
+      "path": "session-mapper.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 56,
+      "summary": "code file, language typescript, about 56 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:session-mapper.ts",
+      "label": "session-mapper.ts",
+      "type": "module",
+      "path": "session-mapper.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:session-mapper.ts",
+      "label": "session-mapper.ts",
+      "type": "file",
+      "path": "session-mapper.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 98,
+      "summary": "code file, language typescript, about 98 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.bridge-test-helpers.ts",
+      "label": "translator.bridge-test-helpers.ts",
+      "type": "module",
+      "path": "translator.bridge-test-helpers.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.bridge-test-helpers.ts",
+      "label": "translator.bridge-test-helpers.ts",
+      "type": "file",
+      "path": "translator.bridge-test-helpers.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 172,
+      "summary": "code file, language typescript, about 172 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.cancel-scoping.test.ts",
+      "label": "translator.cancel-scoping.test.ts",
+      "type": "module",
+      "path": "translator.cancel-scoping.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.cancel-scoping.test.ts",
+      "label": "translator.cancel-scoping.test.ts",
+      "type": "file",
+      "path": "translator.cancel-scoping.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 328,
+      "summary": "code file, language typescript, about 328 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.error-kind.test.ts",
+      "label": "translator.error-kind.test.ts",
+      "type": "module",
+      "path": "translator.error-kind.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.error-kind.test.ts",
+      "label": "translator.error-kind.test.ts",
+      "type": "file",
+      "path": "translator.error-kind.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 59,
+      "summary": "code file, language typescript, about 59 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.event-ledger.test.ts",
+      "label": "translator.event-ledger.test.ts",
+      "type": "module",
+      "path": "translator.event-ledger.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.event-ledger.test.ts",
+      "label": "translator.event-ledger.test.ts",
+      "type": "file",
+      "path": "translator.event-ledger.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 390,
+      "summary": "code file, language typescript, about 390 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.final-snapshots.test.ts",
+      "label": "translator.final-snapshots.test.ts",
+      "type": "module",
+      "path": "translator.final-snapshots.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.final-snapshots.test.ts",
+      "label": "translator.final-snapshots.test.ts",
+      "type": "file",
+      "path": "translator.final-snapshots.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 152,
+      "summary": "code file, language typescript, about 152 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.lifecycle.test.ts",
+      "label": "translator.lifecycle.test.ts",
+      "type": "module",
+      "path": "translator.lifecycle.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.lifecycle.test.ts",
+      "label": "translator.lifecycle.test.ts",
+      "type": "file",
+      "path": "translator.lifecycle.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 458,
+      "summary": "code file, language typescript, about 458 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.permission-relay.test.ts",
+      "label": "translator.permission-relay.test.ts",
+      "type": "module",
+      "path": "translator.permission-relay.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.permission-relay.test.ts",
+      "label": "translator.permission-relay.test.ts",
+      "type": "file",
+      "path": "translator.permission-relay.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 469,
+      "summary": "code file, language typescript, about 469 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.presentation.ts",
+      "label": "translator.presentation.ts",
+      "type": "module",
+      "path": "translator.presentation.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.presentation.ts",
+      "label": "translator.presentation.ts",
+      "type": "file",
+      "path": "translator.presentation.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 266,
+      "summary": "code file, language typescript, about 266 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.prompt-harness.test-support.ts",
+      "label": "translator.prompt-harness.test-support.ts",
+      "type": "module",
+      "path": "translator.prompt-harness.test-support.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.prompt-harness.test-support.ts",
+      "label": "translator.prompt-harness.test-support.ts",
+      "type": "file",
+      "path": "translator.prompt-harness.test-support.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 94,
+      "summary": "code file, language typescript, about 94 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.prompt-prefix.test.ts",
+      "label": "translator.prompt-prefix.test.ts",
+      "type": "module",
+      "path": "translator.prompt-prefix.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.prompt-prefix.test.ts",
+      "label": "translator.prompt-prefix.test.ts",
+      "type": "file",
+      "path": "translator.prompt-prefix.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 185,
+      "summary": "code file, language typescript, about 185 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.prompt-size.test.ts",
+      "label": "translator.prompt-size.test.ts",
+      "type": "module",
+      "path": "translator.prompt-size.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.prompt-size.test.ts",
+      "label": "translator.prompt-size.test.ts",
+      "type": "file",
+      "path": "translator.prompt-size.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 22,
+      "summary": "code file, language typescript, about 22 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.replay.test.ts",
+      "label": "translator.replay.test.ts",
+      "type": "module",
+      "path": "translator.replay.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.replay.test.ts",
+      "label": "translator.replay.test.ts",
+      "type": "file",
+      "path": "translator.replay.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 39,
+      "summary": "code file, language typescript, about 39 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.replay.ts",
+      "label": "translator.replay.ts",
+      "type": "module",
+      "path": "translator.replay.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.replay.ts",
+      "label": "translator.replay.ts",
+      "type": "file",
+      "path": "translator.replay.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 62,
+      "summary": "code file, language typescript, about 62 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-config.test.ts",
+      "label": "translator.session-config.test.ts",
+      "type": "module",
+      "path": "translator.session-config.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-config.test.ts",
+      "label": "translator.session-config.test.ts",
+      "type": "file",
+      "path": "translator.session-config.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 360,
+      "summary": "code file, language typescript, about 360 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-lineage-meta.test.ts",
+      "label": "translator.session-lineage-meta.test.ts",
+      "type": "module",
+      "path": "translator.session-lineage-meta.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-lineage-meta.test.ts",
+      "label": "translator.session-lineage-meta.test.ts",
+      "type": "file",
+      "path": "translator.session-lineage-meta.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 221,
+      "summary": "code file, language typescript, about 221 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-list.test.ts",
+      "label": "translator.session-list.test.ts",
+      "type": "module",
+      "path": "translator.session-list.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-list.test.ts",
+      "label": "translator.session-list.test.ts",
+      "type": "file",
+      "path": "translator.session-list.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 44,
+      "summary": "code file, language typescript, about 44 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-list.ts",
+      "label": "translator.session-list.ts",
+      "type": "module",
+      "path": "translator.session-list.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-list.ts",
+      "label": "translator.session-list.ts",
+      "type": "file",
+      "path": "translator.session-list.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 67,
+      "summary": "code file, language typescript, about 67 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-rate-limit.test.ts",
+      "label": "translator.session-rate-limit.test.ts",
+      "type": "module",
+      "path": "translator.session-rate-limit.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-rate-limit.test.ts",
+      "label": "translator.session-rate-limit.test.ts",
+      "type": "file",
+      "path": "translator.session-rate-limit.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 71,
+      "summary": "code file, language typescript, about 71 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-setup.test.ts",
+      "label": "translator.session-setup.test.ts",
+      "type": "module",
+      "path": "translator.session-setup.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-setup.test.ts",
+      "label": "translator.session-setup.test.ts",
+      "type": "file",
+      "path": "translator.session-setup.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 264,
+      "summary": "code file, language typescript, about 264 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-snapshot.test.ts",
+      "label": "translator.session-snapshot.test.ts",
+      "type": "module",
+      "path": "translator.session-snapshot.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-snapshot.test.ts",
+      "label": "translator.session-snapshot.test.ts",
+      "type": "file",
+      "path": "translator.session-snapshot.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 146,
+      "summary": "code file, language typescript, about 146 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.session-updates.ts",
+      "label": "translator.session-updates.ts",
+      "type": "module",
+      "path": "translator.session-updates.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.session-updates.ts",
+      "label": "translator.session-updates.ts",
+      "type": "file",
+      "path": "translator.session-updates.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 179,
+      "summary": "code file, language typescript, about 179 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.set-session-mode.test.ts",
+      "label": "translator.set-session-mode.test.ts",
+      "type": "module",
+      "path": "translator.set-session-mode.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.set-session-mode.test.ts",
+      "label": "translator.set-session-mode.test.ts",
+      "type": "file",
+      "path": "translator.set-session-mode.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 92,
+      "summary": "code file, language typescript, about 92 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.stop-reason.test.ts",
+      "label": "translator.stop-reason.test.ts",
+      "type": "module",
+      "path": "translator.stop-reason.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.stop-reason.test.ts",
+      "label": "translator.stop-reason.test.ts",
+      "type": "file",
+      "path": "translator.stop-reason.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 603,
+      "summary": "code file, language typescript, about 603 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.test-helpers.ts",
+      "label": "translator.test-helpers.ts",
+      "type": "module",
+      "path": "translator.test-helpers.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.test-helpers.ts",
+      "label": "translator.test-helpers.ts",
+      "type": "file",
+      "path": "translator.test-helpers.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 32,
+      "summary": "code file, language typescript, about 32 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.tool-streaming.test.ts",
+      "label": "translator.tool-streaming.test.ts",
+      "type": "module",
+      "path": "translator.tool-streaming.test.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.tool-streaming.test.ts",
+      "label": "translator.tool-streaming.test.ts",
+      "type": "file",
+      "path": "translator.tool-streaming.test.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 126,
+      "summary": "code file, language typescript, about 126 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:translator.ts",
+      "label": "translator.ts",
+      "type": "module",
+      "path": "translator.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:translator.ts",
+      "label": "translator.ts",
+      "type": "file",
+      "path": "translator.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 1689,
+      "summary": "code file, language typescript, about 1689 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "module:types.ts",
+      "label": "types.ts",
+      "type": "module",
+      "path": "types.ts",
+      "summary": "Top-level module or directory discovered by Understand Anything scan.",
+      "tags": [
+        "ua-scan"
+      ]
+    },
+    {
+      "id": "file:types.ts",
+      "label": "types.ts",
+      "type": "file",
+      "path": "types.ts",
+      "language": "typescript",
+      "category": "code",
+      "sizeLines": 9,
+      "summary": "code file, language typescript, about 9 lines.",
+      "tags": [
+        "ua-scan",
+        "code",
+        "typescript"
+      ]
+    },
+    {
+      "id": "entity:lesson:01-platform-map",
+      "label": "OpenClaw 全局架构：本地优先个人 AI 助手",
+      "type": "lesson",
+      "path": "README.md",
+      "symbol": "OpenClaw 全局架构：本地优先个人 AI 助手",
+      "lesson": "01-platform-map",
+      "summary": "把 OpenClaw 先看成一个由 Gateway 调度的本地优先 agent 操作系统：消息入口、agent runtime、工具、插件、设备节点和 UI 都围绕同一个控制面工作。",
+      "tags": [
+        "llm-entity",
+        "01-platform-map"
+      ]
+    },
+    {
+      "id": "entity:concept:01-platform-map",
+      "label": "本地优先个人 AI 助手",
+      "type": "concept",
+      "path": "README.md",
+      "symbol": "concept",
+      "lesson": "01-platform-map",
+      "summary": "把 OpenClaw 先看成一个由 Gateway 调度的本地优先 agent 操作系统：消息入口、agent runtime、工具、插件、设备节点和 UI 都围绕同一个控制面工作。",
+      "tags": [
+        "llm-entity",
+        "01-platform-map"
+      ]
+    },
+    {
+      "id": "entity:lesson:02-agent-core-loop",
+      "label": "Agent Core：从消息到工具调用的最小循环",
+      "type": "lesson",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "Agent Core：从消息到工具调用的最小循环",
+      "lesson": "02-agent-core-loop",
+      "summary": "agent loop 的本质是一个事件驱动的状态机：追加用户消息，调用模型流，提取工具调用，执行工具，把工具结果写回上下文，再决定是否继续。",
+      "tags": [
+        "llm-entity",
+        "02-agent-core-loop"
+      ]
+    },
+    {
+      "id": "entity:concept:02-agent-core-loop",
+      "label": "从消息到工具调用的最小循环",
+      "type": "concept",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "concept",
+      "lesson": "02-agent-core-loop",
+      "summary": "agent loop 的本质是一个事件驱动的状态机：追加用户消息，调用模型流，提取工具调用，执行工具，把工具结果写回上下文，再决定是否继续。",
+      "tags": [
+        "llm-entity",
+        "02-agent-core-loop"
+      ]
+    },
+    {
+      "id": "entity:symbol:agentLoop",
+      "label": "agentLoop/runLoop",
+      "type": "source_symbol",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "agentLoop",
+      "lesson": "02-agent-core-loop",
+      "summary": "agent-core 的低层循环入口与主状态机。",
+      "tags": [
+        "llm-entity",
+        "02-agent-core-loop"
+      ]
+    },
+    {
+      "id": "entity:lesson:03-message-context-stream",
+      "label": "消息、上下文与流式事件",
+      "type": "lesson",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "消息、上下文与流式事件",
+      "lesson": "03-message-context-stream",
+      "summary": "LLM 应用不是一次请求一次字符串，而是一组消息、系统提示、工具定义和流式事件的组合。OpenClaw 把 partial assistant message 放入上下文并随事件更新。",
+      "tags": [
+        "llm-entity",
+        "03-message-context-stream"
+      ]
+    },
+    {
+      "id": "entity:concept:03-message-context-stream",
+      "label": "",
+      "type": "concept",
+      "path": "packages/agent-core/src/agent-loop.ts",
+      "symbol": "concept",
+      "lesson": "03-message-context-stream",
+      "summary": "LLM 应用不是一次请求一次字符串，而是一组消息、系统提示、工具定义和流式事件的组合。OpenClaw 把 partial assistant message 放入上下文并随事件更新。",
+      "tags": [
+        "llm-entity",
+        "03-message-context-stream"
+      ]
+    },
+    {
+      "id": "entity:lesson:04-tools-policy-sandbox",
+      "label": "工具系统：定义、策略、沙箱与执行前后钩子",
+      "type": "lesson",
+      "path": "src/agents/agent-tools.ts",
+      "symbol": "工具系统：定义、策略、沙箱与执行前后钩子",
+      "lesson": "04-tools-policy-sandbox",
+      "summary": "工具调用是 agent 产生外部影响的边界。OpenClaw 同时处理 schema 规范化、allow/deny 策略、沙箱路径、before/after hook、执行顺序和错误归一化。",
+      "tags": [
+        "llm-entity",
+        "04-tools-policy-sandbox"
+      ]
+    },
+    {
+      "id": "entity:concept:04-tools-policy-sandbox",
+      "label": "定义、策略、沙箱与执行前后钩子",
+      "type": "concept",
+      "path": "src/agents/agent-tools.ts",
+      "symbol": "concept",
+      "lesson": "04-tools-policy-sandbox",
+      "summary": "工具调用是 agent 产生外部影响的边界。OpenClaw 同时处理 schema 规范化、allow/deny 策略、沙箱路径、before/after hook、执行顺序和错误归一化。",
+      "tags": [
+        "llm-entity",
+        "04-tools-policy-sandbox"
+      ]
+    },
+    {
+      "id": "entity:lesson:05-embedded-runtime-provider",
+      "label": "内置 Runtime：模型选择、Provider、重试与故障转移",
+      "type": "lesson",
+      "path": "src/agents/embedded-agent-runner/run.ts",
+      "symbol": "内置 Runtime：模型选择、Provider、重试与故障转移",
+      "lesson": "05-embedded-runtime-provider",
+      "summary": "OpenClaw 的内置 runner 把低层 loop 包装成可运营的运行时：选择模型、准备认证、构建 prompt 和工具、处理空回复/溢出/限流/计费错误、记录 usage，并在必要时故障转移。",
+      "tags": [
+        "llm-entity",
+        "05-embedded-runtime-provider"
+      ]
+    },
+    {
+      "id": "entity:concept:05-embedded-runtime-provider",
+      "label": "模型选择、Provider、重试与故障转移",
+      "type": "concept",
+      "path": "src/agents/embedded-agent-runner/run.ts",
+      "symbol": "concept",
+      "lesson": "05-embedded-runtime-provider",
+      "summary": "OpenClaw 的内置 runner 把低层 loop 包装成可运营的运行时：选择模型、准备认证、构建 prompt 和工具、处理空回复/溢出/限流/计费错误、记录 usage，并在必要时故障转移。",
+      "tags": [
+        "llm-entity",
+        "05-embedded-runtime-provider"
+      ]
+    },
+    {
+      "id": "entity:lesson:06-sessions-acp-control-plane",
+      "label": "会话与 ACP 控制面：把一次 turn 变成可管理任务",
+      "type": "lesson",
+      "path": "src/acp/control-plane/manager.core.ts",
+      "symbol": "会话与 ACP 控制面：把一次 turn 变成可管理任务",
+      "lesson": "06-sessions-acp-control-plane",
+      "summary": "agent 不是孤立函数调用，而是有 session key、runtime handle、active turn、取消、超时、后台任务进度和 backend failover 的长生命周期对象。",
+      "tags": [
+        "llm-entity",
+        "06-sessions-acp-control-plane"
+      ]
+    },
+    {
+      "id": "entity:concept:06-sessions-acp-control-plane",
+      "label": "把一次 turn 变成可管理任务",
+      "type": "concept",
+      "path": "src/acp/control-plane/manager.core.ts",
+      "symbol": "concept",
+      "lesson": "06-sessions-acp-control-plane",
+      "summary": "agent 不是孤立函数调用，而是有 session key、runtime handle、active turn、取消、超时、后台任务进度和 backend failover 的长生命周期对象。",
+      "tags": [
+        "llm-entity",
+        "06-sessions-acp-control-plane"
+      ]
+    },
+    {
+      "id": "entity:lesson:07-plugin-sdk-providers",
+      "label": "插件 SDK 与 Provider 扩展：把生态接入运行时",
+      "type": "lesson",
+      "path": "src/plugin-sdk/plugin-entry.ts",
+      "symbol": "插件 SDK 与 Provider 扩展：把生态接入运行时",
+      "lesson": "07-plugin-sdk-providers",
+      "summary": "插件 SDK 是 OpenClaw 的扩展边界：插件可以注册 provider、工具、命令、会话 action、hook、UI、模型目录和安全审计能力。",
+      "tags": [
+        "llm-entity",
+        "07-plugin-sdk-providers"
+      ]
+    },
+    {
+      "id": "entity:concept:07-plugin-sdk-providers",
+      "label": "把生态接入运行时",
+      "type": "concept",
+      "path": "src/plugin-sdk/plugin-entry.ts",
+      "symbol": "concept",
+      "lesson": "07-plugin-sdk-providers",
+      "summary": "插件 SDK 是 OpenClaw 的扩展边界：插件可以注册 provider、工具、命令、会话 action、hook、UI、模型目录和安全审计能力。",
+      "tags": [
+        "llm-entity",
+        "07-plugin-sdk-providers"
+      ]
+    },
+    {
+      "id": "entity:lesson:08-devices-channels-security",
+      "label": "渠道、设备节点与安全默认值",
+      "type": "lesson",
+      "path": "README.md",
+      "symbol": "渠道、设备节点与安全默认值",
+      "lesson": "08-devices-channels-security",
+      "summary": "OpenClaw 面对真实外部渠道和本机设备能力，所以安全模型必须默认把 inbound DM 当成不可信输入，并用 pairing、allowlist、sandbox、工具策略和节点权限收口。",
+      "tags": [
+        "llm-entity",
+        "08-devices-channels-security"
+      ]
+    },
+    {
+      "id": "entity:concept:08-devices-channels-security",
+      "label": "",
+      "type": "concept",
+      "path": "README.md",
+      "symbol": "concept",
+      "lesson": "08-devices-channels-security",
+      "summary": "OpenClaw 面对真实外部渠道和本机设备能力，所以安全模型必须默认把 inbound DM 当成不可信输入，并用 pairing、allowlist、sandbox、工具策略和节点权限收口。",
+      "tags": [
+        "llm-entity",
+        "08-devices-channels-security"
+      ]
+    },
+    {
+      "id": "layer:source-files",
+      "label": "Source Files",
+      "summary": "Files discovered by Understand Anything deterministic scan.",
+      "type": "layer",
+      "tags": [
+        "architecture-layer"
+      ]
+    },
+    {
+      "id": "layer:semantic-entities",
+      "label": "Semantic Entities",
+      "summary": "LLM-compiled concepts and source symbols from the learning pack.",
+      "type": "layer",
+      "tags": [
+        "architecture-layer"
+      ]
+    },
+    {
+      "id": "layer:test-evidence",
+      "label": "Test Evidence",
+      "summary": "Tests referenced by claims and lessons.",
+      "type": "layer",
+      "tags": [
+        "architecture-layer"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "project:source-scope",
+      "target": "module:approval-classifier.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:approval-classifier.test.ts",
+      "target": "file:approval-classifier.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:approval-classifier.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:approval-classifier.ts",
+      "target": "file:approval-classifier.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:client-helpers.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:client-helpers.ts",
+      "target": "file:client-helpers.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:client.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:client.test.ts",
+      "target": "file:client.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:client.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:client.ts",
+      "target": "file:client.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:commands.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:commands.ts",
+      "target": "file:commands.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/active-turns.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.backend-failover.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.backend-failover.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.background-task.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.cancel-session.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.cancel-session.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.close-session.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.core.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.failover.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.identity-reconcile.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.initialize-session.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.initialize-session.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.runtime-config.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.runtime-controls.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.runtime-handle-cache.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.runtime-handle-ensure.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.runtime-handles.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.runtime-options-commands.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.runtime-resume-state.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.startup-identity-reconcile.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.startup-identity-reconcile.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.status.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.test-helpers.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.turn-results.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.turn-runner.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.turn-stream.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.turn-timeout.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.types.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/manager.utils.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/runtime-cache.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/runtime-cache.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/runtime-options.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/runtime-options.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/session-actor-queue.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:control-plane",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:control-plane",
+      "target": "file:control-plane/spawn.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:conversation-id.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:conversation-id.ts",
+      "target": "file:conversation-id.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:event-ledger.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:event-ledger.test.ts",
+      "target": "file:event-ledger.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:event-ledger.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:event-ledger.ts",
+      "target": "file:event-ledger.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:event-mapper.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:event-mapper.test.ts",
+      "target": "file:event-mapper.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:event-mapper.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:event-mapper.ts",
+      "target": "file:event-mapper.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:permission-relay.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:permission-relay.test.ts",
+      "target": "file:permission-relay.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:permission-relay.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:permission-relay.ts",
+      "target": "file:permission-relay.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:persistent-bindings.lifecycle.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:persistent-bindings.lifecycle.test.ts",
+      "target": "file:persistent-bindings.lifecycle.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:persistent-bindings.lifecycle.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:persistent-bindings.lifecycle.ts",
+      "target": "file:persistent-bindings.lifecycle.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:persistent-bindings.resolve.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:persistent-bindings.resolve.ts",
+      "target": "file:persistent-bindings.resolve.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:persistent-bindings.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:persistent-bindings.test.ts",
+      "target": "file:persistent-bindings.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:persistent-bindings.types.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:persistent-bindings.types.ts",
+      "target": "file:persistent-bindings.types.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:policy.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:policy.test.ts",
+      "target": "file:policy.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:policy.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:policy.ts",
+      "target": "file:policy.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:protocol-schema.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:protocol-schema.test.ts",
+      "target": "file:protocol-schema.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:runtime",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:runtime",
+      "target": "file:runtime/adapter-contract.testkit.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:runtime",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:runtime",
+      "target": "file:runtime/availability.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:runtime",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:runtime",
+      "target": "file:runtime/errors.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:runtime",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:runtime",
+      "target": "file:runtime/registry.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:runtime",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:runtime",
+      "target": "file:runtime/registry.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:runtime",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:runtime",
+      "target": "file:runtime/session-meta.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:runtime",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:runtime",
+      "target": "file:runtime/session-meta.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:secret-file.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:secret-file.test.ts",
+      "target": "file:secret-file.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:secret-file.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:secret-file.ts",
+      "target": "file:secret-file.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:server.startup.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:server.startup.test.ts",
+      "target": "file:server.startup.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:server.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:server.ts",
+      "target": "file:server.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:session-mapper.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:session-mapper.test.ts",
+      "target": "file:session-mapper.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:session-mapper.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:session-mapper.ts",
+      "target": "file:session-mapper.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.bridge-test-helpers.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.bridge-test-helpers.ts",
+      "target": "file:translator.bridge-test-helpers.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.cancel-scoping.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.cancel-scoping.test.ts",
+      "target": "file:translator.cancel-scoping.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.error-kind.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.error-kind.test.ts",
+      "target": "file:translator.error-kind.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.event-ledger.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.event-ledger.test.ts",
+      "target": "file:translator.event-ledger.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.final-snapshots.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.final-snapshots.test.ts",
+      "target": "file:translator.final-snapshots.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.lifecycle.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.lifecycle.test.ts",
+      "target": "file:translator.lifecycle.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.permission-relay.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.permission-relay.test.ts",
+      "target": "file:translator.permission-relay.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.presentation.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.presentation.ts",
+      "target": "file:translator.presentation.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.prompt-harness.test-support.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.prompt-harness.test-support.ts",
+      "target": "file:translator.prompt-harness.test-support.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.prompt-prefix.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.prompt-prefix.test.ts",
+      "target": "file:translator.prompt-prefix.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.prompt-size.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.prompt-size.test.ts",
+      "target": "file:translator.prompt-size.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.replay.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.replay.test.ts",
+      "target": "file:translator.replay.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.replay.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.replay.ts",
+      "target": "file:translator.replay.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-config.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-config.test.ts",
+      "target": "file:translator.session-config.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-lineage-meta.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-lineage-meta.test.ts",
+      "target": "file:translator.session-lineage-meta.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-list.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-list.test.ts",
+      "target": "file:translator.session-list.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-list.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-list.ts",
+      "target": "file:translator.session-list.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-rate-limit.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-rate-limit.test.ts",
+      "target": "file:translator.session-rate-limit.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-setup.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-setup.test.ts",
+      "target": "file:translator.session-setup.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-snapshot.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-snapshot.test.ts",
+      "target": "file:translator.session-snapshot.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.session-updates.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.session-updates.ts",
+      "target": "file:translator.session-updates.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.set-session-mode.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.set-session-mode.test.ts",
+      "target": "file:translator.set-session-mode.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.stop-reason.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.stop-reason.test.ts",
+      "target": "file:translator.stop-reason.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.test-helpers.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.test-helpers.ts",
+      "target": "file:translator.test-helpers.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.tool-streaming.test.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.tool-streaming.test.ts",
+      "target": "file:translator.tool-streaming.test.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:translator.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:translator.ts",
+      "target": "file:translator.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "module:types.ts",
+      "type": "contains",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "module:types.ts",
+      "target": "file:types.ts",
+      "type": "contains_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:01-platform-map",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:01-platform-map",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:02-agent-core-loop",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:symbol:agentLoop",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:03-message-context-stream",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:03-message-context-stream",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:04-tools-policy-sandbox",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:04-tools-policy-sandbox",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:05-embedded-runtime-provider",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:06-sessions-acp-control-plane",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:06-sessions-acp-control-plane",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:07-plugin-sdk-providers",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:07-plugin-sdk-providers",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:lesson:08-devices-channels-security",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "entity:concept:08-devices-channels-security",
+      "type": "explains_concept",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "entity:concept:02-agent-core-loop",
+      "target": "entity:symbol:agentLoop",
+      "type": "explained_by",
+      "label": "concept:02-agent-core-loop explained_by symbol:agentLoop",
+      "evidence": [
+        "ev-code-agent-loop-entry",
+        "ev-code-run-loop-tools"
+      ]
+    },
+    {
+      "source": "entity:concept:03-message-context-stream",
+      "target": "entity:symbol:agentLoop",
+      "type": "depends_on",
+      "label": "concept:03-message-context-stream depends_on symbol:agentLoop",
+      "evidence": [
+        "ev-code-stream-response",
+        "ev-code-agent-types"
+      ]
+    },
+    {
+      "source": "entity:concept:04-tools-policy-sandbox",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "extends",
+      "label": "concept:04-tools-policy-sandbox extends concept:02-agent-core-loop",
+      "evidence": [
+        "ev-code-run-loop-tools",
+        "ev-code-tool-factory"
+      ]
+    },
+    {
+      "source": "entity:concept:05-embedded-runtime-provider",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "adapts",
+      "label": "concept:05-embedded-runtime-provider adapts concept:02-agent-core-loop",
+      "evidence": [
+        "ev-code-embedded-run",
+        "ev-code-agent-loop-entry"
+      ]
+    },
+    {
+      "source": "entity:concept:06-sessions-acp-control-plane",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "composes",
+      "label": "concept:06-sessions-acp-control-plane composes concept:05-embedded-runtime-provider",
+      "evidence": [
+        "ev-code-acp-manager",
+        "ev-code-acp-stream"
+      ]
+    },
+    {
+      "source": "entity:concept:07-plugin-sdk-providers",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "extends",
+      "label": "concept:07-plugin-sdk-providers extends concept:05-embedded-runtime-provider",
+      "evidence": [
+        "ev-code-plugin-entry",
+        "ev-code-provider-entry"
+      ]
+    },
+    {
+      "source": "entity:concept:08-devices-channels-security",
+      "target": "entity:concept:06-sessions-acp-control-plane",
+      "type": "depends_on",
+      "label": "concept:08-devices-channels-security depends_on concept:06-sessions-acp-control-plane",
+      "evidence": [
+        "ev-readme-security",
+        "ev-test-android-device-auth"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "layer:source-files",
+      "type": "has_layer",
+      "evidence": [
+        "llm-architecture-pass"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "layer:semantic-entities",
+      "type": "has_layer",
+      "evidence": [
+        "llm-architecture-pass"
+      ]
+    },
+    {
+      "source": "project:source-scope",
+      "target": "layer:test-evidence",
+      "type": "has_layer",
+      "evidence": [
+        "llm-architecture-pass"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:approval-classifier.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:approval-classifier.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:client-helpers.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:client.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:client.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:commands.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/active-turns.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.backend-failover.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.backend-failover.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.background-task.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.cancel-session.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.cancel-session.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.close-session.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.core.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.failover.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.identity-reconcile.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.initialize-session.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.initialize-session.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.runtime-config.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.runtime-controls.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.runtime-handle-cache.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.runtime-handle-ensure.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.runtime-handles.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.runtime-options-commands.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.runtime-resume-state.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.startup-identity-reconcile.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.startup-identity-reconcile.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.status.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.test-helpers.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.turn-results.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.turn-runner.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.turn-stream.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.turn-timeout.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.types.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/manager.utils.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/runtime-cache.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/runtime-cache.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/runtime-options.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/runtime-options.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/session-actor-queue.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:control-plane/spawn.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:conversation-id.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:event-ledger.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:event-ledger.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:event-mapper.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:event-mapper.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:permission-relay.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:permission-relay.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:persistent-bindings.lifecycle.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:persistent-bindings.lifecycle.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:persistent-bindings.resolve.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:persistent-bindings.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:persistent-bindings.types.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:policy.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:policy.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:protocol-schema.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:runtime/adapter-contract.testkit.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:runtime/availability.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:runtime/errors.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:runtime/registry.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:runtime/registry.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:runtime/session-meta.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:runtime/session-meta.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:secret-file.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:secret-file.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:server.startup.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:server.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:session-mapper.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:session-mapper.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.bridge-test-helpers.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.cancel-scoping.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.error-kind.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.event-ledger.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.final-snapshots.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.lifecycle.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.permission-relay.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.presentation.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.prompt-harness.test-support.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.prompt-prefix.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.prompt-size.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.replay.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.replay.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-config.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-lineage-meta.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-list.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-list.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-rate-limit.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-setup.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-snapshot.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.session-updates.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.set-session-mode.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.stop-reason.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.test-helpers.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.tool-streaming.test.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:translator.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:source-files",
+      "target": "file:types.ts",
+      "type": "covers_file",
+      "evidence": [
+        "ua-scan-result"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:01-platform-map",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:01-platform-map",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:02-agent-core-loop",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:02-agent-core-loop",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:symbol:agentLoop",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:03-message-context-stream",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:03-message-context-stream",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:04-tools-policy-sandbox",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:04-tools-policy-sandbox",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:05-embedded-runtime-provider",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:05-embedded-runtime-provider",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:06-sessions-acp-control-plane",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:06-sessions-acp-control-plane",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:07-plugin-sdk-providers",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:07-plugin-sdk-providers",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:lesson:08-devices-channels-security",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    },
+    {
+      "source": "layer:semantic-entities",
+      "target": "entity:concept:08-devices-channels-security",
+      "type": "covers_entity",
+      "evidence": [
+        "learning-pack-entity"
+      ]
+    }
+  ],
+  "review": {
+    "summary": "UA deterministic scan/batch merged with learning-pack entities and relations.",
+    "residualRisks": [
+      "If native Understand Anything slash-command subagents were unavailable, this graph is a UA-compatible learning graph rather than a full native session artifact.",
+      "Cross-scope entities may be represented semantically even when the source scope only scanned one subdirectory."
+    ]
+  }
+}

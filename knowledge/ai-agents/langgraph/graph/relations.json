@@ -1,0 +1,72 @@
+[
+  {
+    "id": "rel-01",
+    "from": "concept:01-runnable",
+    "to": "concept:02-message-schema",
+    "type": "depends_on",
+    "description": "可执行图依赖状态 schema 和 reducer。",
+    "evidence_ids": [
+      "ev-messages-state-code"
+    ]
+  },
+  {
+    "id": "rel-02",
+    "from": "concept:02-message-schema",
+    "to": "concept:05-tool-interface",
+    "type": "composes",
+    "description": "工具结果通过 ToolMessage 回到 messages 状态。",
+    "evidence_ids": [
+      "ev-runtime-code"
+    ]
+  },
+  {
+    "id": "rel-03",
+    "from": "concept:03-prompt-template",
+    "to": "concept:04-chat-model-adapter",
+    "type": "feeds",
+    "description": "prompt 装配结果进入模型适配节点。",
+    "evidence_ids": [
+      "ev-react-call-model-code"
+    ]
+  },
+  {
+    "id": "rel-04",
+    "from": "concept:04-chat-model-adapter",
+    "to": "concept:07-agent-loop",
+    "type": "emits",
+    "description": "模型输出决定 agent loop 的下一步。",
+    "evidence_ids": [
+      "ev-toolnode-code"
+    ]
+  },
+  {
+    "id": "rel-05",
+    "from": "concept:05-tool-interface",
+    "to": "concept:07-agent-loop",
+    "type": "implements",
+    "description": "ToolNode 是 ReAct 循环中的动作执行节点。",
+    "evidence_ids": [
+      "ev-pregel-stream-code"
+    ]
+  },
+  {
+    "id": "rel-06",
+    "from": "concept:06-callback-tracing",
+    "to": "concept:08-provider-integration",
+    "type": "observes",
+    "description": "stream/debug 事件可包含 checkpoint 相关状态。",
+    "evidence_ids": [
+      "ev-command-code"
+    ]
+  },
+  {
+    "id": "rel-07",
+    "from": "concept:07-agent-loop",
+    "to": "concept:08-provider-integration",
+    "type": "depends_on",
+    "description": "可恢复 agent loop 依赖 checkpoint 和线程配置。",
+    "evidence_ids": [
+      "ev-checkpoint-code"
+    ]
+  }
+]

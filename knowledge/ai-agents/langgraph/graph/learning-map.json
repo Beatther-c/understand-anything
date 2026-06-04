@@ -1,0 +1,154 @@
+{
+  "project": "langgraph",
+  "repo": "langchain-ai/langgraph",
+  "commit": "83dd61feaca993d2ee428706ad04c869895ce400",
+  "commit_date": "2026-06-01T14:51:31-04:00",
+  "source_scope": "libs/langgraph, libs/prebuilt, libs/checkpoint, libs/sdk-py",
+  "reader_profile": "有经验的后端工程师，熟悉 Python/Java 服务端、状态机和测试，但可能刚接触 LLM Agent。",
+  "generated_at": "2026-06-02T01:27:58.322Z",
+  "units": [
+    {
+      "id": "01-runnable",
+      "title": "LangGraph 的可执行图：从 Runnable 到 CompiledStateGraph",
+      "status": "complete",
+      "depends_on": [],
+      "lesson": "lessons/01-runnable.md",
+      "quiz": "quizzes/01-runnable.quiz.md",
+      "mastery": "mastery/01-runnable.mastery.md",
+      "lab": "labs/01-mini-runnable/README.md",
+      "evidence_ids": [
+        "ev-stategraph-code",
+        "ev-compiled-code",
+        "ev-test-state-basic",
+        "ev-test-runnable"
+      ]
+    },
+    {
+      "id": "02-message-schema",
+      "title": "状态与消息：TypedDict、Reducer 与 MessagesState",
+      "status": "complete",
+      "depends_on": [
+        "01-runnable"
+      ],
+      "lesson": "lessons/02-message-schema.md",
+      "quiz": "quizzes/02-message-schema.quiz.md",
+      "mastery": "mastery/02-message-schema.mastery.md",
+      "lab": "labs/02-message-types/README.md",
+      "evidence_ids": [
+        "ev-messages-state-code",
+        "ev-add-messages-code",
+        "ev-test-messages-state",
+        "ev-test-channels-overwrite"
+      ]
+    },
+    {
+      "id": "03-prompt-template",
+      "title": "节点函数即提示装配层：把业务上下文变成模型输入",
+      "status": "complete",
+      "depends_on": [
+        "02-message-schema"
+      ],
+      "lesson": "lessons/03-prompt-template.md",
+      "quiz": "quizzes/03-prompt-template.quiz.md",
+      "mastery": "mastery/03-prompt-template.mastery.md",
+      "lab": "labs/03-mini-prompt-template/README.md",
+      "evidence_ids": [
+        "ev-runtime-code",
+        "ev-react-prompt-code",
+        "ev-test-react-prompt",
+        "ev-test-runtime-context"
+      ]
+    },
+    {
+      "id": "04-chat-model-adapter",
+      "title": "模型适配：把 ChatModel 当成图节点的一部分",
+      "status": "complete",
+      "depends_on": [
+        "03-prompt-template"
+      ],
+      "lesson": "lessons/04-chat-model-adapter.md",
+      "quiz": "quizzes/04-chat-model-adapter.quiz.md",
+      "mastery": "mastery/04-chat-model-adapter.mastery.md",
+      "lab": "labs/04-mini-chat-model-adapter/README.md",
+      "evidence_ids": [
+        "ev-react-call-model-code",
+        "ev-tool-binding-code",
+        "ev-test-dynamic-model",
+        "ev-test-model-tool-mismatch"
+      ]
+    },
+    {
+      "id": "05-tool-interface",
+      "title": "工具接口：ToolNode、InjectedState 与 ToolMessage",
+      "status": "complete",
+      "depends_on": [
+        "04-chat-model-adapter"
+      ],
+      "lesson": "lessons/05-tool-interface.md",
+      "quiz": "quizzes/05-tool-interface.quiz.md",
+      "mastery": "mastery/05-tool-interface.mastery.md",
+      "lab": "labs/05-mini-tool-calling/README.md",
+      "evidence_ids": [
+        "ev-toolnode-code",
+        "ev-injected-state-code",
+        "ev-test-toolnode",
+        "ev-test-injected-state"
+      ]
+    },
+    {
+      "id": "06-callback-tracing",
+      "title": "流式输出、调试事件与追踪",
+      "status": "complete",
+      "depends_on": [
+        "05-tool-interface"
+      ],
+      "lesson": "lessons/06-callback-tracing.md",
+      "quiz": "quizzes/06-callback-tracing.quiz.md",
+      "mastery": "mastery/06-callback-tracing.mastery.md",
+      "lab": "labs/06-mini-callback-tracer/README.md",
+      "evidence_ids": [
+        "ev-pregel-stream-code",
+        "ev-debug-code",
+        "ev-test-stream-events",
+        "ev-test-debug-checkpoints"
+      ]
+    },
+    {
+      "id": "07-agent-loop",
+      "title": "Agent Loop：条件边、Command、interrupt 与 ReAct 循环",
+      "status": "complete",
+      "depends_on": [
+        "06-callback-tracing"
+      ],
+      "lesson": "lessons/07-agent-loop.md",
+      "quiz": "quizzes/07-agent-loop.quiz.md",
+      "mastery": "mastery/07-agent-loop.mastery.md",
+      "lab": "labs/07-mini-agent-loop/README.md",
+      "evidence_ids": [
+        "ev-command-code",
+        "ev-interrupt-code",
+        "ev-react-loop-code",
+        "ev-test-interrupt-loop",
+        "ev-test-parent-command"
+      ]
+    },
+    {
+      "id": "08-provider-integration",
+      "title": "持久化与远程集成：Checkpoint、Store、SDK 与部署边界",
+      "status": "complete",
+      "depends_on": [
+        "07-agent-loop"
+      ],
+      "lesson": "lessons/08-provider-integration.md",
+      "quiz": "quizzes/08-provider-integration.quiz.md",
+      "mastery": "mastery/08-provider-integration.mastery.md",
+      "lab": "labs/08-mini-provider-adapter/README.md",
+      "evidence_ids": [
+        "ev-checkpoint-code",
+        "ev-sdk-client-code",
+        "ev-test-checkpoint",
+        "ev-test-sdk-stream"
+      ]
+    }
+  ]
+}

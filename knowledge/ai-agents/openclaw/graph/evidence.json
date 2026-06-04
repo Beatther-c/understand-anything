@@ -1,0 +1,522 @@
+[
+  {
+    "id": "ev-readme-product",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "README.md",
+    "line_range": [
+      20,
+      46
+    ],
+    "symbol": null,
+    "evidence_type": "docs",
+    "summary": "README 说明 OpenClaw 是本地优先个人 AI 助手，Gateway 是控制面，产品形态包括多渠道、语音、Canvas、工具和节点。"
+  },
+  {
+    "id": "ev-readme-security",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "README.md",
+    "line_range": [
+      118,
+      150
+    ],
+    "symbol": null,
+    "evidence_type": "docs",
+    "summary": "README 明确把 inbound DM 视为不可信输入，并描述 pairing、allowlist、sandbox 默认策略。"
+  },
+  {
+    "id": "ev-doc-runtime-layout",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "docs/agent-runtime-architecture.md",
+    "line_range": [
+      7,
+      23
+    ],
+    "symbol": null,
+    "evidence_type": "docs",
+    "summary": "runtime 架构文档列出 src/agents、packages/agent-core、src/llm、plugin-sdk 的分层。"
+  },
+  {
+    "id": "ev-code-agent-loop-entry",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.ts",
+    "line_range": [
+      42,
+      71
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "agentLoop 创建 EventStream 并异步运行 runAgentLoop。"
+  },
+  {
+    "id": "ev-code-run-agent-loop",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.ts",
+    "line_range": [
+      119,
+      143
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "runAgentLoop 追加 prompt、发出 agent_start/turn_start/message 事件，并进入 runLoop。"
+  },
+  {
+    "id": "ev-code-run-loop-tools",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.ts",
+    "line_range": [
+      250,
+      339
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "runLoop 流式生成 assistant message，执行 tool calls，写回 tool results，处理 prepareNextTurn、stop、steering、follow-up。"
+  },
+  {
+    "id": "ev-code-stream-response",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.ts",
+    "line_range": [
+      345,
+      441
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "streamAssistantResponse 负责 transformContext、convertToLlm、调用 streamFn、处理 start/delta/done/error 事件。"
+  },
+  {
+    "id": "ev-code-tool-exec-mode",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.ts",
+    "line_range": [
+      447,
+      481
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "executeToolCalls 根据 sequential/parallel 配置选择工具执行策略。"
+  },
+  {
+    "id": "ev-code-agent-types",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/types.ts",
+    "line_range": [
+      133,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "AgentLoopConfig 暴露 convertToLlm、transformContext、getApiKey、shouldStopAfterTurn、prepareNextTurn、steering/follow-up、toolExecution 和 beforeToolCall。"
+  },
+  {
+    "id": "ev-code-tool-factory",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/agent-tools.ts",
+    "line_range": [
+      1,
+      113
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "agent-tools 导入策略、沙箱、插件、channel、OpenClaw 工具和 schema 规范化模块，是工具系统聚合入口。"
+  },
+  {
+    "id": "ev-code-tool-adapter",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/agent-tool-definition-adapter.ts",
+    "line_range": [
+      225,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "工具 adapter 把任意返回值归一化为 AgentToolResult，并拆分当前/历史 execute 参数。"
+  },
+  {
+    "id": "ev-code-tool-log-redact",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/agent-tool-definition-adapter.ts",
+    "line_range": [
+      138,
+      203
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "工具 adapter 对 exec 命令和 env 做敏感信息摘要/脱敏，避免日志泄漏。"
+  },
+  {
+    "id": "ev-code-tool-construction",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/embedded-agent-runner/run/attempt-tool-construction-plan.ts",
+    "line_range": [
+      12,
+      207
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "工具构造计划根据 allowlist、工具组和 plugin 名称决定 core/channel/plugin 工具是否构造。"
+  },
+  {
+    "id": "ev-code-embedded-run",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/embedded-agent-runner/run.ts",
+    "line_range": [
+      1,
+      215
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "内置 runner 汇集认证、模型解析、context engine、hooks、failover、compaction、usage 等运行时依赖。"
+  },
+  {
+    "id": "ev-code-acp-manager",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/acp/control-plane/manager.core.ts",
+    "line_range": [
+      62,
+      130
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "AcpSessionManager 持有 actor queue、runtime handle cache、active turn、turn stats，并能解析 session 与观测状态。"
+  },
+  {
+    "id": "ev-code-acp-turn",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/acp/control-plane/manager.turn-runner.ts",
+    "line_range": [
+      50,
+      139
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "runManagerTurn 建立后台任务上下文、解析 backend candidate、记录失败并管理 active ACP turn。"
+  },
+  {
+    "id": "ev-code-acp-stream",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/acp/control-plane/manager.turn-runner.ts",
+    "line_range": [
+      140,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "runManagerTurn 对 backend 尝试、runtime handle、运行状态、abort signal、turn stream 与超时进行编排。"
+  },
+  {
+    "id": "ev-code-plugin-entry",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/plugin-sdk/plugin-entry.ts",
+    "line_range": [
+      1,
+      124
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "plugin-entry 汇总 OpenClawPluginApi、AgentHarness、Provider、工具、hook、session action 等扩展类型。"
+  },
+  {
+    "id": "ev-code-provider-entry",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/plugin-sdk/provider-entry.ts",
+    "line_range": [
+      139,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "defineSingleProviderPluginEntry 注册 provider auth、catalog、static/live model catalog。"
+  },
+  {
+    "id": "ev-code-provider-tools",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/plugin-sdk/provider-tools.ts",
+    "line_range": [
+      16,
+      109
+    ],
+    "symbol": null,
+    "evidence_type": "code",
+    "summary": "provider-tools 提供 Gemini/OpenAI 工具 schema 检查与规范化。"
+  },
+  {
+    "id": "ev-test-agent-loop-basic",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.test.ts",
+    "line_range": [
+      1,
+      220
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "agent-core 的 agent-loop 测试覆盖基础事件流和消息返回。"
+  },
+  {
+    "id": "ev-test-agent-loop-tool",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.test.ts",
+    "line_range": [
+      220,
+      520
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "agent-loop 测试覆盖工具调用、工具结果和下一轮循环。"
+  },
+  {
+    "id": "ev-test-agent-loop-continue",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/agent-core/src/agent-loop.test.ts",
+    "line_range": [
+      520,
+      900
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "agent-loop 测试覆盖 continue/retry 类上下文续跑行为。"
+  },
+  {
+    "id": "ev-test-llm-validation",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/llm-core/src/validation.test.ts",
+    "line_range": [
+      1,
+      220
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "llm-core validation 测试为消息/模型数据契约提供证据。"
+  },
+  {
+    "id": "ev-test-tool-adapter",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/agent-tool-definition-adapter.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "工具 adapter 测试覆盖工具定义适配、执行和错误处理。"
+  },
+  {
+    "id": "ev-test-tool-policy",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/agent-tools.policy.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "工具 policy 测试覆盖 allow/deny、继承与工具策略行为。"
+  },
+  {
+    "id": "ev-test-tool-construction",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/embedded-agent-runner/run/attempt-tool-construction-plan.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "工具构造计划测试覆盖 allowlist、禁用工具和 plugin/channel/core 工具构造开关。"
+  },
+  {
+    "id": "ev-test-run-failover",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/embedded-agent-runner/run.cross-provider-fallback-error-context.test.ts",
+    "line_range": [
+      1,
+      240
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "runner 故障转移测试覆盖 provider fallback 错误上下文。"
+  },
+  {
+    "id": "ev-test-run-overflow",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/embedded-agent-runner/run.overflow-compaction.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "runner 溢出压缩测试覆盖 context overflow 下的 compaction/retry。"
+  },
+  {
+    "id": "ev-test-model-forward",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/agents/embedded-agent-runner/model.forward-compat.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "模型 forward compatibility 测试覆盖新 provider/model 配置兼容。"
+  },
+  {
+    "id": "ev-test-acp-manager",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/acp/control-plane/manager.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "ACP manager 测试覆盖 session manager 的基础行为。"
+  },
+  {
+    "id": "ev-test-acp-turn-runner",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/acp/control-plane/manager.turn-results.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "ACP turn 结果测试覆盖 turn 输出与终止结果。"
+  },
+  {
+    "id": "ev-test-acp-runtime-cache",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/acp/control-plane/runtime-cache.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "runtime cache 测试覆盖 handle cache 生命周期。"
+  },
+  {
+    "id": "ev-test-acp-turn-stream",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/acp/translator.tool-streaming.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "ACP translator 工具流测试覆盖工具事件映射/流式输出。"
+  },
+  {
+    "id": "ev-test-plugin-entry",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/plugin-package-contract/src/index.test.ts",
+    "line_range": [
+      1,
+      220
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "插件 package contract 测试支持插件 manifest/entry 的约束。"
+  },
+  {
+    "id": "ev-test-provider-entry",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "src/plugins/provider-runtime.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "provider runtime 测试支持 provider 注册/运行时解析。"
+  },
+  {
+    "id": "ev-test-provider-tools",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/plugin-sdk/src/provider-tools.test.ts",
+    "line_range": [
+      1,
+      260
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "provider tools 测试支持 schema 兼容工具函数。"
+  },
+  {
+    "id": "ev-test-android-device-auth",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "apps/android/app/src/test/java/ai/openclaw/app/gateway/DeviceAuthPayloadTest.kt",
+    "line_range": [
+      1,
+      220
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "Android device auth 测试支持设备认证 payload 语义。"
+  },
+  {
+    "id": "ev-test-gateway-protocol",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "packages/gateway-protocol/src/index.test.ts",
+    "line_range": [
+      1,
+      220
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "gateway-protocol 测试支持 Gateway 协议导出与 schema 契约。"
+  },
+  {
+    "id": "ev-test-android-node-handlers",
+    "repo": "openclaw/openclaw",
+    "commit": "4bb86877e2cf4ae8edc4294de68a693b1119b7c3",
+    "path": "apps/android/app/src/test/java/ai/openclaw/app/node/InvokeDispatcherTest.kt",
+    "line_range": [
+      1,
+      220
+    ],
+    "symbol": null,
+    "evidence_type": "test",
+    "summary": "Android node invoke dispatcher 测试支持节点能力调用分发。"
+  }
+]
